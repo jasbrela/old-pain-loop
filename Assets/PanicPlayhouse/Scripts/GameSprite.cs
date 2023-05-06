@@ -15,21 +15,25 @@ namespace PanicPlayhouse.Scripts
         private void Start()
         {
             gameObject.TryGetComponent(out _renderer);
+            
             _defaultMat = _renderer.material;
+            
+            var temp = _renderer.color;
+            temp.a = 0f;
+            _renderer.color = temp;
         }
 
-        [Button]
-        private void FadeOut()
+        public void FadeOut()
         {
+        
             _renderer.material = outline;
-            _renderer.DOFade(0, 1);
+            _renderer.DOFade(0, 0.25f);
         }
         
-        [Button]
-        private void FadeIn()
+        public void FadeIn()
         {
             _renderer.material = _defaultMat;
-            _renderer.DOFade(1, 1);
+            _renderer.DOFade(1, 0.25f);
         }
     }
 }
