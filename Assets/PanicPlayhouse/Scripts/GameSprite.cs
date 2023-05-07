@@ -1,6 +1,4 @@
-using System;
 using DG.Tweening;
-using NaughtyAttributes;
 using UnityEngine;
 
 namespace PanicPlayhouse.Scripts

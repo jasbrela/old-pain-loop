@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace PanicPlayhouse.Scripts
+namespace PanicPlayhouse.Scripts.Player
 {
     public class PlayerMovement : MonoBehaviour
     {
