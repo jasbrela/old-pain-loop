@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace PanicPlayhouse.Scripts.Player
 {
-    public class PlayerInteractionDetector : Listener
+    public class PlayerInteractionDetector : MonoBehaviour
     {
         [SerializeField] private float maxRange;
         [SerializeField] private LayerMask interactableMask;
@@ -21,9 +21,8 @@ namespace PanicPlayhouse.Scripts.Player
             SetUpControls();
         }
 
-        protected override void OnDisable()
+        protected void OnDisable()
         {
-            base.OnDisable();
             UnsubscribeControls();
         }
 
@@ -44,14 +43,11 @@ namespace PanicPlayhouse.Scripts.Player
                 return;
             }
 
-            Debug.Log("Hit something");
             if (hit.collider != null)
             {
-                Debug.Log("Something has a collider");
                 hit.collider.TryGetComponent(out IInteractable interactable);
                 
                 if (_currentTarget == interactable) return;
-                Debug.Log("Something is the new target!");
 
                 _currentTarget?.OnQuitRange();
                 _currentTarget = interactable;

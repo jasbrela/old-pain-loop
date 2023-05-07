@@ -12,6 +12,7 @@ namespace PanicPlayhouse.Scripts.Player
         private Rigidbody _rb;
         private PlayerInput _input;
         private Vector3 _previousInput;
+        private bool _isHidden;
 
         private void Start()
         {
@@ -20,6 +21,20 @@ namespace PanicPlayhouse.Scripts.Player
             _sr = GetComponentInChildren<SpriteRenderer>();
         
             SetUpControls();
+        }
+
+        public void ChangeVisibility()
+        {
+            _isHidden = !_isHidden;
+            
+            if (_isHidden)
+            {
+                _input.actions["Movement"].Disable();
+            }
+            else
+            {
+                _input.actions["Movement"].Enable();
+            }
         }
 
         private void SetUpControls()
@@ -48,6 +63,7 @@ namespace PanicPlayhouse.Scripts.Player
     
         private void Move()
         {
+            if (_isHidden) return;
             if (_rb.velocity.magnitude >= defaultMaxVel) return;
         
             _rb.AddRelativeForce(_previousInput * defaultForce, ForceMode.Force);
