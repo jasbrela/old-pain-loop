@@ -1,20 +1,18 @@
-using System;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace PanicPlayhouse.Scripts
 {
     public class Room : MonoBehaviour
     {
         [SerializeField] private bool useCamPerRoom;
-        [SerializeField] private GameObject virtualCam;
+        [SerializeField] private CinemachineVirtualCamera virtualCam;
         private List<GameSprite> _objects = new();
-
+        
         private void Start()
         {
-            if (!useCamPerRoom) virtualCam.SetActive(false);
+            if (!useCamPerRoom) virtualCam.gameObject.SetActive(false);
             _objects = new List<GameSprite>(GetComponentsInChildren<GameSprite>());
         }
 
@@ -26,7 +24,7 @@ namespace PanicPlayhouse.Scripts
             }
 
             if (!useCamPerRoom) return;
-            if (other.CompareTag("Player") && !other.isTrigger) virtualCam.SetActive(true);
+            if (other.CompareTag("Player") && !other.isTrigger) virtualCam.gameObject.SetActive(true);
         }
 
         private void OnTriggerExit(Collider other)
@@ -37,7 +35,7 @@ namespace PanicPlayhouse.Scripts
             }
             
             if (!useCamPerRoom) return;
-            if (other.CompareTag("Player") && !other.isTrigger) virtualCam.SetActive(false);
+            if (other.CompareTag("Player") && !other.isTrigger) virtualCam.gameObject.SetActive(false);
         }
     }
 }
