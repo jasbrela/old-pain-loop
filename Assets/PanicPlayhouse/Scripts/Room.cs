@@ -2,16 +2,19 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace PanicPlayhouse.Scripts
 {
     public class Room : MonoBehaviour
     {
+        [SerializeField] private bool useCamPerRoom;
         [SerializeField] private GameObject virtualCam;
         private List<GameSprite> _objects = new();
 
         private void Start()
         {
+            if (!useCamPerRoom) virtualCam.SetActive(false);
             _objects = new List<GameSprite>(GetComponentsInChildren<GameSprite>());
         }
 
@@ -22,6 +25,7 @@ namespace PanicPlayhouse.Scripts
                 obj.FadeIn();
             }
 
+            if (!useCamPerRoom) return;
             if (other.CompareTag("Player") && !other.isTrigger) virtualCam.SetActive(true);
         }
 
@@ -32,6 +36,7 @@ namespace PanicPlayhouse.Scripts
                 obj.FadeOut();
             }
             
+            if (!useCamPerRoom) return;
             if (other.CompareTag("Player") && !other.isTrigger) virtualCam.SetActive(false);
         }
     }
