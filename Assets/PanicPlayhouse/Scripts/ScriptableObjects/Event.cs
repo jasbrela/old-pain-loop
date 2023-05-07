@@ -14,7 +14,7 @@ namespace PanicPlayhouse.Scripts.ScriptableObjects
         [Button]
         public void Raise()
         {
-            Debug.Log("Raised event: " + name);
+            Debug.Log("Raised event: ".Bold() + name);
             
             for(int i = _listeners.Count -1; i >= 0; i--)
                 _listeners[i].OnEventRaised();

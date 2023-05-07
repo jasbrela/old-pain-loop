@@ -13,7 +13,7 @@ namespace PanicPlayhouse.Scripts.Player
         private PlayerInput _input;
         private Vector3 _forward = Vector3.forward;
 
-        private IInteractable _currentTarget;
+        private Interactable _currentTarget;
 
         private void Start()
         {
@@ -45,7 +45,7 @@ namespace PanicPlayhouse.Scripts.Player
 
             if (hit.collider != null)
             {
-                hit.collider.TryGetComponent(out IInteractable interactable);
+                hit.collider.TryGetComponent(out Interactable interactable);
                 
                 if (_currentTarget == interactable) return;
 
