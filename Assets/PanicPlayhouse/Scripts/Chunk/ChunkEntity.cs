@@ -1,9 +1,9 @@
 using DG.Tweening;
 using UnityEngine;
 
-namespace PanicPlayhouse.Scripts
+namespace PanicPlayhouse.Scripts.Chunk
 {
-    public class GameSprite : MonoBehaviour
+    public class ChunkEntity : MonoBehaviour
     {
         [SerializeField] private Material outline;
 
@@ -12,7 +12,7 @@ namespace PanicPlayhouse.Scripts
 
         private void Start()
         {
-            gameObject.TryGetComponent(out _renderer);
+            _renderer = GetComponentInChildren<SpriteRenderer>();
             
             _defaultMat = _renderer.material;
             

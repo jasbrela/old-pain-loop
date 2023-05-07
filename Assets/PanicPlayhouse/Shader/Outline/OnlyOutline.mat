@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Outline
+  m_Name: OnlyOutline
   m_Shader: {fileID: -6465566751694194690, guid: b62c74da9e1cdc145ae106efeb3cbb35, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -93,7 +93,7 @@ Material:
     - CORNERS: 0
     - PixelSnap: 0
     - _AlphaClip: 0
-    - _Black: 0
+    - _Black: 1
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0

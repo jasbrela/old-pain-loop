@@ -8,25 +8,19 @@ namespace PanicPlayhouse.Scripts.Interfaces
 {
     public abstract class Listener : MonoBehaviour
     {
-        [SerializeField] protected List<Event> events;
+        [SerializeField] protected Event @event;
         [HideInInspector] [SerializeField] protected UnityEvent response;
 
-        private bool IsEventNull => events == null;
+        //private bool IsEventNull => @event == null;
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
-            foreach (Event @event in events)
-            {
-                @event.RegisterListener(this);
-            }
+            @event.RegisterListener(this);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
-            foreach (Event @event in events)
-            {
-                @event.UnregisterListener(this);
-            }
+            @event.UnregisterListener(this);
         }
 
         public void OnEventRaised()

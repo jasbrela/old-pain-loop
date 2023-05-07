@@ -4,7 +4,7 @@ using PanicPlayhouse.Scripts.Interfaces;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 
-namespace PanicPlayhouse.Scripts
+namespace PanicPlayhouse.Scripts.Camera
 {
     [RequireComponent(typeof(CinemachineVirtualCamera))]
     public class CameraModifiers : Listener
