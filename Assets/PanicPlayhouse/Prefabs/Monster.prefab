@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2799308151189938383}
   - component: {fileID: 6883720999910810048}
+  - component: {fileID: 6262647242452103651}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6262647242452103651
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2617084689451222883}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9b668260fdd6f44ab5f3af30b7c99b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2849899001654777004
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +119,7 @@ GameObject:
   - component: {fileID: 2849899001654777005}
   - component: {fileID: 7860628906984239353}
   - component: {fileID: 3951687702779899637}
+  - component: {fileID: 6262647242452103656}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Player
@@ -111,7 +134,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2849899001654777004}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.77, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -162,7 +185,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 0
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -183,3 +206,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98780da6ac6413645929e21c61439557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  footsteps: {fileID: 6262647242452103656}
+  lastKnownPos: {fileID: 11400000, guid: 0d7671ccd9b703a4e802a36ba3734be3, type: 2}
+  agent: {fileID: 7860628906984239353}
+--- !u!114 &6262647242452103656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2849899001654777004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94844c139c6d2e44c8935f18d8dde45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footsteps: []
+  interval: 0

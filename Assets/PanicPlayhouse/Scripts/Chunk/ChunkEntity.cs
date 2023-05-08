@@ -6,32 +6,31 @@ namespace PanicPlayhouse.Scripts.Chunk
     public class ChunkEntity : MonoBehaviour
     {
         [SerializeField] private Material outline;
-
-        private SpriteRenderer _renderer;
+        [SerializeField] private SpriteRenderer spriteRenderer;
         private Material _defaultMat;
 
         private void Start()
         {
-            _renderer = GetComponentInChildren<SpriteRenderer>();
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             
-            _defaultMat = _renderer.material;
+            _defaultMat = spriteRenderer.material;
             
-            var temp = _renderer.color;
+            var temp = spriteRenderer.color;
             temp.a = 0f;
-            _renderer.color = temp;
+            spriteRenderer.color = temp;
         }
 
         public void FadeOut()
         {
         
-            _renderer.material = outline;
-            _renderer.DOFade(0, 0.25f);
+            spriteRenderer.material = outline;
+            spriteRenderer.DOFade(0, 0.25f);
         }
         
         public void FadeIn()
         {
-            _renderer.material = _defaultMat;
-            _renderer.DOFade(1, 0.25f);
+            spriteRenderer.material = _defaultMat;
+            spriteRenderer.DOFade(1, 0.25f);
         }
     }
 }

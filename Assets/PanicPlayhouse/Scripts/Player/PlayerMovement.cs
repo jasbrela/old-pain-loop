@@ -1,27 +1,30 @@
+using NaughtyAttributes;
+using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace PanicPlayhouse.Scripts.Player
 {
     public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField] private Vector3Variable lastKnownPos;
+        [Header("Movement")]
         [SerializeField] private float defaultForce;
         [SerializeField] private float defaultMaxVel;
+        [SerializeField] private Vector3Variable lastKnownPos;
+        [SerializeField] private FootstepsAudio footsteps;
 
-        private SpriteRenderer _sr;
-        private Rigidbody _rb;
-        private PlayerInput _input;
+        [Header("Components")]
+        [SerializeField] private SpriteRenderer spriteRenderer;
+        [Label("Rigidbody")] [SerializeField] private Rigidbody rb;
+        [SerializeField] private PlayerInput input;
+        
         private Vector3 _previousInput;
         private bool _isHidden;
 
         private void Start()
         {
-            _input = GetComponent<PlayerInput>();
-            _rb = GetComponent<Rigidbody>();
-            _sr = GetComponentInChildren<SpriteRenderer>();
-        
             SetUpControls();
         }
 
@@ -31,30 +34,31 @@ namespace PanicPlayhouse.Scripts.Player
             
             if (_isHidden)
             {
-                _input.actions["Movement"].Disable();
+                input.actions["Movement"].Disable();
             }
             else
             {
-                _input.actions["Movement"].Enable();
+                input.actions["Movement"].Enable();
             }
         }
 
         private void SetUpControls()
         {
-            _input.actions["Movement"].performed += SetMovement;
-            _input.actions["Movement"].canceled += ResetMovement;
+            input.actions["Movement"].performed += SetMovement;
+            input.actions["Movement"].canceled += ResetMovement;
         }
 
         private void OnDisable()
         {
-            _input.actions["Movement"].performed -= SetMovement;
-            _input.actions["Movement"].canceled -= ResetMovement;
+            input.actions["Movement"].performed -= SetMovement;
+            input.actions["Movement"].canceled -= ResetMovement;
         }
 
         private void SetMovement(InputAction.CallbackContext ctx)
         {
             _previousInput = ctx.ReadValue<Vector3>();
-            if (_previousInput.x != 0) _sr.flipX = _previousInput.x > 0;
+            footsteps.IsMoving = _previousInput != Vector3.zero;
+            if (_previousInput.x != 0) spriteRenderer.flipX = _previousInput.x > 0;
         }
 
 
@@ -66,19 +70,21 @@ namespace PanicPlayhouse.Scripts.Player
         private void Move()
         {
             if (_isHidden) return;
-            if (_rb.velocity.magnitude >= defaultMaxVel) return;
+            if (rb.velocity.magnitude >= defaultMaxVel) return;
         
-            _rb.AddRelativeForce(_previousInput * defaultForce, ForceMode.Force);
+            rb.AddRelativeForce(_previousInput * defaultForce, ForceMode.Force);
         }
     
         private void ResetMovement(InputAction.CallbackContext obj)
         {
             _previousInput = Vector3.zero;
-            Vector3 vel = _rb.velocity;
+            Vector3 vel = rb.velocity;
         
             vel = new Vector2(vel.x * 0.15f, vel.y);
         
-            _rb.velocity = vel;
+            rb.velocity = vel;
+            
+            footsteps.IsMoving = false;
         }
 
         public void SaveLastKnownPosition()

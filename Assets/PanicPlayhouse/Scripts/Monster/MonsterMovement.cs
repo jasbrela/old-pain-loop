@@ -1,23 +1,18 @@
 using System;
 using System.Collections;
+using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 namespace PanicPlayhouse.Scripts.Monster
 {
     public class MonsterMovement : MonoBehaviour
     {
+        [SerializeField] private FootstepsAudio footsteps;
         [SerializeField] private Vector3Variable lastKnownPos;
-        private NavMeshAgent _monster;
-
-        private void Start()
-        {
-            if (TryGetComponent(out _monster)) return;
-            
-            Debug.LogWarning("The monster is missing a NavMeshAgent Component", this);
-            gameObject.SetActive(false);
-        }
+        [SerializeField] private NavMeshAgent agent;
 
         public void OnTriggerMonster()
         {
@@ -27,7 +22,7 @@ namespace PanicPlayhouse.Scripts.Monster
         IEnumerator WaitThenMove()
         {
             yield return new WaitForSeconds(1);
-            _monster.destination = lastKnownPos.Value;
+            agent.destination = lastKnownPos.Value;
         }
     }
 }

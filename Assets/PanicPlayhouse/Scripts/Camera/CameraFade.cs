@@ -6,27 +6,25 @@ namespace PanicPlayhouse.Scripts.Camera
 {
     public class CameraFade : MonoBehaviour
     {
-        private Image _renderer;
+        [SerializeField] private Image blackImage;
         private Material _defaultMat;
 
         private void Start()
         {
-            _renderer = GetComponentInChildren<Image>();
-            
-            var temp = _renderer.color;
+            var temp = blackImage.color;
             temp.a = 0f;
-            _renderer.color = temp;
+            blackImage.color = temp;
         }
 
         public void FadeOut()
         {
         
-            _renderer.DOFade(0, 0.25f);
+            blackImage.DOFade(0, 0.25f);
         }
         
         public void FadeIn()
         {
-            _renderer.DOFade(1, 0.25f);
+            blackImage.DOFade(1, 0.25f);
         }
     }
 }

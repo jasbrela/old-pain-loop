@@ -1,21 +1,23 @@
 using System.Collections.Generic;
 using Cinemachine;
+using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
 
 namespace PanicPlayhouse.Scripts.Chunk
 {
     public class Chunk : MonoBehaviour
     {
-        [SerializeField] private bool useCamPerRoom;
         [SerializeField] private Event onEnterChunk;
-        private CinemachineVirtualCamera _virtualCam;
+        [SerializeField] private bool useCamPerRoom;
+        [ShowIf("useCamPerRoom")] [SerializeField] private CinemachineVirtualCamera virtualCam;
+        
         private List<ChunkEntity> _entities = new();
         
         private void Start()
         {
-            _virtualCam = GetComponentInChildren<CinemachineVirtualCamera>();
-            if (_virtualCam != null && !useCamPerRoom) _virtualCam.gameObject.SetActive(false);
+            if (virtualCam != null && !useCamPerRoom) virtualCam.gameObject.SetActive(false);
             
             _entities = new List<ChunkEntity>(GetComponentsInChildren<ChunkEntity>());
         }
@@ -31,7 +33,7 @@ namespace PanicPlayhouse.Scripts.Chunk
             }
 
             if (!useCamPerRoom) return;
-            if (other.CompareTag("Player") && !other.isTrigger) _virtualCam.gameObject.SetActive(true);
+            if (other.CompareTag("Player") && !other.isTrigger) virtualCam.gameObject.SetActive(true);
         }
 
         private void OnTriggerExit(Collider other)
@@ -44,7 +46,7 @@ namespace PanicPlayhouse.Scripts.Chunk
             }
             
             if (!useCamPerRoom) return;
-            if (other.CompareTag("Player") && !other.isTrigger) _virtualCam.gameObject.SetActive(false);
+            if (other.CompareTag("Player") && !other.isTrigger) virtualCam.gameObject.SetActive(false);
         }
     }
 }

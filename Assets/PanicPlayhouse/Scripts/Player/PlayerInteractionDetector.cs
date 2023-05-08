@@ -6,18 +6,18 @@ namespace PanicPlayhouse.Scripts.Player
 {
     public class PlayerInteractionDetector : MonoBehaviour
     {
+        [SerializeField] private bool debug;
+        [Space(10)]
         [SerializeField] private float maxRange;
         [SerializeField] private LayerMask interactableMask;
-        [SerializeField] private bool debug;
     
-        private PlayerInput _input;
+        [SerializeField] private PlayerInput input;
         private Vector3 _forward = Vector3.forward;
 
         private Interactable _currentTarget;
 
         private void Start()
         {
-            TryGetComponent(out _input);
             SetUpControls();
         }
 
@@ -69,8 +69,8 @@ namespace PanicPlayhouse.Scripts.Player
     
         private void SetUpControls()
         {
-            _input.actions["Interact"].performed += Interact;
-            _input.actions["Movement"].performed += OnPlayerMove;
+            input.actions["Interact"].performed += Interact;
+            input.actions["Movement"].performed += OnPlayerMove;
         }
 
         private void OnPlayerMove(InputAction.CallbackContext obj)
@@ -81,8 +81,8 @@ namespace PanicPlayhouse.Scripts.Player
 
         private void UnsubscribeControls()
         {
-            _input.actions["Interact"].performed -= Interact;
-            _input.actions["Movement"].performed -= OnPlayerMove;
+            input.actions["Interact"].performed -= Interact;
+            input.actions["Movement"].performed -= OnPlayerMove;
         }
     
         private void Interact(InputAction.CallbackContext callbackContext)

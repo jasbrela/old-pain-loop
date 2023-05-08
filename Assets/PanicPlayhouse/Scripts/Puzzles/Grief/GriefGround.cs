@@ -12,7 +12,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
         public void Rotate()
         {
             transform.Rotate(Vector3.up, 90);
-            Debug.Log("Rotated ground to: ".Bold() + transform.eulerAngles.y + ". Should be:".Bold() + CorrectY + "Is it Correct? ".Bold() + IsCorrect);
+            //Debug.Log("Rotated ground to: ".Bold() + transform.eulerAngles.y + ". Should be:".Bold() + CorrectY + "Is it Correct? ".Bold() + IsCorrect);
         }
     }
 }

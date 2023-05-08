@@ -12,14 +12,13 @@ namespace PanicPlayhouse.Scripts.Camera
         [SerializeField] private FloatVariable insanity;
         [SerializeField] private float multiplier = 0.1f;
         
-        private CinemachineVirtualCamera _cam;
+        [SerializeField] private CinemachineVirtualCamera cam;
         private CinemachineBasicMultiChannelPerlin _noise;
         private void Start()
         {
             if (insanity == null) return;
-            if (!TryGetComponent(out _cam)) return;
             
-            _noise = _cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            _noise = cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
             _noise.m_AmplitudeGain = 0;
         }
 

@@ -8,28 +8,27 @@ namespace PanicPlayhouse.Scripts.Interfaces
     {
         [SerializeField] private Material hoverMaterial;
         private Material _defaultMaterial;
-        private SpriteRenderer _renderer;
+        [SerializeField] private SpriteRenderer spriteRenderer;
 
         private void Start()
         {
-            _renderer = GetComponentInChildren<SpriteRenderer>();
-            if (_renderer == null) return;
-            _defaultMaterial = _renderer.material;
+            if (spriteRenderer == null) return;
+            _defaultMaterial = spriteRenderer.material;
         }
 
         public virtual void OnInteract() { }
 
         public virtual void OnEnterRange()
         {
-            if (_renderer == null) return;
-            _renderer.material = hoverMaterial;
+            if (spriteRenderer == null) return;
+            spriteRenderer.material = hoverMaterial;
 
         }
 
         public virtual void OnQuitRange()
         {
-            if (_renderer == null) return;
-            _renderer.material = _defaultMaterial;
+            if (spriteRenderer == null) return;
+            spriteRenderer.material = _defaultMaterial;
         }
     }
 }

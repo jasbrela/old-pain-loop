@@ -1,10 +1,12 @@
 using PanicPlayhouse.Scripts.Interfaces;
+using UnityEngine;
 
 namespace PanicPlayhouse.Scripts.Puzzles.Grief
 {
     public class GriefButton : Interactable
     {
-        public bool IsCorrect => Ground.IsCorrect;
+        [SerializeField] private GriefGround ground;
+        public bool IsCorrect => ground.IsCorrect;
         public bool IsBlocked { get; set; } = false;
 
         public GriefPuzzle Puzzle
@@ -18,23 +20,14 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
                 }
             }
         }
-        
-        private GriefGround Ground
-        {
-            get
-            {
-                if (_ground == null) _ground = transform.parent.GetComponentInChildren<GriefGround>();
-                return _ground;
-            }
-        }
-        
+
         private GriefPuzzle _puzzle;
         private GriefGround _ground;
         
         public override void OnInteract()
         {
             if (IsBlocked) return;
-            Ground.Rotate();
+            ground.Rotate();
             Puzzle.OnPressButton(this);
         }
 
