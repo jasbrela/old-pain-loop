@@ -48,8 +48,8 @@ namespace PanicPlayhouse.Scripts.Player
                 hit.collider.TryGetComponent(out Interactable interactable);
                 
                 if (_currentTarget == interactable) return;
-
-                _currentTarget?.OnQuitRange();
+                if (_currentTarget != null) _currentTarget.OnQuitRange();
+                
                 _currentTarget = interactable;
                 _currentTarget.OnEnterRange();
             }
@@ -87,7 +87,7 @@ namespace PanicPlayhouse.Scripts.Player
     
         private void Interact(InputAction.CallbackContext callbackContext)
         {
-            _currentTarget?.OnInteract();
+            if (_currentTarget != null) _currentTarget.OnInteract();
         }
     }
 }

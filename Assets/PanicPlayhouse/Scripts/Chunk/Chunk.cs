@@ -1,12 +1,14 @@
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
 
 namespace PanicPlayhouse.Scripts.Chunk
 {
     public class Chunk : MonoBehaviour
     {
         [SerializeField] private bool useCamPerRoom;
+        [SerializeField] private Event onEnterChunk;
         private CinemachineVirtualCamera _virtualCam;
         private List<ChunkEntity> _entities = new();
         
@@ -20,6 +22,9 @@ namespace PanicPlayhouse.Scripts.Chunk
 
         private void OnTriggerEnter(Collider other)
         {
+            gameObject.name = "Chunk (Visible)";
+            if (onEnterChunk != null) onEnterChunk.Raise();
+            
             foreach (ChunkEntity obj in _entities)
             {
                 obj.FadeIn();
@@ -31,6 +36,8 @@ namespace PanicPlayhouse.Scripts.Chunk
 
         private void OnTriggerExit(Collider other)
         {
+            gameObject.name = "Chunk (Hidden)";
+
             foreach (ChunkEntity obj in _entities)
             {
                 obj.FadeOut();

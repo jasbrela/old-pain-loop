@@ -19,14 +19,14 @@ namespace PanicPlayhouse.Scripts.Interfaces
 
         public virtual void OnInteract() { }
 
-        public void OnEnterRange()
+        public virtual void OnEnterRange()
         {
             if (_renderer == null) return;
             _renderer.material = hoverMaterial;
 
         }
 
-        public void OnQuitRange()
+        public virtual void OnQuitRange()
         {
             if (_renderer == null) return;
             _renderer.material = _defaultMaterial;

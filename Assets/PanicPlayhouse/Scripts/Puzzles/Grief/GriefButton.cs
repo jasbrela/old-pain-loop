@@ -1,14 +1,13 @@
-﻿using PanicPlayhouse.Scripts.Interfaces;
-using UnityEngine;
+using PanicPlayhouse.Scripts.Interfaces;
 
-namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
+namespace PanicPlayhouse.Scripts.Puzzles.Grief
 {
-    public class XylophoneButton : Interactable
+    public class GriefButton : Interactable
     {
-        [SerializeField] private AudioClip clip;
+        public bool IsCorrect => Ground.IsCorrect;
         public bool IsBlocked { get; set; } = false;
 
-        public XylophonePuzzle Puzzle
+        public GriefPuzzle Puzzle
         {
             get => _puzzle;
             set
@@ -19,12 +18,23 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
                 }
             }
         }
-
-        private XylophonePuzzle _puzzle;
+        
+        private GriefGround Ground
+        {
+            get
+            {
+                if (_ground == null) _ground = transform.parent.GetComponentInChildren<GriefGround>();
+                return _ground;
+            }
+        }
+        
+        private GriefPuzzle _puzzle;
+        private GriefGround _ground;
         
         public override void OnInteract()
         {
             if (IsBlocked) return;
+            Ground.Rotate();
             Puzzle.OnPressButton(this);
         }
 
