@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,6 +8,7 @@ namespace PanicPlayhouse.Scripts.Monster
 {
     public class MonsterMovement : MonoBehaviour
     {
+        [SerializeField] private Vector3Variable lastKnownPos;
         private NavMeshAgent _monster;
 
         private void Start()
@@ -16,10 +19,15 @@ namespace PanicPlayhouse.Scripts.Monster
             gameObject.SetActive(false);
         }
 
-        public void MoveTo(Vector3 position)
+        public void OnTriggerMonster()
         {
-            _monster.destination = position;
-            
+            StartCoroutine(WaitThenMove());
+        }
+
+        IEnumerator WaitThenMove()
+        {
+            yield return new WaitForSeconds(1);
+            _monster.destination = lastKnownPos.Value;
         }
     }
 }

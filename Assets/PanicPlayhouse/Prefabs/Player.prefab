@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 7734100179996136546}
   - component: {fileID: 7734100179996136548}
   - component: {fileID: 1170892685}
+  - component: {fileID: 1170892686}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -192,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c56eee3c3e0be948a3e6684a9912e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastKnownPos: {fileID: 11400000, guid: 0d7671ccd9b703a4e802a36ba3734be3, type: 2}
   defaultForce: 80
   defaultMaxVel: 10
 --- !u!114 &1170892685
@@ -207,3 +209,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insanity: {fileID: 11400000, guid: c94776497f346824984f8bf99fb6f8d4, type: 2}
+  insanityOnRespawn: 20
+  checkpoint: {fileID: 11400000, guid: bde0aeb7427311846869ede4fdd7feb3, type: 2}
+  onRespawn: {fileID: 11400000, guid: 558047ec2a68a9f47b82410a303abfd0, type: 2}
+--- !u!114 &1170892686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734100179996136547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b890db2a60a15df4c8bf1c387ed2a4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxRange: 5
+  interactableMask:
+    serializedVersion: 2
+    m_Bits: 64
+  debug: 1

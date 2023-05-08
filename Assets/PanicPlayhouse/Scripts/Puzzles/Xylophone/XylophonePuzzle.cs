@@ -12,11 +12,16 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         [SerializeField] private float insanityReward;
         [SerializeField] private FloatVariable insanity;
 
+        [Header("Monster")]
+        [SerializeField] private Event triggerMonster;
+        [SerializeField] private int triggerInterval; // this could be changed based on insanity...
+        
         [Header("Puzzle")]
         [SerializeField] private Event onFinish;
         [SerializeField] private List<XylophoneButton> order;
         private List<XylophoneButton> _uniqueButtons;
         private int _buttonCount;
+        private int _triggerCount;
         
         private bool IsActivated { get; set; } = false;
         private bool IsFinished { get; set; } = false;
@@ -28,7 +33,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             if (order.Count == 0)
             {
                 gameObject.SetActive(false);
-                Debug.Log(name + " has been deactivated.");
+                Debug.Log(name.Bold().Color("#FF4500") + " has been deactivated.");
                 return;
             }
             
@@ -42,7 +47,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         {
             if (IsActivated || IsFinished) return;
             
-            Debug.Log(name + "has been activated.");
+            Debug.Log(name.Bold().Color("#00FA9A") + " has been activated.");
             
             foreach (XylophoneButton button in _uniqueButtons)
             {
@@ -53,6 +58,13 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         public void OnPressButton(XylophoneButton button)
         {
             if (IsFinished || !IsActivated) return;
+            _triggerCount++;
+            
+            if (_triggerCount == triggerInterval && triggerMonster != null)
+            {
+                _triggerCount = 0;
+                triggerMonster.Raise();
+            }
             
             if (order[_buttonCount] == button)
             {

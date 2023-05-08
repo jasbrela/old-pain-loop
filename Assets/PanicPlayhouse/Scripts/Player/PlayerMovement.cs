@@ -1,3 +1,4 @@
+using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +6,7 @@ namespace PanicPlayhouse.Scripts.Player
 {
     public class PlayerMovement : MonoBehaviour
     {
+        [SerializeField] private Vector3Variable lastKnownPos;
         [SerializeField] private float defaultForce;
         [SerializeField] private float defaultMaxVel;
 
@@ -77,6 +79,11 @@ namespace PanicPlayhouse.Scripts.Player
             vel = new Vector2(vel.x * 0.15f, vel.y);
         
             _rb.velocity = vel;
+        }
+
+        public void SaveLastKnownPosition()
+        {
+            lastKnownPos.Value = transform.position;
         }
     }
 }

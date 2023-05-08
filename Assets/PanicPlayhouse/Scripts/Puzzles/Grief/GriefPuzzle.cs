@@ -27,7 +27,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
             if (_buttons.Count == 0)
             {
                 gameObject.SetActive(false);
-                Debug.Log(name + " has been deactivated.");
+                Debug.Log(name.Bold().Color("#FF4500") + " has been deactivated.");
                 return;
             }
             
@@ -42,7 +42,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
         {
             if (IsActivated || IsFinished) return;
             
-            Debug.Log(name + " has been activated.");
+            Debug.Log(name.Bold().Color("#00FA9A") + " has been activated.");
 
             foreach (GriefButton button in _buttons) button.IsBlocked = false;
         }
