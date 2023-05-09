@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outline: {fileID: 2100000, guid: d7a2b1ecc7fae7144b820dae29e39748, type: 2}
+  spriteRenderer: {fileID: 0}
 --- !u!65 &5676857026044252301
 BoxCollider:
   m_ObjectHideFlags: 0

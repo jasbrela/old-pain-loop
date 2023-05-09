@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7638325723872354304}
   - component: {fileID: 1395562758165979407}
+  - component: {fileID: 7531366103364602725}
+  - component: {fileID: 2385807414069712015}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +86,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7531366103364602725
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7532318208342181804}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9b668260fdd6f44ab5f3af30b7c99b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2385807414069712015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7532318208342181804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec165433794445cb9f412e210ad192f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7531366103364602725}
+  walking:
+    param: isMoving
 --- !u!1 &7734100179996136547
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,6 +336,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1395562758165979407}
   rb: {fileID: 7734100179996136549}
   input: {fileID: 7734100179996136551}
+  anim: {fileID: 2385807414069712015}
 --- !u!114 &1170892685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,11 +365,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b890db2a60a15df4c8bf1c387ed2a4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 1
   maxRange: 5
   interactableMask:
     serializedVersion: 2
     m_Bits: 64
-  debug: 1
   input: {fileID: 7734100179996136551}
 --- !u!114 &7026857029642244600
 MonoBehaviour:

@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421488777}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: -1.44}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.03, z: -3.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1483311592977890433}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &421488780
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 653029272063399439, guid: 15e04985488180246b2164ec9b168e64, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.168
       objectReference: {fileID: 0}
     - target: {fileID: 653029272063399439, guid: 15e04985488180246b2164ec9b168e64, type: 3}
       propertyPath: m_LocalPosition.z
@@ -267,6 +267,70 @@ PrefabInstance:
       propertyPath: m_Name
       value: GriefButton
       objectReference: {fileID: 0}
+    - target: {fileID: 653029272628172202, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 653029272628172202, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 653029272628172202, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 653029272628172202, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 653029272628172202, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392832283338660372, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392832283338660372, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392832283338660372, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392832283338660372, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.036
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392832283338660372, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.049
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637752848587800090, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637752848587800090, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637752848587800090, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115395576058308560, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115395576058308560, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115395576058308560, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6344502092875666385, guid: 15e04985488180246b2164ec9b168e64, type: 3}
       propertyPath: ground
       value: 
@@ -275,6 +339,18 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1195577854576305360}
+    - target: {fileID: 8712750743921333574, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712750743921333574, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712750743921333574, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15e04985488180246b2164ec9b168e64, type: 3}
 --- !u!212 &1195577854576305360 stripped

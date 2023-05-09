@@ -3,7 +3,6 @@ using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace PanicPlayhouse.Scripts.Player
 {
@@ -19,6 +18,7 @@ namespace PanicPlayhouse.Scripts.Player
         [SerializeField] private SpriteRenderer spriteRenderer;
         [Label("Rigidbody")] [SerializeField] private Rigidbody rb;
         [SerializeField] private PlayerInput input;
+        [Label("Animation")][SerializeField] private EntityAnimation anim;
         
         private Vector3 _previousInput;
         private bool _isHidden;
@@ -57,7 +57,10 @@ namespace PanicPlayhouse.Scripts.Player
         private void SetMovement(InputAction.CallbackContext ctx)
         {
             _previousInput = ctx.ReadValue<Vector3>();
+            
             footsteps.IsMoving = _previousInput != Vector3.zero;
+            anim.Walking.SetBool(_previousInput != Vector3.zero);            
+            
             if (_previousInput.x != 0) spriteRenderer.flipX = _previousInput.x > 0;
         }
 
@@ -83,7 +86,7 @@ namespace PanicPlayhouse.Scripts.Player
             vel = new Vector2(vel.x * 0.15f, vel.y);
         
             rb.velocity = vel;
-            
+            anim.Walking.SetBool(false);            
             footsteps.IsMoving = false;
         }
 
