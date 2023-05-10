@@ -14,6 +14,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
         [SerializeField] private float insanityPenalty;
         [SerializeField] private float insanityReward;
         [SerializeField] private FloatVariable insanity;
+        
         private List<GriefButton> _buttons;
         private List<bool> _areCorrect;
         private bool IsActivated { get; set; } = false;

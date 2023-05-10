@@ -14,9 +14,12 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         [SerializeField] private float duration = 1f;
 
         public int Value => value;
+        public bool IsBlocked { get; set; }
         
         public void Push(Vector3 forward)
         {
+            if (IsBlocked) return;
+            
             Collider[] results = { };
             var size = Physics.OverlapSphereNonAlloc(toMove.transform.position + forward, radius, results, avoidOverlap);
             if (size > 0) return;

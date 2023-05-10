@@ -3044,6 +3044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1348191550}
+  - component: {fileID: 1348191551}
   m_Layer: 0
   m_Name: GoldenBeadMaterialPuzzle
   m_TagString: Untagged
@@ -3066,6 +3067,22 @@ Transform:
   m_Father: {fileID: 447542678}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1348191551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348191549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75d57940d82821940b08000518e95269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFinish: {fileID: 0}
+  insanityPenalty: 0
+  insanityReward: 0
+  insanity: {fileID: 0}
 --- !u!4 &1351654455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5130497187238044172, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
