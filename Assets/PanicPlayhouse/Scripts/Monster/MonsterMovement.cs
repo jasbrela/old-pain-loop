@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 namespace PanicPlayhouse.Scripts.Monster
 {

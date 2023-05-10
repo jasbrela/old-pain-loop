@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
 using Cinemachine;
 using NaughtyAttributes;
 using PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
 using Random = UnityEngine.Random;
 

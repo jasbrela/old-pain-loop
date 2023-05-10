@@ -1,6 +1,4 @@
 using Cinemachine;
-using NaughtyAttributes;
-using PanicPlayhouse.Scripts.Interfaces;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 
