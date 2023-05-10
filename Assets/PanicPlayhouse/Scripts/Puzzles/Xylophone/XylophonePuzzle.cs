@@ -47,6 +47,8 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         {
             if (IsActivated || IsFinished) return;
             
+            IsActivated = true;
+
             Debug.Log(name.Bold().Color("#00FA9A") + " has been activated.");
             
             foreach (XylophoneButton button in _uniqueButtons)
@@ -58,6 +60,8 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         public void OnPressButton(XylophoneButton button)
         {
             if (IsFinished || !IsActivated) return;
+            
+            Debug.Log(_triggerCount);
             _triggerCount++;
             
             if (_triggerCount == triggerInterval && triggerMonster != null)

@@ -47,6 +47,8 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         public void ActivatePuzzle()
         {
             if (IsActivated || IsFinished) return;
+
+            IsActivated = true;
             
             Debug.Log(name.Bold().Color("#00FA9A") + " has been activated.");
 

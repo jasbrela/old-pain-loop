@@ -43,6 +43,8 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
         {
             if (IsActivated || IsFinished) return;
             
+            IsActivated = true;
+            
             Debug.Log(name.Bold().Color("#00FA9A") + " has been activated.");
 
             foreach (GriefButton button in _buttons) button.IsBlocked = false;

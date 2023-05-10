@@ -221,5 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94844c139c6d2e44c8935f18d8dde45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footsteps: []
-  interval: 0
+  footsteps:
+  - {fileID: 8300000, guid: 641d51f4a7ee3304fb84630b90c7e5ed, type: 3}
+  - {fileID: 8300000, guid: 88106a88c385e1342ad87b7d8be55101, type: 3}
+  interval: 0.5

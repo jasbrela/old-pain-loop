@@ -6,14 +6,23 @@ namespace PanicPlayhouse.Scripts.Interfaces
 {
     public abstract class Interactable : MonoBehaviour
     {
-        [SerializeField] private Material hoverMaterial;
-        private Material _defaultMaterial;
+        [Tooltip("'False' will switch sprites instead of material")]
+        [SerializeField] private bool switchMat = true;
+        
+        [HideIf("switchMat")][SerializeField] private Sprite hoverSprite;
+        [ShowIf("switchMat")][SerializeField] private Material hoverMaterial;
         [SerializeField] private SpriteRenderer spriteRenderer;
 
+        private Material _defaultMaterial;
+        private Sprite _defaultSprite;
         private void Start()
         {
             if (spriteRenderer == null) return;
-            _defaultMaterial = spriteRenderer.material;
+            
+            if (switchMat)
+                _defaultMaterial = spriteRenderer.material;
+            else
+                _defaultSprite = spriteRenderer.sprite;
         }
 
         public virtual void OnInteract() { }
@@ -21,14 +30,22 @@ namespace PanicPlayhouse.Scripts.Interfaces
         public virtual void OnEnterRange()
         {
             if (spriteRenderer == null) return;
-            spriteRenderer.material = hoverMaterial;
+
+            if (switchMat)
+                spriteRenderer.material = hoverMaterial;
+            else
+                spriteRenderer.sprite = hoverSprite;
 
         }
 
         public virtual void OnQuitRange()
         {
             if (spriteRenderer == null) return;
-            spriteRenderer.material = _defaultMaterial;
+            
+            if (switchMat)
+                spriteRenderer.material = _defaultMaterial;
+            else
+                spriteRenderer.sprite = _defaultSprite;
         }
     }
 }

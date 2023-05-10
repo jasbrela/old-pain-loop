@@ -5,6 +5,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
 {
     public class XylophoneButton : Interactable
     {
+        [SerializeField] private AudioSource source;
         [SerializeField] private AudioClip clip;
         public bool IsBlocked { get; set; } = false;
 
@@ -25,6 +26,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         public override void OnInteract()
         {
             if (IsBlocked) return;
+            source.PlayOneShot(clip);
             Puzzle.OnPressButton(this);
         }
 
