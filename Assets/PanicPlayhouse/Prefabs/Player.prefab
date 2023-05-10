@@ -72,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2018830641
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e9aee19513150d14e8bf5b644f7b880b, type: 3}
+  m_Sprite: {fileID: -803839969, guid: 94c01691e36e25b489a64c5e34448260, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 7532318208342181804}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d9b668260fdd6f44ab5f3af30b7c99b1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8cb3d33e554527e46927712018d42a1c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7531366103364602725}
   walking:
-    param: isMoving
+    param: IsMoving
 --- !u!1 &7734100179996136547
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,8 +219,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 6.2592406, z: 0.25}
-  m_Center: {x: 0, y: 3.1296203, z: 0}
+  m_Size: {x: 1, y: 3.1648228, z: 0.25}
+  m_Center: {x: 0, y: 1.5824114, z: 0}
 --- !u!82 &6859096937882116277
 AudioSource:
   m_ObjectHideFlags: 0

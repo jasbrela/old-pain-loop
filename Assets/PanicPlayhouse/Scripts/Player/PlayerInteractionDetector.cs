@@ -1,4 +1,5 @@
 using PanicPlayhouse.Scripts.Interfaces;
+using PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -47,11 +48,12 @@ namespace PanicPlayhouse.Scripts.Player
             {
                 hit.collider.TryGetComponent(out Interactable interactable);
                 
+                
                 if (_currentTarget == interactable) return;
                 if (_currentTarget != null) _currentTarget.OnQuitRange();
                 
                 _currentTarget = interactable;
-                _currentTarget.OnEnterRange();
+                if (_currentTarget != null) _currentTarget.OnEnterRange();
             }
             else
             {
@@ -87,7 +89,13 @@ namespace PanicPlayhouse.Scripts.Player
     
         private void Interact(InputAction.CallbackContext callbackContext)
         {
-            if (_currentTarget != null) _currentTarget.OnInteract();
+            if (_currentTarget == null) return;
+            
+            _currentTarget.OnInteract();
+
+            if (!_currentTarget.TryGetComponent(out Pushable pushable)) return;
+            
+            pushable.Push(_forward);
         }
     }
 }

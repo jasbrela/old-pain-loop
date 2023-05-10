@@ -579,7 +579,7 @@ PrefabInstance:
     - target: {fileID: 6344502092875666385, guid: 15e04985488180246b2164ec9b168e64, type: 3}
       propertyPath: spriteRenderer
       value: 
-      objectReference: {fileID: 1195577854576305360}
+      objectReference: {fileID: 2349576532640159401}
     - target: {fileID: 8712750743921333574, guid: 15e04985488180246b2164ec9b168e64, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -597,5 +597,10 @@ PrefabInstance:
 --- !u!212 &1195577854576305360 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 653029272628172201, guid: 15e04985488180246b2164ec9b168e64, type: 3}
+  m_PrefabInstance: {fileID: 1839594075711811961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2349576532640159401 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4115395576058308560, guid: 15e04985488180246b2164ec9b168e64, type: 3}
   m_PrefabInstance: {fileID: 1839594075711811961}
   m_PrefabAsset: {fileID: 0}
