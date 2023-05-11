@@ -15,10 +15,14 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         [SerializeField] private float insanityReward;
         [SerializeField] private FloatVariable insanity;
 
+        [Header("SFX")]
+        [SerializeField] private AudioSource source;
+        [SerializeField] private AudioClip success;
+        
         private List<GoldenBeadMaterialBase> _matBases;
         private List<Pushable> _pushables;
         private List<bool> _areCorrect;
-        
+
         private bool IsActivated { get; set; } = false;
         private bool IsFinished { get; set; } = false;
         
@@ -62,6 +66,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
 
             if (_areCorrect.IndexOf(false) == -1)
             {
+                if (success != null) source.PlayOneShot(success);
                 if (onFinish != null) onFinish.Raise();
                 IsFinished = true;
                 insanity.Value -= insanityReward;
@@ -72,6 +77,11 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             
 
             insanity.Value += insanityPenalty;
+        }
+
+        public void PlayClip(AudioClip clip)
+        {
+            source.PlayOneShot(clip);
         }
     }
 }

@@ -465,4 +465,6 @@ MonoBehaviour:
   hoverSprite: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 4115395576058308560}
+  rotate: {fileID: 8300000, guid: 924e82d6ccc41754b8b910620928b645, type: 3}
+  click: {fileID: 8300000, guid: c7ecdca571ac0ac45b77c1a7bf8178df, type: 3}
   ground: {fileID: 0}

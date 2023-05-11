@@ -1,14 +1,13 @@
 using System.Collections.Generic;
-using NaughtyAttributes;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
 
 namespace PanicPlayhouse.Scripts.Puzzles.Grief
 {
     public class GriefPuzzle : MonoBehaviour
     {
+        
         [Header("Puzzle")]
         [SerializeField] private Event onFinish;
 
@@ -16,6 +15,10 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
         [SerializeField] private float insanityPenalty;
         [SerializeField] private float insanityReward;
         [SerializeField] private FloatVariable insanity;
+
+        [Header("SFX")]
+        [SerializeField] private AudioClip success;
+        [SerializeField] private AudioSource source;
         
         private List<GriefButton> _buttons;
         private List<bool> _areCorrect;
@@ -59,6 +62,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
 
             if (_areCorrect.IndexOf(false) == -1)
             {
+                if (success != null) source.PlayOneShot(success);
                 foreach (GriefButton btn in _buttons)
                 {
                     btn.IsBlocked = true;
@@ -68,6 +72,11 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
             }
 
             insanity.Value += insanityPenalty;
+        }
+        
+        public void PlayClip(AudioClip clip)
+        {
+            source.PlayOneShot(clip);
         }
     }
 }

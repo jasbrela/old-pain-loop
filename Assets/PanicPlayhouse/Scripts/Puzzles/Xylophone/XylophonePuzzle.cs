@@ -19,6 +19,11 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         [Header("Puzzle")]
         [SerializeField] private Event onFinish;
         [SerializeField] private List<XylophoneButton> order;
+        
+        [Header("SFX")]
+        [SerializeField] private AudioClip success;
+        [SerializeField] private AudioSource source;
+        
         private List<XylophoneButton> _uniqueButtons;
         private int _buttonCount;
         private int _triggerCount;
@@ -86,10 +91,16 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             IsActivated = false;
             insanity.Value -= insanityReward;
             if (onFinish != null) onFinish.Raise();
-                
+            if (success != null) source.PlayOneShot(success);
+
             foreach (XylophoneButton btn in _uniqueButtons) btn.IsBlocked = true;
                 
             Debug.Log("Xylophone Finished!");
+        }
+        
+        public void PlayClip(AudioClip clip)
+        {
+            source.PlayOneShot(clip);
         }
     }
 }

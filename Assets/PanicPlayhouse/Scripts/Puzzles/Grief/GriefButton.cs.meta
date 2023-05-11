@@ -3,7 +3,13 @@ guid: c558052aabab99d49a66d1dab5ef2d08
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - hoverSprite: {instanceID: 0}
+  - hoverMaterial: {instanceID: 0}
+  - spriteRenderer: {instanceID: 0}
+  - click: {fileID: 8300000, guid: 362f0a8c409c9e148abfe9ddd57056bc, type: 3}
+  - source: {instanceID: 0}
+  - ground: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
