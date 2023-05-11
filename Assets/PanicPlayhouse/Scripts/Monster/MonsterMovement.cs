@@ -43,30 +43,34 @@ namespace PanicPlayhouse.Scripts.Monster
 
         private void Update()
         {
-            float distance = Vector3.Distance(transform.position, player.transform.position);
+            float distanceFromPlayer = Vector3.Distance(transform.position, player.transform.position);
+            float distanceFromDefaultPos = Vector3.Distance(transform.position, _defaultPos);
 
-            if (distance <= visionDistance || IsFollowingPlayer && distance <= giveUpDistance && !player.IsHidden)
+
+            if (!player.IsHidden && (distanceFromPlayer <= visionDistance || IsFollowingPlayer && distanceFromPlayer <= giveUpDistance))
             {
+                Debug.Log("A");
                 IsFollowingPlayer = true;
                 StartCoroutine(WaitThenMove(player.transform.position, 0));
             }
-            else
+            else if (distanceFromDefaultPos > 0.5)
             {
                 IsComingBack = true;
                 footsteps.IsMoving = false;
                 StartCoroutine(WaitThenMove(_defaultPos, 3));
             }
             
-            if (distance <= insanityDistance)
+            if (distanceFromPlayer <= insanityDistance)
                 playerInsanity.Value += insanityPenalty * Time.deltaTime;
 
-            if (distance <= killDistance && (!player.IsHidden || CanKillHiddenPlayer))
+            if (distanceFromPlayer <= killDistance && (!player.IsHidden || CanKillHiddenPlayer))
             {
                 playerInsanity.Value = playerInsanity.MaxValue;
                 if (CanKillHiddenPlayer) CanKillHiddenPlayer = false;
             }
 
             // movement stuff
+            Debug.Log($"{agent.pathPending}, {!(agent.remainingDistance <= agent.stoppingDistance)}, {agent.hasPath}, {agent.velocity.sqrMagnitude != 0f}, {IsComingBack} ");
             if (agent.pathPending) return;
             if (!(agent.remainingDistance <= agent.stoppingDistance)) return;
             if (agent.hasPath && agent.velocity.sqrMagnitude != 0f) return;

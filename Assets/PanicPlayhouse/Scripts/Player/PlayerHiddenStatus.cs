@@ -1,5 +1,4 @@
-﻿using System;
-using PanicPlayhouse.Scripts.ScriptableObjects;
+﻿using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 
 namespace PanicPlayhouse.Scripts.Player
@@ -14,12 +13,13 @@ namespace PanicPlayhouse.Scripts.Player
         [SerializeField] private float insanityReward;
         [SerializeField] private FloatVariable insanity;
         public bool IsHidden { get; private set; }
-        private float defaultVolume;
+        private float _defaultVolume;
+        private bool _defaultLoop;
 
         private void Start()
         {
-            defaultVolume = source.volume;
-            source.loop = true;
+            _defaultLoop = source.loop;
+            _defaultVolume = source.volume;
         }
 
         private void Update()
@@ -35,6 +35,8 @@ namespace PanicPlayhouse.Scripts.Player
             if (IsHidden)
             {
                 source.volume = volume;
+                source.loop = true;
+                
                 if (insanity.Value > insanity.MaxValue * percentageToExhausted / 100)
                 {
                     source.clip = exhaustedAudio;
@@ -49,7 +51,8 @@ namespace PanicPlayhouse.Scripts.Player
             else
             {
                 source.Stop();
-                source.volume = defaultVolume;
+                source.loop = _defaultLoop;
+                source.volume = _defaultVolume;
             }
         }
     }
