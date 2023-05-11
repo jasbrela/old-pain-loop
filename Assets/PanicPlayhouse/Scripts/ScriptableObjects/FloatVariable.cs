@@ -18,14 +18,15 @@ namespace PanicPlayhouse.Scripts.ScriptableObjects
         [SerializeField] private float minValue;
         [ShowNonSerializedField] [NonSerialized] private float _value;
 
+        public float MaxValue => maxValue;
+        public float MinValue => minValue;
+
         public float Value
         {
             get => _value;
             set
             {
-                var temp = _value;   
                 _value = value;
-                //Debug.Log("Insanity set: ".Bold() + temp + " -> " + _value);
                 
                 if (_value <= minValue)
                 {

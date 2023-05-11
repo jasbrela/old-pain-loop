@@ -450,8 +450,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8273640313085596070}
   value: 100
   toMove: {fileID: 2483654306622389507}
-  radius: 10
-  multiplier: 3
+  radius: 5
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 65
@@ -840,8 +839,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 416797054500706521}
   value: 100
   toMove: {fileID: 9108526581855904370}
-  radius: 10
-  multiplier: 3
+  radius: 5
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 65
@@ -1523,8 +1521,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1211200421264012653}
   value: 100
   toMove: {fileID: 1304325146868214842}
-  radius: 10
-  multiplier: 3
+  radius: 5
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 65
@@ -1956,8 +1953,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1867444206183243904}
   value: 100
   toMove: {fileID: 1548969535892901849}
-  radius: 10
-  multiplier: 3
+  radius: 5
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 65
@@ -2144,8 +2140,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7688430947765855252}
   value: 100
   toMove: {fileID: 8225285345906044600}
-  radius: 10
-  multiplier: 3
+  radius: 5
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 65
