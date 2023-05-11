@@ -61,7 +61,6 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         {
             if (IsFinished || !IsActivated) return;
             
-            Debug.Log(_triggerCount);
             _triggerCount++;
             
             if (_triggerCount == triggerInterval && triggerMonster != null)

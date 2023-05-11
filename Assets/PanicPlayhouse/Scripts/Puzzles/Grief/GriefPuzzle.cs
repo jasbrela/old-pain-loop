@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using NaughtyAttributes;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
 
 namespace PanicPlayhouse.Scripts.Puzzles.Grief
@@ -17,6 +19,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
         
         private List<GriefButton> _buttons;
         private List<bool> _areCorrect;
+        
         private bool IsActivated { get; set; } = false;
         private bool IsFinished { get; set; } = false;
 

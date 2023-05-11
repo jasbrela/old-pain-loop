@@ -461,6 +461,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c558052aabab99d49a66d1dab5ef2d08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchMat: 1
+  hoverSprite: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 4115395576058308560}
   ground: {fileID: 0}

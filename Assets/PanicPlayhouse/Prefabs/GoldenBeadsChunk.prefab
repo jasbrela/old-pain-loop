@@ -444,12 +444,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b978ec1f3684df0b1e90cedf151d5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchMat: 1
+  hoverSprite: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 8273640313085596070}
   value: 100
   toMove: {fileID: 2483654306622389507}
-  radius: 5
-  multiplier: 4
+  radius: 10
+  multiplier: 3
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 65
@@ -832,12 +834,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b978ec1f3684df0b1e90cedf151d5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchMat: 1
+  hoverSprite: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 416797054500706521}
   value: 100
   toMove: {fileID: 9108526581855904370}
-  radius: 5
-  multiplier: 4
+  radius: 10
+  multiplier: 3
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 65
@@ -1513,12 +1517,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b978ec1f3684df0b1e90cedf151d5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchMat: 1
+  hoverSprite: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 1211200421264012653}
   value: 100
   toMove: {fileID: 1304325146868214842}
-  radius: 5
-  multiplier: 4
+  radius: 10
+  multiplier: 3
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 65
@@ -1944,12 +1950,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b978ec1f3684df0b1e90cedf151d5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchMat: 1
+  hoverSprite: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 1867444206183243904}
   value: 100
   toMove: {fileID: 1548969535892901849}
-  radius: 5
-  multiplier: 4
+  radius: 10
+  multiplier: 3
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 65
@@ -2130,12 +2138,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b978ec1f3684df0b1e90cedf151d5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchMat: 1
+  hoverSprite: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 7688430947765855252}
   value: 100
   toMove: {fileID: 8225285345906044600}
-  radius: 5
-  multiplier: 4
+  radius: 10
+  multiplier: 3
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 65
@@ -2203,6 +2213,10 @@ PrefabInstance:
     - target: {fileID: 2848858760408051707, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396503253355224572, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5018230386546114480, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
       propertyPath: m_IsActive

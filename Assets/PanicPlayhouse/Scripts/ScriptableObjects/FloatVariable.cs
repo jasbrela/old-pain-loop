@@ -25,7 +25,7 @@ namespace PanicPlayhouse.Scripts.ScriptableObjects
             {
                 var temp = _value;   
                 _value = value;
-                Debug.Log("Insanity set: ".Bold() + temp + " -> " + _value);
+                //Debug.Log("Insanity set: ".Bold() + temp + " -> " + _value);
                 
                 if (_value <= minValue)
                 {
