@@ -74,11 +74,10 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
                 if (onFinish != null) onFinish.Raise();
                 IsFinished = true;
                 insanity.Value -= insanityReward;
+                
+                foreach (var pushable in _pushables)
+                    pushable.IsBlocked = true;
             }
-
-            foreach (var pushable in _pushables)
-                pushable.IsBlocked = true;
-            
 
             insanity.Value += insanityPenalty;
         }

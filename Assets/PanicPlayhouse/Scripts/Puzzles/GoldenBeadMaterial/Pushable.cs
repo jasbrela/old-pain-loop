@@ -7,10 +7,13 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
     public class Pushable : Interactable
     {
         [SerializeField] private int value;
-        [SerializeField] private Transform toMove;
         [SerializeField] private float radius;
         [SerializeField] private LayerMask avoidOverlap;
         [SerializeField] private float duration = 1f;
+        
+        [Header("SFX")]
+        [SerializeField] private AudioSource source;
+        [SerializeField] private AudioClip drag;
 
         private void OnDrawGizmosSelected()
         {
@@ -24,12 +27,24 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         public void Push(Vector3 forward)
         {
             if (IsBlocked) return;
-
+            
             Collider[] results = new Collider[10];
-            var size = Physics.OverlapSphereNonAlloc(toMove.transform.position + forward, radius, results, avoidOverlap);
-            if (size > 0) return;
+            var size = Physics.OverlapSphereNonAlloc(gameObject.transform.position + forward * radius, radius/2, results, avoidOverlap);
+            
+            if (size > 0)
+            {
+                Debug.Log(size);
+                
+                foreach (Collider result in results)
+                {
+                    Debug.Log(result.ToString().Bold(), result.gameObject);
+                }
+                return;
+            }
+            
+            source.PlayOneShot(drag);
 
-            toMove.DOMove(toMove.position + forward * radius/2, duration);
+            gameObject.transform.DOMove(gameObject.transform.position + forward * radius, duration);
         }
         
     }
