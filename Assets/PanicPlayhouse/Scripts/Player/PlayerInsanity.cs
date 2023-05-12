@@ -24,7 +24,7 @@ namespace PanicPlayhouse.Scripts.Player
 
         IEnumerator Respawn()
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(2);
             transform.position = checkpoint.Value;
             insanity.Value = insanityOnRespawn;
             yield return new WaitForSeconds(1);

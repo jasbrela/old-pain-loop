@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 1170892686}
   - component: {fileID: 7026857029642244600}
   - component: {fileID: 8929065640780248005}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -400,5 +400,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb5ed26f9474522bad9ebdbb1f1cb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 6859096937882116277}
+  tiredAudio: {fileID: 8300000, guid: eb5c2ee238fae8d43a95628fd1e3f6c6, type: 3}
+  exhaustedAudio: {fileID: 8300000, guid: 24e7c0df55f7df2419a5857f3e72ae0a, type: 3}
+  volume: 1
+  percentageToExhausted: 50
   insanityReward: 1
   insanity: {fileID: 11400000, guid: c94776497f346824984f8bf99fb6f8d4, type: 2}

@@ -13,7 +13,9 @@ namespace PanicPlayhouse.Scripts.ScriptableObjects
         [Button]
         public void Raise()
         {
+#if UNITY_EDITOR
             Debug.Log("Raised event: ".Bold().Color("#FFD700") + name);
+#endif
             
             for(int i = _listeners.Count -1; i >= 0; i--)
                 _listeners[i].OnEventRaised();

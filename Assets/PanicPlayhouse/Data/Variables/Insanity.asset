@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onChangeValue: {fileID: 11400000, guid: ffe913370857bf642bf80fcb0fac342e, type: 2}
   onMaxValueReached: {fileID: 11400000, guid: e53ff158097dcca4e872c35629d1b1ed, type: 2}
-  onMinValueReached: {fileID: 0}
+  onMinValueReached: {fileID: 11400000, guid: eccf715feb2a51842a30dbe92d98e60a, type: 2}
   initialValue: 0
   maxValue: 100
   minValue: 0

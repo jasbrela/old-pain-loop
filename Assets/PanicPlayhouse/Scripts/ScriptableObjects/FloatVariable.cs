@@ -26,17 +26,21 @@ namespace PanicPlayhouse.Scripts.ScriptableObjects
             get => _value;
             set
             {
+                var temp = _value;
                 _value = value;
+#if UNITY_EDITOR
+                //Debug.Log($"Insanity: {temp} -> {_value}");
+#endif
                 
-                if (_value <= minValue)
+                if (_value <= MinValue)
                 {
-                    _value = minValue;
-                    if (onMinValueReached != null) onMaxValueReached.Raise();
+                    _value = MinValue;
+                    if (onMinValueReached != null) onMinValueReached.Raise();
                 }
-                else if (_value >= maxValue)
+                else if (_value >= MaxValue)
                 {
-                    if (onMaxValueReached != null) onMinValueReached.Raise();
-                    _value = maxValue;
+                    if (onMaxValueReached != null) onMaxValueReached.Raise();
+                    _value = MaxValue;
                 }
                 if (onChangeValue != null) onChangeValue.Raise();
             }

@@ -35,7 +35,9 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             if (_matBases.Count == 0)
             {
                 gameObject.SetActive(false);
+#if UNITY_EDITOR
                 Debug.Log(name.Bold().Color("#FF4500") + " has been deactivated.");
+#endif
                 return;
             }
 
@@ -53,8 +55,10 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             if (IsActivated || IsFinished) return;
 
             IsActivated = true;
-            
+
+#if UNITY_EDITOR
             Debug.Log(name.Bold().Color("#00FA9A") + " has been activated.");
+#endif
 
             foreach (Pushable pushable in _pushables)
                 pushable.IsBlocked = false;

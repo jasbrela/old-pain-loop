@@ -11,8 +11,6 @@ namespace PanicPlayhouse.Scripts.Chunk
 
         private void Start()
         {
-            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            
             _defaultMat = spriteRenderer.material;
             
             var temp = spriteRenderer.color;
@@ -22,7 +20,6 @@ namespace PanicPlayhouse.Scripts.Chunk
 
         public void FadeOut()
         {
-        
             spriteRenderer.material = outline;
             spriteRenderer.DOFade(0, 0.25f);
         }

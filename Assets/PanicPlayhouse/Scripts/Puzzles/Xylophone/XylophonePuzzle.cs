@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using PanicPlayhouse.Scripts.Chunk;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
@@ -11,7 +12,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         [SerializeField] private float insanityPenalty;
         [SerializeField] private float insanityReward;
         [SerializeField] private FloatVariable insanity;
-
+        
         [Header("Monster")]
         [SerializeField] private Event triggerMonster;
         [SerializeField] private int triggerInterval; // this could be changed based on insanity...
@@ -19,6 +20,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         [Header("Puzzle")]
         [SerializeField] private Event onFinish;
         [SerializeField] private List<XylophoneButton> order;
+        [SerializeField] private List<Wall> wallsToOpen;
         
         [Header("SFX")]
         [SerializeField] private AudioClip success;
@@ -27,6 +29,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         private List<XylophoneButton> _uniqueButtons;
         private int _buttonCount;
         private int _triggerCount;
+        private bool _firstButtonPressed;
         
         private bool IsActivated { get; set; } = false;
         private bool IsFinished { get; set; } = false;
@@ -38,7 +41,9 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             if (order.Count == 0)
             {
                 gameObject.SetActive(false);
+#if UNITY_EDITOR
                 Debug.Log(name.Bold().Color("#FF4500") + " has been deactivated.");
+#endif
                 return;
             }
             
@@ -54,7 +59,9 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             
             IsActivated = true;
 
+#if UNITY_EDITOR
             Debug.Log(name.Bold().Color("#00FA9A") + " has been activated.");
+#endif
             
             foreach (XylophoneButton button in _uniqueButtons)
             {
@@ -64,6 +71,15 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
 
         public void OnPressButton(XylophoneButton button)
         {
+            if (!_firstButtonPressed)
+            {
+                _firstButtonPressed = true;
+                foreach (Wall wall in wallsToOpen)
+                {
+                    wall.Unlock();
+                }
+            }
+            
             if (IsFinished || !IsActivated) return;
             
             _triggerCount++;
@@ -94,8 +110,6 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             if (success != null) source.PlayOneShot(success);
 
             foreach (XylophoneButton btn in _uniqueButtons) btn.IsBlocked = true;
-                
-            Debug.Log("Xylophone Finished!");
         }
         
         public void PlayClip(AudioClip clip)

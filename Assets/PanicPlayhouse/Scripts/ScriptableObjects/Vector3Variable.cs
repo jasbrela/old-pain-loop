@@ -10,7 +10,7 @@ namespace PanicPlayhouse.Scripts.ScriptableObjects
         [SerializeField] private Vector3 initialValue;
         [ReadOnly] [ShowNonSerializedField] [NonSerialized] private Vector3 _value;
 
-        public bool IsValid => _value == initialValue;
+        public bool IsValid => _value != initialValue;
         public Vector3 Value
         {
             get => _value;

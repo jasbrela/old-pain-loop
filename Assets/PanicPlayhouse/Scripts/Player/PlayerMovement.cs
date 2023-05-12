@@ -42,6 +42,11 @@ namespace PanicPlayhouse.Scripts.Player
             }
         }
 
+        public void UnlockMovement()
+        {
+            input.actions["Movement"].Enable();
+        }
+
         private void SetUpControls()
         {
             input.actions["Movement"].performed += SetMovement;

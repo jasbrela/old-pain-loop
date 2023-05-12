@@ -134,13 +134,14 @@ GameObject:
   - component: {fileID: 4544438}
   - component: {fileID: 4544439}
   - component: {fileID: 4544440}
+  - component: {fileID: 4544441}
   m_Layer: 0
   m_Name: chalk_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4544438
 Transform:
   m_ObjectHideFlags: 0
@@ -222,6 +223,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 2100000, guid: d7a2b1ecc7fae7144b820dae29e39748, type: 2}
   spriteRenderer: {fileID: 4544439}
+--- !u!114 &4544441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4544437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e05f61f4cd4d22459ace1096f9259aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &23486521
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0
+  m_AmplitudeGain: 2
   m_FrequencyGain: 0.5
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &58251767
@@ -580,6 +593,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 2100000, guid: d7a2b1ecc7fae7144b820dae29e39748, type: 2}
   spriteRenderer: {fileID: 138126616}
+--- !u!212 &143582435 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8054852612213038252, guid: ccff1ad5b2ce5cc4f96259bdf4354d40, type: 3}
+  m_PrefabInstance: {fileID: 2027760396}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &177506954 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6824287223990479473, guid: 88b8550db79cb6740936f71fa69ce239, type: 3}
@@ -2102,30 +2120,6 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1260365247}
-        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Chunk.Wall, Assembly-CSharp
-        m_MethodName: Unlock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1196744902}
-        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Chunk.Wall, Assembly-CSharp
-        m_MethodName: Unlock
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1979707686}
         m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Puzzles.Xylophone.XylophonePuzzle,
           Assembly-CSharp
@@ -2386,13 +2380,14 @@ GameObject:
   - component: {fileID: 895660891}
   - component: {fileID: 895660890}
   - component: {fileID: 895660892}
+  - component: {fileID: 895660893}
   m_Layer: 0
   m_Name: chalk_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &895660890
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2474,6 +2469,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 2100000, guid: d7a2b1ecc7fae7144b820dae29e39748, type: 2}
   spriteRenderer: {fileID: 895660890}
+--- !u!114 &895660893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895660889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e05f61f4cd4d22459ace1096f9259aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &944623953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2539,7 +2546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944623953}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 11.007966, y: 14.522364, z: -52.69213}
+  m_LocalPosition: {x: 10.2779665, y: 14.522363, z: -49.782127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2837,7 +2844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 11.007966, y: 14.522364, z: -52.69213}
+  m_LocalPosition: {x: 10.2779665, y: 14.522363, z: -49.782127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3456,13 +3463,14 @@ GameObject:
   - component: {fileID: 1075150848}
   - component: {fileID: 1075150847}
   - component: {fileID: 1075150849}
+  - component: {fileID: 1075150850}
   m_Layer: 0
   m_Name: chalk_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1075150847
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3544,6 +3552,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 2100000, guid: d7a2b1ecc7fae7144b820dae29e39748, type: 2}
   spriteRenderer: {fileID: 1075150847}
+--- !u!114 &1075150850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075150846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e05f61f4cd4d22459ace1096f9259aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1105339089 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4816351551145090447, guid: ff51d090d3efc624ea09be902d7f9ef3, type: 3}
@@ -3628,6 +3648,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1170892688}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Player.PlayerMovement, Assembly-CSharp
+        m_MethodName: UnlockMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6262647242452103649}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Monster.MonsterMovement,
+          Assembly-CSharp
+        m_MethodName: OnKillPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1124857528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5130497187238044172, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
@@ -3644,13 +3689,14 @@ GameObject:
   - component: {fileID: 1153770165}
   - component: {fileID: 1153770164}
   - component: {fileID: 1153770166}
+  - component: {fileID: 1153770167}
   m_Layer: 0
   m_Name: chalk_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1153770164
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3732,6 +3778,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 2100000, guid: d7a2b1ecc7fae7144b820dae29e39748, type: 2}
   spriteRenderer: {fileID: 1153770164}
+--- !u!114 &1153770167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153770163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e05f61f4cd4d22459ace1096f9259aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1170892687 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1170892685, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
@@ -3781,13 +3839,14 @@ GameObject:
   - component: {fileID: 1256328007}
   - component: {fileID: 1256328006}
   - component: {fileID: 1256328008}
+  - component: {fileID: 1256328009}
   m_Layer: 0
   m_Name: chalk_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1256328006
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3869,6 +3928,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 2100000, guid: d7a2b1ecc7fae7144b820dae29e39748, type: 2}
   spriteRenderer: {fileID: 1256328006}
+--- !u!114 &1256328009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256328005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e05f61f4cd4d22459ace1096f9259aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1260365247 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8225620505103105065, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
@@ -3891,13 +3962,14 @@ GameObject:
   - component: {fileID: 1265370841}
   - component: {fileID: 1265370842}
   - component: {fileID: 1265370843}
+  - component: {fileID: 1265370844}
   m_Layer: 0
   m_Name: chalk_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1265370841
 Transform:
   m_ObjectHideFlags: 0
@@ -3979,6 +4051,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 2100000, guid: d7a2b1ecc7fae7144b820dae29e39748, type: 2}
   spriteRenderer: {fileID: 1265370842}
+--- !u!114 &1265370844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265370840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e05f61f4cd4d22459ace1096f9259aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1270501635
 GameObject:
   m_ObjectHideFlags: 0
@@ -3990,13 +4074,14 @@ GameObject:
   - component: {fileID: 1270501636}
   - component: {fileID: 1270501637}
   - component: {fileID: 1270501638}
+  - component: {fileID: 1270501639}
   m_Layer: 0
   m_Name: chalk_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1270501636
 Transform:
   m_ObjectHideFlags: 0
@@ -4078,6 +4163,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 2100000, guid: d7a2b1ecc7fae7144b820dae29e39748, type: 2}
   spriteRenderer: {fileID: 1270501637}
+--- !u!114 &1270501639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270501635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e05f61f4cd4d22459ace1096f9259aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1296301799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6824287223990479473, guid: 88b8550db79cb6740936f71fa69ce239, type: 3}
@@ -5728,6 +5825,9 @@ MonoBehaviour:
   - {fileID: 280763827}
   - {fileID: 744685164}
   - {fileID: 1524864130}
+  wallsToOpen:
+  - {fileID: 1260365247}
+  - {fileID: 1196744902}
   success: {fileID: 0}
   source: {fileID: 1979707688}
 --- !u!4 &1979707687
@@ -6021,6 +6121,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8054852612777811765, guid: ccff1ad5b2ce5cc4f96259bdf4354d40, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 143582435}
     - target: {fileID: 8054852612777811767, guid: ccff1ad5b2ce5cc4f96259bdf4354d40, type: 3}
       propertyPath: m_Name
       value: Hideout
@@ -6166,17 +6270,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6859096937882116277, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7734100179996136547, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7734100179996136547, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7734100179996136550, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
       propertyPath: m_RootOrder
@@ -6184,7 +6280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7734100179996136550, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.7
+      value: 7.97
       objectReference: {fileID: 0}
     - target: {fileID: 7734100179996136550, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6192,7 +6288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7734100179996136550, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -41.5
+      value: -38.59
       objectReference: {fileID: 0}
     - target: {fileID: 7734100179996136550, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6222,26 +6318,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8929065640780248005, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
-      propertyPath: source
-      value: 
-      objectReference: {fileID: 2132348913}
-    - target: {fileID: 8929065640780248005, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
-      propertyPath: volume
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8929065640780248005, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
-      propertyPath: tiredAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: eb5c2ee238fae8d43a95628fd1e3f6c6, type: 3}
-    - target: {fileID: 8929065640780248005, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
-      propertyPath: exhaustedAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 24e7c0df55f7df2419a5857f3e72ae0a, type: 3}
-    - target: {fileID: 8929065640780248005, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
-      propertyPath: percentageToExhausted
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
 --- !u!114 &2132348908 stripped
@@ -6255,11 +6331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb5ed26f9474522bad9ebdbb1f1cb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &2132348913 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6859096937882116277, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
-  m_PrefabInstance: {fileID: 2132348907}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2142892434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5130497187238044172, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
@@ -6623,26 +6694,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2132348908}
-    - target: {fileID: 4294930734330464486, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4294930734330464486, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: MaxDistance
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4294930734330464486, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: rolloffMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4294930734330464486, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7860628906984239353, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
 --- !u!114 &6262647242452103649 stripped

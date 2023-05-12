@@ -1,16 +1,16 @@
-using System;
 using System.Collections;
 using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.Player;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 namespace PanicPlayhouse.Scripts.Monster
 {
     public class MonsterMovement : MonoBehaviour
     {
+        [SerializeField] private AudioSource heartbeatSource;
+        [SerializeField] private AudioSource followingMusicSource;
         [SerializeField] private PlayerHiddenStatus player;
         [SerializeField] private FloatVariable playerInsanity;
         [SerializeField] private float speed;
@@ -28,6 +28,8 @@ namespace PanicPlayhouse.Scripts.Monster
         private bool IsComingBack { get; set; } = true;
         private bool IsFollowingPlayer { get; set; } = false;
         private bool CanKillHiddenPlayer { get; set; } = false;
+        
+        private bool IsForceFollowingPlayer { get; set; }
         
         private void Start()
         {
@@ -47,9 +49,8 @@ namespace PanicPlayhouse.Scripts.Monster
             float distanceFromDefaultPos = Vector3.Distance(transform.position, _defaultPos);
 
 
-            if (!player.IsHidden && (distanceFromPlayer <= visionDistance || IsFollowingPlayer && distanceFromPlayer <= giveUpDistance))
+            if (!player.IsHidden && (distanceFromPlayer <= visionDistance || (IsFollowingPlayer && distanceFromPlayer <= giveUpDistance) || IsForceFollowingPlayer))
             {
-                Debug.Log("A");
                 IsFollowingPlayer = true;
                 StartCoroutine(WaitThenMove(player.transform.position, 0));
             }
@@ -70,7 +71,6 @@ namespace PanicPlayhouse.Scripts.Monster
             }
 
             // movement stuff
-            Debug.Log($"{agent.pathPending}, {!(agent.remainingDistance <= agent.stoppingDistance)}, {agent.hasPath}, {agent.velocity.sqrMagnitude != 0f}, {IsComingBack} ");
             if (agent.pathPending) return;
             if (!(agent.remainingDistance <= agent.stoppingDistance)) return;
             if (agent.hasPath && agent.velocity.sqrMagnitude != 0f) return;
@@ -95,7 +95,32 @@ namespace PanicPlayhouse.Scripts.Monster
             yield return new WaitForSeconds(delay);
             IsMoving = true;
             agent.destination = to;
+            
+            if (Vector3.Distance(player.transform.position, to) < 0.5f)
+            {
+                IsForceFollowingPlayer = true;
+                IsFollowingPlayer = true;
+                if (!heartbeatSource.isPlaying) heartbeatSource.Play();
+                if (!followingMusicSource.isPlaying) followingMusicSource.Play();
+            }
+            else if (Vector3.Distance(_defaultPos, to) < 0.5f)
+            {
+                IsForceFollowingPlayer = false;
+                IsFollowingPlayer = false;
+                if (followingMusicSource.isPlaying) followingMusicSource.Stop();
+                if (heartbeatSource.isPlaying) heartbeatSource.Stop();
+            }
             footsteps.IsMoving = true;
+        }
+
+        public void OnKillPlayer()
+        {
+            IsFollowingPlayer = false;
+            IsForceFollowingPlayer = false;
+            IsMoving = false;
+            IsComingBack = true;
+            agent.destination = _defaultPos;
+            transform.position = _defaultPos;
         }
     }
 }
