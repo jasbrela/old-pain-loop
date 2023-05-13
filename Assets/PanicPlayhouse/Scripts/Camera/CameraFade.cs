@@ -12,13 +12,14 @@ namespace PanicPlayhouse.Scripts.Camera
         private void Start()
         {
             var temp = blackImage.color;
-            temp.a = 0f;
+            temp.a = 1f;
             blackImage.color = temp;
+            
+            blackImage.DOFade(0, 1f);
         }
 
         public void FadeOut()
         {
-        
             blackImage.DOFade(0, 0.25f);
         }
         

@@ -6,9 +6,11 @@ namespace PanicPlayhouse.Scripts.Chunk
     {
         [SerializeField] private GameObject toHide;
         [SerializeField] private GameObject toShow;
+        [SerializeField] private SpriteRenderer spriteRenderer;
         
         public void Unlock()
         {
+            spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
             toHide.SetActive(false);
             toShow.SetActive(true);
         }
