@@ -143,6 +143,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                         yield return new WaitForSeconds(3);
                         if (!isFollowingPlayer && !isCheckingPlayer)
                         {
+                            wasPathComplete = false;
                             wasCheckingPlayer = false;
                             isComingBack = true;
                             agent.destination = _defaultPos;

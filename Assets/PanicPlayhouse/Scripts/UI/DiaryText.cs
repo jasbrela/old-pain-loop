@@ -15,13 +15,16 @@ namespace PanicPlayhouse.Scripts.UI
             buttons.SetActive(false);
             Sequence seq = DOTween.Sequence();
             seq.AppendInterval(0.5f);
-        
-            foreach (TextMeshProUGUI paragraph in paragraphs)
+
+            for (var index = 0; index < paragraphs.Count; index++)
             {
+                var paragraph = paragraphs[index];
                 seq.Append(paragraph.DOFade(1, fadeDuration));
-                seq.AppendInterval(fadeDuration);
+                
+                if (index != paragraphs.Count - 1)
+                    seq.AppendInterval(fadeDuration);
             }
-        
+
             seq.onComplete += () =>
             {
                 buttons.SetActive(true);
