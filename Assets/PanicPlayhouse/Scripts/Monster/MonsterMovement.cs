@@ -1,4 +1,5 @@
 using System.Collections;
+using NaughtyAttributes;
 using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.Player;
 using PanicPlayhouse.Scripts.ScriptableObjects;
@@ -13,6 +14,7 @@ namespace PanicPlayhouse.Scripts.Monster
         [SerializeField] private AudioSource followingMusicSource;
         [SerializeField] private PlayerHiddenStatus player;
         [SerializeField] private FloatVariable playerInsanity;
+        [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private float speed;
         [SerializeField] private float insanityPenalty;
         [SerializeField] private float insanityDistance;
@@ -20,64 +22,32 @@ namespace PanicPlayhouse.Scripts.Monster
         [SerializeField] private float giveUpDistance;
         [SerializeField] private float killDistance;
         [SerializeField] private FootstepsAudio footsteps;
-        [SerializeField] private Vector3Variable lastKnownPos;
         [SerializeField] private NavMeshAgent agent;
+        [Label("Animation")][SerializeField] private EntityAnimation anim;
         private Vector3 _defaultPos;
+        [SerializeField] private float delayBetweenChecks;
+        
+        [Header("DEBUG")]
+        [SerializeField] [ReadOnly] private float distanceFromDestination;
+        [SerializeField] [ReadOnly] private float distanceFromPlayer;
+        [SerializeField] [ReadOnly] private float distanceFromDefaultPos;
+        [SerializeField] [ReadOnly] private bool isComingBack;
+        [SerializeField] [ReadOnly] private bool isCheckingPlayer;
+        [SerializeField] [ReadOnly] private bool wasCheckingPlayer;
+        [SerializeField] [ReadOnly] private bool wasPathComplete;
+        [SerializeField] [ReadOnly] private bool canKillHiddenPlayer;
+        [SerializeField] [ReadOnly] private bool isFollowingPlayer;
 
-        private bool IsMoving { get; set; } = true;
-        private bool IsComingBack { get; set; } = true;
-        private bool IsFollowingPlayer { get; set; } = false;
-        private bool CanKillHiddenPlayer { get; set; } = false;
-        
-        private bool IsForceFollowingPlayer { get; set; }
-        
         private void Start()
         {
             agent.speed = speed;
             _defaultPos = transform.position;
+            StartCoroutine(CheckPathStatus());
         }
 
         public void OnTriggerMonster()
         {
-            StartCoroutine(WaitThenMove(lastKnownPos.Value));
-            IsComingBack = false;
-        }
-
-        private void Update()
-        {
-            float distanceFromPlayer = Vector3.Distance(transform.position, player.transform.position);
-            float distanceFromDefaultPos = Vector3.Distance(transform.position, _defaultPos);
-
-
-            if (!player.IsHidden && (distanceFromPlayer <= visionDistance || (IsFollowingPlayer && distanceFromPlayer <= giveUpDistance) || IsForceFollowingPlayer))
-            {
-                IsFollowingPlayer = true;
-                StartCoroutine(WaitThenMove(player.transform.position, 0));
-            }
-            else if (distanceFromDefaultPos > 0.5)
-            {
-                IsComingBack = true;
-                footsteps.IsMoving = false;
-                StartCoroutine(WaitThenMove(_defaultPos, 3));
-            }
-            
-            if (distanceFromPlayer <= insanityDistance)
-                playerInsanity.Value += insanityPenalty * Time.deltaTime;
-
-            if (distanceFromPlayer <= killDistance && (!player.IsHidden || CanKillHiddenPlayer))
-            {
-                playerInsanity.Value = playerInsanity.MaxValue;
-                if (CanKillHiddenPlayer) CanKillHiddenPlayer = false;
-            }
-
-            // movement stuff
-            if (agent.pathPending) return;
-            if (!(agent.remainingDistance <= agent.stoppingDistance)) return;
-            if (agent.hasPath && agent.velocity.sqrMagnitude != 0f) return;
-            if (IsComingBack) return;
-            IsComingBack = true;
-            footsteps.IsMoving = false;
-            StartCoroutine(WaitThenMove(_defaultPos, 3));
+            isCheckingPlayer = true;
         }
 
         public void OnPlayerHide()
@@ -86,41 +56,101 @@ namespace PanicPlayhouse.Scripts.Monster
 
             if (distance <= visionDistance)
             {
-                CanKillHiddenPlayer = true;
+                canKillHiddenPlayer = true;
             }
-        }
-
-        IEnumerator WaitThenMove(Vector3 to, int delay = 1)
-        {
-            yield return new WaitForSeconds(delay);
-            IsMoving = true;
-            agent.destination = to;
-            
-            if (Vector3.Distance(player.transform.position, to) < 0.5f)
-            {
-                IsForceFollowingPlayer = true;
-                IsFollowingPlayer = true;
-                if (!heartbeatSource.isPlaying) heartbeatSource.Play();
-                if (!followingMusicSource.isPlaying) followingMusicSource.Play();
-            }
-            else if (Vector3.Distance(_defaultPos, to) < 0.5f)
-            {
-                IsForceFollowingPlayer = false;
-                IsFollowingPlayer = false;
-                if (followingMusicSource.isPlaying) followingMusicSource.Stop();
-                if (heartbeatSource.isPlaying) heartbeatSource.Stop();
-            }
-            footsteps.IsMoving = true;
         }
 
         public void OnKillPlayer()
         {
-            IsFollowingPlayer = false;
-            IsForceFollowingPlayer = false;
-            IsMoving = false;
-            IsComingBack = true;
+            isFollowingPlayer = false;
+            isCheckingPlayer = false;
+            isComingBack = true;
+            anim.Walking.SetBool(false);
             agent.destination = _defaultPos;
             transform.position = _defaultPos;
+            agent.speed = speed;
         }
+
+        private IEnumerator CheckPathStatus()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(delayBetweenChecks);
+
+                while (agent == null) yield return null;
+
+                Vector3 monster = transform.position;
+
+                distanceFromDestination = Vector3.Distance(monster, agent.destination);
+                distanceFromPlayer = Vector3.Distance(monster, player.transform.position);
+                distanceFromDefaultPos = Vector3.Distance(monster, _defaultPos);
+
+                if (isCheckingPlayer)
+                {
+                    Debug.Log("IsCheckingPlayer");
+                    // CHECKING PLAYER
+                    wasPathComplete = false;
+                    isCheckingPlayer = false;
+                    wasCheckingPlayer = true;
+                    agent.destination = player.transform.position;
+                    footsteps.IsMoving = true;
+                    anim.Walking.SetBool(true);
+                    isComingBack = false;
+                    spriteRenderer.flipX = monster.x - agent.destination.x > 0;
+                }
+                else if (distanceFromPlayer <= killDistance && (!player.IsHidden || canKillHiddenPlayer))
+                {
+                    Debug.Log("KillPlayer");
+
+                    // KILL PLAYER
+                    playerInsanity.Value = playerInsanity.MaxValue;
+                    anim.Attack.SetTrigger();
+                    if (canKillHiddenPlayer) canKillHiddenPlayer = false;
+                    agent.speed = 0;
+                }
+                else if ((player.IsHidden && canKillHiddenPlayer || !player.IsHidden) &&
+                           (distanceFromPlayer <= visionDistance || isFollowingPlayer && distanceFromPlayer <= giveUpDistance))
+                {
+                    Debug.Log("FollowingPlayer");
+
+                    // FOLLOW PLAYER
+                    wasPathComplete = false;
+                    if (!followingMusicSource.isPlaying) followingMusicSource.Play();
+                    if (!heartbeatSource.isPlaying) heartbeatSource.Play();
+                    isFollowingPlayer = true;
+                    anim.Walking.SetBool(true);
+                    agent.destination = player.transform.position;
+                    footsteps.IsMoving = true;
+                    isComingBack = false;
+                }
+                else if (!wasPathComplete && distanceFromDestination <= agent.stoppingDistance)
+                {
+                    wasPathComplete = true;
+                    Debug.Log("PathComplete");
+                    // PATH COMPLETED
+                    footsteps.IsMoving = false;
+                    anim.Walking.SetBool(false);
+                    if (wasCheckingPlayer || isFollowingPlayer)
+                    {
+                        yield return new WaitForSeconds(3);
+                        if (!isFollowingPlayer && !isCheckingPlayer)
+                        {
+                            wasCheckingPlayer = false;
+                            isComingBack = true;
+                            agent.destination = _defaultPos;
+                            anim.Walking.SetBool(true);
+                            footsteps.IsMoving = true;
+                            if (followingMusicSource.isPlaying) followingMusicSource.Stop();
+                            if (heartbeatSource.isPlaying) heartbeatSource.Stop();
+                        }
+                    }
+                }
+                
+                if (distanceFromPlayer <= insanityDistance)
+                    playerInsanity.Value += insanityPenalty * Time.deltaTime;
+            }
+        }
+        
     }
+    
 }

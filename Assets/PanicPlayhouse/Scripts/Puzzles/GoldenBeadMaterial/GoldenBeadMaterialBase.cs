@@ -27,6 +27,8 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         {
             get
             {
+                Debug.Log(_currentValue);
+                _currentValue = 0;
                 foreach (Pushable pushable in _inside)
                     _currentValue += pushable.Value;
 

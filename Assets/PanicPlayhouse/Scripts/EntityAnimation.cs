@@ -9,7 +9,8 @@ namespace PanicPlayhouse.Scripts.Player
         [Header("Animation")]
         [SerializeField] private Animator animator;
 
-        [HideIf("AnimatorIsNull")] [SerializeField] private Animation walking;
+        [HideIf("AnimatorIsNull")] [SerializeField] private BoolAnimation walking;
+        [HideIf("AnimatorIsNull")] [SerializeField] private TriggerAnimation attack;
         
         public bool AnimatorIsNull => animator == null;
         
@@ -17,18 +18,22 @@ namespace PanicPlayhouse.Scripts.Player
         {
             if (animator == null) return;
             walking.SetAnimator(animator);
+            attack.SetAnimator(animator);
         }
         
         private void Awake()
         {
             if (animator == null) return;
             walking.SetAnimator(animator);
+            attack.SetAnimator(animator);
         }
 
-        public Animation Walking => walking;
+        public BoolAnimation Walking => walking;
+        public TriggerAnimation Attack => attack;
+
         
         [Serializable]
-        public class Animation
+        public class BoolAnimation : Animation
         {
             private Animator _animator;
             [HideIf("AnimatorIsNull")] [SerializeField] [AnimatorParam("_animator", AnimatorControllerParameterType.Bool)] private string param;
@@ -46,5 +51,27 @@ namespace PanicPlayhouse.Scripts.Player
                 _animator.SetBool(param, value);
             }
         }
+        
+        [Serializable]
+        public class TriggerAnimation : Animation
+        {
+            private Animator _animator;
+            [HideIf("AnimatorIsNull")] [SerializeField] [AnimatorParam("_animator", AnimatorControllerParameterType.Trigger)] private string param;
+            
+            public bool AnimatorIsNull => _animator == null;
+            
+            public Animation SetAnimator(Animator animator)
+            {
+                if (_animator == null) _animator = animator;
+                return this;
+            }
+            
+            public void SetTrigger()
+            {
+                _animator.SetTrigger(param);
+            }
+        }
+
+        public class Animation { }
     }
 }

@@ -19,6 +19,7 @@ namespace PanicPlayhouse.Scripts.Player
         [Label("Rigidbody")] [SerializeField] private Rigidbody rb;
         [SerializeField] private PlayerInput input;
         [Label("Animation")][SerializeField] private EntityAnimation anim;
+        [SerializeField] private PlayerHiddenStatus hiddenStatus;
         
         private Vector3 _previousInput;
         private bool _isHidden;
@@ -30,9 +31,7 @@ namespace PanicPlayhouse.Scripts.Player
 
         public void ChangeVisibility()
         {
-            _isHidden = !_isHidden;
-            
-            if (_isHidden)
+            if (hiddenStatus.IsHidden)
             {
                 input.actions["Movement"].Disable();
             }
@@ -40,11 +39,6 @@ namespace PanicPlayhouse.Scripts.Player
             {
                 input.actions["Movement"].Enable();
             }
-        }
-
-        public void UnlockMovement()
-        {
-            input.actions["Movement"].Enable();
         }
 
         private void SetUpControls()

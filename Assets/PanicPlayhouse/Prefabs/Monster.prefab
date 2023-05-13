@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2617084689451222883}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: -4.17, z: -4.17}
+  m_LocalPosition: {x: 0, y: 0, z: -4.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -199,8 +199,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1026207333
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fcc028485b69dce45b2dfbb3c51dd584, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 3951687702779899637}
   - component: {fileID: 6262647242452103656}
   - component: {fileID: 4294930734330464486}
+  - component: {fileID: 3970387762709452774}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -341,6 +342,7 @@ MonoBehaviour:
   followingMusicSource: {fileID: 1058495585430654813}
   player: {fileID: 0}
   playerInsanity: {fileID: 11400000, guid: c94776497f346824984f8bf99fb6f8d4, type: 2}
+  spriteRenderer: {fileID: 6883720999910810048}
   speed: 7
   insanityPenalty: 1
   insanityDistance: 15
@@ -348,8 +350,17 @@ MonoBehaviour:
   giveUpDistance: 25
   killDistance: 5
   footsteps: {fileID: 6262647242452103656}
-  lastKnownPos: {fileID: 11400000, guid: 0d7671ccd9b703a4e802a36ba3734be3, type: 2}
   agent: {fileID: 7860628906984239353}
+  anim: {fileID: 3970387762709452774}
+  delayBetweenChecks: 0
+  distanceFromDestination: 0
+  distanceFromPlayer: 0
+  distanceFromDefaultPos: 0
+  isComingBack: 0
+  isCheckingPlayer: 0
+  wasCheckingPlayer: 0
+  canKillHiddenPlayer: 0
+  isFollowingPlayer: 0
 --- !u!114 &6262647242452103656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +473,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3970387762709452774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2849899001654777004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec165433794445cb9f412e210ad192f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6262647242452103651}
+  walking:
+    param: isMoving
+  attack:
+    param: Attack
 --- !u!1 &6682121490188174515
 GameObject:
   m_ObjectHideFlags: 0

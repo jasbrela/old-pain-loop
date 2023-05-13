@@ -31,16 +31,8 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             Collider[] results = new Collider[10];
             var size = Physics.OverlapSphereNonAlloc(gameObject.transform.position + forward * radius, radius/2, results, avoidOverlap);
             
-            if (size > 0)
-            {
-                Debug.Log(size);
-                
-                foreach (Collider result in results)
-                {
-                    Debug.Log(result.ToString().Bold(), result.gameObject);
-                }
-                return;
-            }
+            if (size > 0) return;
+            
             
             source.PlayOneShot(drag);
 

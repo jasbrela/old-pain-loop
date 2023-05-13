@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/PanicPlayhouse/Scenes/Menu.unity
+    guid: 14450ed3ddc16ec4886bf750422ed41e
+  - enabled: 1
     path: Assets/PanicPlayhouse/Scenes/Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/PanicPlayhouse/Scenes/End.unity
+    guid: 7d72634d26313bd4fb0da03efcb45a55
   m_configObjects: {}

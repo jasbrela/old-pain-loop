@@ -26,9 +26,9 @@ namespace PanicPlayhouse.Scripts.Player
         {
             yield return new WaitForSeconds(2);
             transform.position = checkpoint.Value;
-            insanity.Value = insanityOnRespawn;
             yield return new WaitForSeconds(1);
             onRespawn.Raise();
+            insanity.Value = insanityOnRespawn;
         }
     }
     

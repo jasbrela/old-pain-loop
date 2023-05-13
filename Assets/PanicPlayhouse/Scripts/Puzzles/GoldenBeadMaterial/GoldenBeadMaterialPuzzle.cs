@@ -30,7 +30,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         {
             _pushables = new(FindObjectsOfType<Pushable>());
             _matBases = new(FindObjectsOfType<GoldenBeadMaterialBase>());
-            _areCorrect = new List<bool>(_matBases.Count) { false, false, false, false };
+            _areCorrect = new List<bool>(_matBases.Count) { false, false, false};
             
             if (_matBases.Count == 0)
             {
@@ -66,6 +66,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
 
         public void OnPressBase(GoldenBeadMaterialBase matBase)
         {
+            Debug.Log(matBase.IsCorrect);
             _areCorrect[_matBases.IndexOf(matBase)] = matBase.IsCorrect;
 
             if (_areCorrect.IndexOf(false) == -1)
