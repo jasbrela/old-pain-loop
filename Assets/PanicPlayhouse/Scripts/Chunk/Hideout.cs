@@ -1,9 +1,8 @@
-using PanicPlayhouse.Scripts.Interfaces;
 using UnityEngine;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
 
 
-namespace PanicPlayhouse.Scripts
+namespace PanicPlayhouse.Scripts.Chunk
 {
     public class Hideout : Interactable
     {

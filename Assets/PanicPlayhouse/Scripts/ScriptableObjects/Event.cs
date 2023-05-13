@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using NaughtyAttributes;
-using PanicPlayhouse.Scripts.Interfaces;
 using UnityEngine;
 
 namespace PanicPlayhouse.Scripts.ScriptableObjects

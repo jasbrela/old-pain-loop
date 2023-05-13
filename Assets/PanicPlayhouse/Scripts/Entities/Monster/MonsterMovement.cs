@@ -1,12 +1,12 @@
 using System.Collections;
 using NaughtyAttributes;
 using PanicPlayhouse.Scripts.Audio;
-using PanicPlayhouse.Scripts.Player;
+using PanicPlayhouse.Scripts.Entities.Player;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace PanicPlayhouse.Scripts.Monster
+namespace PanicPlayhouse.Scripts.Entities.Monster
 {
     public class MonsterMovement : MonoBehaviour
     {
@@ -87,7 +87,9 @@ namespace PanicPlayhouse.Scripts.Monster
 
                 if (isCheckingPlayer)
                 {
+#if UNITY_EDITOR
                     Debug.Log("IsCheckingPlayer");
+#endif
                     // CHECKING PLAYER
                     wasPathComplete = false;
                     isCheckingPlayer = false;
@@ -100,7 +102,9 @@ namespace PanicPlayhouse.Scripts.Monster
                 }
                 else if (distanceFromPlayer <= killDistance && (!player.IsHidden || canKillHiddenPlayer))
                 {
+#if UNITY_EDITOR
                     Debug.Log("KillPlayer");
+#endif
 
                     // KILL PLAYER
                     playerInsanity.Value = playerInsanity.MaxValue;
@@ -111,7 +115,9 @@ namespace PanicPlayhouse.Scripts.Monster
                 else if ((player.IsHidden && canKillHiddenPlayer || !player.IsHidden) &&
                            (distanceFromPlayer <= visionDistance || isFollowingPlayer && distanceFromPlayer <= giveUpDistance))
                 {
+#if UNITY_EDITOR
                     Debug.Log("FollowingPlayer");
+#endif
 
                     // FOLLOW PLAYER
                     wasPathComplete = false;
@@ -126,7 +132,9 @@ namespace PanicPlayhouse.Scripts.Monster
                 else if (!wasPathComplete && distanceFromDestination <= agent.stoppingDistance)
                 {
                     wasPathComplete = true;
+#if UNITY_EDITOR
                     Debug.Log("PathComplete");
+#endif
                     // PATH COMPLETED
                     footsteps.IsMoving = false;
                     anim.Walking.SetBool(false);

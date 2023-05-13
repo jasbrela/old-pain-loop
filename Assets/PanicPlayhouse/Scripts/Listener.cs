@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
 
-namespace PanicPlayhouse.Scripts.Interfaces
+namespace PanicPlayhouse.Scripts
 {
     public class Listener : MonoBehaviour
     {

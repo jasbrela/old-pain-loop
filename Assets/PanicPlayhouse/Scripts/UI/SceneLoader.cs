@@ -9,5 +9,10 @@ namespace PanicPlayhouse.Scripts.UI
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+
+        public void LoadMenuScene()
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

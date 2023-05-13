@@ -3,7 +3,7 @@ using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
 
-namespace PanicPlayhouse.Scripts.Player
+namespace PanicPlayhouse.Scripts.Entities.Player
 {
     public class PlayerInsanity : MonoBehaviour
     {

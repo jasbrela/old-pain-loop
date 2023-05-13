@@ -1,7 +1,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace PanicPlayhouse.Scripts.Interfaces
+namespace PanicPlayhouse.Scripts.Chunk
 {
     public abstract class Interactable : MonoBehaviour
     {

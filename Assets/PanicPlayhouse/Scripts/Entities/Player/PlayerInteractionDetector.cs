@@ -1,9 +1,9 @@
-using PanicPlayhouse.Scripts.Interfaces;
+using PanicPlayhouse.Scripts.Chunk;
 using PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace PanicPlayhouse.Scripts.Player
+namespace PanicPlayhouse.Scripts.Entities.Player
 {
     public class PlayerInteractionDetector : MonoBehaviour
     {

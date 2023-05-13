@@ -2,7 +2,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace PanicPlayhouse.Scripts.Player
+namespace PanicPlayhouse.Scripts.Entities
 {
     public class EntityAnimation : MonoBehaviour
     {

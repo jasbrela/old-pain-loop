@@ -1,4 +1,4 @@
-using PanicPlayhouse.Scripts.Interfaces;
+using PanicPlayhouse.Scripts.Chunk;
 using UnityEngine;
 
 namespace PanicPlayhouse.Scripts.Puzzles.Grief

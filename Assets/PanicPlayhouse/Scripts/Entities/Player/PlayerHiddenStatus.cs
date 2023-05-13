@@ -1,7 +1,7 @@
 ﻿using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 
-namespace PanicPlayhouse.Scripts.Player
+namespace PanicPlayhouse.Scripts.Entities.Player
 {
     public class PlayerHiddenStatus : MonoBehaviour
     {

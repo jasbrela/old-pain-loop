@@ -4,7 +4,7 @@ using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace PanicPlayhouse.Scripts.Player
+namespace PanicPlayhouse.Scripts.Entities.Player
 {
     public class PlayerMovement : MonoBehaviour
     {
