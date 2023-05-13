@@ -310,18 +310,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1170892687}
-        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Player.PlayerInsanity, Assembly-CSharp
-        m_MethodName: OnGoInsane
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6262647242452103649}
         m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Monster.MonsterMovement,
           Assembly-CSharp
@@ -450,7 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 1.5
+  m_AmplitudeGain: 2
   m_FrequencyGain: 0.5
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &60626039 stripped
@@ -2577,6 +2565,67 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 14.661747, y: 7.5100007, z: 5.449999}
   m_Center: {x: 0.35415125, y: 2.7, z: 5.229992}
+--- !u!1 &576598790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 576598791}
+  - component: {fileID: 576598792}
+  m_Layer: 0
+  m_Name: OnMaxInsanityReached
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &576598791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576598790}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2132278039}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &576598792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576598790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cb68505d1177747b91f44e3e9ed719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event: {fileID: 11400000, guid: b77fb3bb4f9494541aa341073bd2450d, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1170892687}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Entities.Player.PlayerInsanity,
+          Assembly-CSharp
+        m_MethodName: OnGoInsane
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &576964251 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8559787738326565688, guid: 88b8550db79cb6740936f71fa69ce239, type: 3}
@@ -6336,19 +6385,6 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 27e13900304a25049a8b597d77284e7b, type: 2}
-        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.ScriptableObjects.Event,
-          Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6262647242452103649}
         m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Monster.MonsterMovement,
           Assembly-CSharp
@@ -6362,9 +6398,48 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6262647242452103650}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Stop
+      - m_Target: {fileID: 2132348908}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Entities.Player.PlayerHiddenStatus,
+          Assembly-CSharp
+        m_MethodName: ChangePlayerHiddenStatus
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1170892688}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Entities.Player.PlayerMovement,
+          Assembly-CSharp
+        m_MethodName: ChangeVisibility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 944623960}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Camera.CameraFade, Assembly-CSharp
+        m_MethodName: FadeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6262647242452103649}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Entities.Monster.MonsterMovement,
+          Assembly-CSharp
+        m_MethodName: OnPlayerRespawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10509,7 +10584,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1009891165231230163, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
       propertyPath: m_Name
-      value: Footprints Horizontal (1)
+      value: Footprints Horizontal
       objectReference: {fileID: 0}
     - target: {fileID: 1009891165231230163, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
       propertyPath: m_IsActive
@@ -11122,6 +11197,7 @@ Transform:
   - {fileID: 2097246142}
   - {fileID: 881800664}
   - {fileID: 1566356723}
+  - {fileID: 576598791}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11132,6 +11208,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1170892685, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
+      propertyPath: onGoInsane
+      value: 
+      objectReference: {fileID: 11400000, guid: e53ff158097dcca4e872c35629d1b1ed, type: 2}
     - target: {fileID: 7734100179996136547, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
       propertyPath: m_Name
       value: Player
@@ -11804,6 +11884,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1199204213}
     - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
+      propertyPath: twoDSource
+      value: 
+      objectReference: {fileID: 1199204212}
+    - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4abd8e7d762521f428be7a4b5c9c26c4, type: 3}
+    - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
       propertyPath: delayBetweenChecks
       value: 0.1
       objectReference: {fileID: 0}
@@ -11821,11 +11909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98780da6ac6413645929e21c61439557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &6262647242452103650 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4294930734330464486, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-  m_PrefabInstance: {fileID: 6262647242452103648}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6262647242452103652 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2849899001654777001, guid: 25e6268627950cb47bef604bbbd45551, type: 3}

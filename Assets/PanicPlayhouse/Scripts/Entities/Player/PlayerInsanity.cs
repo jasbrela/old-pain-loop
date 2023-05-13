@@ -11,6 +11,8 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         [Range(0, 100)] [SerializeField] private float insanityOnRespawn;
         [SerializeField] private Vector3Variable checkpoint;
         [SerializeField] private Event onRespawn;
+        [SerializeField] private Event onGoInsane;
+        private bool _goneInsane;
 
         private void Start()
         {
@@ -19,6 +21,9 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
         public void OnGoInsane() // max insanity
         {
+            if (_goneInsane) return;
+            _goneInsane = true;
+            onGoInsane.Raise();
             StartCoroutine(Respawn());
         }
 
@@ -27,6 +32,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             yield return new WaitForSeconds(2);
             transform.position = checkpoint.Value;
             yield return new WaitForSeconds(1);
+            _goneInsane = false;
             onRespawn.Raise();
             insanity.Value = insanityOnRespawn;
         }

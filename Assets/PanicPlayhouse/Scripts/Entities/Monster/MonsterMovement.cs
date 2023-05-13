@@ -10,6 +10,8 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 {
     public class MonsterMovement : MonoBehaviour
     {
+        [SerializeField] private AudioSource twoDSource;
+        [SerializeField] private AudioClip attackSound;
         [SerializeField] private AudioSource heartbeatSource;
         [SerializeField] private AudioSource followingMusicSource;
         [SerializeField] private PlayerHiddenStatus player;
@@ -71,6 +73,13 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             agent.speed = speed;
         }
 
+        public void OnPlayerRespawn()
+        {
+            // safe checks
+            heartbeatSource.Stop();
+            followingMusicSource.Stop();
+        }
+
         private IEnumerator CheckPathStatus()
         {
             while (true)
@@ -105,9 +114,10 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 #if UNITY_EDITOR
                     Debug.Log("KillPlayer");
 #endif
-
+                    twoDSource.PlayOneShot(attackSound);
                     // KILL PLAYER
                     playerInsanity.Value = playerInsanity.MaxValue;
+                    followingMusicSource.Stop();
                     anim.Attack.SetTrigger();
                     if (canKillHiddenPlayer) canKillHiddenPlayer = false;
                     agent.speed = 0;
@@ -118,7 +128,6 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 #if UNITY_EDITOR
                     Debug.Log("FollowingPlayer");
 #endif
-
                     // FOLLOW PLAYER
                     wasPathComplete = false;
                     if (!followingMusicSource.isPlaying) followingMusicSource.Play();
