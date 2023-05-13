@@ -41,7 +41,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Scenario
+  - name: Scenario (Back)
     uniqueID: 857564113
     locked: 0
   - name: Monster
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Door
     uniqueID: 74586531
+    locked: 0
+  - name: Scenario (Front)
+    uniqueID: 1748469711
     locked: 0
   - name: UI
     uniqueID: 3397244933

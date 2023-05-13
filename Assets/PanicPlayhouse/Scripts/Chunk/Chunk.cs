@@ -47,9 +47,9 @@ namespace PanicPlayhouse.Scripts.Chunk
                 if (!other.isTrigger)
                     virtualCam.gameObject.SetActive(true);
                 
-            } else if (other.TryGetComponent(out Pushable entity))
+            } else if (other.TryGetComponent(out Pushable pushable))
             {
-                foreach (ChunkEntity child in entity.GetComponentsInChildren<ChunkEntity>())
+                foreach (ChunkEntity child in pushable.GetComponentsInChildren<ChunkEntity>())
                 {
                     if (!_entities.Contains(child)) _entities.Add(child);
                     if (_isPlayerInside) child.FadeIn();

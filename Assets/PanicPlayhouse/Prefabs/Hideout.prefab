@@ -75,9 +75,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5676857026044252300, guid: 98853e6a46833db4e98a00bcca8110b3, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 8054852612213038252}
     - target: {fileID: 5676857026044252301, guid: 98853e6a46833db4e98a00bcca8110b3, type: 3}
       propertyPath: m_Size.x
-      value: 4.430395
+      value: 3.6495361
       objectReference: {fileID: 0}
     - target: {fileID: 5676857026044252301, guid: 98853e6a46833db4e98a00bcca8110b3, type: 3}
       propertyPath: m_Size.y
@@ -85,11 +89,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5676857026044252301, guid: 98853e6a46833db4e98a00bcca8110b3, type: 3}
       propertyPath: m_Size.z
-      value: 1.871635
+      value: 3.2368736
       objectReference: {fileID: 0}
     - target: {fileID: 5676857026044252301, guid: 98853e6a46833db4e98a00bcca8110b3, type: 3}
       propertyPath: m_Center.x
-      value: -0.5907779
+      value: -0.20034838
       objectReference: {fileID: 0}
     - target: {fileID: 5676857026044252301, guid: 98853e6a46833db4e98a00bcca8110b3, type: 3}
       propertyPath: m_Center.y
@@ -97,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5676857026044252301, guid: 98853e6a46833db4e98a00bcca8110b3, type: 3}
       propertyPath: m_Center.z
-      value: -0.0726068
+      value: -0.75522614
       objectReference: {fileID: 0}
     - target: {fileID: 5676857026044252302, guid: 98853e6a46833db4e98a00bcca8110b3, type: 3}
       propertyPath: m_Name
