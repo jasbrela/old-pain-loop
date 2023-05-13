@@ -14,7 +14,7 @@ namespace PanicPlayhouse.Scripts.UI
         {
             buttons.SetActive(false);
             Sequence seq = DOTween.Sequence();
-            seq.AppendInterval(fadeDuration / 2);
+            seq.AppendInterval(0.5f);
         
             foreach (TextMeshProUGUI paragraph in paragraphs)
             {

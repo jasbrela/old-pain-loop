@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,12 +9,18 @@ namespace PanicPlayhouse.Scripts.UI
     {
         public void LoadNextScene()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(WaitThenLoad(SceneManager.GetActiveScene().buildIndex + 1));
         }
 
         public void LoadMenuScene()
         {
-            SceneManager.LoadScene(0);
+            StartCoroutine(WaitThenLoad(0));
+        }
+
+        IEnumerator WaitThenLoad(int index)
+        {
+            yield return new WaitForSeconds(0.5f);
+            SceneManager.LoadScene(index);
         }
     }
 }
