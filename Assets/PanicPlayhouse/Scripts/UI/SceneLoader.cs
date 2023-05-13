@@ -22,5 +22,10 @@ namespace PanicPlayhouse.Scripts.UI
             yield return new WaitForSeconds(0.5f);
             SceneManager.LoadScene(index);
         }
+
+        public void Quit()
+        {
+            Application.Quit();
+        }
     }
 }
