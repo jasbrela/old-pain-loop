@@ -21,7 +21,10 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         [SerializeField] private Event onFinish;
         [SerializeField] private List<XylophoneButton> order;
         [SerializeField] private List<Wall> wallsToOpen;
-        
+        [SerializeField] private List<SpriteRenderer> drawingsToColor;
+        [SerializeField] private List<Color> colors;
+        [SerializeField] private Color disabledColor;
+
         [Header("SFX")]
         [SerializeField] private AudioClip success;
         [SerializeField] private AudioSource source;
@@ -33,7 +36,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         
         private bool IsActivated { get; set; } = false;
         private bool IsFinished { get; set; } = false;
-
+        
         private void Start()
         {
             _uniqueButtons = new List<XylophoneButton>(FindObjectsOfType<XylophoneButton>());
@@ -50,6 +53,14 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             foreach (XylophoneButton button in order)
             {
                 button.Puzzle = this;
+            }
+        }
+
+        public void EnableFlowers()
+        {
+            foreach (SpriteRenderer drawing in drawingsToColor)
+            {
+                drawing.gameObject.SetActive(true);
             }
         }
 
@@ -81,22 +92,25 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             }
             
             if (IsFinished || !IsActivated) return;
-            
-            _triggerCount++;
+
+            if (order[_buttonCount] == button)
+            {
+                drawingsToColor[_buttonCount].color = colors[_buttonCount];
+                _buttonCount++;
+            }
+            else
+            {
+                foreach (SpriteRenderer sprite in drawingsToColor)
+                    sprite.color = disabledColor;
+
+                _triggerCount++;
+                _buttonCount = 0;
+            }
             
             if (_triggerCount == triggerInterval && triggerMonster != null)
             {
                 _triggerCount = 0;
                 triggerMonster.Raise();
-            }
-            
-            if (order[_buttonCount] == button)
-            {
-                _buttonCount++;
-            }
-            else
-            {
-                _buttonCount = 0;
             }
             
             insanity.Value += insanityPenalty;
