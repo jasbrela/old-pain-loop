@@ -60,6 +60,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         {
             foreach (SpriteRenderer drawing in drawingsToColor)
             {
+                drawing.color = disabledColor;
                 drawing.gameObject.SetActive(true);
             }
         }

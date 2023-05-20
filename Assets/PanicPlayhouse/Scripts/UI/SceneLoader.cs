@@ -27,7 +27,8 @@ namespace PanicPlayhouse.Scripts.UI
         IEnumerator WaitThenLoad(int index)
         {
             yield return new WaitForSeconds(0.5f);
-            
+
+#if !UNITY_WEBGL
             switch (index)
             {
                 case 0:
@@ -40,6 +41,7 @@ namespace PanicPlayhouse.Scripts.UI
                     _richPresence.Details = "Reading the diary";
                     break;
             }
+#endif
             
             SceneManager.LoadScene(index);
         }

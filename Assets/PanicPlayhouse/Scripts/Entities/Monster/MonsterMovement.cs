@@ -10,6 +10,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 {
     public class MonsterMovement : MonoBehaviour
     {
+        [SerializeField] private AudioClip knockSfx;
         [SerializeField] private AudioSource twoDSource;
         [SerializeField] private AudioClip attackSound;
         [SerializeField] private AudioSource heartbeatSource;
@@ -114,6 +115,10 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 #if UNITY_EDITOR
                     Debug.Log("KillPlayer");
 #endif
+                    if (player.IsHidden && knockSfx != null)
+                    {
+                        twoDSource.PlayOneShot(knockSfx);
+                    }
                     twoDSource.PlayOneShot(attackSound);
                     // KILL PLAYER
                     playerInsanity.Value = playerInsanity.MaxValue;

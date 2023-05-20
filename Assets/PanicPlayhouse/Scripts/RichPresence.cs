@@ -90,6 +90,6 @@ namespace PanicPlayhouse.Scripts
 				Destroy(gameObject);
 			}
 		}
-	}
 #endif
+	}
 }
