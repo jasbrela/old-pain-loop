@@ -7,7 +7,10 @@ namespace PanicPlayhouse.Scripts.UI
     public class SceneLoader : MonoBehaviour
     {
         private RichPresence _richPresence;
-        
+        private AsyncOperation _asyncOperation;
+
+        private int NextScene => SceneManager.GetActiveScene().buildIndex + 1;
+
         private void Start()
         {
             _richPresence = FindObjectOfType<RichPresence>();
@@ -15,8 +18,30 @@ namespace PanicPlayhouse.Scripts.UI
 
         public void LoadNextScene()
         {
-            int scene = SceneManager.GetActiveScene().buildIndex + 1;
-            StartCoroutine(WaitThenLoad(scene));
+            if (_asyncOperation is {isDone: true})
+            {
+                _asyncOperation.allowSceneActivation = true;
+                return;
+            }
+            
+            StartCoroutine(WaitThenLoad(NextScene));
+        }
+
+        public void PreLoadNextScene()
+        {
+            StartCoroutine(LoadSceneAsyncProcess());
+        }
+        
+        private IEnumerator LoadSceneAsyncProcess()
+        {
+            _asyncOperation = SceneManager.LoadSceneAsync(NextScene);
+            _asyncOperation.allowSceneActivation = false;
+
+            while (!_asyncOperation.isDone)
+            {
+                Debug.Log($"[scene]:{SceneManager.GetSceneByBuildIndex(NextScene).name} [load progress]: {_asyncOperation.progress}");
+                yield return null;
+            }
         }
 
         public void LoadMenuScene()
@@ -29,20 +54,21 @@ namespace PanicPlayhouse.Scripts.UI
             yield return new WaitForSeconds(0.5f);
 
 #if !UNITY_WEBGL
-            switch (index)
-            {
-                case 0:
-                    _richPresence.Details = "In the menu";
-                    break;
-                case 1:
-                    _richPresence.Details = "Getting scared";
-                    break;
-                case 2:
-                    _richPresence.Details = "Reading the diary";
-                    break;
+            if (_richPresence != null) {
+                switch (index)
+                {
+                    case 0:
+                        _richPresence.Details = "In the menu";
+                        break;
+                    case 1:
+                        _richPresence.Details = "Getting scared";
+                        break;
+                    case 2:
+                        _richPresence.Details = "Reading the diary";
+                        break;
+                }
             }
 #endif
-            
             SceneManager.LoadScene(index);
         }
 
