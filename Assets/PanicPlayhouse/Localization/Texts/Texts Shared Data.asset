@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Texts Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Texts
+  m_TableCollectionNameGuidString: 8ef055a8911b6be4196602f2ced90531
+  m_Entries:
+  - m_Id: 341851795456
+    m_Key: ready
+    m_Metadata:
+      m_Items: []
+  - m_Id: 488685989888
+    m_Key: diary_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 657271844864
+    m_Key: context_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 673377972224
+    m_Key: context_body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3507897004032
+    m_Key: diary_paragraph_one
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3805264769024
+    m_Key: diary_paragraph_two
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3926568235008
+    m_Key: diary_paragraph_three
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4247611821364084760
+  references:
+    version: 2
+    RefIds:
+    - rid: 4247611821364084760
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1684686888926

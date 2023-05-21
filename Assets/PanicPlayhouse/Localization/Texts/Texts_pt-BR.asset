@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Texts_pt-BR
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 8ef055a8911b6be4196602f2ced90531, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 341851795456
+    m_Localized: Estou pronto!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 488685989888
+    m_Localized: "QUERIDO DI\xC1RIO,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 657271844864
+    m_Localized: "Trag\xE9dia Horrorizante: Crian\xE7a Encontrada Morta, Assassinato
+      Brutal Pr\xF3ximo!\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 673377972224
+    m_Localized: "Descoberta chocante: o corpo sem vida de um adolescente foi encontrado
+      em um local desolado.\r\n\r\nA hedionda cena do crime revela um detalhe assustador:
+      apenas um \xFAnico bra\xE7o permanece intacto, aumentando a brutalidade do
+      ato.\r\n\r\nAs autoridades est\xE3o iniciando uma investiga\xE7\xE3o em grande
+      escala sobre essa fatalidade chocante, enquanto a comunidade luta contra o
+      medo e a dor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3507897004032
+    m_Localized: "Acabei de encontrar uma velha casa assustadora na floresta. Ela
+      costumava pertencer a um serial killer psicopata que nunca foi pego. Vamos
+      verificar melhor amanh\xE3.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3805264769024
+    m_Localized: "Minha m\xE3e sempre diz para ter cuidado e n\xE3o ir a lugar nenhum
+      sozinho, principalmente \xE0 noite. Mas \xE9 apenas uma casa abandonada. O
+      que poderia acontecer?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3926568235008
+    m_Localized: "Estamos determinados a desvendar esse mist\xE9rio. Tenho que descobrir
+      o que realmente aconteceu aqui, n\xE3o importa o qu\xE3o assustador seja."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
