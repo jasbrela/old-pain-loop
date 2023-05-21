@@ -407,7 +407,6 @@ GameObject:
   - component: {fileID: 9048797718414815451}
   - component: {fileID: 6404736401202834607}
   - component: {fileID: 6487933810669259487}
-  - component: {fileID: 8575094517987355745}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
@@ -428,7 +427,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4027728551312675292}
-  m_RootOrder: 11
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &6404736401202834607
 SpriteRenderer:
@@ -496,18 +495,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 2100000, guid: d7a2b1ecc7fae7144b820dae29e39748, type: 2}
   spriteRenderer: {fileID: 6404736401202834607}
---- !u!114 &8575094517987355745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3106403849980016657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e05f61f4cd4d22459ace1096f9259aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3321396444615694130
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +510,7 @@ GameObject:
   - component: {fileID: 728731135965290270}
   m_Layer: 6
   m_Name: 100
-  m_TagString: Untagged
+  m_TagString: GoldenMaterialPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -543,7 +530,7 @@ Transform:
   - {fileID: 8061689174295835305}
   - {fileID: 5617159488052566655}
   m_Father: {fileID: 4027728551312675292}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8774994676071230174
 MonoBehaviour:
@@ -1006,7 +993,7 @@ GameObject:
   - component: {fileID: 996273379263584398}
   m_Layer: 6
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: GoldenMaterialPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1030,7 +1017,7 @@ Transform:
   - {fileID: 7868193928021711772}
   - {fileID: 2262590758969711098}
   m_Father: {fileID: 4027728551312675292}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8769560426779812223
 MonoBehaviour:
@@ -1790,7 +1777,7 @@ GameObject:
   - component: {fileID: 6790101740312733072}
   m_Layer: 6
   m_Name: 10
-  m_TagString: Untagged
+  m_TagString: GoldenMaterialPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1810,7 +1797,7 @@ Transform:
   - {fileID: 9080503001596000098}
   - {fileID: 969949673726416351}
   m_Father: {fileID: 4027728551312675292}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7909620111436580370
 MonoBehaviour:
@@ -2321,7 +2308,7 @@ GameObject:
   - component: {fileID: 4221474660579030114}
   m_Layer: 6
   m_Name: 10
-  m_TagString: Untagged
+  m_TagString: GoldenMaterialPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2341,7 +2328,7 @@ Transform:
   - {fileID: 347168631049725934}
   - {fileID: 4367445093680482583}
   m_Father: {fileID: 4027728551312675292}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9000232758012228485
 MonoBehaviour:
@@ -2606,7 +2593,7 @@ GameObject:
   - component: {fileID: 6977050340635507070}
   m_Layer: 6
   m_Name: 10
-  m_TagString: Untagged
+  m_TagString: GoldenMaterialPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2626,7 +2613,7 @@ Transform:
   - {fileID: 2051653840319533278}
   - {fileID: 6363986527532481475}
   m_Father: {fileID: 4027728551312675292}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &964746638324772514
 MonoBehaviour:
@@ -2818,11 +2805,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3650877577617496502, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4396503253355224572, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5018230386546114480, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
       propertyPath: m_IsActive
