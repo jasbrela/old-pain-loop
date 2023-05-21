@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using FMODUnity;
+using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
@@ -7,7 +9,6 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
 {
     public class GriefPuzzle : MonoBehaviour
     {
-        
         [Header("Puzzle")]
         [SerializeField] private Event onFinish;
 
@@ -17,17 +18,20 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
         [SerializeField] private FloatVariable insanity;
 
         [Header("SFX")]
-        [SerializeField] private AudioClip success;
-        [SerializeField] private AudioSource source;
-        
+        [SerializeField] private EventReference success;
+        [SerializeField] private EventReference rotate;
+        [SerializeField] private EventReference click;
+
+        private AudioManager _audio;
         private List<GriefButton> _buttons;
         private List<bool> _areCorrect;
         
-        private bool IsActivated { get; set; } = false;
-        private bool IsFinished { get; set; } = false;
+        private bool IsActivated { get; set; }
+        private bool IsFinished { get; set; }
 
         private void Start()
         {
+            _audio = FindObjectOfType<AudioManager>();
             _buttons = new(FindObjectsOfType<GriefButton>());
             _areCorrect = new List<bool>(_buttons.Count) { false, false, false, false };
             
@@ -63,9 +67,13 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
         {
             _areCorrect[_buttons.IndexOf(button)] = button.IsCorrect;
 
+            _audio.PlayOneShot(rotate);
+            _audio.PlayOneShot(click);
+            
             if (_areCorrect.IndexOf(false) == -1)
             {
-                if (success != null) source.PlayOneShot(success);
+                IsFinished = true;
+                _audio.PlayOneShot(success);
                 foreach (GriefButton btn in _buttons)
                 {
                     btn.IsBlocked = true;
@@ -75,11 +83,6 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
             }
 
             insanity.Value += insanityPenalty;
-        }
-        
-        public void PlayClip(AudioClip clip)
-        {
-            source.PlayOneShot(clip);
         }
     }
 }

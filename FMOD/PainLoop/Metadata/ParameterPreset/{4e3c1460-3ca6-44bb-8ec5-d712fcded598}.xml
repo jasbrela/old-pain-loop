@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{4e3c1460-3ca6-44bb-8ec5-d712fcded598}">
+		<property name="name">
+			<value>Insanity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{2910fb75-7ebe-420e-9431-02691c4fddcd}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{88f8e390-bf10-4241-8d73-9d16378fe524}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{88f8e390-bf10-4241-8d73-9d16378fe524}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

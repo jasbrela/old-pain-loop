@@ -1,5 +1,412 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8210424957012221721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Exhale
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Exhale
+  Guid:
+    Data1: 19088260
+    Data2: 1197418719
+    Data3: -1222664031
+    Data4: -1225507015
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7699927182980157075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/FasterBreath
+  m_EditorClassIdentifier: 
+  Path: event:/Player/FasterBreath
+  Guid:
+    Data1: 405506275
+    Data2: 1102237497
+    Data3: 1588677254
+    Data4: 374654453
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5904
+--- !u!114 &-6819305077037945433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Heartbeat
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Heartbeat
+  Guid:
+    Data1: 835107806
+    Data2: 1168808149
+    Data3: -248597886
+    Data4: -1716327385
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6212330381756551538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Footsteps
+  Guid:
+    Data1: -1980647854
+    Data2: 1131734340
+    Data3: 709334145
+    Data4: -1608874128
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 950
+--- !u!114 &-6026202721322306731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Build/Desktop/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/PainLoop/Build/Desktop/Master.strings.bank
+  Name: Build/Desktop/Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638202861872012674
+  FileSizes:
+  - Name: 
+    Value: 2132
+  Exists: 1
+--- !u!114 &-5971346933030796101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Click
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Click
+  Guid:
+    Data1: -1618134994
+    Data2: 1297044439
+    Data3: -876357226
+    Data4: -1324258945
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4962809133934978678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Build/Desktop/Sounds.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/PainLoop/Build/Desktop/Sounds.bank
+  Name: Build/Desktop/Sounds
+  StudioPath: bank:/Sounds
+  lastModified: 638202908383686758
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-4823670718652974829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Puzzles/Xylophone/Xylophone - 1
+  m_EditorClassIdentifier: 
+  Path: event:/Puzzles/Xylophone/Xylophone - 1
+  Guid:
+    Data1: -1960474598
+    Data2: 1179967470
+    Data3: -1064339035
+    Data4: -153976033
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4289450376884302740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Puzzles/GoldenBeads/Success
+  m_EditorClassIdentifier: 
+  Path: event:/Puzzles/GoldenBeads/Success
+  Guid:
+    Data1: 273338140
+    Data2: 1180732394
+    Data3: 1271365560
+    Data4: 1843738862
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3284689911827096651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/HideoutExit
+  m_EditorClassIdentifier: 
+  Path: event:/Player/HideoutExit
+  Guid:
+    Data1: -1870950844
+    Data2: 1167044527
+    Data3: 1303338891
+    Data4: 1804396310
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3207677776881485176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Puzzles/Xylophone/Xylophone - 3
+  m_EditorClassIdentifier: 
+  Path: event:/Puzzles/Xylophone/Xylophone - 3
+  Guid:
+    Data1: 292526455
+    Data2: 1112995306
+    Data3: 720951693
+    Data4: -773117863
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1465937641262238199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Build/Desktop/Music.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/PainLoop/Build/Desktop/Music.bank
+  Name: Build/Desktop/Music
+  StudioPath: bank:/Music
+  lastModified: 638202888549522474
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-770166402220809846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/HideoutEnter
+  m_EditorClassIdentifier: 
+  Path: event:/Player/HideoutEnter
+  Guid:
+    Data1: -318770910
+    Data2: 1277269862
+    Data3: -674573440
+    Data4: -273675859
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-509379363390524790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monster/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Monster/Footsteps
+  Guid:
+    Data1: 2087403842
+    Data2: 1300446572
+    Data3: 1090422148
+    Data4: -1112043970
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 10000
+  Length: 1672
+--- !u!114 &-139169837577214085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Puzzles/Grief/Rotate
+  m_EditorClassIdentifier: 
+  Path: event:/Puzzles/Grief/Rotate
+  Guid:
+    Data1: -459495668
+    Data2: 1169954731
+    Data3: 400684726
+    Data4: -534790866
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-128216619960820605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monster/Attack
+  m_EditorClassIdentifier: 
+  Path: event:/Monster/Attack
+  Guid:
+    Data1: 688748363
+    Data2: 1105349141
+    Data3: -1021542212
+    Data4: -504563859
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,10 +419,383 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: -6026202721322306731}
+  - {fileID: 7203425406796913588}
+  - {fileID: -1465937641262238199}
+  - {fileID: -4962809133934978678}
+  EditorEvents:
+  - {fileID: -4823670718652974829}
+  - {fileID: 5659965674543036213}
+  - {fileID: -3207677776881485176}
+  - {fileID: 8862062840672864386}
+  - {fileID: -6819305077037945433}
+  - {fileID: 884274138773877835}
+  - {fileID: 4358352869783707237}
+  - {fileID: 1378910887643991052}
+  - {fileID: -139169837577214085}
+  - {fileID: -4289450376884302740}
+  - {fileID: 7557553094967632782}
+  - {fileID: -770166402220809846}
+  - {fileID: -5971346933030796101}
+  - {fileID: -509379363390524790}
+  - {fileID: 2817584278162584298}
+  - {fileID: -3284689911827096651}
+  - {fileID: -128216619960820605}
+  - {fileID: 5394418496790103952}
+  - {fileID: -8210424957012221721}
+  - {fileID: 5954243637806820011}
+  - {fileID: 6891542532083752621}
+  - {fileID: 2815303269161040962}
+  - {fileID: 5909983218414446844}
+  - {fileID: -7699927182980157075}
+  - {fileID: -6212330381756551538}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  cacheTime: 0
+  MasterBanks:
+  - {fileID: 7203425406796913588}
+  StringsBanks:
+  - {fileID: -6026202721322306731}
+  cacheTime: 638202908383686758
   cacheVersion: 131603
+--- !u!114 &884274138773877835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Puzzles/Xylophone/Xylophone - 7
+  m_EditorClassIdentifier: 
+  Path: event:/Puzzles/Xylophone/Xylophone - 7
+  Guid:
+    Data1: 1436871152
+    Data2: 1299297979
+    Data3: -690845770
+    Data4: -991963102
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1378910887643991052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Chasing
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Chasing
+  Guid:
+    Data1: -908431199
+    Data2: 1144317829
+    Data3: -1607084385
+    Data4: 1266244153
+  Banks:
+  - {fileID: -1465937641262238199}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2815303269161040962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Puzzles/GoldenBeads/Drag
+  m_EditorClassIdentifier: 
+  Path: event:/Puzzles/GoldenBeads/Drag
+  Guid:
+    Data1: 103157692
+    Data2: 1297533507
+    Data3: -573588051
+    Data4: -1006240165
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2817584278162584298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Breath
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Breath
+  Guid:
+    Data1: -921577918
+    Data2: 1131247252
+    Data3: 226208392
+    Data4: -1027326254
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5568
+--- !u!114 &4358352869783707237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Menu
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Menu
+  Guid:
+    Data1: -325464955
+    Data2: 1171429948
+    Data3: -875308147
+    Data4: 1748753939
+  Banks:
+  - {fileID: -1465937641262238199}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5394418496790103952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monster/Breath
+  m_EditorClassIdentifier: 
+  Path: event:/Monster/Breath
+  Guid:
+    Data1: -1647065732
+    Data2: 1086785991
+    Data3: 608372611
+    Data4: -1441258881
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 10000
+  Length: 11064
+--- !u!114 &5659965674543036213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambient/Ambient
+  m_EditorClassIdentifier: 
+  Path: event:/Ambient/Ambient
+  Guid:
+    Data1: 1871575917
+    Data2: 1275277428
+    Data3: 1503301801
+    Data4: 1570879789
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 95568
+--- !u!114 &5909983218414446844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Puzzles/Grief/Success
+  m_EditorClassIdentifier: 
+  Path: event:/Puzzles/Grief/Success
+  Guid:
+    Data1: -9684798
+    Data2: 1123356922
+    Data3: 825330590
+    Data4: 296891682
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5954243637806820011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Hover
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Hover
+  Guid:
+    Data1: -1480611189
+    Data2: 1265376966
+    Data3: -1970106184
+    Data4: -1256854717
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6891542532083752621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Puzzles/GoldenBeads/Fitting
+  m_EditorClassIdentifier: 
+  Path: event:/Puzzles/GoldenBeads/Fitting
+  Guid:
+    Data1: 364047777
+    Data2: 1207792392
+    Data3: 1211993742
+    Data4: 1531651864
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7203425406796913588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Build/Desktop/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/PainLoop/Build/Desktop/Master.bank
+  Name: Build/Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 638202861871967439
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7557553094967632782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Puzzles/Grief/Click
+  m_EditorClassIdentifier: 
+  Path: event:/Puzzles/Grief/Click
+  Guid:
+    Data1: -722324190
+    Data2: 1313796250
+    Data3: -754067560
+    Data4: -1048644797
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8862062840672864386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Puzzles/Xylophone/Xylophone - 5
+  m_EditorClassIdentifier: 
+  Path: event:/Puzzles/Xylophone/Xylophone - 5
+  Guid:
+    Data1: 1218088896
+    Data2: 1225701066
+    Data3: -191581798
+    Data4: 247925484
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

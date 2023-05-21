@@ -27,6 +27,7 @@ namespace PanicPlayhouse.Scripts.Camera
         /// </summary>
         public void FadeOut()
         {
+            DOTween.Kill(blackImage);
             blackImage.DOFade(0, fadeDuration);
         }
         
@@ -35,6 +36,7 @@ namespace PanicPlayhouse.Scripts.Camera
         /// </summary>
         public void FadeIn()
         {
+            DOTween.Kill(blackImage);
             blackImage.DOFade(1, fadeDuration);
         }
     }

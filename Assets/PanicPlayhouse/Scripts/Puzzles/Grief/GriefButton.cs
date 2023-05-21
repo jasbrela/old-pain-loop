@@ -5,8 +5,6 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
 {
     public class GriefButton : Interactable
     {
-        [SerializeField] private AudioClip rotate;
-        [SerializeField] private AudioClip click;
         [SerializeField] private GriefGround ground;
         public bool IsCorrect => ground.IsCorrect;
         public bool IsBlocked { get; set; } = false;
@@ -29,8 +27,6 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
         public override void OnInteract()
         {
             if (IsBlocked) return;
-            _puzzle.PlayClip(click);
-            _puzzle.PlayClip(rotate);
             ground.Rotate();
             Puzzle.OnPressButton(this);
         }

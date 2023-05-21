@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2018830641
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -803839969, guid: 94c01691e36e25b489a64c5e34448260, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -122,6 +122,8 @@ MonoBehaviour:
   animator: {fileID: 7531366103364602725}
   walking:
     param: IsMoving
+  attack:
+    param: 
 --- !u!1 &7734100179996136547
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,11 +136,9 @@ GameObject:
   - component: {fileID: 7734100179996136551}
   - component: {fileID: 7734100179996136549}
   - component: {fileID: 7734100179996136546}
-  - component: {fileID: 6859096937882116277}
   - component: {fileID: 7734100179996136548}
   - component: {fileID: 1170892685}
   - component: {fileID: 1170892686}
-  - component: {fileID: 7026857029642244600}
   - component: {fileID: 8929065640780248005}
   m_Layer: 3
   m_Name: Player
@@ -222,102 +222,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.1648228, z: 0.25}
   m_Center: {x: 0, y: 1.5824114, z: 0}
---- !u!82 &6859096937882116277
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7734100179996136547}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &7734100179996136548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,11 +237,18 @@ MonoBehaviour:
   defaultForce: 80
   defaultMaxVel: 10
   lastKnownPos: {fileID: 11400000, guid: 0d7671ccd9b703a4e802a36ba3734be3, type: 2}
-  footsteps: {fileID: 7026857029642244600}
+  footsteps:
+    Guid:
+      Data1: -1980647854
+      Data2: 1131734340
+      Data3: 709334145
+      Data4: -1608874128
+    Path: event:/Player/Footsteps
   spriteRenderer: {fileID: 1395562758165979407}
   rb: {fileID: 7734100179996136549}
   input: {fileID: 7734100179996136551}
   anim: {fileID: 2385807414069712015}
+  hiddenStatus: {fileID: 8929065640780248005}
 --- !u!114 &1170892685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,9 +262,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insanity: {fileID: 11400000, guid: c94776497f346824984f8bf99fb6f8d4, type: 2}
-  insanityOnRespawn: 20
+  insanityOnRespawn: 0
   checkpoint: {fileID: 11400000, guid: bde0aeb7427311846869ede4fdd7feb3, type: 2}
   onRespawn: {fileID: 11400000, guid: 558047ec2a68a9f47b82410a303abfd0, type: 2}
+  onGoInsane: {fileID: 11400000, guid: e53ff158097dcca4e872c35629d1b1ed, type: 2}
 --- !u!114 &1170892686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,22 +284,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   input: {fileID: 7734100179996136551}
---- !u!114 &7026857029642244600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7734100179996136547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94844c139c6d2e44c8935f18d8dde45e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footsteps:
-  - {fileID: 8300000, guid: 876d39d6d4912ff43b01ee71555f1836, type: 3}
-  - {fileID: 8300000, guid: 3c8852379cfec2f40bf1ccc0cfa71c9e, type: 3}
-  interval: 0.5
 --- !u!114 &8929065640780248005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,10 +296,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb5ed26f9474522bad9ebdbb1f1cb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 6859096937882116277}
-  tiredAudio: {fileID: 8300000, guid: eb5c2ee238fae8d43a95628fd1e3f6c6, type: 3}
-  exhaustedAudio: {fileID: 8300000, guid: 24e7c0df55f7df2419a5857f3e72ae0a, type: 3}
-  volume: 1
+  tired:
+    Guid:
+      Data1: -921577918
+      Data2: 1131247252
+      Data3: 226208392
+      Data4: -1027326254
+    Path: event:/Player/Breath
+  exhausted:
+    Guid:
+      Data1: 405506275
+      Data2: 1102237497
+      Data3: 1588677254
+      Data4: 374654453
+    Path: event:/Player/FasterBreath
+  hide:
+    Guid:
+      Data1: -318770910
+      Data2: 1277269862
+      Data3: -674573440
+      Data4: -273675859
+    Path: event:/Player/HideoutEnter
+  leave:
+    Guid:
+      Data1: -1870950844
+      Data2: 1167044527
+      Data3: 1303338891
+      Data4: 1804396310
+    Path: event:/Player/HideoutExit
   percentageToExhausted: 50
   insanityReward: 1
   insanity: {fileID: 11400000, guid: c94776497f346824984f8bf99fb6f8d4, type: 2}

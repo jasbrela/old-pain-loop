@@ -37,11 +37,7 @@ namespace PanicPlayhouse.Scripts.UI
             _asyncOperation = SceneManager.LoadSceneAsync(NextScene);
             _asyncOperation.allowSceneActivation = false;
 
-            while (!_asyncOperation.isDone)
-            {
-                Debug.Log($"[scene]:{SceneManager.GetSceneByBuildIndex(NextScene).name} [load progress]: {_asyncOperation.progress}");
-                yield return null;
-            }
+            while (!_asyncOperation.isDone) yield return null;
         }
 
         public void LoadMenuScene()

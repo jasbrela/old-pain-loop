@@ -5,7 +5,6 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
 {
     public class GoldenBeadMaterialBase : MonoBehaviour
     {
-        [SerializeField] private AudioClip fit;
         [SerializeField] private int correctValue;
         
         public GoldenBeadMaterialPuzzle Puzzle
@@ -41,7 +40,6 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         {
             if (!other.TryGetComponent(out Pushable push)) return;
             
-            _puzzle.PlayClip(fit);
             _inside.Add(push);
             Puzzle.OnPressBase(this);
         }

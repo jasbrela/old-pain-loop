@@ -1,20 +1,28 @@
 using System.Collections;
+using FMOD.Studio;
+using FMODUnity;
 using NaughtyAttributes;
 using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.Entities.Player;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AI;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace PanicPlayhouse.Scripts.Entities.Monster
 {
     public class MonsterMovement : MonoBehaviour
     {
-        [SerializeField] private AudioClip knockSfx;
-        [SerializeField] private AudioSource twoDSource;
-        [SerializeField] private AudioClip attackSound;
-        [SerializeField] private AudioSource heartbeatSource;
-        [SerializeField] private AudioSource followingMusicSource;
+        [Header("Sound")]
+        [SerializeField] private EventReference knock;
+        [SerializeField] private EventReference breath;
+        [SerializeField] private EventReference attack;
+        [SerializeField] private EventReference heartbeat;
+        [SerializeField] private EventReference chasingMusic;
+        [SerializeField] private EventReference footstep;
+
+        [Header("General")]
+        [Label("Rigidbody")] [SerializeField] private Rigidbody rb;
         [SerializeField] private PlayerHiddenStatus player;
         [SerializeField] private FloatVariable playerInsanity;
         [SerializeField] private SpriteRenderer spriteRenderer;
@@ -24,7 +32,6 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         [SerializeField] private float visionDistance;
         [SerializeField] private float giveUpDistance;
         [SerializeField] private float killDistance;
-        [SerializeField] private FootstepsAudio footsteps;
         [SerializeField] private NavMeshAgent agent;
         [Label("Animation")][SerializeField] private EntityAnimation anim;
         private Vector3 _defaultPos;
@@ -33,19 +40,26 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         [Header("DEBUG")]
         [SerializeField] [ReadOnly] private float distanceFromDestination;
         [SerializeField] [ReadOnly] private float distanceFromPlayer;
-        [SerializeField] [ReadOnly] private float distanceFromDefaultPos;
-        [SerializeField] [ReadOnly] private bool isComingBack;
         [SerializeField] [ReadOnly] private bool isCheckingPlayer;
         [SerializeField] [ReadOnly] private bool wasCheckingPlayer;
         [SerializeField] [ReadOnly] private bool wasPathComplete;
         [SerializeField] [ReadOnly] private bool canKillHiddenPlayer;
         [SerializeField] [ReadOnly] private bool isFollowingPlayer;
 
+        private EventInstance _footstepInstance;
+        private EventInstance _heartbeatInstance;
+        private EventInstance _chasingMusicInstance;
+        private EventInstance _breathInstance;
+
+        private AudioManager _audio;
+
         private void Start()
         {
             agent.speed = speed;
             _defaultPos = transform.position;
             StartCoroutine(CheckPathStatus());
+            _audio = FindObjectOfType<AudioManager>();
+            _audio.PlayAudioInLoop(ref _breathInstance, breath, rb);
         }
 
         public void OnTriggerMonster()
@@ -67,7 +81,6 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         {
             isFollowingPlayer = false;
             isCheckingPlayer = false;
-            isComingBack = true;
             anim.Walking.SetBool(false);
             agent.destination = _defaultPos;
             transform.position = _defaultPos;
@@ -77,8 +90,8 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         public void OnPlayerRespawn()
         {
             // safe checks
-            heartbeatSource.Stop();
-            followingMusicSource.Stop();
+            _audio.StopAudioInLoop(_heartbeatInstance);
+            _audio.StopAudioInLoop(_chasingMusicInstance);
         }
 
         private IEnumerator CheckPathStatus()
@@ -93,7 +106,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 
                 distanceFromDestination = Vector3.Distance(monster, agent.destination);
                 distanceFromPlayer = Vector3.Distance(monster, player.transform.position);
-                distanceFromDefaultPos = Vector3.Distance(monster, _defaultPos);
+                Vector3.Distance(monster, _defaultPos);
 
                 if (isCheckingPlayer)
                 {
@@ -105,9 +118,8 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     isCheckingPlayer = false;
                     wasCheckingPlayer = true;
                     agent.destination = player.transform.position;
-                    footsteps.IsMoving = true;
+                    _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                     anim.Walking.SetBool(true);
-                    isComingBack = false;
                     spriteRenderer.flipX = monster.x - agent.destination.x > 0;
                 }
                 else if (distanceFromPlayer <= killDistance && (!player.IsHidden || canKillHiddenPlayer))
@@ -115,14 +127,14 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 #if UNITY_EDITOR
                     Debug.Log("KillPlayer");
 #endif
-                    if (player.IsHidden && knockSfx != null)
+                    if (player.IsHidden)
                     {
-                        twoDSource.PlayOneShot(knockSfx);
+                        _audio.PlayOneShot(knock);
                     }
-                    twoDSource.PlayOneShot(attackSound);
+                    _audio.PlayOneShot(attack);
                     // KILL PLAYER
                     playerInsanity.Value = playerInsanity.MaxValue;
-                    followingMusicSource.Stop();
+                    _audio.StopAudioInLoop(_chasingMusicInstance, STOP_MODE.ALLOWFADEOUT);
                     anim.Attack.SetTrigger();
                     if (canKillHiddenPlayer) canKillHiddenPlayer = false;
                     agent.speed = 0;
@@ -135,13 +147,12 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 #endif
                     // FOLLOW PLAYER
                     wasPathComplete = false;
-                    if (!followingMusicSource.isPlaying) followingMusicSource.Play();
-                    if (!heartbeatSource.isPlaying) heartbeatSource.Play();
+                    _audio.PlayAudioInLoop(ref _chasingMusicInstance, chasingMusic);
+                    _audio.PlayAudioInLoop(ref _heartbeatInstance, heartbeat);
                     isFollowingPlayer = true;
                     anim.Walking.SetBool(true);
                     agent.destination = player.transform.position;
-                    footsteps.IsMoving = true;
-                    isComingBack = false;
+                    _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                 }
                 else if (!wasPathComplete && distanceFromDestination <= agent.stoppingDistance)
                 {
@@ -150,7 +161,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     Debug.Log("PathComplete");
 #endif
                     // PATH COMPLETED
-                    footsteps.IsMoving = false;
+                    _audio.StopAudioInLoop(_footstepInstance);
                     anim.Walking.SetBool(false);
                     if (wasCheckingPlayer || isFollowingPlayer)
                     {
@@ -159,12 +170,11 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                         {
                             wasPathComplete = false;
                             wasCheckingPlayer = false;
-                            isComingBack = true;
                             agent.destination = _defaultPos;
                             anim.Walking.SetBool(true);
-                            footsteps.IsMoving = true;
-                            if (followingMusicSource.isPlaying) followingMusicSource.Stop();
-                            if (heartbeatSource.isPlaying) heartbeatSource.Stop();
+                            _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
+                            _audio.StopAudioInLoop(_chasingMusicInstance, STOP_MODE.ALLOWFADEOUT);
+                            _audio.StopAudioInLoop(_heartbeatInstance);
                         }
                     }
                 }

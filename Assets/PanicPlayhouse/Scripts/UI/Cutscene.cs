@@ -2,27 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using PanicPlayhouse.Scripts.Camera;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 namespace PanicPlayhouse.Scripts.UI
 {
     public class Cutscene : MonoBehaviour
     {
-        [SerializeField] private List<Image> images;
+        [SerializeField] private PlayerInput input;
+        [SerializeField] private GameObject imagesParent;
+        [SerializeField] private List<GameObject> images;
+        [SerializeField] private int secondsPerScene;
         [SerializeField] private GameObject tutorial;
         [SerializeField] private CameraFade fade;
-        [SerializeField] private int secondsPerScene;
         [SerializeField] private SceneLoader loader;
-        
+
         private int _currentScene;
+        private Coroutine _coroutine;
 
         private void Start()
         {
             tutorial.SetActive(false);
-            StartCoroutine(StartCutscene());
+            _coroutine = StartCoroutine(StartCutscene());
+            
+            SetUpControls();
         }
         
+        private void SetUpControls()
+        {
+            input.actions["Skip"].performed += Skip;
+        }
+
+        private void OnDisable()
+        {
+            if (input == null) return;
+            DisableControls();
+        }
+
+        private void DisableControls()
+        {
+            input.actions["Skip"].performed -= Skip;
+        }
+
+        private void Skip(InputAction.CallbackContext ctx)
+        {
+#if UNITY_EDITOR
+            Debug.Log("Skipping cutscene...");
+#endif
+            DisableControls();
+            StopCoroutine(_coroutine);
+            StartCoroutine(OnSkip());
+        }
+
+
         private IEnumerator StartCutscene()
         {
             while (_currentScene != images.Count)
@@ -32,9 +63,26 @@ namespace PanicPlayhouse.Scripts.UI
                 yield return new WaitForSeconds(secondsPerScene);
                 fade.FadeIn();
                 yield return new WaitForSeconds(fade.Duration);
-                images[_currentScene].gameObject.SetActive(false);
+                images[_currentScene].SetActive(false);
                 _currentScene++;
             }
+
+            ShowTutorial();
+        }
+
+        private IEnumerator OnSkip()
+        {
+            fade.FadeIn();
+            yield return new WaitForSeconds(fade.Duration);
+            imagesParent.SetActive(false);
+            ShowTutorial();
+            fade.FadeOut();
+            yield return new WaitForSeconds(fade.Duration);
+        }
+
+        private void ShowTutorial()
+        {
+            DisableControls();
             loader.PreLoadNextScene();
             tutorial.SetActive(true);
         }
