@@ -13,7 +13,6 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         [Header("Movement")]
         [SerializeField] private float defaultForce;
         [SerializeField] private float defaultMaxVel;
-        [SerializeField] private Vector3Variable lastKnownPos;
         [SerializeField] private EventReference footsteps;
         [Header("Components")]
         [SerializeField] private SpriteRenderer spriteRenderer;
@@ -64,7 +63,6 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             if (_previousInput != Vector3.zero)
             {
                 _audio.PlayAudioInLoop(ref _footstepInstance, footsteps);
-                //_audio.PlayAudioInLoop(ref _footstepInstance, footsteps, rb);
             }
             else
             {
@@ -100,11 +98,6 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             rb.velocity = vel;
             anim.Walking.SetBool(false);            
             _audio.StopAudioInLoop(_footstepInstance);
-        }
-
-        public void SaveLastKnownPosition()
-        {
-            lastKnownPos.Value = transform.position;
         }
     }
 }

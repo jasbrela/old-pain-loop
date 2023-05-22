@@ -48,6 +48,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             if (!other.TryGetComponent(out Pushable push)) return;
             
             _inside.Remove(push);
+            Puzzle.OnReleaseBase(this);
         }
     }
 }

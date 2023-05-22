@@ -18,12 +18,12 @@ namespace PanicPlayhouse.Scripts.UI
 
         public void OnClick()
         {
-            if (_audio != null) _audio.PlayOneShot(click);
+            if (_audio != null && !click.IsNull) _audio.PlayOneShot(click);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (_audio != null) _audio.PlayOneShot(chalk);
+            if (_audio != null && !chalk.IsNull) _audio.PlayOneShot(chalk);
         }
     }
 }

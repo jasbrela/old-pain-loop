@@ -31,7 +31,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         {
             yield return new WaitForSeconds(2);
             transform.position = checkpoint.Value;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
             _goneInsane = false;
             onRespawn.Raise();
             insanity.Value = insanityOnRespawn;

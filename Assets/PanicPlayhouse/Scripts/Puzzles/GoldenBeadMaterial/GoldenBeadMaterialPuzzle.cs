@@ -87,5 +87,23 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
 
             insanity.Value += insanityPenalty;
         }
+        
+        public void OnReleaseBase(GoldenBeadMaterialBase matBase)
+        {
+            _areCorrect[_matBases.IndexOf(matBase)] = matBase.IsCorrect;
+            
+            if (_areCorrect.IndexOf(false) == -1)
+            {
+                _audio.PlayOneShot(success);
+                if (onFinish != null) onFinish.Raise();
+                IsFinished = true;
+                insanity.Value -= insanityReward;
+                
+                foreach (var pushable in _pushables)
+                    pushable.IsBlocked = true;
+            }
+
+            insanity.Value += insanityPenalty;
+        }
     }
 }

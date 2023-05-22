@@ -1407,11 +1407,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chalk:
     Guid:
-      Data1: -1480611189
-      Data2: 1265376966
-      Data3: -1970106184
-      Data4: -1256854717
-    Path: event:/UI/Hover
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   click:
     Guid:
       Data1: -722324190
@@ -1454,7 +1454,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -25}
+  m_AnchoredPosition: {x: 0, y: -25.00003}
   m_SizeDelta: {x: 0, y: -550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &186323219
@@ -2644,11 +2644,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chalk:
     Guid:
-      Data1: -1480611189
-      Data2: 1265376966
-      Data3: -1970106184
-      Data4: -1256854717
-    Path: event:/UI/Hover
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   click:
     Guid:
       Data1: -722324190
@@ -6052,11 +6052,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chalk:
     Guid:
-      Data1: -1480611189
-      Data2: 1265376966
-      Data3: -1970106184
-      Data4: -1256854717
-    Path: event:/UI/Hover
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   click:
     Guid:
       Data1: -722324190

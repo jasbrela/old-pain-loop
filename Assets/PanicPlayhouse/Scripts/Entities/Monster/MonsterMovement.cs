@@ -44,6 +44,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         [SerializeField] [ReadOnly] private bool wasCheckingPlayer;
         [SerializeField] [ReadOnly] private bool wasPathComplete;
         [SerializeField] [ReadOnly] private bool canKillHiddenPlayer;
+        [SerializeField] [ReadOnly] private bool killedPlayer;
         [SerializeField] [ReadOnly] private bool isFollowingPlayer;
 
         private EventInstance _footstepInstance;
@@ -83,13 +84,15 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             isCheckingPlayer = false;
             anim.Walking.SetBool(false);
             agent.destination = _defaultPos;
-            transform.position = _defaultPos;
+            //transform.position = _defaultPos;
             agent.speed = speed;
         }
 
         public void OnPlayerRespawn()
         {
-            // safe checks
+            //transform.position = _defaultPos;
+            agent.destination = _defaultPos;
+            killedPlayer = false;
             _audio.StopAudioInLoop(_heartbeatInstance);
             _audio.StopAudioInLoop(_chasingMusicInstance);
         }
@@ -122,17 +125,14 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     anim.Walking.SetBool(true);
                     spriteRenderer.flipX = monster.x - agent.destination.x > 0;
                 }
-                else if (distanceFromPlayer <= killDistance && (!player.IsHidden || canKillHiddenPlayer))
+                else if (!killedPlayer && distanceFromPlayer <= killDistance && (!player.IsHidden || canKillHiddenPlayer))
                 {
 #if UNITY_EDITOR
                     Debug.Log("KillPlayer");
 #endif
-                    if (player.IsHidden)
-                    {
-                        _audio.PlayOneShot(knock);
-                    }
-                    _audio.PlayOneShot(attack);
                     // KILL PLAYER
+                    _audio.PlayOneShot(player.IsHidden ? knock : attack);
+                    killedPlayer = true;
                     playerInsanity.Value = playerInsanity.MaxValue;
                     _audio.StopAudioInLoop(_chasingMusicInstance, STOP_MODE.ALLOWFADEOUT);
                     anim.Attack.SetTrigger();
@@ -140,7 +140,8 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     agent.speed = 0;
                 }
                 else if ((player.IsHidden && canKillHiddenPlayer || !player.IsHidden) &&
-                           (distanceFromPlayer <= visionDistance || isFollowingPlayer && distanceFromPlayer <= giveUpDistance))
+                           (distanceFromPlayer <= visionDistance || isFollowingPlayer && distanceFromPlayer <= giveUpDistance)
+                           && !killedPlayer)
                 {
 #if UNITY_EDITOR
                     Debug.Log("FollowingPlayer");

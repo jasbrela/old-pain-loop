@@ -123,10 +123,10 @@ MonoBehaviour:
   Path: FMOD/PainLoop/Build/Desktop/Master.strings.bank
   Name: Build/Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638203636019271972
+  lastModified: 638203851560437764
   FileSizes:
   - Name: 
-    Value: 2132
+    Value: 2168
   Exists: 1
 --- !u!114 &-5971346933030796101
 MonoBehaviour:
@@ -170,7 +170,7 @@ MonoBehaviour:
   Path: FMOD/PainLoop/Build/Desktop/Sounds.bank
   Name: Build/Desktop/Sounds
   StudioPath: bank:/Sounds
-  lastModified: 638203038191082168
+  lastModified: 638203851618485695
   FileSizes: []
   Exists: 1
 --- !u!114 &-4823670718652974829
@@ -296,7 +296,7 @@ MonoBehaviour:
   Path: FMOD/PainLoop/Build/Desktop/Music.bank
   Name: Build/Desktop/Music
   StudioPath: bank:/Music
-  lastModified: 638203038189613533
+  lastModified: 638203851591814960
   FileSizes: []
   Exists: 1
 --- !u!114 &-770166402220809846
@@ -450,12 +450,13 @@ MonoBehaviour:
   - {fileID: 5909983218414446844}
   - {fileID: -7699927182980157075}
   - {fileID: -6212330381756551538}
+  - {fileID: 3681041287177473342}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7203425406796913588}
   StringsBanks:
   - {fileID: -6026202721322306731}
-  cacheTime: 638203636019271972
+  cacheTime: 638203851618485695
   cacheVersion: 131603
 --- !u!114 &884274138773877835
 MonoBehaviour:
@@ -565,6 +566,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5568
+--- !u!114 &3681041287177473342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monster/Knock
+  m_EditorClassIdentifier: 
+  Path: event:/Monster/Knock
+  Guid:
+    Data1: 1340107690
+    Data2: 1334305799
+    Data3: -1517150024
+    Data4: 769774886
+  Banks:
+  - {fileID: -4962809133934978678}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4358352869783707237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,7 +770,7 @@ MonoBehaviour:
   Path: FMOD/PainLoop/Build/Desktop/Master.bank
   Name: Build/Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 638203636019231975
+  lastModified: 638203851560397737
   FileSizes: []
   Exists: 1
 --- !u!114 &7557553094967632782
