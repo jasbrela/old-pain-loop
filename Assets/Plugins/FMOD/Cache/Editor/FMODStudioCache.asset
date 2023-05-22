@@ -170,7 +170,7 @@ MonoBehaviour:
   Path: FMOD/PainLoop/Build/Desktop/Sounds.bank
   Name: Build/Desktop/Sounds
   StudioPath: bank:/Sounds
-  lastModified: 638202908383686758
+  lastModified: 638203038191082168
   FileSizes: []
   Exists: 1
 --- !u!114 &-4823670718652974829
@@ -296,7 +296,7 @@ MonoBehaviour:
   Path: FMOD/PainLoop/Build/Desktop/Music.bank
   Name: Build/Desktop/Music
   StudioPath: bank:/Music
-  lastModified: 638202888549522474
+  lastModified: 638203038189613533
   FileSizes: []
   Exists: 1
 --- !u!114 &-770166402220809846
@@ -350,8 +350,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 10000
+  MinDistance: 0.8
+  MaxDistance: 90
   Length: 1672
 --- !u!114 &-139169837577214085
 MonoBehaviour:
@@ -455,7 +455,7 @@ MonoBehaviour:
   - {fileID: 7203425406796913588}
   StringsBanks:
   - {fileID: -6026202721322306731}
-  cacheTime: 638202908383686758
+  cacheTime: 638203038191082168
   cacheVersion: 131603
 --- !u!114 &884274138773877835
 MonoBehaviour:
@@ -506,11 +506,11 @@ MonoBehaviour:
   - {fileID: -1465937641262238199}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 118824
 --- !u!114 &2815303269161040962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,11 +587,11 @@ MonoBehaviour:
   - {fileID: -1465937641262238199}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 48360
 --- !u!114 &5394418496790103952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,8 +616,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 10000
+  MinDistance: 1
+  MaxDistance: 50
   Length: 11064
 --- !u!114 &5659965674543036213
 MonoBehaviour:

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Portuguese (Brazil) (pt-BR)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-Portuguese (Brazil) (pt-BR)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e87542c34ed948e49bf871dfe8dc0777
+  m_SerializeEntries:
+  - m_GUID: 917cd093a6a531a4faef8c602838e083
+    m_Address: sair_hover
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  - m_GUID: 26342cd1955e86344ac6efa8fe62b598
+    m_Address: sair
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  - m_GUID: d60a0ca7fb2264e4695da2a753648f14
+    m_Address: comecar
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  - m_GUID: 07520ecb234db5045afdab8346ff16ba
+    m_Address: comecar_hover
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  - m_GUID: edb3578880dc87c478af445c51e30f5a
+    m_Address: creditos
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  - m_GUID: bb2e34deb1359234696986b5bcc4d1f1
+    m_Address: creditos_hover
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: d4f2901c473a3d84a921e2285aad8f0c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: dc86e01afd5fad44fba54ea0c892b180, type: 2}
+    - {fileID: 11400000, guid: e9b3b14597db82b4a93481dbd73134dc, type: 2}

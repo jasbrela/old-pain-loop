@@ -82,6 +82,7 @@ namespace PanicPlayhouse.Scripts.UI
 
         private void ShowTutorial()
         {
+            Cursor.visible = true;
             DisableControls();
             loader.PreLoadNextScene();
             tutorial.SetActive(true);

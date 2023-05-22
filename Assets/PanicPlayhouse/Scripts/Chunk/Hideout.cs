@@ -7,7 +7,6 @@ namespace PanicPlayhouse.Scripts.Chunk
     public class Hideout : Interactable
     {
         [SerializeField] private Event enter;
-        [SerializeField] private Event exit;
         private bool _isHidden;
 
         public override void OnInteract()
@@ -18,10 +17,11 @@ namespace PanicPlayhouse.Scripts.Chunk
             {
                 enter.Raise();
             }
-            else
-            {
-                exit.Raise();
-            }
+        }
+
+        public void OnExitHideout()
+        {
+            _isHidden = false;
         }
     }
 }

@@ -554,8 +554,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   duration: 1
-  source: {fileID: 728731135965290270}
-  drag: {fileID: 8300000, guid: a37028bc2e91f3041affa48c948f8937, type: 3}
+  drag:
+    Guid:
+      Data1: 103157692
+      Data2: 1297533507
+      Data3: -573588051
+      Data4: -1006240165
+    Path: event:/Puzzles/GoldenBeads/Drag
 --- !u!65 &4385566547989614996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1041,8 +1046,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   duration: 1
-  source: {fileID: 996273379263584398}
-  drag: {fileID: 8300000, guid: a37028bc2e91f3041affa48c948f8937, type: 3}
+  drag:
+    Guid:
+      Data1: 103157692
+      Data2: 1297533507
+      Data3: -573588051
+      Data4: -1006240165
+    Path: event:/Puzzles/GoldenBeads/Drag
 --- !u!65 &8884361991693590465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1821,8 +1831,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   duration: 1
-  source: {fileID: 6790101740312733072}
-  drag: {fileID: 8300000, guid: a37028bc2e91f3041affa48c948f8937, type: 3}
+  drag:
+    Guid:
+      Data1: 103157692
+      Data2: 1297533507
+      Data3: -573588051
+      Data4: -1006240165
+    Path: event:/Puzzles/GoldenBeads/Drag
 --- !u!65 &5121778115323642731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1996,7 +2011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd80e22ea85494eb9d0800f3b0646e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fit: {fileID: 8300000, guid: 362f0a8c409c9e148abfe9ddd57056bc, type: 3}
   correctValue: 0
 --- !u!135 &76984965275140303
 SphereCollider:
@@ -2352,8 +2366,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   duration: 1
-  source: {fileID: 4221474660579030114}
-  drag: {fileID: 8300000, guid: a37028bc2e91f3041affa48c948f8937, type: 3}
+  drag:
+    Guid:
+      Data1: 103157692
+      Data2: 1297533507
+      Data3: -573588051
+      Data4: -1006240165
+    Path: event:/Puzzles/GoldenBeads/Drag
 --- !u!65 &8712680825548931919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2637,8 +2656,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   duration: 1
-  source: {fileID: 6977050340635507070}
-  drag: {fileID: 8300000, guid: a37028bc2e91f3041affa48c948f8937, type: 3}
+  drag:
+    Guid:
+      Data1: 103157692
+      Data2: 1297533507
+      Data3: -573588051
+      Data4: -1006240165
+    Path: event:/Puzzles/GoldenBeads/Drag
 --- !u!65 &132476024114923985
 BoxCollider:
   m_ObjectHideFlags: 0

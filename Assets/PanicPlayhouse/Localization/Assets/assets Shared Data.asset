@@ -14,9 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: assets
   m_TableCollectionNameGuidString: 604ecb50f12bcf34a9744558d9c0b6cb
-  m_Entries: []
+  m_Entries:
+  - m_Id: 136960718172160
+    m_Key: quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137144529350656
+    m_Key: quit_hover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139728916869120
+    m_Key: start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139730519093248
+    m_Key: start_hover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139832532955136
+    m_Key: credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139834617524224
+    m_Key: credits_hover
+    m_Metadata:
+      m_Items: []
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 4247611828827062285
   m_KeyGenerator:
     rid: 4247611821364084761
   references:
@@ -26,3 +51,33 @@ MonoBehaviour:
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1684686935121
+    - rid: 4247611828827062285
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 136960718172160
+          m_TableCodes:
+          - en
+          - pt-BR
+        - m_KeyId: 137144529350656
+          m_TableCodes:
+          - en
+          - pt-BR
+        - m_KeyId: 139728916869120
+          m_TableCodes:
+          - en
+          - pt-BR
+        - m_KeyId: 139730519093248
+          m_TableCodes:
+          - en
+          - pt-BR
+        - m_KeyId: 139832532955136
+          m_TableCodes:
+          - en
+          - pt-BR
+        - m_KeyId: 139834617524224
+          m_TableCodes:
+          - en
+          - pt-BR
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
