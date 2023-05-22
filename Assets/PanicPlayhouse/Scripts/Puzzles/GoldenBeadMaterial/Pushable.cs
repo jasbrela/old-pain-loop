@@ -1,4 +1,6 @@
 ﻿using DG.Tweening;
+using FMODUnity;
+using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.Chunk;
 using UnityEngine;
 
@@ -12,9 +14,10 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         [SerializeField] private float duration = 1f;
         
         [Header("SFX")]
-        [SerializeField] private AudioSource source;
-        [SerializeField] private AudioClip drag;
+        [SerializeField] private EventReference drag;
 
+        private AudioManager _audio;
+        
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;
@@ -32,9 +35,9 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             var size = Physics.OverlapSphereNonAlloc(gameObject.transform.position + forward * radius, radius/2, results, avoidOverlap);
             
             if (size > 0) return;
-            
-            
-            source.PlayOneShot(drag);
+
+            if (_audio == null) _audio = FindObjectOfType<AudioManager>();
+            _audio.PlayOneShot(drag);
 
             gameObject.transform.DOMove(gameObject.transform.position + forward * radius, duration);
         }

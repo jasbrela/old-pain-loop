@@ -43,6 +43,38 @@ MonoBehaviour:
     m_Key: diary_paragraph_three
     m_Metadata:
       m_Items: []
+  - m_Id: 402115892899840
+    m_Key: roles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417502428688384
+    m_Key: bus_master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417554295451648
+    m_Key: bus_ambient
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417681697435648
+    m_Key: bus_music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417729638330368
+    m_Key: bus_sfx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417954180395008
+    m_Key: bus_ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 424970235965440
+    m_Key: credits_end
+    m_Metadata:
+      m_Items: []
+  - m_Id: 437707884228608
+    m_Key: instruction
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

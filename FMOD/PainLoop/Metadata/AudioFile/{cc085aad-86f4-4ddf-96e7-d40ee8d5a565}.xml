@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{cc085aad-86f4-4ddf-96e7-d40ee8d5a565}">
+		<property name="assetPath">
+			<value>Giz_Luto.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.5680000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{519b26be-39a1-4dc6-9372-88596cc3c9fe}</destination>
+		</relationship>
+	</object>
+</objects>

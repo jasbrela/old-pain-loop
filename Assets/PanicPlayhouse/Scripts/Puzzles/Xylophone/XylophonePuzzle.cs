@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using FMODUnity;
+using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.Chunk;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
@@ -26,19 +28,21 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         [SerializeField] private Color disabledColor;
 
         [Header("SFX")]
-        [SerializeField] private AudioClip success;
-        [SerializeField] private AudioSource source;
+        [SerializeField] private EventReference success;
+        
+        private AudioManager _audio;
         
         private List<XylophoneButton> _uniqueButtons;
         private int _buttonCount;
         private int _triggerCount;
         private bool _firstButtonPressed;
         
-        private bool IsActivated { get; set; } = false;
-        private bool IsFinished { get; set; } = false;
+        private bool IsActivated { get; set; }
+        private bool IsFinished { get; set; }
         
         private void Start()
         {
+            _audio = FindObjectOfType<AudioManager>();
             _uniqueButtons = new List<XylophoneButton>(FindObjectsOfType<XylophoneButton>());
             
             if (order.Count == 0)
@@ -81,7 +85,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             }
         }
 
-        public void OnPressButton(XylophoneButton button)
+        public void OnPressButton(XylophoneButton button, EventReference reference)
         {
             if (!_firstButtonPressed)
             {
@@ -94,6 +98,8 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             
             if (IsFinished || !IsActivated) return;
 
+            _audio.PlayOneShot(reference, button.transform.position);
+            
             if (order[_buttonCount] == button)
             {
                 drawingsToColor[_buttonCount].color = colors[_buttonCount];
@@ -122,14 +128,9 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             IsActivated = false;
             insanity.Value -= insanityReward;
             if (onFinish != null) onFinish.Raise();
-            if (success != null) source.PlayOneShot(success);
+            _audio.PlayOneShot(success);
 
             foreach (XylophoneButton btn in _uniqueButtons) btn.IsBlocked = true;
-        }
-        
-        public void PlayClip(AudioClip clip)
-        {
-            source.PlayOneShot(clip);
         }
     }
 }

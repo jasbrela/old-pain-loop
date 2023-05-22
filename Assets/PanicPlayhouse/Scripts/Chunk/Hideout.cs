@@ -1,27 +1,25 @@
+using NaughtyAttributes;
 using UnityEngine;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
-
 
 namespace PanicPlayhouse.Scripts.Chunk
 {
     public class Hideout : Interactable
     {
         [SerializeField] private Event enter;
-        [SerializeField] private Event exit;
-        private bool _isHidden;
+        [SerializeField] [ReadOnly] private bool isHidden;
 
         public override void OnInteract()
         {
-            _isHidden = !_isHidden;
+            if (isHidden) return;
+            
+            isHidden = true;
+            enter.Raise();
+        }
 
-            if (_isHidden)
-            {
-                enter.Raise();
-            }
-            else
-            {
-                exit.Raise();
-            }
+        public void OnExitHideout()
+        {
+            isHidden = false;
         }
     }
 }

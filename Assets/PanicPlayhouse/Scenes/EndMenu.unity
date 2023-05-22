@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 238218700}
   - component: {fileID: 238218699}
   - component: {fileID: 238218702}
+  - component: {fileID: 238218703}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -390,7 +391,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 452.8, y: 224}
+  m_SizeDelta: {x: 416.66666, y: 166.66667}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &238218699
 MonoBehaviour:
@@ -421,10 +422,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 7714527b586dc47428be84803e3712fc, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 7714527b586dc47428be84803e3712fc, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 7714527b586dc47428be84803e3712fc, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: fa9e13b7098c18540b8b47298fd85705, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 0e94f66be0cae4e44a1f20ebdd679522, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 0e94f66be0cae4e44a1f20ebdd679522, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 0e94f66be0cae4e44a1f20ebdd679522, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 032799a63b360014ca43dc6e605a27f3, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -447,18 +448,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 381810424}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 6e6193d911ce991488bf83c0d8074294, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1012927064}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -492,7 +481,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fa9e13b7098c18540b8b47298fd85705, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 032799a63b360014ca43dc6e605a27f3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -522,8 +511,140 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc79b1cd6c724f41a813b82a2dd0cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 381810424}
-  clip: {fileID: 8300000, guid: d0763840ccb2c824386ae9c112d11213, type: 3}
+  chalk:
+    Guid:
+      Data1: -1480611189
+      Data2: 1265376966
+      Data3: -1970106184
+      Data4: -1256854717
+    Path: event:/UI/Hover
+  click:
+    Guid:
+      Data1: -1618134994
+      Data2: 1297044439
+      Data3: -876357226
+      Data4: -1324258945
+    Path: event:/UI/Click
+--- !u!114 &238218703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238218697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 4247611843344859278
+  - rid: 4247611843344859281
+  references:
+    version: 2
+    RefIds:
+    - rid: 4247611843344859278
+      type: {class: TrackedUGuiGraphic, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 238218700}
+        m_TrackedProperties:
+          items:
+          - rid: 4247611843344859279
+        m_UpdateType: 0
+    - rid: 4247611843344859279
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859280
+        m_PropertyPath: m_Sprite
+    - rid: 4247611843344859280
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 139832532955136
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611843344859281
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 238218699}
+        m_TrackedProperties:
+          items:
+          - rid: 4247611843344859282
+          - rid: 4247611843344859284
+          - rid: 4247611843344859286
+          - rid: 4247611843344859288
+        m_UpdateType: 0
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 4247611843344859282
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859283
+        m_PropertyPath: m_SpriteState.m_HighlightedSprite
+    - rid: 4247611843344859283
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 139834617524224
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611843344859284
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859285
+        m_PropertyPath: m_SpriteState.m_PressedSprite
+    - rid: 4247611843344859285
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 139834617524224
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611843344859286
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859287
+        m_PropertyPath: m_SpriteState.m_SelectedSprite
+    - rid: 4247611843344859287
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 139834617524224
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611843344859288
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859289
+        m_PropertyPath: m_SpriteState.m_DisabledSprite
+    - rid: 4247611843344859289
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 139832532955136
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
 --- !u!1 &358795735
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,110 +740,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 381810425}
-  - component: {fileID: 381810424}
+  - component: {fileID: 381810426}
   m_Layer: 0
-  m_Name: AudioSource
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &381810424
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381810423}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4548a7caa2cc98d458ba0659026a4ae1, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!4 &381810425
 Transform:
   m_ObjectHideFlags: 0
@@ -738,6 +763,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &381810426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381810423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -325464955
+      Data2: 1171429948
+      Data3: -875308147
+      Data4: 1748753939
+    Path: event:/Music/Menu
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &703932795
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +974,7 @@ GameObject:
   - component: {fileID: 757194753}
   - component: {fileID: 757194752}
   - component: {fileID: 757194755}
+  - component: {fileID: 757194756}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -943,7 +1000,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 388.8, y: 177.84}
+  m_SizeDelta: {x: 347.22226, y: 138.88892}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &757194752
 MonoBehaviour:
@@ -1001,18 +1058,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 381810424}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 6e6193d911ce991488bf83c0d8074294, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &757194753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1063,8 +1108,140 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc79b1cd6c724f41a813b82a2dd0cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 381810424}
-  clip: {fileID: 8300000, guid: d0763840ccb2c824386ae9c112d11213, type: 3}
+  chalk:
+    Guid:
+      Data1: -1480611189
+      Data2: 1265376966
+      Data3: -1970106184
+      Data4: -1256854717
+    Path: event:/UI/Hover
+  click:
+    Guid:
+      Data1: -1618134994
+      Data2: 1297044439
+      Data3: -876357226
+      Data4: -1324258945
+    Path: event:/UI/Click
+--- !u!114 &757194756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757194750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 4247611843344859266
+  - rid: 4247611843344859269
+  references:
+    version: 2
+    RefIds:
+    - rid: 4247611843344859266
+      type: {class: TrackedUGuiGraphic, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 757194753}
+        m_TrackedProperties:
+          items:
+          - rid: 4247611843344859267
+        m_UpdateType: 0
+    - rid: 4247611843344859267
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859268
+        m_PropertyPath: m_Sprite
+    - rid: 4247611843344859268
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 350579833729024
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611843344859269
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 757194752}
+        m_TrackedProperties:
+          items:
+          - rid: 4247611843344859270
+          - rid: 4247611843344859272
+          - rid: 4247611843344859274
+          - rid: 4247611843344859276
+        m_UpdateType: 0
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 4247611843344859270
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859271
+        m_PropertyPath: m_SpriteState.m_HighlightedSprite
+    - rid: 4247611843344859271
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 350598204780544
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611843344859272
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859273
+        m_PropertyPath: m_SpriteState.m_PressedSprite
+    - rid: 4247611843344859273
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 350598204780544
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611843344859274
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859275
+        m_PropertyPath: m_SpriteState.m_SelectedSprite
+    - rid: 4247611843344859275
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 350598204780544
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611843344859276
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859277
+        m_PropertyPath: m_SpriteState.m_DisabledSprite
+    - rid: 4247611843344859277
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 350579833729024
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
 --- !u!1 &761902184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,7 +1570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 875, y: -171.35999}
+  m_AnchoredPosition: {x: 875, y: -218}
   m_SizeDelta: {x: 877, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1064691290
@@ -1414,7 +1591,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: -95.2
+  m_Spacing: -34.14
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -2153,6 +2330,7 @@ GameObject:
   - component: {fileID: 1791026072}
   - component: {fileID: 1791026071}
   - component: {fileID: 1791026073}
+  - component: {fileID: 1791026074}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2293,6 +2471,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 1
   m_AspectRatio: 1.6574723
+--- !u!114 &1791026074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791026069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:8ef055a8911b6be4196602f2ced90531
+    m_TableEntryReference:
+      m_KeyId: 424970235965440
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1791026071}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1927281397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,6 +2631,7 @@ GameObject:
   - component: {fileID: 1947849077}
   - component: {fileID: 1947849080}
   - component: {fileID: 1947849081}
+  - component: {fileID: 1947849082}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -2496,18 +2715,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 381810424}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 6e6193d911ce991488bf83c0d8074294, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1012927064}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -2584,8 +2791,140 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc79b1cd6c724f41a813b82a2dd0cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 381810424}
-  clip: {fileID: 8300000, guid: d0763840ccb2c824386ae9c112d11213, type: 3}
+  chalk:
+    Guid:
+      Data1: -1480611189
+      Data2: 1265376966
+      Data3: -1970106184
+      Data4: -1256854717
+    Path: event:/UI/Hover
+  click:
+    Guid:
+      Data1: -1618134994
+      Data2: 1297044439
+      Data3: -876357226
+      Data4: -1324258945
+    Path: event:/UI/Click
+--- !u!114 &1947849082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947849075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 4247611843344859291
+  - rid: 4247611843344859294
+  references:
+    version: 2
+    RefIds:
+    - rid: 4247611843344859291
+      type: {class: TrackedUGuiGraphic, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 1947849078}
+        m_TrackedProperties:
+          items:
+          - rid: 4247611843344859292
+        m_UpdateType: 0
+    - rid: 4247611843344859292
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859293
+        m_PropertyPath: m_Sprite
+    - rid: 4247611843344859293
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 350613174251520
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611843344859294
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 1947849077}
+        m_TrackedProperties:
+          items:
+          - rid: 4247611843344859295
+          - rid: 4247611843344859297
+          - rid: 4247611843344859299
+          - rid: 4247611843344859301
+        m_UpdateType: 0
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 4247611843344859295
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859296
+        m_PropertyPath: m_SpriteState.m_HighlightedSprite
+    - rid: 4247611843344859296
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 350621420253184
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611843344859297
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859298
+        m_PropertyPath: m_SpriteState.m_PressedSprite
+    - rid: 4247611843344859298
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 350621420253184
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611843344859299
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859300
+        m_PropertyPath: m_SpriteState.m_SelectedSprite
+    - rid: 4247611843344859300
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 350621420253184
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611843344859301
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611843344859302
+        m_PropertyPath: m_SpriteState.m_DisabledSprite
+    - rid: 4247611843344859302
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 350613174251520
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
 --- !u!1 &1948877657
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,8 +3112,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1966538018}
   - component: {fileID: 1966538015}
-  - component: {fileID: 1966538017}
   - component: {fileID: 1966538016}
+  - component: {fileID: 1966538019}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2858,14 +3197,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &1966538017
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966538014}
-  m_Enabled: 1
 --- !u!4 &1966538018
 Transform:
   m_ObjectHideFlags: 0
@@ -2881,6 +3212,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1966538019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966538014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &1982748432
 GameObject:
   m_ObjectHideFlags: 0

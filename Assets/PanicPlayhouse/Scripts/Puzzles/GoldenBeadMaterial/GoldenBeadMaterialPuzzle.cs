@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using FMODUnity;
+using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
@@ -16,18 +18,20 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         [SerializeField] private FloatVariable insanity;
 
         [Header("SFX")]
-        [SerializeField] private AudioSource source;
-        [SerializeField] private AudioClip success;
-        
+        [SerializeField] private EventReference success;
+        [SerializeField] private EventReference fit;
+
+        private AudioManager _audio;
         private List<GoldenBeadMaterialBase> _matBases;
         private List<Pushable> _pushables;
         private List<bool> _areCorrect;
 
-        private bool IsActivated { get; set; } = false;
-        private bool IsFinished { get; set; } = false;
+        private bool IsActivated { get; set; }
+        private bool IsFinished { get; set; }
         
         private void Start()
         {
+            _audio = FindObjectOfType<AudioManager>();
             _pushables = new(FindObjectsOfType<Pushable>());
             _matBases = new(FindObjectsOfType<GoldenBeadMaterialBase>());
             _areCorrect = new List<bool>(_matBases.Count) { false, false, false};
@@ -66,12 +70,13 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
 
         public void OnPressBase(GoldenBeadMaterialBase matBase)
         {
-            Debug.Log(matBase.IsCorrect);
             _areCorrect[_matBases.IndexOf(matBase)] = matBase.IsCorrect;
+
+            _audio.PlayOneShot(fit);
 
             if (_areCorrect.IndexOf(false) == -1)
             {
-                if (success != null) source.PlayOneShot(success);
+                _audio.PlayOneShot(success);
                 if (onFinish != null) onFinish.Raise();
                 IsFinished = true;
                 insanity.Value -= insanityReward;
@@ -81,11 +86,6 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             }
 
             insanity.Value += insanityPenalty;
-        }
-
-        public void PlayClip(AudioClip clip)
-        {
-            source.PlayOneShot(clip);
         }
     }
 }

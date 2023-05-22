@@ -1,14 +1,14 @@
-﻿using PanicPlayhouse.Scripts.Chunk;
+﻿using FMODUnity;
+using PanicPlayhouse.Scripts.Chunk;
 using UnityEngine;
 
 namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
 {
     public class XylophoneButton : Interactable
     {
-        [SerializeField] private AudioSource source;
-        [SerializeField] private AudioClip clip;
-        public bool IsBlocked { get; set; } = false;
-
+        [SerializeField] private EventReference click;
+        public bool IsBlocked { get; set; }
+        
         public XylophonePuzzle Puzzle
         {
             get => _puzzle;
@@ -26,8 +26,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         public override void OnInteract()
         {
             if (IsBlocked) return;
-            source.PlayOneShot(clip);
-            Puzzle.OnPressButton(this);
+            Puzzle.OnPressButton(this, click);
         }
 
         public override void OnEnterRange()

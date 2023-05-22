@@ -1,3 +1,5 @@
+using FMOD.Studio;
+using FMODUnity;
 using NaughtyAttributes;
 using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.ScriptableObjects;
@@ -12,20 +14,22 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         [SerializeField] private float defaultForce;
         [SerializeField] private float defaultMaxVel;
         [SerializeField] private Vector3Variable lastKnownPos;
-        [SerializeField] private FootstepsAudio footsteps;
-
+        [SerializeField] private EventReference footsteps;
         [Header("Components")]
         [SerializeField] private SpriteRenderer spriteRenderer;
         [Label("Rigidbody")] [SerializeField] private Rigidbody rb;
         [SerializeField] private PlayerInput input;
-        [Label("Animation")][SerializeField] private EntityAnimation anim;
+        [Label("Animation")] [SerializeField] private EntityAnimation anim;
         [SerializeField] private PlayerHiddenStatus hiddenStatus;
         
+        private EventInstance _footstepInstance;
+        private AudioManager _audio;
         private Vector3 _previousInput;
         private bool _isHidden;
 
         private void Start()
         {
+            _audio = FindObjectOfType<AudioManager>();
             SetUpControls();
         }
 
@@ -56,8 +60,17 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         private void SetMovement(InputAction.CallbackContext ctx)
         {
             _previousInput = ctx.ReadValue<Vector3>();
-            
-            footsteps.IsMoving = _previousInput != Vector3.zero;
+
+            if (_previousInput != Vector3.zero)
+            {
+                _audio.PlayAudioInLoop(ref _footstepInstance, footsteps);
+                //_audio.PlayAudioInLoop(ref _footstepInstance, footsteps, rb);
+            }
+            else
+            {
+                _audio.StopAudioInLoop(_footstepInstance);
+            }
+
             anim.Walking.SetBool(_previousInput != Vector3.zero);            
             
             if (_previousInput.x != 0) spriteRenderer.flipX = _previousInput.x > 0;
@@ -86,7 +99,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         
             rb.velocity = vel;
             anim.Walking.SetBool(false);            
-            footsteps.IsMoving = false;
+            _audio.StopAudioInLoop(_footstepInstance);
         }
 
         public void SaveLastKnownPosition()
