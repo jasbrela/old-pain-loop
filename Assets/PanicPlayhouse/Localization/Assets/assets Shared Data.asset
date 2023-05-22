@@ -39,6 +39,54 @@ MonoBehaviour:
     m_Key: credits_hover
     m_Metadata:
       m_Items: []
+  - m_Id: 350528294121472
+    m_Key: settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 350560988721152
+    m_Key: settings_hover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 350579833729024
+    m_Key: menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 350598204780544
+    m_Key: menu_hover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 350613174251520
+    m_Key: back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 350621420253184
+    m_Key: back_hover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360344030834688
+    m_Key: audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360354034249728
+    m_Key: audio_selected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360367657349120
+    m_Key: controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360385575415808
+    m_Key: controls_selected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360398355460096
+    m_Key: language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360407067029504
+    m_Key: language_selected
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 4247611828827062285
@@ -79,5 +127,53 @@ MonoBehaviour:
           m_TableCodes:
           - en
           - pt-BR
+        - m_KeyId: 350528294121472
+          m_TableCodes:
+          - en
+          - pt-BR
+        - m_KeyId: 350560988721152
+          m_TableCodes:
+          - pt-BR
+          - en
+        - m_KeyId: 350613174251520
+          m_TableCodes:
+          - pt-BR
+          - en
+        - m_KeyId: 350621420253184
+          m_TableCodes:
+          - pt-BR
+          - en
+        - m_KeyId: 350579833729024
+          m_TableCodes:
+          - en
+          - pt-BR
+        - m_KeyId: 350598204780544
+          m_TableCodes:
+          - en
+          - pt-BR
+        - m_KeyId: 360344030834688
+          m_TableCodes:
+          - en
+          - pt-BR
+        - m_KeyId: 360354034249728
+          m_TableCodes:
+          - en
+          - pt-BR
+        - m_KeyId: 360367657349120
+          m_TableCodes:
+          - pt-BR
+          - en
+        - m_KeyId: 360385575415808
+          m_TableCodes:
+          - pt-BR
+          - en
+        - m_KeyId: 360398355460096
+          m_TableCodes:
+          - pt-BR
+          - en
+        - m_KeyId: 360407067029504
+          m_TableCodes:
+          - pt-BR
+          - en
         m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null

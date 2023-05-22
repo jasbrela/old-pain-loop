@@ -15,7 +15,9 @@ namespace PanicPlayhouse.Scripts
 			get => details;
 			set
 			{
-				Debug.Log("Changed the details");
+#if UNITY_EDITOR
+				Debug.Log("Discord: ".Bold() + "Changed the details");
+#endif
 				details = value;
 				UpdateStatus();
 			}
@@ -50,7 +52,7 @@ namespace PanicPlayhouse.Scripts
 			catch
 			{
 #if UNITY_EDITOR
-				Debug.LogWarning("RunCallbacks: Fail");
+				Debug.LogWarning("Discord:" + " Fail".Bold().Color("#FF4500"));
 #endif
 				Destroy(gameObject);
 			}
@@ -78,14 +80,14 @@ namespace PanicPlayhouse.Scripts
 				activityManager.UpdateActivity(activity, (res) =>
 				{
 #if UNITY_EDITOR
-					if (res != Discord.Result.Ok) Debug.LogWarning("Failed connecting to Discord!");
+					if (res != Discord.Result.Ok) Debug.LogWarning("Discord:" + " Fail".Bold().Color("#FF4500"));
 #endif
 				});
 			}
 			catch
 			{
 #if UNITY_EDITOR
-				Debug.LogWarning("UpdatedStatus: Fail");
+				Debug.LogWarning("Discord:" + " Fail".Bold().Color("#FF4500"));
 #endif
 				Destroy(gameObject);
 			}

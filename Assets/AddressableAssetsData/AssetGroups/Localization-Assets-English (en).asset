@@ -47,6 +47,46 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
+  - m_GUID: 5fab281f70e3be34a9520adae52e9ae7
+    m_Address: settings
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: 1eefad697658ed24c90410886fa995f9
+    m_Address: settings_hover
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: 8eb7db631be4d3b4fb3a10128d45d918
+    m_Address: back_hover
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: 879163ccd520500428244182668a926d
+    m_Address: back
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: 6efb03a17894edc4f89a9dc6f6cc686c
+    m_Address: controls_selected
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: 7339c3e352bdaa5428fc919692cb4cad
+    m_Address: controls
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: 43957bccfd3856642af45969775455e3
+    m_Address: language
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: 2b04cb48a5c82104289ab3ee4004990a
+    m_Address: language_selected
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: d4f2901c473a3d84a921e2285aad8f0c, type: 2}
   m_SchemaSet:

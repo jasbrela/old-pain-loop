@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using FMOD.Studio;
 using FMODUnity;
+using NaughtyAttributes;
 using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
@@ -21,13 +22,19 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         [SerializeField] private PlayerInput input;
         [SerializeField] private Event onLeaveHideout;
         [SerializeField] private float minDelayToLeave;
-
+        [SerializeField] [ReadOnly] private bool isHidden;
+        
         [Header("Insanity")]
         [SerializeField] private float percentageToExhausted;
         [SerializeField] private float insanityReward;
         [SerializeField] private FloatVariable insanity;
-        
-        public bool IsHidden { get; private set; }
+
+        public bool IsHidden
+        {
+            get => isHidden;
+            private set => isHidden = value;
+        }
+
         private AudioManager _audio;
         private bool _canLeave;
         
@@ -53,8 +60,6 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         private void LeaveHideout(InputAction.CallbackContext ctx)
         {
             if (!IsHidden || !_canLeave) return;
-
-            _audio.PlayOneShot(leave);
             if (onLeaveHideout != null) onLeaveHideout.Raise();
         }
 
@@ -70,6 +75,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
             if (IsHidden)
             {
+                _canLeave = false;
                 StartCoroutine(AllowToLeave());
                 if (insanity.Value > insanity.MaxValue * percentageToExhausted / 100)
                 {
@@ -83,7 +89,8 @@ namespace PanicPlayhouse.Scripts.Entities.Player
                 }
             }
             else
-            {
+            { 
+                _audio.PlayOneShot(leave);
                 _audio.StopAudioInLoop(_exhaustedInstance);
                 _audio.StopAudioInLoop(_tiredInstance);
             }

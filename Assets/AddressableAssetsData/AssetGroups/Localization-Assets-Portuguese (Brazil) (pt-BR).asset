@@ -47,6 +47,46 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pt-BR
+  - m_GUID: 5804d9ba49c934c428e84313d00a94c6
+    m_Address: opcoes
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  - m_GUID: 912d39f93aade9b46a789bc0aaabb296
+    m_Address: opcoes_hover
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  - m_GUID: 7f160fc7b0d5d944c8080c84803c7c56
+    m_Address: voltar
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  - m_GUID: d015d4047c1a64d4aa10493db6533211
+    m_Address: voltar_hover
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  - m_GUID: 7f8eeaf6c2033b243b271a4332e22932
+    m_Address: controles
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  - m_GUID: 2d0ba776738d55a4391af8d46f41b7ad
+    m_Address: controles_selected
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  - m_GUID: 7d4ec49736b6a7847877a0617252cf92
+    m_Address: idioma
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+  - m_GUID: 97be94af67cb23642a9c64613cca3829
+    m_Address: idioma_selected
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: d4f2901c473a3d84a921e2285aad8f0c, type: 2}
   m_SchemaSet:

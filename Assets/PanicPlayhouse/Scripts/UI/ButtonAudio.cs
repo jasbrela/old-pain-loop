@@ -1,8 +1,9 @@
 using FMODUnity;
+using PanicPlayhouse.Scripts.Audio;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace PanicPlayhouse.Scripts.Audio
+namespace PanicPlayhouse.Scripts.UI
 {
     public class ButtonAudio : MonoBehaviour, IPointerEnterHandler
     {

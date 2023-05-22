@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f214a84e280e24aa54b4456865ed71, type: 3}
   m_Name: OnMaxInsanityReached
   m_EditorClassIdentifier: 
+  debug: 0

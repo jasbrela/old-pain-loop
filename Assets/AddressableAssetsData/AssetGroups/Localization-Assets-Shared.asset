@@ -25,6 +25,30 @@ MonoBehaviour:
     m_Address: Assets/PanicPlayhouse/Localization/Assets/assets Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: f555748f8fa8da34b8ee66f505654458
+    m_Address: menu_hover
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    - Locale-en
+  - m_GUID: 57d4a4f9ab3ec354b8abdc8e825f968e
+    m_Address: menu
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-pt-BR
+  - m_GUID: 8795f15c54a2ece40ac5f0f54e3c3ae8
+    m_Address: audio
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-pt-BR
+  - m_GUID: babacbaed63fab84b93f882df1f97574
+    m_Address: audio_selected
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-pt-BR
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: d4f2901c473a3d84a921e2285aad8f0c, type: 2}
   m_SchemaSet:

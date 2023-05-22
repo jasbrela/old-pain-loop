@@ -326,6 +326,7 @@ MonoBehaviour:
     Path: event:/Player/HideoutExit
   input: {fileID: 7734100179996136551}
   onLeaveHideout: {fileID: 11400000, guid: 27e13900304a25049a8b597d77284e7b, type: 2}
+  minDelayToLeave: 1
   percentageToExhausted: 50
   insanityReward: 1
   insanity: {fileID: 11400000, guid: c94776497f346824984f8bf99fb6f8d4, type: 2}

@@ -123,7 +123,7 @@ MonoBehaviour:
   Path: FMOD/PainLoop/Build/Desktop/Master.strings.bank
   Name: Build/Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638202861872012674
+  lastModified: 638203636019271972
   FileSizes:
   - Name: 
     Value: 2132
@@ -455,7 +455,7 @@ MonoBehaviour:
   - {fileID: 7203425406796913588}
   StringsBanks:
   - {fileID: -6026202721322306731}
-  cacheTime: 638203038191082168
+  cacheTime: 638203636019271972
   cacheVersion: 131603
 --- !u!114 &884274138773877835
 MonoBehaviour:
@@ -742,7 +742,7 @@ MonoBehaviour:
   Path: FMOD/PainLoop/Build/Desktop/Master.bank
   Name: Build/Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 638202861871967439
+  lastModified: 638203636019231975
   FileSizes: []
   Exists: 1
 --- !u!114 &7557553094967632782

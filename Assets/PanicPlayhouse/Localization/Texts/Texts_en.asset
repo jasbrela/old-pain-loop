@@ -60,6 +60,51 @@ MonoBehaviour:
       what really went down here, no matter how scary it gets.
     m_Metadata:
       m_Items: []
+  - m_Id: 402115892899840
+    m_Localized: 'Game Design
+
+      Game Programmer
+
+      Game Design
+
+      Art
+      / Animation
+
+      Sound / Music
+
+      Narrative'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417502428688384
+    m_Localized: Master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417554295451648
+    m_Localized: Ambient
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417681697435648
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417729638330368
+    m_Localized: Sound Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417954180395008
+    m_Localized: UI (Interface)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 424970235965440
+    m_Localized: "Felipe Vergara\t\tGame Design\r\nGabriela Matias\t\tGame Programmer\nPriscila
+      Januario\tGame Design\r\nRoger Cardoso\t\tArt / Animation\r\nGabriel Scavacini\tSound
+      / Music\r\nFilipe Xavier\t\tNarrative"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 437707884228608
+    m_Localized: Press WASD/Arrows to move, E/F/Space to interact
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

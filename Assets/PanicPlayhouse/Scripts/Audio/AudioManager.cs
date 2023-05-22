@@ -10,11 +10,13 @@ namespace PanicPlayhouse.Scripts.Audio
 {
     public class AudioManager : MonoBehaviour
     {
-        [SerializeField] private SceneLoader loader;
+        [SerializeField] private Boot boot;
         
         private Bus _music;
         private Bus _sfx;
         private Bus _master;
+        private Bus _ambient;
+        private Bus _ui;
         
         private void Awake()
         {
@@ -32,8 +34,8 @@ namespace PanicPlayhouse.Scripts.Audio
             _master = RuntimeManager.GetBus("bus:/");
             _music = RuntimeManager.GetBus("bus:/Music");
             _sfx = RuntimeManager.GetBus("bus:/SFX");
-            _master = RuntimeManager.GetBus("bus:/UI");
-            _master = RuntimeManager.GetBus("bus:/Ambient");
+            _ambient = RuntimeManager.GetBus("bus:/Ambient");
+            _ui = RuntimeManager.GetBus("bus:/UI");
 
             StartCoroutine(CheckIfAllBanksLoaded());
         }
@@ -47,7 +49,7 @@ namespace PanicPlayhouse.Scripts.Audio
 #if UNITY_EDITOR
             Debug.Log("Banks Loaded");
 #endif
-            loader.LoadNextScene();
+            boot.Ready(gameObject);
         }
 
         public void PlayOneShot(EventReference reference, Vector3 pos)
@@ -101,19 +103,19 @@ namespace PanicPlayhouse.Scripts.Audio
             _music.setVolume(volume);
         }
     
-        public void SetSfxVolume(float volume)
+        public void SetSFXVolume(float volume)
         {
             _sfx.setVolume(volume);
         }
         
         public void SetAmbientVolume(float volume)
         {
-            _music.setVolume(volume);
+            _ambient.setVolume(volume);
         }
     
         public void SetUIVolume(float volume)
         {
-            _sfx.setVolume(volume);
+            _ui.setVolume(volume);
         }
     }
 }
