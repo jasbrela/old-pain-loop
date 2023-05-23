@@ -602,6 +602,14 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
       objectReference: {fileID: 64480922}
+    - target: {fileID: 6702330453873080241, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702330453873080241, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6783750890081441022, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -2608,50 +2616,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &429865326
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 429865328}
-  - component: {fileID: 429865327}
-  m_Layer: 0
-  m_Name: AudioUtils
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &429865327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429865326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec1c8a22e9548e796d7863e8724cc05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &429865328
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429865326}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &530852376
 GameObject:
   m_ObjectHideFlags: 0
@@ -4032,8 +3996,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f586bd00c249e4989d7265d114d319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appId: 0
-  details: In the menu
 --- !u!4 &1553430888
 Transform:
   m_ObjectHideFlags: 0

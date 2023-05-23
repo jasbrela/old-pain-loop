@@ -87,6 +87,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pt-BR
+  - m_GUID: e986aa61257d675439a4cc87e1f12798
+    m_Address: espacobarra
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: d4f2901c473a3d84a921e2285aad8f0c, type: 2}
   m_SchemaSet:

@@ -75,6 +75,34 @@ MonoBehaviour:
     m_Key: instruction
     m_Metadata:
       m_Items: []
+  - m_Id: 760206467289088
+    m_Key: press
+    m_Metadata:
+      m_Items: []
+  - m_Id: 760373664829440
+    m_Key: or
+    m_Metadata:
+      m_Items: []
+  - m_Id: 760651390668800
+    m_Key: to_interact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 760781749637120
+    m_Key: to_move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761160281378816
+    m_Key: interact_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761352959315968
+    m_Key: careful_sanity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761537743572992
+    m_Key: careful_desc
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

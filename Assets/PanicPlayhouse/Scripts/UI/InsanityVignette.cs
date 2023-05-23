@@ -20,9 +20,7 @@ namespace PanicPlayhouse.Scripts.UI
         {
             var width = Mathf.Lerp(minInsanityScale.x, _maxInsanityScale.x, insanity.Percentage);
             var height = Mathf.Lerp(minInsanityScale.y, _maxInsanityScale.y, insanity.Percentage);
-            
-            Debug.Log("new size: (" + width + ", "+ height + ") -> " + insanity.Percentage);
-            
+                        
             rect.sizeDelta = new Vector2(width, height);
         }
     }

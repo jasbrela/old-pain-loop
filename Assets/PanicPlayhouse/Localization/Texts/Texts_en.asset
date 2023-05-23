@@ -105,6 +105,36 @@ MonoBehaviour:
     m_Localized: Press WASD/Arrows to move, E/F/Space to interact
     m_Metadata:
       m_Items: []
+  - m_Id: 760206467289088
+    m_Localized: Press
+    m_Metadata:
+      m_Items: []
+  - m_Id: 760373664829440
+    m_Localized: or
+    m_Metadata:
+      m_Items: []
+  - m_Id: 760651390668800
+    m_Localized: to interact with objects.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 760781749637120
+    m_Localized: to move.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761160281378816
+    m_Localized: Interact with a locker to hide. Hiding can be useful to lose the
+      monster and recover sanity.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761352959315968
+    m_Localized: Be careful with your insanity!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761537743572992
+    m_Localized: The more insane you are, the darker your vision will become to the
+      point you finally pass out.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

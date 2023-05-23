@@ -58,13 +58,13 @@ namespace PanicPlayhouse.Scripts.UI
         {
             while (_currentScene != images.Count)
             {
+                _currentScene++;
                 fade.FadeOut();
                 yield return new WaitForSeconds(fade.Duration);
                 yield return new WaitForSeconds(secondsPerScene);
                 fade.FadeIn();
                 yield return new WaitForSeconds(fade.Duration);
                 images[_currentScene].SetActive(true);
-                _currentScene++;
             }
 
             ShowTutorial();

@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PanicPlayhouse/Scenes/MainMenu.unity
     guid: 14450ed3ddc16ec4886bf750422ed41e
-  - enabled: 0
+  - enabled: 1
     path: Assets/PanicPlayhouse/Scenes/PreGame.unity
     guid: 6dec2a4055eca23458bdf80596f4ed57
   - enabled: 1
