@@ -573,7 +573,7 @@ Transform:
   m_GameObject: {fileID: 120768872}
   m_LocalRotation: {x: -0.4889736, y: 0.5107885, z: -0.5107885, w: 0.4889736}
   m_LocalPosition: {x: 0.02, y: -0.09, z: -0}
-  m_LocalScale: {x: 2.0019042, y: 2, z: 12.536147}
+  m_LocalScale: {x: 3.33, y: 2, z: 16.93}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2127011188}
@@ -1886,7 +1886,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2132348908}
-        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Player.PlayerHiddenStatus,
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Entities.Player.PlayerHiddenStatus,
           Assembly-CSharp
         m_MethodName: ChangePlayerHiddenStatus
         m_Mode: 6
@@ -3271,7 +3271,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2132348908}
-        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Player.PlayerHiddenStatus,
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Entities.Player.PlayerHiddenStatus,
           Assembly-CSharp
         m_MethodName: ChangePlayerHiddenStatus
         m_Mode: 6
@@ -7691,19 +7691,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2132348908}
-        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Entities.Player.PlayerHiddenStatus,
-          Assembly-CSharp
-        m_MethodName: ChangePlayerHiddenStatus
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1170892688}
         m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Entities.Player.PlayerMovement,
           Assembly-CSharp
@@ -7733,6 +7720,80 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Entities.Monster.MonsterMovement,
           Assembly-CSharp
         m_MethodName: OnPlayerRespawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2132348908}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Entities.Player.PlayerHiddenStatus,
+          Assembly-CSharp
+        m_MethodName: StopBreathingAudios
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 782584993}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Chunk.Hideout, Assembly-CSharp
+        m_MethodName: OnExitHideout
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2027760397}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Chunk.Hideout, Assembly-CSharp
+        m_MethodName: OnExitHideout
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1055463716}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Chunk.Hideout, Assembly-CSharp
+        m_MethodName: OnExitHideout
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 836023656}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Chunk.Hideout, Assembly-CSharp
+        m_MethodName: OnExitHideout
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1170892688}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.Entities.Player.PlayerMovement,
+          Assembly-CSharp
+        m_MethodName: UnlockMovement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10402,7 +10463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661568695}
   m_LocalRotation: {x: -0.4889736, y: 0.5107885, z: -0.5107885, w: 0.4889736}
-  m_LocalPosition: {x: -1.22, y: -1.01, z: 0}
+  m_LocalPosition: {x: -1.6, y: -0.44, z: -0}
   m_LocalScale: {x: 3.3, y: 2, z: 19.78}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12331,6 +12392,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2321741121382268039, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
+      propertyPath: m_Color.a
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159043163023745031, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
+      propertyPath: m_Color.a
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819112048369925020, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
+      propertyPath: m_Color.a
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428499597618306678, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
+      propertyPath: m_Color.a
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298995709131158541, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
+      propertyPath: m_Color.a
+      value: 0.74509805
+      objectReference: {fileID: 0}
     - target: {fileID: 6399665405427193587, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -12374,6 +12455,18 @@ PrefabInstance:
     - target: {fileID: 6399665405427193587, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453081005878775884, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
+      propertyPath: m_Color.a
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501492834265867443, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
+      propertyPath: m_Color.a
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801689091248814397, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
+      propertyPath: m_Color.a
+      value: 0.74509805
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6573cc3f8ef6fd40917f555c8de16a4, type: 3}
@@ -13560,11 +13653,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5016783327734980381, guid: ff51d090d3efc624ea09be902d7f9ef3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5016783327734980381, guid: ff51d090d3efc624ea09be902d7f9ef3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.77
+      value: 0.4999999
       objectReference: {fileID: 0}
     - target: {fileID: 5016783327734980381, guid: ff51d090d3efc624ea09be902d7f9ef3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13976,46 +14069,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2132348908}
-    - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: knock.Path
-      value: event:/Puzzles/Grief/Click
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: breath.Path
-      value: event:/Monster/Breath
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: knock.Guid.Data1
-      value: -722324190
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: knock.Guid.Data2
-      value: 1313796250
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: knock.Guid.Data3
-      value: -754067560
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: knock.Guid.Data4
-      value: -1048644797
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: breath.Guid.Data1
-      value: -1647065732
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: breath.Guid.Data2
-      value: 1086785991
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: breath.Guid.Data3
-      value: 608372611
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951687702779899637, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
-      propertyPath: breath.Guid.Data4
-      value: -1441258881
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25e6268627950cb47bef604bbbd45551, type: 3}
 --- !u!114 &6262647242452103649 stripped

@@ -1,14 +1,17 @@
 using TMPro;
 using UnityEngine;
 
-public class GameVersion : MonoBehaviour
+namespace PanicPlayhouse.Scripts.UI
 {
-    [SerializeField] private TextMeshProUGUI text;
-    
-    void Start()
+    public class GameVersion : MonoBehaviour
     {
-        if (text == null) TryGetComponent(out text);
-        text.text = $"Pain Loop {Application.version}";
-    }
+        [SerializeField] private TextMeshProUGUI text;
+    
+        void Start()
+        {
+            if (text == null) TryGetComponent(out text);
+            text.text = $"Pain Loop {Application.version}";
+        }
 
+    }
 }

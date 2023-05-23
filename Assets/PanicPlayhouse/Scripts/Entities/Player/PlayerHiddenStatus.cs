@@ -91,9 +91,15 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             else
             { 
                 _audio.PlayOneShot(leave);
-                _audio.StopAudioInLoop(_exhaustedInstance);
-                _audio.StopAudioInLoop(_tiredInstance);
+                StopBreathingAudios();
             }
+        }
+
+        public void StopBreathingAudios()
+        {
+            isHidden = false;
+            _audio.StopAudioInLoop(_exhaustedInstance);
+            _audio.StopAudioInLoop(_tiredInstance);
         }
 
         private IEnumerator AllowToLeave()

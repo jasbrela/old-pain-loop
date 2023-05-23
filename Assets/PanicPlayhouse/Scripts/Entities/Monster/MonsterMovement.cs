@@ -84,13 +84,13 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             isCheckingPlayer = false;
             anim.Walking.SetBool(false);
             agent.destination = _defaultPos;
-            //transform.position = _defaultPos;
+            transform.position = _defaultPos;
             agent.speed = speed;
         }
 
         public void OnPlayerRespawn()
         {
-            //transform.position = _defaultPos;
+            transform.position = _defaultPos;
             agent.destination = _defaultPos;
             killedPlayer = false;
             _audio.StopAudioInLoop(_heartbeatInstance);
@@ -131,7 +131,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     Debug.Log("KillPlayer");
 #endif
                     // KILL PLAYER
-                    _audio.PlayOneShot(player.IsHidden ? knock : attack);
+                    _audio.PlayOneShot(canKillHiddenPlayer ? knock : attack);
                     killedPlayer = true;
                     playerInsanity.Value = playerInsanity.MaxValue;
                     _audio.StopAudioInLoop(_chasingMusicInstance, STOP_MODE.ALLOWFADEOUT);
@@ -166,6 +166,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     anim.Walking.SetBool(false);
                     if (wasCheckingPlayer || isFollowingPlayer)
                     {
+                        isFollowingPlayer = false;
                         yield return new WaitForSeconds(3);
                         if (!isFollowingPlayer && !isCheckingPlayer)
                         {

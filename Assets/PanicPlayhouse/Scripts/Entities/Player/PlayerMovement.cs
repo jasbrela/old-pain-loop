@@ -40,8 +40,13 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             }
             else
             {
-                input.actions["Movement"].Enable();
+                UnlockMovement();
             }
+        }
+
+        public void UnlockMovement()
+        {
+            input.actions["Movement"].Enable();
         }
 
         private void SetUpControls()
