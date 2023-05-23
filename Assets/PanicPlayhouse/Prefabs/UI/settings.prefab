@@ -1848,6 +1848,82 @@ MonoBehaviour:
   key: ambient_volume
   slider: {fileID: 3295884059302267100}
   text: {fileID: 6477549373836187331}
+--- !u!1 &1290369879998553450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7586311257072545790}
+  - component: {fileID: 2514281401319049895}
+  - component: {fileID: 2882339227210403424}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &7586311257072545790
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290369879998553450}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3637584143428065826}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2514281401319049895
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290369879998553450}
+  m_CullTransparentMesh: 1
+--- !u!114 &2882339227210403424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290369879998553450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7294118}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1504900921305833976
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,7 +2620,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6172961531699354139}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2563,6 +2639,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec1c8a22e9548e796d7863e8724cc05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4930097601437987010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3637584143428065826}
+  m_Layer: 5
+  m_Name: area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3637584143428065826
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4930097601437987010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7586311257072545790}
+  - {fileID: 6172961531467307120}
+  - {fileID: 6172961532760898894}
+  - {fileID: 6172961531011284864}
+  m_Father: {fileID: 6172961531699354139}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4934164414757215848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,12 +3053,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6172961531699354139}
-  m_RootOrder: 2
+  m_Father: {fileID: 3637584143428065826}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 35.890137}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &6172961531011284923
@@ -3273,7 +3389,7 @@ GameObject:
   - component: {fileID: 8874784735182515539}
   - component: {fileID: 1598742866774917869}
   - component: {fileID: 3509912019101972464}
-  - component: {fileID: 9067420963793007610}
+  - component: {fileID: 5849213333842526437}
   m_Layer: 5
   m_Name: language
   m_TagString: Untagged
@@ -3497,7 +3613,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   m_IsOn: 0
---- !u!114 &9067420963793007610
+--- !u!114 &5849213333842526437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3510,110 +3626,110 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjects:
-  - rid: 4247611861942665270
-  - rid: 4247611861942665273
+  - rid: 4247611867609956380
+  - rid: 4247611867609956389
   references:
     version: 2
     RefIds:
-    - rid: 4247611861942665270
+    - rid: 4247611867609956380
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 3509912019101972464}
+        m_TrackedProperties:
+          items:
+          - rid: 4247611867609956381
+          - rid: 4247611867609956383
+          - rid: 4247611867609956385
+          - rid: 4247611867609956387
+        m_UpdateType: 0
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 4247611867609956381
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611867609956382
+        m_PropertyPath: m_SpriteState.m_DisabledSprite
+    - rid: 4247611867609956382
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 360407067029504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611867609956383
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611867609956384
+        m_PropertyPath: m_SpriteState.m_SelectedSprite
+    - rid: 4247611867609956384
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 360407067029504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611867609956385
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611867609956386
+        m_PropertyPath: m_SpriteState.m_PressedSprite
+    - rid: 4247611867609956386
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 360407067029504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611867609956387
+      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          rid: 4247611867609956388
+        m_PropertyPath: m_SpriteState.m_HighlightedSprite
+    - rid: 4247611867609956388
+      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
+      data:
+        m_TableReference:
+          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
+        m_TableEntryReference:
+          m_KeyId: 360407067029504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+    - rid: 4247611867609956389
       type: {class: TrackedUGuiGraphic, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
       data:
         m_Target: {fileID: 6172961531124977946}
         m_TrackedProperties:
           items:
-          - rid: 4247611861942665271
+          - rid: 4247611867609956390
         m_UpdateType: 0
-    - rid: 4247611861942665271
+    - rid: 4247611867609956390
       type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
       data:
         m_Localized:
-          rid: 4247611861942665272
+          rid: 4247611867609956391
         m_PropertyPath: m_Sprite
-    - rid: 4247611861942665272
+    - rid: 4247611867609956391
       type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
       data:
         m_TableReference:
           m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
         m_TableEntryReference:
           m_KeyId: 360398355460096
-          m_Key: 
-        m_FallbackState: 0
-        m_WaitForCompletion: 0
-    - rid: 4247611861942665273
-      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
-      data:
-        m_Target: {fileID: 3509912019101972464}
-        m_TrackedProperties:
-          items:
-          - rid: 4247611861942665274
-          - rid: 4247611861942665276
-          - rid: 4247611861942665278
-          - rid: 4247611861942665280
-        m_UpdateType: 0
-        m_Changed:
-          m_PersistentCalls:
-            m_Calls: []
-    - rid: 4247611861942665274
-      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_Localized:
-          rid: 4247611861942665275
-        m_PropertyPath: m_SpriteState.m_HighlightedSprite
-    - rid: 4247611861942665275
-      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
-      data:
-        m_TableReference:
-          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
-        m_TableEntryReference:
-          m_KeyId: 360407067029504
-          m_Key: 
-        m_FallbackState: 0
-        m_WaitForCompletion: 0
-    - rid: 4247611861942665276
-      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_Localized:
-          rid: 4247611861942665277
-        m_PropertyPath: m_SpriteState.m_PressedSprite
-    - rid: 4247611861942665277
-      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
-      data:
-        m_TableReference:
-          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
-        m_TableEntryReference:
-          m_KeyId: 360407067029504
-          m_Key: 
-        m_FallbackState: 0
-        m_WaitForCompletion: 0
-    - rid: 4247611861942665278
-      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_Localized:
-          rid: 4247611861942665279
-        m_PropertyPath: m_SpriteState.m_SelectedSprite
-    - rid: 4247611861942665279
-      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
-      data:
-        m_TableReference:
-          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
-        m_TableEntryReference:
-          m_KeyId: 360407067029504
-          m_Key: 
-        m_FallbackState: 0
-        m_WaitForCompletion: 0
-    - rid: 4247611861942665280
-      type: {class: LocalizedAssetProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_Localized:
-          rid: 4247611861942665281
-        m_PropertyPath: m_SpriteState.m_DisabledSprite
-    - rid: 4247611861942665281
-      type: {class: LocalizedSprite, ns: UnityEngine.Localization, asm: Unity.Localization}
-      data:
-        m_TableReference:
-          m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
-        m_TableEntryReference:
-          m_KeyId: 360407067029504
           m_Key: 
         m_FallbackState: 0
         m_WaitForCompletion: 0
@@ -3653,7 +3769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65.83334, y: -265}
+  m_AnchoredPosition: {x: 54.166664, y: -265}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6172961531275080162
@@ -3774,7 +3890,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6172961531467307121}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3782,13 +3898,13 @@ RectTransform:
   - {fileID: 6172961532995565578}
   - {fileID: 6172961532785817015}
   - {fileID: 6172961531124977948}
-  m_Father: {fileID: 6172961531699354139}
-  m_RootOrder: 0
+  m_Father: {fileID: 3637584143428065826}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -35}
-  m_SizeDelta: {x: 0, y: -70.00006}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6172961531467307119
 MonoBehaviour:
@@ -3844,9 +3960,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6172961531467307120}
-  - {fileID: 6172961532760898894}
-  - {fileID: 6172961531011284864}
+  - {fileID: 3637584143428065826}
   - {fileID: 4199864649958465242}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3891,10 +4005,10 @@ RectTransform:
   m_Father: {fileID: 6172961532760898894}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1000, y: 530}
+  m_SizeDelta: {x: 850, y: 530}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6172961531978278368
 MonoBehaviour:
@@ -3957,7 +4071,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 460.00006, y: -265}
+  m_AnchoredPosition: {x: 425, y: -265}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6172961532313095467
@@ -4163,20 +4277,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6172961532760898895}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6172961532512268355}
   - {fileID: 6172961531978278369}
-  m_Father: {fileID: 6172961531699354139}
-  m_RootOrder: 1
+  m_Father: {fileID: 3637584143428065826}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 0, y: -550}
+  m_SizeDelta: {x: 1820, y: 430}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6172961532785817016
 GameObject:
@@ -4559,7 +4673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 854.16675, y: -265}
+  m_AnchoredPosition: {x: 795.8333, y: -265}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6172961532841961648

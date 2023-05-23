@@ -10,9 +10,9 @@ namespace PanicPlayhouse.Scripts.UI
 {
     public class ChangeLocale : MonoBehaviour
     {
-        [SerializeField] private Toggle langBtn;
         [SerializeField] private EventReference click;
         [SerializeField] private TextMeshProUGUI display;
+        [SerializeField] private Button back;
         [SerializeField] private Button left;
         [SerializeField] private Button right;
         
@@ -27,18 +27,25 @@ namespace PanicPlayhouse.Scripts.UI
 
         private IEnumerator EnableButtons()
         {
-            yield return new WaitForSeconds(0.6f);
-            langBtn.interactable = true;
-            langBtn.interactable = false;
-            left.enabled = true;
-            right.enabled = true;
+            yield return new WaitForSeconds(0.5f);
+
+            back.interactable = true;
+            left.interactable = true;
+            right.interactable = true;
+            
+            UpdateDisplay();
+        }
+
+        private void DisableButtons()
+        {
+            back.interactable = false;
+            left.interactable = false;
+            right.interactable = false;
         }
 
         public void OnClickLeft()
         {
-            left.enabled = false;
-            right.enabled = false;
-            
+            DisableButtons();
             _audio.PlayOneShot(click);
             _index--;
             if (_index < 0) _index = LocalizationSettings.AvailableLocales.Locales.Count - 1;
@@ -47,9 +54,7 @@ namespace PanicPlayhouse.Scripts.UI
         
         public void OnClickRight()
         {
-            left.enabled = false;
-            right.enabled = false;
-            
+            DisableButtons();
             _audio.PlayOneShot(click);
             _index++;
             if (_index >= LocalizationSettings.AvailableLocales.Locales.Count) _index = 0;
@@ -60,7 +65,6 @@ namespace PanicPlayhouse.Scripts.UI
         {
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
             PlayerPrefs.SetInt("locale", index);
-            UpdateDisplay();
             StartCoroutine(EnableButtons());
         }
 

@@ -7,7 +7,9 @@ namespace PanicPlayhouse.Scripts.ScriptableObjects
     [CreateAssetMenu(menuName = "Data/Event", fileName = "New Event")]
     public class Event : ScriptableObject
     {
+#if UNITY_EDITOR
         [SerializeField] private bool debug = true;
+#endif
         private readonly List<Listener> _listeners = new();
         
         [Button]

@@ -22,6 +22,7 @@ namespace PanicPlayhouse.Scripts.UI
         private void Start()
         {
             tutorial.SetActive(false);
+            loader.PreLoadNextScene();
             _coroutine = StartCoroutine(StartCutscene());
             
             SetUpControls();
@@ -56,7 +57,7 @@ namespace PanicPlayhouse.Scripts.UI
 
         private IEnumerator StartCutscene()
         {
-            while (_currentScene != images.Count)
+            while (_currentScene < images.Count - 1)
             {
                 _currentScene++;
                 fade.FadeOut();
@@ -84,7 +85,6 @@ namespace PanicPlayhouse.Scripts.UI
         {
             Cursor.visible = true;
             DisableControls();
-            loader.PreLoadNextScene();
             tutorial.SetActive(true);
         }
     }
