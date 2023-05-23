@@ -10,6 +10,7 @@ namespace PanicPlayhouse.Scripts.UI
 {
     public class ChangeLocale : MonoBehaviour
     {
+        [SerializeField] private Toggle langBtn;
         [SerializeField] private EventReference click;
         [SerializeField] private TextMeshProUGUI display;
         [SerializeField] private Button left;
@@ -27,6 +28,8 @@ namespace PanicPlayhouse.Scripts.UI
         private IEnumerator EnableButtons()
         {
             yield return new WaitForSeconds(0.6f);
+            langBtn.interactable = true;
+            langBtn.interactable = false;
             left.enabled = true;
             right.enabled = true;
         }

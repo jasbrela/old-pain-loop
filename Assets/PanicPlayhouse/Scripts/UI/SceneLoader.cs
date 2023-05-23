@@ -6,6 +6,7 @@ namespace PanicPlayhouse.Scripts.UI
 {
     public class SceneLoader : MonoBehaviour
     {
+        [SerializeField] private GameObject disableOnLoad;
         private RichPresence _richPresence;
         private AsyncOperation _asyncOperation;
 
@@ -20,6 +21,7 @@ namespace PanicPlayhouse.Scripts.UI
         {
             if (_asyncOperation is {isDone: true})
             {
+                DisableObjectOnLoad();
                 _asyncOperation.allowSceneActivation = true;
                 return;
             }
@@ -45,8 +47,17 @@ namespace PanicPlayhouse.Scripts.UI
             StartCoroutine(WaitThenLoad(0));
         }
 
+        private void DisableObjectOnLoad()
+        {
+#if UNITY_WEBGL
+            if (disableOnLoad != null) disableOnLoad.SetActive(false);
+#endif
+        }
+
         IEnumerator WaitThenLoad(int index)
         {
+            DisableObjectOnLoad();
+
             yield return new WaitForSeconds(0.5f);
 
 #if !UNITY_WEBGL

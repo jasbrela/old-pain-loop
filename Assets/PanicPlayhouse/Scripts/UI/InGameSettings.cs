@@ -24,7 +24,7 @@ namespace PanicPlayhouse.Scripts.UI
         
         private void OnDisable()
         {
-            input.actions["ToggleMenu"].performed -= ToggleMenu;
+            if (input != null) input.actions["ToggleMenu"].performed -= ToggleMenu;
         }
 
         private void ToggleMenu(InputAction.CallbackContext ctx)

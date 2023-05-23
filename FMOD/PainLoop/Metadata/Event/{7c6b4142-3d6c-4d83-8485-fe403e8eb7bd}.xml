@@ -62,7 +62,7 @@
 			<value>0.800000012</value>
 		</property>
 		<property name="maximumDistance">
-			<value>90</value>
+			<value>100</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{b7bc0460-8585-4799-a37c-8d59fee6b62e}" />
@@ -106,6 +106,9 @@
 	<object class="SingleSound" id="{df5d06ce-4170-4f17-bcff-01f1cbf052d5}">
 		<property name="length">
 			<value>0.91200000000000003</value>
+		</property>
+		<property name="volume">
+			<value>5</value>
 		</property>
 		<relationship name="fadeOutCurve">
 			<destination>{b48f7c2f-a664-4fc8-98a5-8c3825dca0d2}</destination>
@@ -170,7 +173,7 @@
 			<value>0.800000012</value>
 		</property>
 		<property name="maximumDistance">
-			<value>90</value>
+			<value>100</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{1bc74a44-89b9-4723-a426-61fc8676d908}">

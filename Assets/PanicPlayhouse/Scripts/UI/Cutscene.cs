@@ -63,7 +63,7 @@ namespace PanicPlayhouse.Scripts.UI
                 yield return new WaitForSeconds(secondsPerScene);
                 fade.FadeIn();
                 yield return new WaitForSeconds(fade.Duration);
-                images[_currentScene].SetActive(false);
+                images[_currentScene].SetActive(true);
                 _currentScene++;
             }
 

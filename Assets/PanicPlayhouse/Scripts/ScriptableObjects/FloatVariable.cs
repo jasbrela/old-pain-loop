@@ -20,7 +20,7 @@ namespace PanicPlayhouse.Scripts.ScriptableObjects
 
         public float MaxValue => maxValue;
         public float MinValue => minValue;
-
+        public float Percentage => _value / maxValue;
         public float Value
         {
             get => _value;

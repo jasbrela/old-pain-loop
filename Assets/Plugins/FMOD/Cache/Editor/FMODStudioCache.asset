@@ -170,7 +170,7 @@ MonoBehaviour:
   Path: FMOD/PainLoop/Build/Desktop/Sounds.bank
   Name: Build/Desktop/Sounds
   StudioPath: bank:/Sounds
-  lastModified: 638203851618485695
+  lastModified: 638204309027695740
   FileSizes: []
   Exists: 1
 --- !u!114 &-4823670718652974829
@@ -351,7 +351,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 0.8
-  MaxDistance: 90
+  MaxDistance: 100
   Length: 1672
 --- !u!114 &-139169837577214085
 MonoBehaviour:
@@ -456,7 +456,7 @@ MonoBehaviour:
   - {fileID: 7203425406796913588}
   StringsBanks:
   - {fileID: -6026202721322306731}
-  cacheTime: 638203851618485695
+  cacheTime: 638204309027695740
   cacheVersion: 131603
 --- !u!114 &884274138773877835
 MonoBehaviour:
