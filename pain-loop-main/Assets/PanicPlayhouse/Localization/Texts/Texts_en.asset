@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Texts_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 8ef055a8911b6be4196602f2ced90531, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 341851795456
+    m_Localized: I'm ready!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 488685989888
+    m_Localized: DEAR DIARY,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 673377972224
+    m_Localized: 'Startling discovery: the lifeless body of a teen has been found
+      in a desolate location.
+
+
+      The heinous crime scene reveals a chilling
+      detail: only a single arm remains intact, heightening the brutality of the
+      act.
+
+
+      Authorities are launching a full-scale investigation into this
+      shocking tragedy, as the community grapples with fear and grief.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 657271844864
+    m_Localized: "\rHorror Strikes: Teen found Dead, Gruesome Murder Nearby!\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3507897004032
+    m_Localized: I just found this creepy old house in the woods. Turns out it used
+      to belong to a psycho serial killer who never got caught. We're gonna check
+      it out more tomorrow.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3805264769024
+    m_Localized: "My mom always says to be careful and not go anywhere alone, specially
+      at night. But it's just an abandoned house. What could happen?\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3926568235008
+    m_Localized: We're determined to crack this mystery wide open. Gotta find out
+      what really went down here, no matter how scary it gets.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402115892899840
+    m_Localized: 'Game Design
+
+      Game Programmer
+
+      Game Design
+
+      Art
+      / Animation
+
+      Sound / Music
+
+      Narrative'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417502428688384
+    m_Localized: Master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417554295451648
+    m_Localized: Ambient
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417681697435648
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417729638330368
+    m_Localized: Sound Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417954180395008
+    m_Localized: UI (Interface)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 424970235965440
+    m_Localized: "Felipe Vergara\t\tGame Design\r\nGabriela Matias\t\tGame Programmer\nPriscila
+      Januario\tGame Design\r\nRoger Cardoso\t\tArt / Animation\r\nGabriel Scavacini\tSound
+      / Music\r\nFilipe Xavier\t\tNarrative"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 437707884228608
+    m_Localized: Press WASD/Arrows to move, E/F/Space to interact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 760206467289088
+    m_Localized: Press
+    m_Metadata:
+      m_Items: []
+  - m_Id: 760373664829440
+    m_Localized: or
+    m_Metadata:
+      m_Items: []
+  - m_Id: 760651390668800
+    m_Localized: to interact with objects.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 760781749637120
+    m_Localized: to move.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761160281378816
+    m_Localized: Interact with a locker to hide. Hiding can be useful to lose the
+      monster and recover sanity.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761352959315968
+    m_Localized: Be careful with your insanity!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761537743572992
+    m_Localized: The more insane you are, the darker your vision will become to the
+      point you finally pass out.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a763a88cd23abfc4bb6a41901454c56f, type: 3}
+  m_Name: Insanity
+  m_EditorClassIdentifier: 
+  onChangeValue: {fileID: 11400000, guid: ffe913370857bf642bf80fcb0fac342e, type: 2}
+  onMaxValueReached: {fileID: 11400000, guid: b77fb3bb4f9494541aa341073bd2450d, type: 2}
+  onMinValueReached: {fileID: 11400000, guid: eccf715feb2a51842a30dbe92d98e60a, type: 2}
+  initialValue: 0
+  maxValue: 100
+  minValue: 0

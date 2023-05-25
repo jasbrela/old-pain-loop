@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ebb4aa12-109b-47e6-b12b-8add962e5399}">
+		<property name="assetPath">
+			<value>Menu_Giz.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.59999999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{519b26be-39a1-4dc6-9372-88596cc3c9fe}</destination>
+		</relationship>
+	</object>
+</objects>

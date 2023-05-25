@@ -1,0 +1,549 @@
+fileFormatVersion: 2
+guid: 275a681ac3ae6a44dba422dbe70d0c7b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nina_sprites_idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 17
+        width: 387
+        height: 482
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb80c164101b02c4aa0b42ea3157c081
+      internalID: 141764020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_2
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 6
+        width: 373
+        height: 472
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c73e1956432ff8a4a92e47f372c54626
+      internalID: -562896195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_3
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 13
+        width: 376
+        height: 446
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92eeca9376bc07c46bfb09ada8797b29
+      internalID: -875104442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_4
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 2
+        width: 358
+        height: 454
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 442ce43513120ce469e17b2680bc121b
+      internalID: -1964613085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_5
+      rect:
+        serializedVersion: 2
+        x: 2177
+        y: 0
+        width: 313
+        height: 543
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3dfcdb20c2420449ea8a24754b7cd4
+      internalID: 992709250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_6
+      rect:
+        serializedVersion: 2
+        x: 2604
+        y: 13
+        width: 307
+        height: 486
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5350cfb988383e41b0ff8a1e4faec05
+      internalID: -1354001491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_7
+      rect:
+        serializedVersion: 2
+        x: 3018
+        y: 13
+        width: 313
+        height: 486
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adcbc2b2691e4604c9e67e413866fa09
+      internalID: 1173945739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_8
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 13
+        width: 325
+        height: 482
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ce0210a977b504b82bd7de0ef27169
+      internalID: -946361898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_9
+      rect:
+        serializedVersion: 2
+        x: 3782
+        y: 17
+        width: 384
+        height: 474
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f78fd10461cba4fa62a8a2a7fd3ce1
+      internalID: 2026795733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_10
+      rect:
+        serializedVersion: 2
+        x: 4199
+        y: 6
+        width: 387
+        height: 468
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4067a608c7cd9b3449e94b475c919ff9
+      internalID: -1814520887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_11
+      rect:
+        serializedVersion: 2
+        x: 4635
+        y: 2
+        width: 372
+        height: 450
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0615086b44d3e27408f26736672dbc07
+      internalID: 2107714482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_12
+      rect:
+        serializedVersion: 2
+        x: 5923
+        y: 2
+        width: 332
+        height: 463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae0dab4fc93b724d953a5217f49ba1c
+      internalID: -833607755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_13
+      rect:
+        serializedVersion: 2
+        x: 6366
+        y: 9
+        width: 299
+        height: 484
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d1e837d5b08f5846aa28a9362bcb6fd
+      internalID: -1497156822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_14
+      rect:
+        serializedVersion: 2
+        x: 6783
+        y: 17
+        width: 303
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4815b1613cc0c6d47b05ca8785ed77b7
+      internalID: -1078227884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_16
+      rect:
+        serializedVersion: 2
+        x: 7211
+        y: 13
+        width: 303
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be72e936ab7ecd46b73a747977cc30c
+      internalID: 750651190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_18
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 17
+        width: 365
+        height: 420
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718629e137c371342afbe5f5e267c33e
+      internalID: 290336700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_23
+      rect:
+        serializedVersion: 2
+        x: 5070
+        y: 2
+        width: 358
+        height: 430
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494739e491deda549928e13c2a847541
+      internalID: 728962242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nina_sprites_idle_24
+      rect:
+        serializedVersion: 2
+        x: 5495
+        y: 10
+        width: 350
+        height: 428
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1729468c3851333459381a1ed65b888f
+      internalID: 1717283194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0479746765e37994d864067f79dc4684
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      nina_sprites_idle_0: 141764020
+      nina_sprites_idle_1: -1100984608
+      nina_sprites_idle_10: -1814520887
+      nina_sprites_idle_11: 2107714482
+      nina_sprites_idle_12: -833607755
+      nina_sprites_idle_13: -1497156822
+      nina_sprites_idle_14: -1078227884
+      nina_sprites_idle_15: -1009742240
+      nina_sprites_idle_16: 750651190
+      nina_sprites_idle_17: 1906192152
+      nina_sprites_idle_18: 290336700
+      nina_sprites_idle_19: -1961184181
+      nina_sprites_idle_2: -562896195
+      nina_sprites_idle_20: 231684182
+      nina_sprites_idle_21: 711229544
+      nina_sprites_idle_22: 2071021114
+      nina_sprites_idle_23: 728962242
+      nina_sprites_idle_24: 1717283194
+      nina_sprites_idle_25: 1608281924
+      nina_sprites_idle_26: 2061804954
+      nina_sprites_idle_27: -146313280
+      nina_sprites_idle_28: 1746118398
+      nina_sprites_idle_29: -458248499
+      nina_sprites_idle_3: -875104442
+      nina_sprites_idle_30: 486892685
+      nina_sprites_idle_31: 823158606
+      nina_sprites_idle_32: -1739754154
+      nina_sprites_idle_33: -1241216681
+      nina_sprites_idle_34: 1228225920
+      nina_sprites_idle_35: 1421126773
+      nina_sprites_idle_4: -1964613085
+      nina_sprites_idle_5: 992709250
+      nina_sprites_idle_6: -1354001491
+      nina_sprites_idle_7: 1173945739
+      nina_sprites_idle_8: -946361898
+      nina_sprites_idle_9: 2026795733
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
