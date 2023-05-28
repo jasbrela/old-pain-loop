@@ -781,7 +781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f586bd00c249e4989d7265d114d319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appId: 1107520580774805534
   boot: {fileID: 487838838}
 --- !u!4 &1133184589
 Transform:

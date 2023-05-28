@@ -6,10 +6,9 @@ namespace PanicPlayhouse.Scripts
 {
 	public class RichPresence : MonoBehaviour
 	{
-#if !UNITY_WEBGL
-		
-		[SerializeField] private long appId = 1107520580774805534;
+		private const long AppId = 1107520580774805534;
 		[SerializeField] private Boot boot;
+#if !UNITY_WEBGL
 		private string _details = "Loading...";
 		private string _state = "\"Why is it taking so long?\"";
 
@@ -51,7 +50,7 @@ namespace PanicPlayhouse.Scripts
 		void Start () {
 			try
 			{
-				_discord = new Discord.Discord(appId, (UInt64)Discord.CreateFlags.NoRequireDiscord);
+				_discord = new Discord.Discord(AppId, (UInt64)Discord.CreateFlags.NoRequireDiscord);
 			}
 			catch (Exception e)
 			{
@@ -119,6 +118,11 @@ namespace PanicPlayhouse.Scripts
 #endif
 				Destroy(gameObject);
 			}
+		}
+#else
+		private void Start()
+		{
+			boot.Ready(gameObject, true);
 		}
 #endif
 	}

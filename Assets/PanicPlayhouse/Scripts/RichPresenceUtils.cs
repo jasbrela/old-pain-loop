@@ -4,6 +4,8 @@ namespace PanicPlayhouse.Scripts
 {
     public class RichPresenceUtils : MonoBehaviour
     {
+#if !UNITY_WEBGL
+        
         [SerializeField] private string sceneState;
         [SerializeField] private string sceneDetails;
 
@@ -27,5 +29,6 @@ namespace PanicPlayhouse.Scripts
         {
             _presence.Details = text;
         }
+#endif
     }
 }
