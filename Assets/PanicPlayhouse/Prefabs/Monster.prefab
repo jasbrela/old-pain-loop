@@ -248,6 +248,7 @@ MonoBehaviour:
       Data3: 1090422148
       Data4: -1112043970
     Path: event:/Monster/Footsteps
+  arrivedAtDefaultPosition: {fileID: 11400000, guid: 71ce80b22ecd8784f85fc15a45861198, type: 2}
   rb: {fileID: 2849899001654777002}
   player: {fileID: 0}
   playerInsanity: {fileID: 11400000, guid: c94776497f346824984f8bf99fb6f8d4, type: 2}

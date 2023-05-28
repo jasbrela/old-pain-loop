@@ -7,6 +7,8 @@ using PanicPlayhouse.Scripts.Entities.Player;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
+using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace PanicPlayhouse.Scripts.Entities.Monster
@@ -22,7 +24,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         [SerializeField] private EventReference footstep;
 
         [Header("General")]
-        [SerializeField] private RichPresenceUtils rich;
+        [SerializeField] private Event arrivedAtDefaultPosition;
         [Label("Rigidbody")] [SerializeField] private Rigidbody rb;
         [SerializeField] private PlayerHiddenStatus player;
         [SerializeField] private FloatVariable playerInsanity;
@@ -187,7 +189,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                             anim.Walking.SetBool(true);
                             _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                             StopAudiosInLoop();
-                            rich.SetDetails("Roaming around...");
+                            if (arrivedAtDefaultPosition != null) arrivedAtDefaultPosition.Raise();
                         }
                     }
                 }
