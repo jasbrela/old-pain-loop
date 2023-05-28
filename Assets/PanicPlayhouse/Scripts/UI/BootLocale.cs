@@ -15,6 +15,7 @@ namespace PanicPlayhouse.Scripts.UI
     
         private void Initialize(AsyncOperationHandle<LocalizationSettings> obj)
         {
+            PlayerPrefs.DeleteKey("locale"); // TODO: Remove this line after fixing the localization
             var index = PlayerPrefs.GetInt("locale", LocalizationSettings.AvailableLocales.Locales.IndexOf(LocalizationSettings.SelectedLocale));
         
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];

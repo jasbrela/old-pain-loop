@@ -122,8 +122,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 761160281378816
-    m_Localized: Interact with a locker to hide. Hiding can be useful to lose the
-      monster and recover sanity.
+    m_Localized: Interactive objects will be outlined when you get close. Interact
+      with a locker to hide. Hiding can be useful to lose the monster and recover
+      sanity.
     m_Metadata:
       m_Items: []
   - m_Id: 761352959315968
@@ -133,6 +134,22 @@ MonoBehaviour:
   - m_Id: 761537743572992
     m_Localized: The more insane you are, the darker your vision will become to the
       point you finally pass out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2344233464778752
+    m_Localized: Denial and Isolation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2345542993596416
+    m_Localized: Em breve
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2345641391968256
+    m_Localized: Anger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2346584560914432
+    m_Localized: Loading...
     m_Metadata:
       m_Items: []
   references:

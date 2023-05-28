@@ -7,7 +7,7 @@ namespace PanicPlayhouse.Scripts.Camera
     public class CameraFade : MonoBehaviour
     {
         [SerializeField] private bool fadeOnStart = true;
-        [SerializeField] private float fadeDuration = 0.25f;
+        [SerializeField] private float fadeDuration = 0.25f;    
         [SerializeField] private Image blackImage;
         private Material _defaultMat;
 

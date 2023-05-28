@@ -1,5 +1,4 @@
 using System.Collections;
-using FMOD;
 using FMOD.Studio;
 using FMODUnity;
 using PanicPlayhouse.Scripts.UI;
@@ -28,7 +27,7 @@ namespace PanicPlayhouse.Scripts.Audio
             
             DontDestroyOnLoad(this);
         }
-        
+
         void Start()
         {
             _master = RuntimeManager.GetBus("bus:/");
@@ -88,7 +87,7 @@ namespace PanicPlayhouse.Scripts.Audio
             instance.getPlaybackState(out PLAYBACK_STATE state);
         
             if (state != PLAYBACK_STATE.PLAYING) return;
-        
+            
             instance.stop(mode);
             instance.release();
         }

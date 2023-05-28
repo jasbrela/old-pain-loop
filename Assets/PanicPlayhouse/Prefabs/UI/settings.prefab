@@ -3396,7 +3396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6172961531124977948
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3412,9 +3412,9 @@ RectTransform:
   m_Father: {fileID: 6172961531467307120}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1440, y: -54.999996}
   m_SizeDelta: {x: 275.00006, y: 109.99999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6172961531124977945
@@ -4839,7 +4839,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8795f15c54a2ece40ac5f0f54e3c3ae8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: babacbaed63fab84b93f882df1f97574, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5063,7 +5063,7 @@ MonoBehaviour:
         m_TableReference:
           m_TableCollectionName: GUID:604ecb50f12bcf34a9744558d9c0b6cb
         m_TableEntryReference:
-          m_KeyId: 360344030834688
+          m_KeyId: 360354034249728
           m_Key: 
         m_FallbackState: 0
         m_WaitForCompletion: 0

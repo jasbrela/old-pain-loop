@@ -109,8 +109,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 761160281378816
-    m_Localized: "Interaja com um arm\xE1rio para esconder. Esconder-se pode ser
-      \xFAtil para despistar o monstro e recuperar sanidade."
+    m_Localized: "Objetos interativos ficar\xE3o contornados quando voc\xEA chegar
+      perto. Interaja com um arm\xE1rio para esconder. Esconder-se pode ser \xFAtil
+      para despistar o monstro e recuperar sanidade."
     m_Metadata:
       m_Items: []
   - m_Id: 761352959315968
@@ -120,6 +121,22 @@ MonoBehaviour:
   - m_Id: 761537743572992
     m_Localized: "\xC0 medida que sua sanidade diminui, a vis\xE3o ficar\xE1 cada
       vez mais escura, at\xE9 finalmente desmaiar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2344233464778752
+    m_Localized: "Nega\xE7\xE3o e Isolamento"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2345542993596416
+    m_Localized: Coming soon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2345641391968256
+    m_Localized: Raiva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2346584560914432
+    m_Localized: Carregando...
     m_Metadata:
       m_Items: []
   references:

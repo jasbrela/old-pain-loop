@@ -12,13 +12,16 @@ EditorBuildSettings:
     path: Assets/PanicPlayhouse/Scenes/MainMenu.unity
     guid: 14450ed3ddc16ec4886bf750422ed41e
   - enabled: 1
-    path: Assets/PanicPlayhouse/Scenes/PreGame.unity
+    path: Assets/PanicPlayhouse/Scenes/Cutscene.unity
     guid: 6dec2a4055eca23458bdf80596f4ed57
   - enabled: 1
-    path: Assets/PanicPlayhouse/Scenes/Game.unity
+    path: Assets/PanicPlayhouse/Scenes/FirstPhase.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/PanicPlayhouse/Scenes/EndMenu.unity
+    path: Assets/PanicPlayhouse/Scenes/LastPhase.unity
+    guid: c3ab50e8b3f893947b58f30636df8329
+  - enabled: 1
+    path: Assets/PanicPlayhouse/Scenes/End.unity
     guid: 7d72634d26313bd4fb0da03efcb45a55
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: ae5a6152291ab574e91c6170d66cf62a, type: 2}

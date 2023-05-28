@@ -11,6 +11,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
     public class PlayerMovement : MonoBehaviour
     {
         [Header("Movement")]
+        [SerializeField] private bool startLocked;
         [SerializeField] private float defaultForce;
         [SerializeField] private float defaultMaxVel;
         [SerializeField] private EventReference footsteps;
@@ -53,6 +54,8 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         {
             input.actions["Movement"].performed += SetMovement;
             input.actions["Movement"].canceled += ResetMovement;
+            
+            if (startLocked) input.actions["Movement"].Disable();
         }
 
         private void OnDisable()

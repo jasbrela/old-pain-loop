@@ -83,18 +83,28 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             isFollowingPlayer = false;
             isCheckingPlayer = false;
             anim.Walking.SetBool(false);
-            agent.destination = _defaultPos;
+            SetAgentDestination(_defaultPos);
             transform.position = _defaultPos;
             agent.speed = speed;
+        }
+
+        private void SetAgentDestination(Vector3 pos)
+        {
+            agent.destination = new Vector3(pos.x, transform.position.y, pos.z);
         }
 
         public void OnPlayerRespawn()
         {
             transform.position = _defaultPos;
-            agent.destination = _defaultPos;
+            SetAgentDestination(_defaultPos);
             killedPlayer = false;
+            StopAudiosInLoop();
+        }
+
+        public void StopAudiosInLoop()
+        {
             _audio.StopAudioInLoop(_heartbeatInstance);
-            _audio.StopAudioInLoop(_chasingMusicInstance);
+            _audio.StopAudioInLoop(_chasingMusicInstance, STOP_MODE.ALLOWFADEOUT);
         }
 
         private IEnumerator CheckPathStatus()
@@ -120,7 +130,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     wasPathComplete = false;
                     isCheckingPlayer = false;
                     wasCheckingPlayer = true;
-                    agent.destination = player.transform.position;
+                    SetAgentDestination(player.transform.position);
                     _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                     anim.Walking.SetBool(true);
                     spriteRenderer.flipX = monster.x - agent.destination.x > 0;
@@ -134,7 +144,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     _audio.PlayOneShot(canKillHiddenPlayer ? knock : attack);
                     killedPlayer = true;
                     playerInsanity.Value = playerInsanity.MaxValue;
-                    _audio.StopAudioInLoop(_chasingMusicInstance, STOP_MODE.ALLOWFADEOUT);
+                    StopAudiosInLoop();
                     anim.Attack.SetTrigger();
                     if (canKillHiddenPlayer) canKillHiddenPlayer = false;
                     agent.speed = 0;
@@ -152,7 +162,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     _audio.PlayAudioInLoop(ref _heartbeatInstance, heartbeat);
                     isFollowingPlayer = true;
                     anim.Walking.SetBool(true);
-                    agent.destination = player.transform.position;
+                    SetAgentDestination(player.transform.position);
                     _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                 }
                 else if (!wasPathComplete && distanceFromDestination <= agent.stoppingDistance)
@@ -172,11 +182,10 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                         {
                             wasPathComplete = false;
                             wasCheckingPlayer = false;
-                            agent.destination = _defaultPos;
+                            SetAgentDestination(_defaultPos);
                             anim.Walking.SetBool(true);
                             _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
-                            _audio.StopAudioInLoop(_chasingMusicInstance, STOP_MODE.ALLOWFADEOUT);
-                            _audio.StopAudioInLoop(_heartbeatInstance);
+                            StopAudiosInLoop();
                         }
                     }
                 }
