@@ -107,6 +107,8 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         public void StopAudiosInLoop()
         {
             _audio.StopAudioInLoop(_heartbeatInstance);
+            _audio.StopAudioInLoop(_breathInstance);
+            _audio.StopAudioInLoop(_footstepInstance);
             _audio.StopAudioInLoop(_chasingMusicInstance, STOP_MODE.ALLOWFADEOUT);
         }
 
