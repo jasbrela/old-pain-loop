@@ -92,6 +92,16 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
+  - m_GUID: 2cb492c7e64e70c429ea09c2740977e0
+    m_Address: resume_hover
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: 7e0a4a509d075e947bf283c9ec552754
+    m_Address: resume
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: d4f2901c473a3d84a921e2285aad8f0c, type: 2}
   m_SchemaSet:

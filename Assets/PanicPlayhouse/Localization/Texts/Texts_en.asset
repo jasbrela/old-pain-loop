@@ -152,6 +152,10 @@ MonoBehaviour:
     m_Localized: Loading...
     m_Metadata:
       m_Items: []
+  - m_Id: 2358364112703488
+    m_Localized: The game is not paused!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

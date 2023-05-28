@@ -11,6 +11,14 @@ namespace PanicPlayhouse.Scripts.Chunk
 
         private void Start()
         {
+            if (spriteRenderer == null)
+            {
+#if UNITY_EDITOR
+                Debug.LogWarning("NULL SPRITE RENDERER FOUND. PLEASE FIX!".Bold().Color("#FF4500"), this);
+#endif
+                return;
+            }
+            
             _defaultMat = spriteRenderer.material;
             
             var temp = spriteRenderer.color;

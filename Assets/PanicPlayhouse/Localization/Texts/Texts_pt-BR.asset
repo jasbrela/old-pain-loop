@@ -139,6 +139,10 @@ MonoBehaviour:
     m_Localized: Carregando...
     m_Metadata:
       m_Items: []
+  - m_Id: 2358364112703488
+    m_Localized: "O jogo n\xE3o est\xE1 pausado!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
