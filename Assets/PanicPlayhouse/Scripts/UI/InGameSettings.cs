@@ -45,9 +45,9 @@ namespace PanicPlayhouse.Scripts.UI
         {
             if (!_isOpen) return;
             
-            onClose?.Invoke();
-            _isOpen = false;
             Cursor.visible = false;
+            _isOpen = false;
+            onClose?.Invoke();
         }
     }
 }

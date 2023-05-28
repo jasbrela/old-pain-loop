@@ -47,7 +47,7 @@ namespace PanicPlayhouse.Scripts.UI
         private void Skip(InputAction.CallbackContext ctx)
         {
 #if UNITY_EDITOR
-            Debug.Log("Skipping cutscene...");
+            Debug.Log("Cutscene: ".Bold() + "Skipping cutscene...");
 #endif
             DisableControls();
             StopCoroutine(_coroutine);

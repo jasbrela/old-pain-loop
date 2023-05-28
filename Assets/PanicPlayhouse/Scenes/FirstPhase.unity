@@ -2218,6 +2218,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1422658688}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.RichPresenceUtils, Assembly-CSharp
+        m_MethodName: SetDetails
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Roaming around...
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &329752323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2943,11 +2955,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6915323099472621799, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6915323099472621799, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6915323099472621799, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2956,11 +2968,11 @@ PrefabInstance:
     - target: {fileID: 6915323099472621799, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 329752325}
+      objectReference: {fileID: 1109066015}
     - target: {fileID: 6915323099472621799, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1851114558}
+      objectReference: {fileID: 1109066015}
     - target: {fileID: 6915323099472621799, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -2975,11 +2987,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6915323099472621799, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
+      value: CloseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6915323099472621799, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetActive
+      value: CloseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6915323099472621799, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
@@ -2995,7 +3007,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6915323099472621799, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: PanicPlayhouse.Scripts.UI.InGameSettings, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915323099472621799, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PanicPlayhouse.Scripts.UI.InGameSettings, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6915323099472621799, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
@@ -4271,6 +4287,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1422658688}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.RichPresenceUtils, Assembly-CSharp
+        m_MethodName: SetDetails
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Taking a deep breath
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1001 &491854083
@@ -6422,16 +6450,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1422658688}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.RichPresenceUtils, Assembly-CSharp
+        m_MethodName: SetDetails
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Roaming around...
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &847575864
@@ -10091,11 +10119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448fe0fd30704f242857dbf68ce2e85a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loader: {fileID: 0}
   text: {fileID: 271084336}
-  soon: {fileID: 0}
   image: {fileID: 1177183957}
   delay: 2
+  soon: {fileID: 0}
+  loader: {fileID: 0}
   player: {fileID: 1170892688}
 --- !u!1 &1188443489
 GameObject:
@@ -11352,6 +11380,82 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1575186154911069795, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
   m_PrefabInstance: {fileID: 1599054029}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1422658687
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 309558112089212703, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 309558112089212703, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 309558112089212703, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 309558112089212703, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 309558112089212703, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 309558112089212703, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 309558112089212703, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 309558112089212703, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 309558112089212703, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 309558112089212703, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 309558112089212703, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459908579693297355, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: m_Name
+      value: RichPresenceUtils
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020712112991336212, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: sceneState
+      value: I. Denial and Isolation
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020712112991336212, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+      propertyPath: sceneDetails
+      value: Plucking up the courage.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+--- !u!114 &1422658688 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9020712112991336212, guid: c2c14b6562c951844ba7211d38be4e5f, type: 3}
+  m_PrefabInstance: {fileID: 1422658687}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512a2bc5c5bfe524e9f7cebfc3204e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1423604744
 GameObject:
   m_ObjectHideFlags: 0
@@ -13684,11 +13788,6 @@ Canvas:
   m_SortingLayerID: -897722363
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1851114558 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4930097601437987010, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
-  m_PrefabInstance: {fileID: 329752323}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1856996441 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5301850900301800379, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
@@ -15249,6 +15348,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1422658688}
+        m_TargetAssemblyTypeName: PanicPlayhouse.Scripts.RichPresenceUtils, Assembly-CSharp
+        m_MethodName: SetDetails
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: '"What is this sound?"'
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &2098601600 stripped

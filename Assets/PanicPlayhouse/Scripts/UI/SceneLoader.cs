@@ -1,4 +1,5 @@
 using System.Collections;
+using FMOD;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -56,6 +57,7 @@ namespace PanicPlayhouse.Scripts.UI
 
         IEnumerator WaitThenLoad(int index)
         {
+
             DisableObjectOnLoad();
 
             yield return new WaitForSeconds(0.5f);
@@ -64,19 +66,42 @@ namespace PanicPlayhouse.Scripts.UI
             if (_richPresence != null) {
                 switch (index)
                 {
-                    case 0:
-                        _richPresence.Details = "In the menu";
+                    case 0: // BOOT
+                        _richPresence.State = "Loading...";
+                        _richPresence.Details = "\"Why is it taking so long?\"";
                         break;
-                    case 1:
-                        _richPresence.Details = "Getting scared";
+                    case 1: // MAIN MENU
+                        _richPresence.State = "In the menu";
+                        _richPresence.Details = "\"What am I doing here?\"";
                         break;
-                    case 2:
-                        _richPresence.Details = "Reading the diary";
+                    case 2: // CUTSCENE, TUTORIAL
+                        _richPresence.State = "In the tutorial";
+                        _richPresence.Details = "Getting ready!";
                         break;
+                    case 3: // FIRST PHASE
+                        _richPresence.State = "I. Denial and Isolation";
+                        _richPresence.Details = "In my room";
+                        break;
+                    case 4: // LAST PHASE
+                        _richPresence.State = "II. Anger";
+                        _richPresence.Details = "Getting angrier...";
+                        break;
+                    case 5: // END GAME
+                        _richPresence.State = "In the menu";
+                        _richPresence.Details = "Just finished the game!";
+                        break;
+
                 }
             }
 #endif
+            StopAllSounds();
             SceneManager.LoadScene(index);
+        }
+
+        private static void StopAllSounds()
+        {
+            FMODUnity.RuntimeManager.CoreSystem.getMasterChannelGroup(out ChannelGroup group);
+            group.stop();
         }
 
         public void Quit()

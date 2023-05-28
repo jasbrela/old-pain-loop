@@ -1,4 +1,5 @@
 using System;
+using PanicPlayhouse.Scripts.UI;
 using UnityEngine;
 
 namespace PanicPlayhouse.Scripts
@@ -7,18 +8,33 @@ namespace PanicPlayhouse.Scripts
 	{
 #if !UNITY_WEBGL
 		
-		[SerializeField] private long appId;
-		[SerializeField] private string details = "In the menu";
+		[SerializeField] private long appId = 1107520580774805534;
+		[SerializeField] private Boot boot;
+		private string _details = "Loading...";
+		private string _state = "\"Why is it taking so long?\"";
 
 		public string Details
 		{
-			get => details;
+			get => _details;
 			set
 			{
 #if UNITY_EDITOR
-				Debug.Log("Discord: ".Bold() + "Changed the details");
+				Debug.Log("Discord Rich Presence: ".Bold() + "Changed the details");
 #endif
-				details = value;
+				_details = value;
+				UpdateStatus();
+			}
+		}
+		
+		public string State
+		{
+			get => _state;
+			set
+			{
+#if UNITY_EDITOR
+				Debug.Log("Discord Rich Presence: ".Bold() + "Changed the state");
+#endif
+				_state = value;
 				UpdateStatus();
 			}
 		}
@@ -33,26 +49,36 @@ namespace PanicPlayhouse.Scripts
 		}
 
 		void Start () {
-			_discord = new Discord.Discord(appId, (UInt64)Discord.CreateFlags.NoRequireDiscord);
+			try
+			{
+				_discord = new Discord.Discord(appId, (UInt64)Discord.CreateFlags.NoRequireDiscord);
+			}
+			catch (Exception e)
+			{
+				Debug.LogWarning("Discord Rich Presence:".Bold() + " Fail".Bold().Color("#FF4500") + "\nMessage: ".Bold() + e.Message, this);
+				boot.Ready(gameObject, true);
+				Destroy(gameObject);
+				return;
+			}
 
-#if UNITY_EDITOR
-			_discord.GetActivityManager().ClearActivity(result => Debug.Log("ClearActivity: " + result));
-#endif
-			
 			_time = DateTimeOffset.Now.ToUnixTimeMilliseconds();
 			
 			UpdateStatus();
+
+			boot.Ready(gameObject);
 		}
     	
 		void Update () {
+			if (_discord == null) return;
+			
 			try
 			{
 				_discord.RunCallbacks();
 			}
-			catch
+			catch (Exception e)
 			{
 #if UNITY_EDITOR
-				Debug.LogWarning("Discord:" + " Fail".Bold().Color("#FF4500"));
+				Debug.LogWarning("Discord Rich Presence:".Bold() + " Fail".Bold().Color("#FF4500") + "\nMessage: ".Bold() + e.Message, this);
 #endif
 				Destroy(gameObject);
 			}
@@ -66,7 +92,8 @@ namespace PanicPlayhouse.Scripts
 
 				var activity = new Discord.Activity
 				{
-					Details = details,
+					Details = _details,
+					State = _state,
 					Assets =
 					{
 						LargeImage = "logo"
@@ -77,17 +104,18 @@ namespace PanicPlayhouse.Scripts
 					}
 				};
 
-				activityManager.UpdateActivity(activity, (res) =>
+				activityManager.UpdateActivity(activity, res =>
 				{
 #if UNITY_EDITOR
-					if (res != Discord.Result.Ok) Debug.LogWarning("Discord:" + " Fail".Bold().Color("#FF4500"));
+					if (res != Discord.Result.Ok) Debug.LogWarning("Discord Rich Presence:".Bold() + " Fail".Bold().Color("#FF4500") + "\nResult: ".Bold() + res, this);
+
 #endif
 				});
 			}
-			catch
+			catch (Exception e)
 			{
 #if UNITY_EDITOR
-				Debug.LogWarning("Discord:" + " Fail".Bold().Color("#FF4500"));
+				Debug.LogWarning("Discord Rich Presence:".Bold() + " Fail".Bold().Color("#FF4500") + "\nMessage: ".Bold() + e.Message, this);
 #endif
 				Destroy(gameObject);
 			}

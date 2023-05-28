@@ -22,6 +22,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         [SerializeField] private EventReference footstep;
 
         [Header("General")]
+        [SerializeField] private RichPresenceUtils rich;
         [Label("Rigidbody")] [SerializeField] private Rigidbody rb;
         [SerializeField] private PlayerHiddenStatus player;
         [SerializeField] private FloatVariable playerInsanity;
@@ -124,7 +125,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                 if (isCheckingPlayer)
                 {
 #if UNITY_EDITOR
-                    Debug.Log("IsCheckingPlayer");
+                    Debug.Log("MonsterMovement: ".Bold() + "IsCheckingPlayer");
 #endif
                     // CHECKING PLAYER
                     wasPathComplete = false;
@@ -138,7 +139,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                 else if (!killedPlayer && distanceFromPlayer <= killDistance && (!player.IsHidden || canKillHiddenPlayer))
                 {
 #if UNITY_EDITOR
-                    Debug.Log("KillPlayer");
+                    Debug.Log("MonsterMovement: ".Bold() + "KillPlayer");
 #endif
                     // KILL PLAYER
                     _audio.PlayOneShot(canKillHiddenPlayer ? knock : attack);
@@ -154,7 +155,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                            && !killedPlayer)
                 {
 #if UNITY_EDITOR
-                    Debug.Log("FollowingPlayer");
+                    Debug.Log("MonsterMovement: ".Bold() + "FollowingPlayer");
 #endif
                     // FOLLOW PLAYER
                     wasPathComplete = false;
@@ -169,7 +170,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                 {
                     wasPathComplete = true;
 #if UNITY_EDITOR
-                    Debug.Log("PathComplete");
+                    Debug.Log("MonsterMovement: ".Bold() + "PathComplete");
 #endif
                     // PATH COMPLETED
                     _audio.StopAudioInLoop(_footstepInstance);
@@ -186,6 +187,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                             anim.Walking.SetBool(true);
                             _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                             StopAudiosInLoop();
+                            rich.SetDetails("Roaming around...");
                         }
                     }
                 }

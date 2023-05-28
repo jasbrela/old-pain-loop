@@ -17,7 +17,7 @@ namespace PanicPlayhouse.Scripts.UI
         [SerializeField] private SceneLoader loader;
         [SerializeField] private List<EssentialSystem> systems;
 
-        public void Ready(GameObject obj)
+        public void Ready(GameObject obj, bool failed = false)
         {
             bool ready = true;
         
@@ -26,7 +26,14 @@ namespace PanicPlayhouse.Scripts.UI
                 if (sys.gameObject == obj)
                 {
 #if UNITY_EDITOR
-                    Debug.Log($"{obj.name}".Bold().Color("#00FA9A") + " system is ready");
+                    if (failed)
+                    {
+                        Debug.Log($"{obj.name}".Bold().Color("#FF4500") + " failed to load.");
+                    }
+                    else
+                    {
+                        Debug.Log($"{obj.name}".Bold().Color("#00FA9A") + " system is ready");
+                    }
 #endif
                     sys.ready = true;
                 }

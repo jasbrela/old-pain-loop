@@ -42,11 +42,11 @@ namespace PanicPlayhouse.Scripts.Audio
         private IEnumerator CheckIfAllBanksLoaded()
         {
 #if UNITY_EDITOR
-            Debug.Log("Loading banks...");
+            Debug.Log("FMOD Audio: ".Bold() + "Loading banks...");
 #endif
             while (!RuntimeManager.HaveAllBanksLoaded) yield return null;
 #if UNITY_EDITOR
-            Debug.Log("Banks Loaded");
+            Debug.Log("FMOD Audio: ".Bold() + "Banks Loaded");
 #endif
             boot.Ready(gameObject);
         }

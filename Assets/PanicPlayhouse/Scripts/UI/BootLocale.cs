@@ -24,7 +24,7 @@ namespace PanicPlayhouse.Scripts.UI
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
             PlayerPrefs.SetInt("locale", index);
             
-            text.gameObject.SetActive(true);
+            if (text != null) text.gameObject.SetActive(true);
             
             boot.Ready(gameObject);
         }
