@@ -10,11 +10,13 @@ namespace PanicPlayhouse.Scripts.Camera
 {
     public class FadeAfterDelay : MonoBehaviour
     {
-        [SerializeField] private SceneLoader loader;
         [SerializeField] private TextMeshProUGUI text;
-        [SerializeField] private TextMeshProUGUI soon;
         [SerializeField] private Image image;
         [SerializeField] private float delay;
+        
+        [Header("OPTIONAL")]
+        [SerializeField] private TextMeshProUGUI soon;
+        [SerializeField] private SceneLoader loader;
         [SerializeField] private PlayerMovement player;
         void Start()
         {
@@ -43,6 +45,7 @@ namespace PanicPlayhouse.Scripts.Camera
             
             player.UnlockMovement();
             image.DOFade(0, 0.5f);
+            image.gameObject.SetActive(false);
         }
     }
 }

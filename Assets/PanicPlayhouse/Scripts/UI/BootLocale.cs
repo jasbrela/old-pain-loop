@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -6,7 +7,9 @@ namespace PanicPlayhouse.Scripts.UI
 {
     public class BootLocale : MonoBehaviour
     {
+        [SerializeField] private TextMeshProUGUI text;
         [SerializeField] private Boot boot;
+        
         void Start()
         {
             var operation = LocalizationSettings.InitializationOperation;
@@ -20,6 +23,8 @@ namespace PanicPlayhouse.Scripts.UI
         
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
             PlayerPrefs.SetInt("locale", index);
+            
+            text.gameObject.SetActive(true);
             
             boot.Ready(gameObject);
         }
