@@ -863,7 +863,7 @@ GameObject:
   - component: {fileID: 242767782}
   - component: {fileID: 242767781}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -884,10 +884,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1017950724
-      Data2: 1083738604
-      Data3: -1691125072
-      Data4: -1503656485
+      Data1: -325464955
+      Data2: 1171429948
+      Data3: -875308147
+      Data4: 1748753939
     Path: event:/Music/Cutscene
   Event: 
   PlayEvent: 11

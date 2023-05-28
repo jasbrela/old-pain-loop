@@ -37,7 +37,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         {
             if (hiddenStatus.IsHidden)
             {
-                input.actions["Movement"].Disable();
+                LockMovement();
             }
             else
             {
@@ -50,12 +50,17 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             input.actions["Movement"].Enable();
         }
 
+        public void LockMovement()
+        {
+            input.actions["Movement"].Disable();
+        }
+
         private void SetUpControls()
         {
             input.actions["Movement"].performed += SetMovement;
             input.actions["Movement"].canceled += ResetMovement;
             
-            if (startLocked) input.actions["Movement"].Disable();
+            if (startLocked) LockMovement();
         }
 
         private void OnDisable()

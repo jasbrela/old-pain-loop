@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7f4b2073-3d52-48d5-bd35-1004315ff9cf}">
+		<property name="assetPath">
+			<value>Xylophone_Monster.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>10.055999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{519b26be-39a1-4dc6-9372-88596cc3c9fe}</destination>
+		</relationship>
+	</object>
+</objects>

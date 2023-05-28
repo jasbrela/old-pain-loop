@@ -45,7 +45,7 @@ namespace PanicPlayhouse.Scripts.UI
 
         public void LoadMenuScene()
         {
-            StartCoroutine(WaitThenLoad(0));
+            StartCoroutine(WaitThenLoad(1));
         }
 
         private void DisableObjectOnLoad()
@@ -55,12 +55,17 @@ namespace PanicPlayhouse.Scripts.UI
 #endif
         }
 
-        IEnumerator WaitThenLoad(int index)
+        public void LoadAfterDelay(float delay)
+        {
+            StartCoroutine(WaitThenLoad(NextScene, delay));
+        }
+
+        IEnumerator WaitThenLoad(int index, float delay = 0.5f)
         {
 
             DisableObjectOnLoad();
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(delay);
 
 #if !UNITY_WEBGL
             if (_richPresence != null) {

@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2018830641
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -803839969, guid: 94c01691e36e25b489a64c5e34448260, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -234,9 +234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c56eee3c3e0be948a3e6684a9912e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startLocked: 1
   defaultForce: 80
   defaultMaxVel: 10
-  lastKnownPos: {fileID: 11400000, guid: 0d7671ccd9b703a4e802a36ba3734be3, type: 2}
   footsteps:
     Guid:
       Data1: -1980647854
@@ -327,6 +327,7 @@ MonoBehaviour:
   input: {fileID: 7734100179996136551}
   onLeaveHideout: {fileID: 11400000, guid: 27e13900304a25049a8b597d77284e7b, type: 2}
   minDelayToLeave: 1
+  isHidden: 0
   percentageToExhausted: 50
   insanityReward: 1
   insanity: {fileID: 11400000, guid: c94776497f346824984f8bf99fb6f8d4, type: 2}

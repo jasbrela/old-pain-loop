@@ -25,7 +25,6 @@ namespace PanicPlayhouse.Scripts.UI
             PlayerPrefs.SetInt("locale", index);
             
             if (text != null) text.gameObject.SetActive(true);
-            
             boot.Ready(gameObject);
         }
     }

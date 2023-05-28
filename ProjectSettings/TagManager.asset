@@ -42,6 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Walls
+    uniqueID: 1550125195
+    locked: 0
   - name: Scenario (Back)
     uniqueID: 857564113
     locked: 0

@@ -20,7 +20,7 @@ namespace PanicPlayhouse.Scripts.UI
         public void Ready(GameObject obj, bool failed = false)
         {
             bool ready = true;
-        
+
             foreach (EssentialSystem sys in systems)
             {
                 if (sys.gameObject == obj)
@@ -38,7 +38,7 @@ namespace PanicPlayhouse.Scripts.UI
                     sys.ready = true;
                 }
 
-                ready = sys.ready;
+                if (!sys.ready) ready = false;
             }
         
             if (ready) loader.LoadNextScene();

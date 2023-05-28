@@ -17,6 +17,7 @@ namespace PanicPlayhouse.Scripts.Chunk
         private List<ChunkEntity> _entities = new();
         private int _id;
         private bool _isPlayerInside;
+        private bool _firstTime = true;
         
         private void Start()
         {
@@ -34,9 +35,12 @@ namespace PanicPlayhouse.Scripts.Chunk
                 _isPlayerInside = true;
                 
                 gameObject.name = "Chunk (Visible) " + _id;
-                
-                if (onEnterChunk != null)
+
+                if (onEnterChunk != null && _firstTime)
+                {
                     onEnterChunk.Raise();
+                    _firstTime = false;
+                }
 
                 foreach (ChunkEntity obj in _entities)
                     obj.FadeIn();

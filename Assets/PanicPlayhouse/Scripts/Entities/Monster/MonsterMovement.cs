@@ -7,7 +7,6 @@ using PanicPlayhouse.Scripts.Entities.Player;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
@@ -16,6 +15,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
     public class MonsterMovement : MonoBehaviour
     {
         [Header("Sound")]
+        [SerializeField] private StudioEventEmitter xylophone;
         [SerializeField] private EventReference knock;
         [SerializeField] private EventReference breath;
         [SerializeField] private EventReference attack;
@@ -43,6 +43,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         [Header("DEBUG")]
         [SerializeField] [ReadOnly] private float distanceFromDestination;
         [SerializeField] [ReadOnly] private float distanceFromPlayer;
+        [SerializeField] [ReadOnly] private float distanceFromDefault;
         [SerializeField] [ReadOnly] private bool isCheckingPlayer;
         [SerializeField] [ReadOnly] private bool wasCheckingPlayer;
         [SerializeField] [ReadOnly] private bool wasPathComplete;
@@ -50,6 +51,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         [SerializeField] [ReadOnly] private bool killedPlayer;
         [SerializeField] [ReadOnly] private bool isFollowingPlayer;
 
+        private bool _firstEvent = true;
         private EventInstance _footstepInstance;
         private EventInstance _heartbeatInstance;
         private EventInstance _chasingMusicInstance;
@@ -124,7 +126,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 
                 distanceFromDestination = Vector3.Distance(monster, agent.destination);
                 distanceFromPlayer = Vector3.Distance(monster, player.transform.position);
-                Vector3.Distance(monster, _defaultPos);
+                distanceFromDefault = Vector3.Distance(monster, _defaultPos);
 
                 if (isCheckingPlayer)
                 {
@@ -137,6 +139,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     wasCheckingPlayer = true;
                     SetAgentDestination(player.transform.position);
                     _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
+                    xylophone.Stop();
                     anim.Walking.SetBool(true);
                     spriteRenderer.flipX = monster.x - agent.destination.x > 0;
                 }
@@ -169,6 +172,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     anim.Walking.SetBool(true);
                     SetAgentDestination(player.transform.position);
                     _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
+                    xylophone.Stop();
                 }
                 else if (!wasPathComplete && distanceFromDestination <= agent.stoppingDistance)
                 {
@@ -176,6 +180,12 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 #if UNITY_EDITOR
                     Debug.Log("MonsterMovement: ".Bold() + "PathComplete");
 #endif
+                    if (distanceFromDefault < 1f && !_firstEvent)
+                    {
+                        if (arrivedAtDefaultPosition != null) arrivedAtDefaultPosition.Raise();
+                    }
+                    if (_firstEvent) _firstEvent = false;
+                    
                     // PATH COMPLETED
                     _audio.StopAudioInLoop(_footstepInstance);
                     anim.Walking.SetBool(false);
@@ -191,7 +201,6 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                             anim.Walking.SetBool(true);
                             _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                             StopAudiosInLoop();
-                            if (arrivedAtDefaultPosition != null) arrivedAtDefaultPosition.Raise();
                         }
                     }
                 }

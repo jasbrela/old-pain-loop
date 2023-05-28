@@ -18,6 +18,7 @@ namespace PanicPlayhouse.Scripts.Camera
         [SerializeField] private TextMeshProUGUI soon;
         [SerializeField] private SceneLoader loader;
         [SerializeField] private PlayerMovement player;
+        
         void Start()
         {
             StartCoroutine(Fade());
