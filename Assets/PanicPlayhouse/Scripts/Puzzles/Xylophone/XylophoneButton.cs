@@ -7,8 +7,21 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
     public class XylophoneButton : Interactable
     {
         [SerializeField] private EventReference click;
-        public bool IsBlocked { get; set; }
+        private bool _isBlocked;
         
+        public bool IsBlocked
+        {
+            get => _isBlocked;
+            set
+            {
+                _isBlocked = value;
+                if (_isBlocked)
+                {
+                    OnQuitRange();
+                }
+            }
+        }
+
         public XylophonePuzzle Puzzle
         {
             get => _puzzle;
