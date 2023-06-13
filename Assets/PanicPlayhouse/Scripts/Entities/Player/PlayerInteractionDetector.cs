@@ -1,15 +1,18 @@
+using System;
 using PanicPlayhouse.Scripts.Chunk;
 using PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace PanicPlayhouse.Scripts.Entities.Player
 {
     public class PlayerInteractionDetector : MonoBehaviour
     {
         [SerializeField] private bool debug;
+        [FormerlySerializedAs("maxRange")]
         [Space(10)]
-        [SerializeField] private float maxRange;
+        [SerializeField] private float interactionRadius;
         [SerializeField] private LayerMask interactableMask;
     
         [SerializeField] private PlayerInput input;
@@ -29,36 +32,47 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
         private void Update()
         {
-            RaycastForInteractable();
+            CheckForInteractable();
         }
 
-        private void RaycastForInteractable()
+        private void OnDrawGizmos()
         {
-            Ray ray = new Ray(transform.position + Vector3.up, _forward);
+            Gizmos.DrawWireSphere(transform.position, interactionRadius);
+        }
 
-            if (debug) Debug.DrawRay(ray.origin, ray.direction * maxRange, Color.cyan);
-
-            if (!Physics.Raycast(ray, out RaycastHit hit, maxRange, interactableMask))
+        private void CheckForInteractable()
+        {
+            var results = new Collider[5];
+            var size = Physics.OverlapSphereNonAlloc(transform.position, interactionRadius, results, interactableMask);
+            
+            Debug.Log(size);
+            
+            if (size == 0)
             {
                 ResetTarget();
                 return;
             }
 
-            if (hit.collider != null)
+            Interactable interactable = null;
+            
+            foreach (Collider col in results)
             {
-                hit.collider.TryGetComponent(out Interactable interactable);
-                
-                
+                if (interactable != null) break;
+                col.TryGetComponent(out interactable);
+            }
+            
+            if (interactable != null)
+            {
                 if (_currentTarget == interactable) return;
+                
                 if (_currentTarget != null) _currentTarget.OnQuitRange();
                 
                 _currentTarget = interactable;
+                
                 if (_currentTarget != null) _currentTarget.OnEnterRange();
             }
-            else
-            {
-                ResetTarget();
-            }
+            else ResetTarget();
+            
         }
 
         private void ResetTarget()
