@@ -1,22 +1,21 @@
-using System;
+using System.Collections;
 using PanicPlayhouse.Scripts.Chunk;
 using PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace PanicPlayhouse.Scripts.Entities.Player
 {
     public class PlayerInteractionDetector : MonoBehaviour
     {
-        [SerializeField] private bool debug;
-        [FormerlySerializedAs("maxRange")]
+        [SerializeField] private PlayerTooltip tooltip;
+
         [Space(10)]
         [SerializeField] private float interactionRadius;
         [SerializeField] private LayerMask interactableMask;
     
         [SerializeField] private PlayerInput input;
-        private Vector3 _forward = Vector3.forward;
+        private Vector3 _forward = Vector3.forward; // TODO: Remove forward
 
         private Interactable _currentTarget;
 
@@ -45,8 +44,6 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             var results = new Collider[5];
             var size = Physics.OverlapSphereNonAlloc(transform.position, interactionRadius, results, interactableMask);
             
-            Debug.Log(size);
-            
             if (size == 0)
             {
                 ResetTarget();
@@ -64,12 +61,21 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             if (interactable != null)
             {
                 if (_currentTarget == interactable) return;
-                
-                if (_currentTarget != null) _currentTarget.OnQuitRange();
+
+                if (_currentTarget != null)
+                {
+                    tooltip.IsCloseToInteraction = false;
+                    _currentTarget.OnQuitRange();
+                    tooltip.HideTooltip();
+                }
                 
                 _currentTarget = interactable;
+
+                if (_currentTarget == null) return;
                 
-                if (_currentTarget != null) _currentTarget.OnEnterRange();
+                _currentTarget.OnEnterRange();
+                ResetIdleTimer();
+                tooltip.IsCloseToInteraction = true;
             }
             else ResetTarget();
             
@@ -79,8 +85,12 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         {
             if (_currentTarget == null) return;
 
+            tooltip.IsCloseToInteraction = false;
             _currentTarget.OnQuitRange();
             _currentTarget = null;
+            
+            StopCoroutine(IdleTimer());
+            tooltip.HideTooltip();
         }
     
         private void SetUpControls()
@@ -101,15 +111,37 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             input.actions["Movement"].performed -= OnPlayerMove;
         }
     
-        private void Interact(InputAction.CallbackContext callbackContext)
+        private void Interact(InputAction.CallbackContext ctx)
         {
             if (_currentTarget == null) return;
+            
+            tooltip.SetInteractionKey(ctx.action.activeControl.displayName);
+            
+            ResetIdleTimer();
+            tooltip.HideTooltip();
             
             _currentTarget.OnInteract();
 
             if (!_currentTarget.TryGetComponent(out Pushable pushable)) return;
             
             pushable.Push(_forward);
+        }
+        
+        private void ResetIdleTimer() {
+            StopCoroutine(IdleTimer());
+            StartCoroutine(IdleTimer());
+        }
+        
+        private IEnumerator IdleTimer()
+        {
+            yield return new WaitForSeconds(tooltip.MinimumInactiveSeconds);
+            if (_currentTarget == null)
+            {
+                ResetIdleTimer();
+                yield break;
+            }
+
+            tooltip.ShowInteractionTooltip();
         }
     }
 }

@@ -60,6 +60,9 @@ TagManager:
   - name: Scenario (Front)
     uniqueID: 1748469711
     locked: 0
+  - name: UI (In-game)
+    uniqueID: 2336533873
+    locked: 0
   - name: UI
     uniqueID: 3397244933
     locked: 0

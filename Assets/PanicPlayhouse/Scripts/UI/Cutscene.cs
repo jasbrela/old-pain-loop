@@ -12,7 +12,6 @@ namespace PanicPlayhouse.Scripts.UI
         [SerializeField] private GameObject imagesParent;
         [SerializeField] private List<GameObject> images;
         [SerializeField] private int secondsPerScene;
-        [SerializeField] private GameObject tutorial;
         [SerializeField] private CameraFade fade;
         [SerializeField] private SceneLoader loader;
 
@@ -21,7 +20,6 @@ namespace PanicPlayhouse.Scripts.UI
 
         private void Start()
         {
-            tutorial.SetActive(false);
             loader.PreLoadNextScene();
             _coroutine = StartCoroutine(StartCutscene());
             
@@ -68,7 +66,7 @@ namespace PanicPlayhouse.Scripts.UI
                 images[_currentScene].SetActive(true);
             }
 
-            ShowTutorial();
+            loader.LoadNextScene();
         }
 
         private IEnumerator OnSkip()
@@ -76,16 +74,7 @@ namespace PanicPlayhouse.Scripts.UI
             fade.FadeIn();
             yield return new WaitForSeconds(fade.Duration);
             imagesParent.SetActive(false);
-            ShowTutorial();
-            fade.FadeOut();
-            yield return new WaitForSeconds(fade.Duration);
-        }
-
-        private void ShowTutorial()
-        {
-            Cursor.visible = true;
-            DisableControls();
-            tutorial.SetActive(true);
+            loader.LoadNextScene();
         }
     }
 }

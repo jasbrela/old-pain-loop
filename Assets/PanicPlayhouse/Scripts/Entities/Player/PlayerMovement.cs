@@ -2,7 +2,6 @@ using FMOD.Studio;
 using FMODUnity;
 using NaughtyAttributes;
 using PanicPlayhouse.Scripts.Audio;
-using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,7 +20,8 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         [SerializeField] private PlayerInput input;
         [Label("Animation")] [SerializeField] private EntityAnimation anim;
         [SerializeField] private PlayerHiddenStatus hiddenStatus;
-        
+
+        public bool IsMoving { get; private set; }
         private EventInstance _footstepInstance;
         private AudioManager _audio;
         private Vector3 _previousInput;
@@ -71,6 +71,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
         private void SetMovement(InputAction.CallbackContext ctx)
         {
+            IsMoving = true;
             _previousInput = ctx.ReadValue<Vector3>();
 
             if (_previousInput != Vector3.zero)
@@ -103,6 +104,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
     
         private void ResetMovement(InputAction.CallbackContext obj)
         {
+            IsMoving = false;
             _previousInput = Vector3.zero;
             Vector3 vel = rb.velocity;
         
