@@ -2,6 +2,7 @@
 using FMODUnity;
 using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.Chunk;
+using PanicPlayhouse.Scripts.Puzzles.Grief;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
@@ -23,6 +24,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         [SerializeField] private Event onFinish;
         [SerializeField] private List<XylophoneButton> order;
         [SerializeField] private List<Wall> wallsToOpen;
+        [SerializeField] private List<GameObject> roomsToShow;
         [SerializeField] private List<SpriteRenderer> drawingsToColor;
         [SerializeField] private List<Color> colors;
         [SerializeField] private Color disabledColor;
@@ -58,6 +60,8 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             {
                 button.Puzzle = this;
             }
+            
+            ActivatePuzzle();
         }
 
         public void EnableFlowers()
@@ -90,9 +94,14 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             if (!_firstButtonPressed)
             {
                 _firstButtonPressed = true;
+
                 foreach (Wall wall in wallsToOpen)
                 {
                     wall.Unlock();
+                }
+                foreach (GameObject room in roomsToShow)
+                {
+                    room.SetActive(true);
                 }
             }
             

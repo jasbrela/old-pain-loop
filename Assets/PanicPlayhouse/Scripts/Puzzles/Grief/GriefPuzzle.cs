@@ -49,6 +49,8 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
                 button.IsBlocked = true;
                 button.Puzzle = this;
             }
+            
+            ActivatePuzzle();
         }
 
         public void ActivatePuzzle()

@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
 
 namespace PanicPlayhouse.Scripts.Chunk
 {
@@ -7,6 +9,9 @@ namespace PanicPlayhouse.Scripts.Chunk
     {
         [SerializeField] private float delayToOpen = 0.5f;
         [SerializeField] private Wall openWall;
+        [SerializeField] private List<GameObject> show;
+        [SerializeField] private Event onEnterTutorialHideout;
+        
         private bool _interacted = false;
         public override void OnInteract()
         {
@@ -14,13 +19,19 @@ namespace PanicPlayhouse.Scripts.Chunk
             
             _interacted = true;
             base.OnInteract();
-            StartCoroutine(OpenWall());
+            StartCoroutine(AfterOnInteract());
         }
 
-        private IEnumerator OpenWall()
+        private IEnumerator AfterOnInteract()
         {
             yield return new WaitForSeconds(delayToOpen);
             
+            if (onEnterTutorialHideout != null) onEnterTutorialHideout.Raise();
+            
+            foreach (GameObject obj in show)
+            {
+                obj.SetActive(true);
+            }
             openWall.Unlock();
         }
     }

@@ -52,6 +52,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             foreach (GoldenBeadMaterialBase matBase in _matBases)
                 matBase.Puzzle = this;
             
+            ActivatePuzzle();
         }
         
         public void ActivatePuzzle()
