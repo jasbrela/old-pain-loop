@@ -11,7 +11,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
     {
         [Header("Puzzle")]
         [SerializeField] private Event onFinish;
-        
+
         [Header("Insanity")]
         [SerializeField] private float insanityPenalty;
         [SerializeField] private float insanityReward;
@@ -23,19 +23,19 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
 
         private AudioManager _audio;
         private List<GoldenBeadMaterialBase> _matBases;
-        private List<Pushable> _pushables;
+        private List<PuzzlePickupable> _pushables;
         private List<bool> _areCorrect;
 
         private bool IsActivated { get; set; }
         private bool IsFinished { get; set; }
-        
+
         private void Start()
         {
             _audio = FindObjectOfType<AudioManager>();
-            _pushables = new(FindObjectsOfType<Pushable>());
+            _pushables = new(FindObjectsOfType<PuzzlePickupable>());
             _matBases = new(FindObjectsOfType<GoldenBeadMaterialBase>());
-            _areCorrect = new List<bool>(_matBases.Count) { false, false, false};
-            
+            _areCorrect = new List<bool>(_matBases.Count) { false, false, false };
+
             if (_matBases.Count == 0)
             {
                 gameObject.SetActive(false);
@@ -45,16 +45,16 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
                 return;
             }
 
-            foreach (Pushable pushable in _pushables)
+            foreach (PuzzlePickupable pushable in _pushables)
                 pushable.IsBlocked = true;
-            
-            
+
+
             foreach (GoldenBeadMaterialBase matBase in _matBases)
                 matBase.Puzzle = this;
-            
+
             ActivatePuzzle();
         }
-        
+
         public void ActivatePuzzle()
         {
             if (IsActivated || IsFinished) return;
@@ -65,7 +65,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             Debug.Log(name.Bold().Color("#00FA9A") + " has been activated.");
 #endif
 
-            foreach (Pushable pushable in _pushables)
+            foreach (PuzzlePickupable pushable in _pushables)
                 pushable.IsBlocked = false;
         }
 
@@ -81,25 +81,25 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
                 if (onFinish != null) onFinish.Raise();
                 IsFinished = true;
                 insanity.Value -= insanityReward;
-                
+
                 foreach (var pushable in _pushables)
                     pushable.IsBlocked = true;
             }
 
             insanity.Value += insanityPenalty;
         }
-        
+
         public void OnReleaseBase(GoldenBeadMaterialBase matBase)
         {
             _areCorrect[_matBases.IndexOf(matBase)] = matBase.IsCorrect;
-            
+
             if (_areCorrect.IndexOf(false) == -1)
             {
                 _audio.PlayOneShot(success);
                 if (onFinish != null) onFinish.Raise();
                 IsFinished = true;
                 insanity.Value -= insanityReward;
-                
+
                 foreach (var pushable in _pushables)
                     pushable.IsBlocked = true;
             }

@@ -6,18 +6,30 @@ using UnityEngine.InputSystem;
 
 namespace PanicPlayhouse.Scripts.Entities.Player
 {
+    public enum PlayerInteractionState
+    {
+        None,
+        InteractableNearby,
+        InteractablePickedUp
+    }
+
     public class PlayerInteractionDetector : MonoBehaviour
     {
+        [Header("Tooltip")]
         [SerializeField] private PlayerTooltip tooltip;
 
+        [Header("Interaction")]
         [Space(10)]
         [SerializeField] private float interactionRadius;
         [SerializeField] private LayerMask interactableMask;
-    
+        public Transform pickupInteractablePosition;
+
         [SerializeField] private PlayerInput input;
-        private Vector3 _forward = Vector3.forward; // TODO: Remove forward
 
         private Interactable _currentTarget;
+        private Pickupable _pickedUpInteractable;
+        private PlayerInteractionState _currentInteractionState = PlayerInteractionState.None;
+
 
         private void Start()
         {
@@ -41,58 +53,82 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
         private void CheckForInteractable()
         {
-            var results = new Collider[5];
-            var size = Physics.OverlapSphereNonAlloc(transform.position, interactionRadius, results, interactableMask);
-            
-            if (size == 0)
+            bool GetNearbyInteractable(out Interactable interactable)
             {
-                ResetTarget();
-                return;
-            }
+                interactable = null;
+                Collider[] results = new Collider[5];
+                int size = Physics.OverlapSphereNonAlloc(transform.position, interactionRadius, results, interactableMask);
 
-            Interactable interactable = null;
-            
-            foreach (Collider col in results)
-            {
-                if (interactable != null) break;
-                col.TryGetComponent(out interactable);
-            }
-            
-            if (interactable != null)
-            {
-                if (_currentTarget == interactable) return;
+                if (size == 0)
+                    return false;
 
-                if (_currentTarget != null)
+                foreach (Collider col in results)
                 {
-                    tooltip.IsCloseToInteraction = false;
-                    _currentTarget.OnQuitRange();
-                    tooltip.HideTooltip();
+                    col.TryGetComponent(out interactable);
+                    if (interactable != null) break;
                 }
-                
-                _currentTarget = interactable;
 
-                if (_currentTarget == null) return;
-                
+                if (interactable == null)
+                    return false;
+
+                return true;
+            }
+            void SetupCurrentTarget(Interactable nearbyInteractable)
+            {
+                _currentInteractionState = PlayerInteractionState.InteractableNearby;
+                _currentTarget = nearbyInteractable;
                 _currentTarget.OnEnterRange();
                 ResetIdleTimer();
                 tooltip.IsCloseToInteraction = true;
             }
-            else ResetTarget();
-            
+
+
+            // Get nearest interactable.
+            if (!GetNearbyInteractable(out Interactable nearbyInteractable))
+            {
+                ResetTarget();
+            }
+
+            // We didn't have any nearby interactables last check;
+            if (_currentInteractionState == PlayerInteractionState.None && nearbyInteractable != null)
+            {
+                // Setup current target with nearby interactable.
+                SetupCurrentTarget(nearbyInteractable);
+            }
+            else if (_currentInteractionState == PlayerInteractionState.InteractableNearby)
+            {
+                if (_currentTarget != nearbyInteractable)
+                {
+                    ResetTarget();
+                    SetupCurrentTarget(nearbyInteractable);
+                }
+            }
+            else if (_currentInteractionState == PlayerInteractionState.InteractablePickedUp)
+            {
+                // Caso não tenhamos interagível nas mãos, volta o estado do player para None e chama a função novamente.
+                if (_pickedUpInteractable == null || !_pickedUpInteractable.pickedUp)
+                {
+                    _pickedUpInteractable = null;
+                    ResetTarget();
+                    CheckForInteractable();
+                }
+                else SetupCurrentTarget(_pickedUpInteractable);
+            }
         }
 
         private void ResetTarget()
         {
+            _currentInteractionState = PlayerInteractionState.None;
             if (_currentTarget == null) return;
 
             tooltip.IsCloseToInteraction = false;
             _currentTarget.OnQuitRange();
             _currentTarget = null;
-            
+
             StopCoroutine(IdleTimer());
             tooltip.HideTooltip();
         }
-    
+
         private void SetUpControls()
         {
             input.actions["Interact"].performed += Interact;
@@ -102,7 +138,6 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         private void OnPlayerMove(InputAction.CallbackContext obj)
         {
             var forward = obj.ReadValue<Vector3>().normalized;
-            if (forward != Vector3.zero) _forward = forward;
         }
 
         private void UnsubscribeControls()
@@ -110,28 +145,39 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             input.actions["Interact"].performed -= Interact;
             input.actions["Movement"].performed -= OnPlayerMove;
         }
-    
+
         private void Interact(InputAction.CallbackContext ctx)
         {
             if (_currentTarget == null) return;
-            
+
             tooltip.SetInteractionKey(ctx.action.activeControl.displayName);
-            
+
             ResetIdleTimer();
             tooltip.HideTooltip();
-            
+
             _currentTarget.OnInteract();
 
-            if (!_currentTarget.TryGetComponent(out Pushable pushable)) return;
-            
-            pushable.Push(_forward);
+            if (!_currentTarget.TryGetComponent(out Pickupable pickupable))
+            {
+                if (pickupable.pickedUp)
+                {
+                    _pickedUpInteractable = pickupable;
+                    _currentInteractionState = PlayerInteractionState.InteractablePickedUp;
+                }
+                else
+                {
+                    _pickedUpInteractable = null;
+                    _currentInteractionState = PlayerInteractionState.None;
+                }
+            }
         }
-        
-        private void ResetIdleTimer() {
+
+        private void ResetIdleTimer()
+        {
             StopCoroutine(IdleTimer());
             StartCoroutine(IdleTimer());
         }
-        
+
         private IEnumerator IdleTimer()
         {
             yield return new WaitForSeconds(tooltip.MinimumInactiveSeconds);

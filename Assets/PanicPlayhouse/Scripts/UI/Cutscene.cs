@@ -20,12 +20,12 @@ namespace PanicPlayhouse.Scripts.UI
 
         private void Start()
         {
-            loader.PreLoadNextScene();
             _coroutine = StartCoroutine(StartCutscene());
-            
+            loader.PreLoadNextScene();
+
             SetUpControls();
         }
-        
+
         private void SetUpControls()
         {
             input.actions["Skip"].performed += Skip;

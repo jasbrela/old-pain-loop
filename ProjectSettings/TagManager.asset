@@ -16,7 +16,7 @@ TagManager:
   - AvoidPushing
   - Monster
   - Obstacles
-  - 
+  - PickedUpInteractable
   - 
   - 
   - 

@@ -473,19 +473,32 @@ MonoBehaviour:
   hoverSprite: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 8273640313085596070}
-  value: 100
   radius: 5
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 128
-  duration: 1
-  drag:
+  tweenDuration: 1
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  pickedUpInteractableLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  pickup:
     Guid:
       Data1: 103157692
       Data2: 1297533507
       Data3: -573588051
       Data4: -1006240165
     Path: event:/Puzzles/GoldenBeads/Drag
+  drop:
+    Guid:
+      Data1: 103157692
+      Data2: 1297533507
+      Data3: -573588051
+      Data4: -1006240165
+    Path: event:/Puzzles/GoldenBeads/Drag
+  interactionDetector: {fileID: 0}
 --- !u!65 &4385566547989614996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -920,19 +933,32 @@ MonoBehaviour:
   hoverSprite: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 416797054500706521}
-  value: 1
   radius: 5
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 128
-  duration: 1
-  drag:
+  tweenDuration: 1
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  pickedUpInteractableLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  pickup:
     Guid:
       Data1: 103157692
       Data2: 1297533507
       Data3: -573588051
       Data4: -1006240165
     Path: event:/Puzzles/GoldenBeads/Drag
+  drop:
+    Guid:
+      Data1: 103157692
+      Data2: 1297533507
+      Data3: -573588051
+      Data4: -1006240165
+    Path: event:/Puzzles/GoldenBeads/Drag
+  interactionDetector: {fileID: 0}
 --- !u!65 &8884361991693590465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1615,19 +1641,32 @@ MonoBehaviour:
   hoverSprite: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 1211200421264012653}
-  value: 10
   radius: 5
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 128
-  duration: 1
-  drag:
+  tweenDuration: 1
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  pickedUpInteractableLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  pickup:
     Guid:
       Data1: 103157692
       Data2: 1297533507
       Data3: -573588051
       Data4: -1006240165
     Path: event:/Puzzles/GoldenBeads/Drag
+  drop:
+    Guid:
+      Data1: 103157692
+      Data2: 1297533507
+      Data3: -573588051
+      Data4: -1006240165
+    Path: event:/Puzzles/GoldenBeads/Drag
+  interactionDetector: {fileID: 0}
 --- !u!65 &5121778115323642731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1763,7 +1802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6024075932156089722}
   - component: {fileID: 6150905185500135851}
-  - component: {fileID: 76984965275140303}
+  - component: {fileID: 3636889166309954519}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -1779,7 +1818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6024075932156089671}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0077171326, y: 0.06, z: 0.011657715}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1801,19 +1840,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctValue: 0
---- !u!135 &76984965275140303
-SphereCollider:
+--- !u!65 &3636889166309954519
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6024075932156089671}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.64723617
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.5, z: 1}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!1 &6510980845950571214
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,19 +2074,32 @@ MonoBehaviour:
   hoverSprite: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 1867444206183243904}
-  value: 10
   radius: 5
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 128
-  duration: 1
-  drag:
+  tweenDuration: 1
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  pickedUpInteractableLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  pickup:
     Guid:
       Data1: 103157692
       Data2: 1297533507
       Data3: -573588051
       Data4: -1006240165
     Path: event:/Puzzles/GoldenBeads/Drag
+  drop:
+    Guid:
+      Data1: 103157692
+      Data2: 1297533507
+      Data3: -573588051
+      Data4: -1006240165
+    Path: event:/Puzzles/GoldenBeads/Drag
+  interactionDetector: {fileID: 0}
 --- !u!65 &8712680825548931919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2310,19 +2362,32 @@ MonoBehaviour:
   hoverSprite: {fileID: 0}
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 7688430947765855252}
-  value: 10
   radius: 5
   avoidOverlap:
     serializedVersion: 2
     m_Bits: 128
-  duration: 1
-  drag:
+  tweenDuration: 1
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  pickedUpInteractableLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  pickup:
     Guid:
       Data1: 103157692
       Data2: 1297533507
       Data3: -573588051
       Data4: -1006240165
     Path: event:/Puzzles/GoldenBeads/Drag
+  drop:
+    Guid:
+      Data1: 103157692
+      Data2: 1297533507
+      Data3: -573588051
+      Data4: -1006240165
+    Path: event:/Puzzles/GoldenBeads/Drag
+  interactionDetector: {fileID: 0}
 --- !u!65 &132476024114923985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2489,7 +2554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3650877577617496502, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4396503253355224572, guid: 5771034d00a746e40adb2d78f81b704f, type: 3}
       propertyPath: m_RootOrder
