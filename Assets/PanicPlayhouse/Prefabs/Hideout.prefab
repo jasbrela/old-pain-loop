@@ -143,7 +143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5676857025500680981, guid: 98853e6a46833db4e98a00bcca8110b3, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5676857025500680981, guid: 98853e6a46833db4e98a00bcca8110b3, type: 3}
       propertyPath: m_SortingLayerID
@@ -265,7 +265,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5676857026044252300, guid: 98853e6a46833db4e98a00bcca8110b3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98853e6a46833db4e98a00bcca8110b3, type: 3}
 --- !u!212 &8054852612213038252 stripped
 SpriteRenderer:

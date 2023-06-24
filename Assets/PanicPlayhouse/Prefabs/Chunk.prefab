@@ -386,7 +386,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5130497187238044172}
   - component: {fileID: 3103861212335142996}
-  - component: {fileID: 231459192}
   m_Layer: 0
   m_Name: Chunk
   m_TagString: Untagged
@@ -426,21 +425,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 4, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
---- !u!114 &231459192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5130497187238044168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d494843ea5e6b842b2e44f5d80c5e1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onEnterChunk: {fileID: 0}
-  useCamPerRoom: 0
-  virtualCam: {fileID: 0}
 --- !u!1001 &3321104013092450425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,7 +500,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3121073041233223833, guid: 2ff20d597dbde994c8290b1e643f9af5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ff20d597dbde994c8290b1e643f9af5, type: 3}
 --- !u!4 &2609827167997880123 stripped
 Transform:
@@ -598,7 +583,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3121073041233223833, guid: 2ff20d597dbde994c8290b1e643f9af5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ff20d597dbde994c8290b1e643f9af5, type: 3}
 --- !u!4 &5725649923179838219 stripped
 Transform:
@@ -680,7 +666,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3121073041233223833, guid: 2ff20d597dbde994c8290b1e643f9af5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ff20d597dbde994c8290b1e643f9af5, type: 3}
 --- !u!4 &6820187086319950365 stripped
 Transform:
@@ -762,7 +749,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3121073041233223833, guid: 2ff20d597dbde994c8290b1e643f9af5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2ff20d597dbde994c8290b1e643f9af5, type: 3}
 --- !u!4 &8680738587226534627 stripped
 Transform:

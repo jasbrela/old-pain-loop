@@ -46,7 +46,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
         private void OnMove(InputAction.CallbackContext obj)
         {
-            throw new NotImplementedException();
+            ResetIdleTimer();
         }
 
         private void ShowMovementTooltip()
