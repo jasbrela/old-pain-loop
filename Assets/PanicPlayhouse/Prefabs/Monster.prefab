@@ -62,7 +62,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMaxDistance: 100
 --- !u!1 &2617084689451222883
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +329,7 @@ MonoBehaviour:
   delayBetweenChecks: 0.1
   distanceFromDestination: 0
   distanceFromPlayer: 0
+  distanceFromDefault: 0
   isCheckingPlayer: 0
   wasCheckingPlayer: 0
   wasPathComplete: 0
