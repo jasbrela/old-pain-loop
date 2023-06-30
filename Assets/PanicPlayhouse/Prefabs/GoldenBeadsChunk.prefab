@@ -474,16 +474,19 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 8273640313085596070}
   radius: 5
-  avoidOverlap:
-    serializedVersion: 2
-    m_Bits: 128
   tweenDuration: 1
-  interactableLayerMask:
+  interactableMask:
     serializedVersion: 2
     m_Bits: 64
-  pickedUpInteractableLayerMask:
+  pickedUpInteractableMask:
     serializedVersion: 2
     m_Bits: 1024
+  avoidOverlapMask:
+    serializedVersion: 2
+    m_Bits: 128
+  roomMask:
+    serializedVersion: 2
+    m_Bits: 1
   pickup:
     Guid:
       Data1: 103157692
@@ -934,16 +937,19 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 416797054500706521}
   radius: 5
-  avoidOverlap:
-    serializedVersion: 2
-    m_Bits: 128
   tweenDuration: 1
-  interactableLayerMask:
+  interactableMask:
     serializedVersion: 2
     m_Bits: 64
-  pickedUpInteractableLayerMask:
+  pickedUpInteractableMask:
     serializedVersion: 2
     m_Bits: 1024
+  avoidOverlapMask:
+    serializedVersion: 2
+    m_Bits: 128
+  roomMask:
+    serializedVersion: 2
+    m_Bits: 1
   pickup:
     Guid:
       Data1: 103157692
@@ -1642,16 +1648,19 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 1211200421264012653}
   radius: 5
-  avoidOverlap:
-    serializedVersion: 2
-    m_Bits: 128
   tweenDuration: 1
-  interactableLayerMask:
+  interactableMask:
     serializedVersion: 2
     m_Bits: 64
-  pickedUpInteractableLayerMask:
+  pickedUpInteractableMask:
     serializedVersion: 2
     m_Bits: 1024
+  avoidOverlapMask:
+    serializedVersion: 2
+    m_Bits: 128
+  roomMask:
+    serializedVersion: 2
+    m_Bits: 1
   pickup:
     Guid:
       Data1: 103157692
@@ -2075,16 +2084,19 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 1867444206183243904}
   radius: 5
-  avoidOverlap:
-    serializedVersion: 2
-    m_Bits: 128
   tweenDuration: 1
-  interactableLayerMask:
+  interactableMask:
     serializedVersion: 2
     m_Bits: 64
-  pickedUpInteractableLayerMask:
+  pickedUpInteractableMask:
     serializedVersion: 2
     m_Bits: 1024
+  avoidOverlapMask:
+    serializedVersion: 2
+    m_Bits: 128
+  roomMask:
+    serializedVersion: 2
+    m_Bits: 1
   pickup:
     Guid:
       Data1: 103157692
@@ -2363,16 +2375,19 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 7688430947765855252}
   radius: 5
-  avoidOverlap:
-    serializedVersion: 2
-    m_Bits: 128
   tweenDuration: 1
-  interactableLayerMask:
+  interactableMask:
     serializedVersion: 2
     m_Bits: 64
-  pickedUpInteractableLayerMask:
+  pickedUpInteractableMask:
     serializedVersion: 2
     m_Bits: 1024
+  avoidOverlapMask:
+    serializedVersion: 2
+    m_Bits: 128
+  roomMask:
+    serializedVersion: 2
+    m_Bits: 1
   pickup:
     Guid:
       Data1: 103157692

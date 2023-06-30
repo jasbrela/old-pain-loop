@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -9,69 +10,73 @@ namespace PanicPlayhouse.Scripts.Entities
         [Header("Animation")]
         [SerializeField] private Animator animator;
 
-        [HideIf("AnimatorIsNull")] [SerializeField] private BoolAnimation walking;
-        [HideIf("AnimatorIsNull")] [SerializeField] private TriggerAnimation attack;
-        
+        [HideIf("AnimatorIsNull")]
+        public GenericDictionary<string, Animation> animations = new GenericDictionary<string, Animation>();
+
         public bool AnimatorIsNull => animator == null;
-        
+
         private void OnValidate()
         {
             if (animator == null) return;
-            walking.SetAnimator(animator);
-            attack.SetAnimator(animator);
+
+            foreach (KeyValuePair<string, Animation> kvp in animations)
+            {
+                if (kvp.Value == null)
+                    animations[kvp.Key] = new Animation();
+
+                kvp.Value.SetAnimator(animator);
+            }
         }
-        
+
         private void Awake()
         {
-            if (animator == null) return;
-            walking.SetAnimator(animator);
-            attack.SetAnimator(animator);
+            OnValidate();
         }
 
-        public BoolAnimation Walking => walking;
-        public TriggerAnimation Attack => attack;
-
-        
-        [Serializable]
-        public class BoolAnimation : Animation
+        public Animation this[string key]
         {
-            private Animator _animator;
-            [HideIf("AnimatorIsNull")] [SerializeField] [AnimatorParam("_animator", AnimatorControllerParameterType.Bool)] private string param;
-            
-            public bool AnimatorIsNull => _animator == null;
-            
+            get => animations[key];
+            set => animations[key] = value;
+        }
+
+
+
+        public class Animation
+        {
+            [HideIf("AnimatorIsNull")]
+            [SerializeField]
+            [AnimatorParam("_animator")]
+            protected string _param;
+            protected Animator _animator;
+
+            public virtual void SetValue() => _animator.SetTrigger(_param);
+            public virtual void SetValue(bool value) => _animator.SetBool(_param, value);
+            public virtual void SetValue(float value) => _animator.SetFloat(_param, value);
+            public virtual void SetValue(int value) => _animator.SetInteger(_param, value);
+
             public Animation SetAnimator(Animator animator)
             {
-                if (_animator == null) _animator = animator;
+                _animator = animator;
                 return this;
             }
-            
-            public void SetBool(bool value)
-            {
-                _animator.SetBool(param, value);
-            }
-        }
-        
-        [Serializable]
-        public class TriggerAnimation : Animation
-        {
-            private Animator _animator;
-            [HideIf("AnimatorIsNull")] [SerializeField] [AnimatorParam("_animator", AnimatorControllerParameterType.Trigger)] private string param;
-            
-            public bool AnimatorIsNull => _animator == null;
-            
-            public Animation SetAnimator(Animator animator)
-            {
-                if (_animator == null) _animator = animator;
-                return this;
-            }
-            
-            public void SetTrigger()
-            {
-                _animator.SetTrigger(param);
-            }
-        }
 
-        public class Animation { }
+            public Animation()
+            {
+                _animator = null;
+                _param = null;
+            }
+
+            public Animation(Animator animator)
+            {
+                _animator = animator;
+                _param = null;
+            }
+
+            public Animation(Animator animator, string param)
+            {
+                _animator = animator;
+                this._param = param;
+            }
+        }
     }
 }

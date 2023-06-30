@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using PanicPlayhouse.Scripts.Utils;
 
 namespace PanicPlayhouse.Scripts.ScriptableObjects
 {
@@ -11,20 +12,20 @@ namespace PanicPlayhouse.Scripts.ScriptableObjects
         [SerializeField] private bool debug = true;
 #endif
         private readonly List<Listener> _listeners = new();
-        
+
         [Button]
         public void Raise()
         {
 #if UNITY_EDITOR
             if (debug) Debug.Log("Raised event: ".Bold().Color("#FFD700") + name);
 #endif
-            
-            for(int i = _listeners.Count -1; i >= 0; i--)
+
+            for (int i = _listeners.Count - 1; i >= 0; i--)
                 _listeners[i].OnEventRaised();
         }
 
         public void RegisterListener(Listener listener)
-        {   
+        {
             _listeners.Add(listener);
         }
 

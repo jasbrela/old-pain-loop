@@ -2,6 +2,7 @@ using System.Collections;
 using FMOD;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using PanicPlayhouse.Scripts.Utils;
 
 namespace PanicPlayhouse.Scripts.UI
 {
@@ -20,13 +21,13 @@ namespace PanicPlayhouse.Scripts.UI
 
         public void LoadNextScene()
         {
-            if (_asyncOperation is {isDone: true})
+            if (_asyncOperation is { isDone: true })
             {
                 DisableObjectOnLoad();
                 _asyncOperation.allowSceneActivation = true;
                 return;
             }
-            
+
             StartCoroutine(WaitThenLoad(NextScene));
         }
 
@@ -34,7 +35,7 @@ namespace PanicPlayhouse.Scripts.UI
         {
             StartCoroutine(LoadSceneAsyncProcess());
         }
-        
+
         private IEnumerator LoadSceneAsyncProcess()
         {
             _asyncOperation = SceneManager.LoadSceneAsync(NextScene);
@@ -68,7 +69,8 @@ namespace PanicPlayhouse.Scripts.UI
             yield return new WaitForSeconds(delay);
 
 #if !UNITY_WEBGL
-            if (_richPresence != null) {
+            if (_richPresence != null)
+            {
                 switch (index)
                 {
                     case 0: // BOOT

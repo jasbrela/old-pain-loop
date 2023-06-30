@@ -14,9 +14,6 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         [SerializeField] private float tweenDuration = 1f;
 
         [Header("Collision")]
-        [SerializeField] private LayerMask interactableMask;
-        [SerializeField] private LayerMask pickedUpInteractableMask;
-        [SerializeField] private LayerMask avoidOverlapMask;
         [SerializeField] private LayerMask roomMask;
 
         [Header("SFX")]
@@ -25,6 +22,10 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
 
         [Header("Components")]
         [SerializeField] private PlayerInteractionDetector interactionDetector;
+
+
+        private Collider _collider;
+        private Rigidbody _rigidbody;
 
         private bool _pickedUp = false;
         public bool pickedUp
@@ -49,6 +50,12 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
 
         private Tween currentTween;
 
+        private void Awake()
+        {
+            _collider = GetComponentInChildren<Collider>();
+            _rigidbody = GetComponentInChildren<Rigidbody>();
+        }
+
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;
@@ -59,7 +66,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
 
         public override void OnInteract()
         {
-            if (IsBlocked) return;
+            // if (IsBlocked) return;
 
             if (!_pickedUp) OnPickup();
             else OnDrop();
@@ -84,15 +91,25 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             // if (_pickedUp)
             //     return;
 
-            Audio.PlayOneShot(pickup);
+            Audio?.PlayOneShot(pickup);
             transform.SetParent(interactionDetector.pickupInteractablePosition);
             if (currentTween != null)
                 currentTween.Kill(true);
 
-            currentTween = transform.DOLocalMove(Vector3.zero, tweenDuration, true)
-            .OnComplete(() => { currentTween = null; });
+            currentTween = transform.DOLocalMove(Vector3.zero, tweenDuration)
+            .OnStart(() =>
+            {
+                _collider.enabled = false;
+                _rigidbody.useGravity = false;
+            })
+            .OnComplete(() =>
+            {
+                _collider.enabled = true;
+                _rigidbody.useGravity = true;
+                currentTween = null;
+            });
 
-            gameObject.layer = pickedUpInteractableMask.value;
+            // gameObject.layer = pickedUpInteractableMask.value;
 
             _pickedUp = true;
         }
@@ -110,7 +127,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             //     return;
 
             Transform roomTransform = null;
-            Audio.PlayOneShot(drop);
+            Audio?.PlayOneShot(drop);
 
 
             if (Physics.Raycast(interactionDetector.transform.position, Vector3.down, out RaycastHit hitInfo, 99, roomMask))
@@ -122,10 +139,18 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             if (currentTween != null)
                 currentTween.Kill(true);
 
-            currentTween = transform.DOMove(interactionDetector.transform.position, tweenDuration, true)
-            .OnComplete(() => { currentTween = null; });
-
-            gameObject.layer = interactableMask.value;
+            currentTween = transform.DOMove(interactionDetector.transform.position, tweenDuration)
+            .OnStart(() =>
+            {
+                _collider.enabled = false;
+                _rigidbody.useGravity = false;
+            })
+            .OnComplete(() =>
+            {
+                _collider.enabled = true;
+                _rigidbody.useGravity = true;
+                currentTween = null;
+            });
 
             _pickedUp = false;
         }

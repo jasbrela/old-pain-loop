@@ -16,9 +16,9 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         [SerializeField] private EventReference footsteps;
         [Header("Components")]
         [SerializeField] private SpriteRenderer spriteRenderer;
-        [Label("Rigidbody")] [SerializeField] private Rigidbody rb;
+        [Label("Rigidbody")][SerializeField] private Rigidbody rb;
         [SerializeField] private PlayerInput input;
-        [Label("Animation")] [SerializeField] private EntityAnimation anim;
+        [Label("Animation")][SerializeField] private EntityAnimation anim;
         [SerializeField] private PlayerHiddenStatus hiddenStatus;
 
         public bool IsMoving { get; private set; }
@@ -59,7 +59,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         {
             input.actions["Movement"].performed += SetMovement;
             input.actions["Movement"].canceled += ResetMovement;
-            
+
             if (startLocked) LockMovement();
         }
 
@@ -76,15 +76,15 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
             if (_previousInput != Vector3.zero)
             {
-                _audio.PlayAudioInLoop(ref _footstepInstance, footsteps);
+                _audio?.PlayAudioInLoop(ref _footstepInstance, footsteps);
             }
             else
             {
-                _audio.StopAudioInLoop(_footstepInstance);
+                _audio?.StopAudioInLoop(_footstepInstance);
             }
 
-            anim.Walking.SetBool(_previousInput != Vector3.zero);            
-            
+            anim["walking"].SetValue(_previousInput != Vector3.zero);
+
             if (_previousInput.x != 0) spriteRenderer.flipX = _previousInput.x > 0;
         }
 
@@ -93,26 +93,26 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         {
             Move();
         }
-    
+
         private void Move()
         {
             if (_isHidden) return;
             if (rb.velocity.magnitude >= defaultMaxVel) return;
-        
+
             rb.AddRelativeForce(_previousInput * defaultForce, ForceMode.Force);
         }
-    
+
         private void ResetMovement(InputAction.CallbackContext obj)
         {
             IsMoving = false;
             _previousInput = Vector3.zero;
             Vector3 vel = rb.velocity;
-        
+
             vel = new Vector2(vel.x * 0.15f, vel.y);
-        
+
             rb.velocity = vel;
-            anim.Walking.SetBool(false);            
-            _audio.StopAudioInLoop(_footstepInstance);
+            anim["walking"].SetValue(false);
+            _audio?.StopAudioInLoop(_footstepInstance);
         }
     }
 }

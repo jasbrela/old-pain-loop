@@ -1660,7 +1660,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -515.35, y: 0}
+  m_AnchoredPosition: {x: -515.35004, y: 0}
   m_SizeDelta: {x: -1302.7, y: 686.05005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &238917454
@@ -4615,16 +4615,10 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: fd240dd8520d0564bad0d8ef2cc12c6a, type: 2}
   spriteRenderer: {fileID: 1449907842}
   radius: 5
-  avoidOverlap:
-    serializedVersion: 2
-    m_Bits: 128
   tweenDuration: 1
-  interactableLayerMask:
+  roomMask:
     serializedVersion: 2
-    m_Bits: 64
-  pickedUpInteractableLayerMask:
-    serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1
   pickup:
     Guid:
       Data1: 103157692
@@ -16027,6 +16021,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 285402477806567589, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
+      propertyPath: animations.keyCollision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 285402477806567589, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
+      propertyPath: animations.list.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 285402477806567589, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
+      propertyPath: animations.list.Array.data[0].Key
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7734100179996136547, guid: 6035743e794274f4d9d7dd5003c53360, type: 3}
       propertyPath: m_Name
       value: Player

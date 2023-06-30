@@ -1,0 +1,1998 @@
+fileFormatVersion: 2
+guid: 40282e496680d2f4a9129934e5e27fa0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: upright_grab_0
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1468
+        width: 142
+        height: 450
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033a9c071e5c54b448614a20a6cc1340
+      internalID: 1920292975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_1
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 1465
+        width: 149
+        height: 451
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e766177f1678fe4abc21d7a97329734
+      internalID: -1904540762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_2
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1448
+        width: 153
+        height: 450
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1909db5c9c49ec040a0c0bbf612ce568
+      internalID: 1885689666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_3
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 1453
+        width: 161
+        height: 442
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac8865e275251f4f92f18c5dc7ec460
+      internalID: 76946595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_4
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 1448
+        width: 179
+        height: 435
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a545f91bede6ef84f86a2df02e2c69f4
+      internalID: 1868232277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_5
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1456
+        width: 191
+        height: 424
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e40c36499e874459ffad41a9f44b5d
+      internalID: 1589472849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_6
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 1464
+        width: 198
+        height: 408
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4920f514b48983341ae520d0d1d39552
+      internalID: -503773145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_7
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 1468
+        width: 206
+        height: 406
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f9302fe2ac8ea4eb6390905b7d0225
+      internalID: 1032715569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_8
+      rect:
+        serializedVersion: 2
+        x: 2585
+        y: 1468
+        width: 218
+        height: 389
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e4a29ed00c3544b9a72fbd0e60cc6a
+      internalID: -473069102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_9
+      rect:
+        serializedVersion: 2
+        x: 2889
+        y: 1468
+        width: 225
+        height: 378
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934f62bf63f99e54bba130ef1c1a1718
+      internalID: -1243125155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_10
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 1468
+        width: 225
+        height: 370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fe242cc1efc67489a22d832d43c058
+      internalID: 21016754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_11
+      rect:
+        serializedVersion: 2
+        x: 3517
+        y: 1464
+        width: 233
+        height: 366
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e16599c9aa25a143afa2d4d5f9d0859
+      internalID: 2083893123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_12
+      rect:
+        serializedVersion: 2
+        x: 3830
+        y: 1464
+        width: 237
+        height: 355
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5665b8e10e6bb1a4c8ea029e44971de9
+      internalID: -1503198327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_13
+      rect:
+        serializedVersion: 2
+        x: 4144
+        y: 1464
+        width: 237
+        height: 351
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5393d120e61241d4fb6e644eb9676be2
+      internalID: 800894567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_14
+      rect:
+        serializedVersion: 2
+        x: 4453
+        y: 1464
+        width: 241
+        height: 351
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8407044c09fa641a8f433f96819dd6
+      internalID: 1007494327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_15
+      rect:
+        serializedVersion: 2
+        x: 4765
+        y: 1464
+        width: 242
+        height: 351
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf00d3f17e1e3b41b7ccd1d7c47eaa1
+      internalID: 14272270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_16
+      rect:
+        serializedVersion: 2
+        x: 5076
+        y: 1468
+        width: 244
+        height: 343
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eadd6257f5247a047b4c508fce3f2850
+      internalID: 861141814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_17
+      rect:
+        serializedVersion: 2
+        x: 5389
+        y: 1468
+        width: 245
+        height: 343
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc670835195c49643b62fbc0404b638a
+      internalID: -272458346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_18
+      rect:
+        serializedVersion: 2
+        x: 5699
+        y: 1468
+        width: 244
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c4e8c969688c242b40ca63d0925ac0
+      internalID: 103915390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_19
+      rect:
+        serializedVersion: 2
+        x: 6001
+        y: 1468
+        width: 256
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7005264350a574eb9bcc10b717bf0e
+      internalID: 687924135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_20
+      rect:
+        serializedVersion: 2
+        x: 6302
+        y: 1468
+        width: 268
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f351c205e5dc04897248be472a4872
+      internalID: -983860017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_21
+      rect:
+        serializedVersion: 2
+        x: 6604
+        y: 1468
+        width: 279
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e99d06bb9f2efc7468e348a591099969
+      internalID: -1959279384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_22
+      rect:
+        serializedVersion: 2
+        x: 6906
+        y: 1468
+        width: 290
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d649ce7b0871c304a813c70df5ff0773
+      internalID: 685533484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_23
+      rect:
+        serializedVersion: 2
+        x: 7216
+        y: 1468
+        width: 294
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ae4a1f5fbca1e41ac4d401bac73683
+      internalID: -1721582589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_24
+      rect:
+        serializedVersion: 2
+        x: 7521
+        y: 1468
+        width: 298
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755b0636d058c96408663cb64334dd1b
+      internalID: -1734284190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_25
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 987
+        width: 305
+        height: 357
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af50c4102949ff84da196bd0428e5d5d
+      internalID: 920898573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_26
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 987
+        width: 305
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331d38b0f01cad442bb04f717ae7a27e
+      internalID: -665056859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_27
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 987
+        width: 305
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c26e62cc2b3857c4b899fc827cdeb980
+      internalID: -4175650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_28
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 987
+        width: 305
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4f8ac57cfaf584eaf470ea6c748afd
+      internalID: -247664544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_29
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 987
+        width: 306
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23709dc3cb2353446826f4889ffaf085
+      internalID: 97345057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_30
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 987
+        width: 309
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c707a7ac8d6eb4ebd64eadec4ded7e
+      internalID: -1621725921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_31
+      rect:
+        serializedVersion: 2
+        x: 1878
+        y: 987
+        width: 309
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf33d8aef8c38934d8c60bd5a1c6f782
+      internalID: 291164280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_32
+      rect:
+        serializedVersion: 2
+        x: 2191
+        y: 987
+        width: 310
+        height: 330
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df93a085f8dd8f46a704845fe86f858
+      internalID: 535996325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_33
+      rect:
+        serializedVersion: 2
+        x: 2505
+        y: 983
+        width: 309
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff3094d49952464c9422e79cd199063
+      internalID: -716476210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_34
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 983
+        width: 309
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf25e855d0aefd45bbd84be97504f6d
+      internalID: 1213680580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_35
+      rect:
+        serializedVersion: 2
+        x: 3131
+        y: 983
+        width: 310
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c8ab941a0b5ed4e84de65842cd9055
+      internalID: -2129401325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_36
+      rect:
+        serializedVersion: 2
+        x: 3444
+        y: 983
+        width: 310
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc9b6e2689d454499316504b07b3f22
+      internalID: 1360877649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_37
+      rect:
+        serializedVersion: 2
+        x: 3758
+        y: 979
+        width: 309
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07ecb75cfe1a074881dc1e493ede6f3
+      internalID: -424891194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_38
+      rect:
+        serializedVersion: 2
+        x: 4071
+        y: 979
+        width: 310
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67751ee34e768f4493defee23595cfd
+      internalID: 1621513580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_39
+      rect:
+        serializedVersion: 2
+        x: 4384
+        y: 979
+        width: 310
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d736cb27375e12740b650446a6caa119
+      internalID: -376715904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_40
+      rect:
+        serializedVersion: 2
+        x: 4698
+        y: 979
+        width: 309
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e67d95eaaf785d4fa439011d206a82a
+      internalID: 678173342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_41
+      rect:
+        serializedVersion: 2
+        x: 5009
+        y: 979
+        width: 311
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c3cfae453905b44b5d9b550ca271cb
+      internalID: -480176941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_42
+      rect:
+        serializedVersion: 2
+        x: 5324
+        y: 979
+        width: 310
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e6613f54f52164db990ab47b458388
+      internalID: 1981913631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_43
+      rect:
+        serializedVersion: 2
+        x: 5634
+        y: 979
+        width: 313
+        height: 338
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9a0ad55c6766a4d8eff5c7f2cff19a
+      internalID: 53103912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_44
+      rect:
+        serializedVersion: 2
+        x: 5951
+        y: 979
+        width: 306
+        height: 338
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85a879f4310b844383060b7ab44528f
+      internalID: 1895888136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_45
+      rect:
+        serializedVersion: 2
+        x: 6260
+        y: 979
+        width: 310
+        height: 338
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83411aae45ece39469165c52bd803b20
+      internalID: 368962265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_46
+      rect:
+        serializedVersion: 2
+        x: 6574
+        y: 983
+        width: 309
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7bf4a250f5546f43b2406a3931d2b1d
+      internalID: 687315180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_47
+      rect:
+        serializedVersion: 2
+        x: 6887
+        y: 983
+        width: 309
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e2e792b81b8d84395ad5c05dce8484
+      internalID: -611639549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_48
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 983
+        width: 310
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdb535446f0c9b45942b841cdf39228
+      internalID: 1222153419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_49
+      rect:
+        serializedVersion: 2
+        x: 7514
+        y: 979
+        width: 309
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02cbc067c54b1564aabf2184086a9f62
+      internalID: 2095823022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_73
+      rect:
+        serializedVersion: 2
+        x: 7269
+        y: 494
+        width: 214
+        height: 409
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775fd559c75ab9446bb268b0a774a9b6
+      internalID: 1071501923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_74
+      rect:
+        serializedVersion: 2
+        x: 7590
+        y: 498
+        width: 199
+        height: 412
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8bfd88fcee42b5479e3c7b539a70562
+      internalID: 1140752707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_72
+      rect:
+        serializedVersion: 2
+        x: 6948
+        y: 494
+        width: 226
+        height: 401
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b1a4a85213e434eacd5f8533c44926
+      internalID: 1875117347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_71
+      rect:
+        serializedVersion: 2
+        x: 6627
+        y: 494
+        width: 241
+        height: 394
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe9d38a44e061645a24ba02648e076a
+      internalID: 1591823594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_69
+      rect:
+        serializedVersion: 2
+        x: 5993
+        y: 502
+        width: 248
+        height: 370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1132f7aa7e867646bc47ace33e9d67a
+      internalID: -2009271807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_70
+      rect:
+        serializedVersion: 2
+        x: 6310
+        y: 498
+        width: 245
+        height: 382
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eec910f0052e22408d4f62cf16613ec
+      internalID: 372133271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_53
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 499
+        width: 298
+        height: 364
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819c39f5239f5d1459e4271cb41da3c7
+      internalID: 104499936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_67
+      rect:
+        serializedVersion: 2
+        x: 5366
+        y: 502
+        width: 252
+        height: 359
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b30c1e67a38da04c9d1fe998bc14581
+      internalID: 459156696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_68
+      rect:
+        serializedVersion: 2
+        x: 5680
+        y: 502
+        width: 250
+        height: 363
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 706235cc274e34f47ba83e246a3b456d
+      internalID: 1451630748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_50
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 498
+        width: 309
+        height: 357
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d2e75d54b3e904a9a9084cafc8a35e
+      internalID: -1191511432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_66
+      rect:
+        serializedVersion: 2
+        x: 5057
+        y: 506
+        width: 248
+        height: 347
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45cc5b2acda1db4995d5149e907a744
+      internalID: 1689725986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_52
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 498
+        width: 302
+        height: 344
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 507955a6e870cb2449d05c88dc517f01
+      internalID: -1019313050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_54
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 502
+        width: 295
+        height: 344
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7635b3690fefe8349b4d40a479b325c7
+      internalID: 876068585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_55
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 502
+        width: 287
+        height: 344
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9c057256218b34db170400e8dbee72
+      internalID: -1141041497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_56
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 502
+        width: 286
+        height: 344
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7cc87e76d5a618429b77ffde4d009a4
+      internalID: 607537493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_57
+      rect:
+        serializedVersion: 2
+        x: 2221
+        y: 500
+        width: 279
+        height: 344
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7316a89fdf4dd44f9748f8bdf2534fa
+      internalID: -1933531677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_58
+      rect:
+        serializedVersion: 2
+        x: 2539
+        y: 502
+        width: 275
+        height: 344
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e508af4b6edb0d54d964666958e8fa56
+      internalID: 1862337308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_59
+      rect:
+        serializedVersion: 2
+        x: 2860
+        y: 502
+        width: 263
+        height: 344
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905b4d8993dddc94b953cec2f2bb6efb
+      internalID: -21296716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_60
+      rect:
+        serializedVersion: 2
+        x: 3177
+        y: 502
+        width: 260
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d1551710b8c4745b79d2e2e8b6d3a7
+      internalID: 307527479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_65
+      rect:
+        serializedVersion: 2
+        x: 4747
+        y: 506
+        width: 245
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40f25a14d4ef0b479af9faa52510d1c
+      internalID: -79532787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_51
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 498
+        width: 306
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ebd87eacaa89a4990b42a56a5f4648
+      internalID: -2062348296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_61
+      rect:
+        serializedVersion: 2
+        x: 3495
+        y: 502
+        width: 251
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3e49e0b2cb1c1498dc0d54a24191d2
+      internalID: -628291447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_62
+      rect:
+        serializedVersion: 2
+        x: 3815
+        y: 498
+        width: 245
+        height: 336
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8df9ef857c9bae42b3bb4742857525f
+      internalID: -1636732540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_63
+      rect:
+        serializedVersion: 2
+        x: 4128
+        y: 502
+        width: 241
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf754319b0bd7a40bbeb8e9b873077c
+      internalID: 1614449842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_64
+      rect:
+        serializedVersion: 2
+        x: 4438
+        y: 506
+        width: 244
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e3c1ab340e7a854b897cb2b3b8a0e0f
+      internalID: 146685941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_75
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 0
+        width: 198
+        height: 433
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308b870815c05624cb9925f8f53a8a7e
+      internalID: -933522555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_76
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 17
+        width: 195
+        height: 416
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13fc00eccc727f941842feeb23322a2f
+      internalID: 153016190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_77
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 13
+        width: 195
+        height: 420
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d2682b7024738549a490a4286366b40
+      internalID: 1017614272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_78
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 13
+        width: 195
+        height: 420
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d36213901afea4892fe5c1a969d09a
+      internalID: 793543808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_79
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 13
+        width: 195
+        height: 420
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0fe6e6627e1d7489f512951861c5ac
+      internalID: -600873755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upright_grab_80
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 13
+        width: 199
+        height: 423
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3a928185f9af54fbc62d0d66d67821
+      internalID: -755211282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0479746765e37994d864067f79dc4684
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ninagrab_v2_0: 1417263109
+      ninagrab_v2_1: 1404840730
+      ninagrab_v2_10: -865101285
+      ninagrab_v2_100: 1081545850
+      ninagrab_v2_102: 1378548933
+      ninagrab_v2_104: 599016445
+      ninagrab_v2_105: -2125051513
+      ninagrab_v2_107: 1536281350
+      ninagrab_v2_109: -1355016334
+      ninagrab_v2_110: 1934173699
+      ninagrab_v2_112: 1395274935
+      ninagrab_v2_113: 902282291
+      ninagrab_v2_114: -1738589622
+      ninagrab_v2_115: -1467079422
+      ninagrab_v2_118: -107952715
+      ninagrab_v2_119: -831028536
+      ninagrab_v2_12: -338722702
+      ninagrab_v2_121: 1274527559
+      ninagrab_v2_122: 10318747
+      ninagrab_v2_124: 1383826694
+      ninagrab_v2_125: 2003505915
+      ninagrab_v2_126: 344198007
+      ninagrab_v2_135: -2144663640
+      ninagrab_v2_137: 467819540
+      ninagrab_v2_140: -788690633
+      ninagrab_v2_144: 1643448142
+      ninagrab_v2_146: 763905802
+      ninagrab_v2_148: -1929786411
+      ninagrab_v2_15: -1282743308
+      ninagrab_v2_150: 1951694302
+      ninagrab_v2_152: 1480290556
+      ninagrab_v2_154: -23340546
+      ninagrab_v2_156: 1639182450
+      ninagrab_v2_157: 811762920
+      ninagrab_v2_158: -373293473
+      ninagrab_v2_159: -1166553365
+      ninagrab_v2_160: -630057236
+      ninagrab_v2_161: -829657295
+      ninagrab_v2_17: -873373176
+      ninagrab_v2_19: -357962236
+      ninagrab_v2_21: 2141127667
+      ninagrab_v2_23: 1253500353
+      ninagrab_v2_24: 640919974
+      ninagrab_v2_25: -1596101544
+      ninagrab_v2_26: -477895704
+      ninagrab_v2_27: 426143835
+      ninagrab_v2_28: 275875566
+      ninagrab_v2_29: -156571733
+      ninagrab_v2_30: 1583070000
+      ninagrab_v2_31: -1398832646
+      ninagrab_v2_32: 1729394656
+      ninagrab_v2_33: 1825879938
+      ninagrab_v2_34: 393773181
+      ninagrab_v2_36: 921212650
+      ninagrab_v2_4: 192199689
+      ninagrab_v2_5: -1796144734
+      ninagrab_v2_50: 910441034
+      ninagrab_v2_51: -993797024
+      ninagrab_v2_52: 2140035063
+      ninagrab_v2_53: -222092505
+      ninagrab_v2_54: 1300042844
+      ninagrab_v2_55: -1591063699
+      ninagrab_v2_56: 1327745212
+      ninagrab_v2_57: 647072179
+      ninagrab_v2_58: -625857350
+      ninagrab_v2_59: -1154623642
+      ninagrab_v2_60: -1558597427
+      ninagrab_v2_61: -559123012
+      ninagrab_v2_62: -2001966638
+      ninagrab_v2_63: -1352463881
+      ninagrab_v2_64: -1560260619
+      ninagrab_v2_65: -78199579
+      ninagrab_v2_66: -943424130
+      ninagrab_v2_67: 1716945317
+      ninagrab_v2_68: -1202721834
+      ninagrab_v2_69: 527618762
+      ninagrab_v2_70: 1371148996
+      ninagrab_v2_71: -1472637139
+      ninagrab_v2_72: 1685083083
+      ninagrab_v2_73: 547155491
+      ninagrab_v2_8: 1903179720
+      upright_grab_0: 1920292975
+      upright_grab_1: -1904540762
+      upright_grab_10: 21016754
+      upright_grab_11: 2083893123
+      upright_grab_12: -1503198327
+      upright_grab_13: 800894567
+      upright_grab_14: 1007494327
+      upright_grab_15: 14272270
+      upright_grab_16: 861141814
+      upright_grab_17: -272458346
+      upright_grab_18: 103915390
+      upright_grab_19: 687924135
+      upright_grab_2: 1885689666
+      upright_grab_20: -983860017
+      upright_grab_21: -1959279384
+      upright_grab_22: 685533484
+      upright_grab_23: -1721582589
+      upright_grab_24: -1734284190
+      upright_grab_25: 920898573
+      upright_grab_26: -665056859
+      upright_grab_27: -4175650
+      upright_grab_28: -247664544
+      upright_grab_29: 97345057
+      upright_grab_3: 76946595
+      upright_grab_30: -1621725921
+      upright_grab_31: 291164280
+      upright_grab_32: 535996325
+      upright_grab_33: -716476210
+      upright_grab_34: 1213680580
+      upright_grab_35: -2129401325
+      upright_grab_36: 1360877649
+      upright_grab_37: -424891194
+      upright_grab_38: 1621513580
+      upright_grab_39: -376715904
+      upright_grab_4: 1868232277
+      upright_grab_40: 678173342
+      upright_grab_41: -480176941
+      upright_grab_42: 1981913631
+      upright_grab_43: 53103912
+      upright_grab_44: 1895888136
+      upright_grab_45: 368962265
+      upright_grab_46: 687315180
+      upright_grab_47: -611639549
+      upright_grab_48: 1222153419
+      upright_grab_49: 2095823022
+      upright_grab_5: 1589472849
+      upright_grab_50: -1191511432
+      upright_grab_51: -2062348296
+      upright_grab_52: -1019313050
+      upright_grab_53: 104499936
+      upright_grab_54: 876068585
+      upright_grab_55: -1141041497
+      upright_grab_56: 607537493
+      upright_grab_57: -1933531677
+      upright_grab_58: 1862337308
+      upright_grab_59: -21296716
+      upright_grab_6: -503773145
+      upright_grab_60: 307527479
+      upright_grab_61: -628291447
+      upright_grab_62: -1636732540
+      upright_grab_63: 1614449842
+      upright_grab_64: 146685941
+      upright_grab_65: -79532787
+      upright_grab_66: 1689725986
+      upright_grab_67: 459156696
+      upright_grab_68: 1451630748
+      upright_grab_69: -2009271807
+      upright_grab_7: 1032715569
+      upright_grab_70: 372133271
+      upright_grab_71: 1591823594
+      upright_grab_72: 1875117347
+      upright_grab_73: 1071501923
+      upright_grab_74: 1140752707
+      upright_grab_75: -933522555
+      upright_grab_76: 153016190
+      upright_grab_77: 1017614272
+      upright_grab_78: 793543808
+      upright_grab_79: -600873755
+      upright_grab_8: -473069102
+      upright_grab_80: -755211282
+      upright_grab_9: -1243125155
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

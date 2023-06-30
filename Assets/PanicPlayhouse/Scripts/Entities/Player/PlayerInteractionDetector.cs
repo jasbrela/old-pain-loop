@@ -25,6 +25,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         public Transform pickupInteractablePosition;
 
         [SerializeField] private PlayerInput input;
+        [SerializeField] private EntityAnimation anim;
 
         private Interactable _currentTarget;
         private Pickupable _pickedUpInteractable;
@@ -53,38 +54,22 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
         private void CheckForInteractable()
         {
-            bool GetNearbyInteractable(out Interactable interactable)
+            if (_currentInteractionState == PlayerInteractionState.InteractablePickedUp)
             {
-                interactable = null;
-                Collider[] results = new Collider[5];
-                int size = Physics.OverlapSphereNonAlloc(transform.position, interactionRadius, results, interactableMask);
-
-                if (size == 0)
-                    return false;
-
-                foreach (Collider col in results)
+                // Caso não tenhamos interagível nas mãos, volta o estado do player para None e chama a função novamente.
+                if (_pickedUpInteractable == null || !_pickedUpInteractable.pickedUp)
                 {
-                    col.TryGetComponent(out interactable);
-                    if (interactable != null) break;
+                    ResetTarget();
+                    CheckForInteractable();
                 }
+                else SetupCurrentTarget(_pickedUpInteractable);
 
-                if (interactable == null)
-                    return false;
-
-                return true;
-            }
-            void SetupCurrentTarget(Interactable nearbyInteractable)
-            {
-                _currentInteractionState = PlayerInteractionState.InteractableNearby;
-                _currentTarget = nearbyInteractable;
-                _currentTarget.OnEnterRange();
-                ResetIdleTimer();
-                tooltip.IsCloseToInteraction = true;
+                return;
             }
 
-
+            // Debug.Log("Checking for Interactable!");
             // Get nearest interactable.
-            if (!GetNearbyInteractable(out Interactable nearbyInteractable))
+            if (!GetNearbyInteractable(out Interactable nearbyInteractable) && _pickedUpInteractable == null)
             {
                 ResetTarget();
             }
@@ -93,6 +78,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             if (_currentInteractionState == PlayerInteractionState.None && nearbyInteractable != null)
             {
                 // Setup current target with nearby interactable.
+                _currentInteractionState = PlayerInteractionState.InteractableNearby;
                 SetupCurrentTarget(nearbyInteractable);
             }
             else if (_currentInteractionState == PlayerInteractionState.InteractableNearby)
@@ -100,24 +86,51 @@ namespace PanicPlayhouse.Scripts.Entities.Player
                 if (_currentTarget != nearbyInteractable)
                 {
                     ResetTarget();
+
+                    _currentInteractionState = PlayerInteractionState.InteractableNearby;
                     SetupCurrentTarget(nearbyInteractable);
                 }
             }
-            else if (_currentInteractionState == PlayerInteractionState.InteractablePickedUp)
+        }
+
+        private bool GetNearbyInteractable(out Interactable interactable)
+        {
+            interactable = null;
+            Collider[] results = new Collider[5];
+            int size = Physics.OverlapSphereNonAlloc(transform.position, interactionRadius, results, interactableMask);
+
+            if (size == 0)
+                return false;
+
+            foreach (Collider col in results)
             {
-                // Caso não tenhamos interagível nas mãos, volta o estado do player para None e chama a função novamente.
-                if (_pickedUpInteractable == null || !_pickedUpInteractable.pickedUp)
-                {
-                    _pickedUpInteractable = null;
-                    ResetTarget();
-                    CheckForInteractable();
-                }
-                else SetupCurrentTarget(_pickedUpInteractable);
+                col.TryGetComponent(out interactable);
+                if (interactable != null) break;
             }
+
+            if (interactable == null)
+                return false;
+
+            return true;
+        }
+
+        private void SetupCurrentTarget(Interactable nearbyInteractable)
+        {
+            if (nearbyInteractable == null) return;
+
+            Debug.Log($"Setting up current target: {(nearbyInteractable != null ? nearbyInteractable.name : "null")}");
+            if (_currentTarget != null)
+                ResetTarget();
+
+            _currentTarget = nearbyInteractable;
+            _currentTarget.OnEnterRange();
+            ResetIdleTimer();
+            tooltip.IsCloseToInteraction = true;
         }
 
         private void ResetTarget()
         {
+            Debug.Log($"Resetting current target: {(_currentTarget != null ? _currentTarget.name : "null")}");
             _currentInteractionState = PlayerInteractionState.None;
             if (_currentTarget == null) return;
 
@@ -157,15 +170,18 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
             _currentTarget.OnInteract();
 
-            if (!_currentTarget.TryGetComponent(out Pickupable pickupable))
+            if (_currentTarget.TryGetComponent(out Pickupable pickupable))
             {
                 if (pickupable.pickedUp)
                 {
+                    anim["pickup_trigger"].SetValue();
+                    anim["has_item"].SetValue(true);
                     _pickedUpInteractable = pickupable;
                     _currentInteractionState = PlayerInteractionState.InteractablePickedUp;
                 }
                 else
                 {
+                    anim["has_item"].SetValue(false);
                     _pickedUpInteractable = null;
                     _currentInteractionState = PlayerInteractionState.None;
                 }

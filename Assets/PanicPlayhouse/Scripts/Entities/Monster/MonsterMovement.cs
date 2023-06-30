@@ -3,7 +3,7 @@ using FMOD.Studio;
 using FMODUnity;
 using NaughtyAttributes;
 using PanicPlayhouse.Scripts.Audio;
-using PanicPlayhouse.Scripts.Entities.Player;
+using PanicPlayhouse.Scripts.Entities;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AI;
@@ -25,8 +25,8 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 
         [Header("General")]
         [SerializeField] private Event arrivedAtDefaultPosition;
-        [Label("Rigidbody")] [SerializeField] private Rigidbody rb;
-        [SerializeField] private PlayerHiddenStatus player;
+        [Label("Rigidbody")][SerializeField] private Rigidbody rb;
+        [SerializeField] private Player.PlayerHiddenStatus player;
         [SerializeField] private FloatVariable playerInsanity;
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private float speed;
@@ -39,17 +39,17 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         [Label("Animation")][SerializeField] private EntityAnimation anim;
         private Vector3 _defaultPos;
         [SerializeField] private float delayBetweenChecks;
-        
+
         [Header("DEBUG")]
-        [SerializeField] [ReadOnly] private float distanceFromDestination;
-        [SerializeField] [ReadOnly] private float distanceFromPlayer;
-        [SerializeField] [ReadOnly] private float distanceFromDefault;
-        [SerializeField] [ReadOnly] private bool isCheckingPlayer;
-        [SerializeField] [ReadOnly] private bool wasCheckingPlayer;
-        [SerializeField] [ReadOnly] private bool wasPathComplete;
-        [SerializeField] [ReadOnly] private bool canKillHiddenPlayer;
-        [SerializeField] [ReadOnly] private bool killedPlayer;
-        [SerializeField] [ReadOnly] private bool isFollowingPlayer;
+        [SerializeField][ReadOnly] private float distanceFromDestination;
+        [SerializeField][ReadOnly] private float distanceFromPlayer;
+        [SerializeField][ReadOnly] private float distanceFromDefault;
+        [SerializeField][ReadOnly] private bool isCheckingPlayer;
+        [SerializeField][ReadOnly] private bool wasCheckingPlayer;
+        [SerializeField][ReadOnly] private bool wasPathComplete;
+        [SerializeField][ReadOnly] private bool canKillHiddenPlayer;
+        [SerializeField][ReadOnly] private bool killedPlayer;
+        [SerializeField][ReadOnly] private bool isFollowingPlayer;
 
         private bool _firstEvent = true;
         private EventInstance _footstepInstance;
@@ -65,7 +65,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             _defaultPos = transform.position;
             StartCoroutine(CheckPathStatus());
             _audio = FindObjectOfType<AudioManager>();
-            _audio.PlayAudioInLoop(ref _breathInstance, breath, rb);
+            _audio?.PlayAudioInLoop(ref _breathInstance, breath, rb);
         }
 
         public void OnTriggerMonster()
@@ -87,7 +87,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         {
             isFollowingPlayer = false;
             isCheckingPlayer = false;
-            anim.Walking.SetBool(false);
+            anim["walk"].SetValue(false);
             SetAgentDestination(_defaultPos);
             transform.position = _defaultPos;
             agent.speed = speed;
@@ -140,7 +140,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     SetAgentDestination(player.transform.position);
                     _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                     xylophone.Stop();
-                    anim.Walking.SetBool(true);
+                    anim["walk"].SetValue(true);
                     spriteRenderer.flipX = monster.x - agent.destination.x > 0;
                 }
                 else if (!killedPlayer && distanceFromPlayer <= killDistance && (!player.IsHidden || canKillHiddenPlayer))
@@ -153,7 +153,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     killedPlayer = true;
                     playerInsanity.Value = playerInsanity.MaxValue;
                     StopAudiosInLoop();
-                    anim.Attack.SetTrigger();
+                    anim["attack"].SetValue();
                     if (canKillHiddenPlayer) canKillHiddenPlayer = false;
                     agent.speed = 0;
                 }
@@ -169,7 +169,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     _audio.PlayAudioInLoop(ref _chasingMusicInstance, chasingMusic);
                     _audio.PlayAudioInLoop(ref _heartbeatInstance, heartbeat);
                     isFollowingPlayer = true;
-                    anim.Walking.SetBool(true);
+                    anim["walk"].SetValue(true);
                     SetAgentDestination(player.transform.position);
                     _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                     xylophone.Stop();
@@ -185,10 +185,10 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                         if (arrivedAtDefaultPosition != null) arrivedAtDefaultPosition.Raise();
                     }
                     if (_firstEvent) _firstEvent = false;
-                    
+
                     // PATH COMPLETED
-                    _audio.StopAudioInLoop(_footstepInstance);
-                    anim.Walking.SetBool(false);
+                    _audio?.StopAudioInLoop(_footstepInstance);
+                    anim["walk"].SetValue(false);
                     if (wasCheckingPlayer || isFollowingPlayer)
                     {
                         isFollowingPlayer = false;
@@ -198,18 +198,18 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                             wasPathComplete = false;
                             wasCheckingPlayer = false;
                             SetAgentDestination(_defaultPos);
-                            anim.Walking.SetBool(true);
+                            anim["walk"].SetValue(true);
                             _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                             StopAudiosInLoop();
                         }
                     }
                 }
-                
+
                 if (distanceFromPlayer <= insanityDistance)
                     playerInsanity.Value += insanityPenalty * Time.deltaTime;
             }
         }
-        
+
     }
-    
+
 }
