@@ -69,13 +69,13 @@ namespace PanicPlayhouse.Scripts.Puzzles.Grief
         {
             _areCorrect[_buttons.IndexOf(button)] = button.IsCorrect;
 
-            _audio.PlayOneShot(rotate);
-            _audio.PlayOneShot(click);
+            _audio?.PlayOneShot(rotate);
+            _audio?.PlayOneShot(click);
             
             if (_areCorrect.IndexOf(false) == -1)
             {
                 IsFinished = true;
-                _audio.PlayOneShot(success);
+                _audio?.PlayOneShot(success);
                 foreach (GriefButton btn in _buttons)
                 {
                     btn.IsBlocked = true;
