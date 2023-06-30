@@ -16,6 +16,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         [SerializeField] private EventReference footsteps;
         [Header("Components")]
         [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private Transform flipXGameObjects;
         [Label("Rigidbody")][SerializeField] private Rigidbody rb;
         [SerializeField] private PlayerInput input;
         [Label("Animation")][SerializeField] private EntityAnimation anim;
@@ -83,9 +84,21 @@ namespace PanicPlayhouse.Scripts.Entities.Player
                 _audio?.StopAudioInLoop(_footstepInstance);
             }
 
-            anim["walking"].SetValue(_previousInput != Vector3.zero);
+            anim["is_moving"].SetValue(_previousInput != Vector3.zero);
 
-            if (_previousInput.x != 0) spriteRenderer.flipX = _previousInput.x > 0;
+            if (_previousInput.x != 0)
+            {
+                spriteRenderer.flipX = _previousInput.x > 0;
+                flipXGameObjects.rotation = Quaternion.Euler
+                (
+                    new Vector3
+                    (
+                        0,
+                        _previousInput.x > 0 ? 180 : 0,
+                        0
+                    )
+                );
+            }
         }
 
 
@@ -111,7 +124,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             vel = new Vector2(vel.x * 0.15f, vel.y);
 
             rb.velocity = vel;
-            anim["walking"].SetValue(false);
+            anim["is_moving"].SetValue(false);
             _audio?.StopAudioInLoop(_footstepInstance);
         }
     }

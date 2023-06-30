@@ -54,6 +54,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         {
             _collider = GetComponentInChildren<Collider>();
             _rigidbody = GetComponentInChildren<Rigidbody>();
+
         }
 
         private void OnDrawGizmosSelected()
@@ -93,23 +94,24 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
 
             Audio?.PlayOneShot(pickup);
             transform.SetParent(interactionDetector.pickupInteractablePosition);
-            if (currentTween != null)
-                currentTween.Kill(true);
+            transform.localPosition = Vector3.zero;
+            // if (currentTween != null)
+            //     currentTween.Kill(true);
 
-            currentTween = transform.DOLocalMove(Vector3.zero, tweenDuration)
-            .OnStart(() =>
-            {
-                _collider.enabled = false;
-                _rigidbody.useGravity = false;
-            })
-            .OnComplete(() =>
-            {
-                _collider.enabled = true;
-                _rigidbody.useGravity = true;
-                currentTween = null;
-            });
+            // currentTween = transform.DOLocalMove(Vector3.zero, tweenDuration)
+            // .OnStart(() =>
+            // {
+            //     _collider.enabled = false;
+            //     _rigidbody.useGravity = false;
+            // })
+            // .OnComplete(() =>
+            // {
+            //     _collider.enabled = true;
+            //     _rigidbody.useGravity = true;
+            //     currentTween = null;
+            // });
 
-            // gameObject.layer = pickedUpInteractableMask.value;
+            gameObject.layer = LayerMask.NameToLayer("PickedupInteractable");
 
             _pickedUp = true;
         }
@@ -151,6 +153,9 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
                 _rigidbody.useGravity = true;
                 currentTween = null;
             });
+
+            gameObject.layer = LayerMask.NameToLayer("Interactable");
+            transform.rotation = Quaternion.identity;
 
             _pickedUp = false;
         }

@@ -174,14 +174,14 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             {
                 if (pickupable.pickedUp)
                 {
-                    anim["pickup_trigger"].SetValue();
-                    anim["has_item"].SetValue(true);
+                    anim["on_pickup_item"].SetValue();
+                    anim["item_picked_up"].SetValue(true);
                     _pickedUpInteractable = pickupable;
                     _currentInteractionState = PlayerInteractionState.InteractablePickedUp;
                 }
                 else
                 {
-                    anim["has_item"].SetValue(false);
+                    anim["item_picked_up"].SetValue(false);
                     _pickedUpInteractable = null;
                     _currentInteractionState = PlayerInteractionState.None;
                 }

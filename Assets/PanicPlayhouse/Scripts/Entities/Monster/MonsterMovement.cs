@@ -87,7 +87,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         {
             isFollowingPlayer = false;
             isCheckingPlayer = false;
-            anim["walk"].SetValue(false);
+            anim["is_moving"].SetValue(false);
             SetAgentDestination(_defaultPos);
             transform.position = _defaultPos;
             agent.speed = speed;
@@ -140,7 +140,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     SetAgentDestination(player.transform.position);
                     _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                     xylophone.Stop();
-                    anim["walk"].SetValue(true);
+                    anim["is_moving"].SetValue(true);
                     spriteRenderer.flipX = monster.x - agent.destination.x > 0;
                 }
                 else if (!killedPlayer && distanceFromPlayer <= killDistance && (!player.IsHidden || canKillHiddenPlayer))
@@ -169,7 +169,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     _audio.PlayAudioInLoop(ref _chasingMusicInstance, chasingMusic);
                     _audio.PlayAudioInLoop(ref _heartbeatInstance, heartbeat);
                     isFollowingPlayer = true;
-                    anim["walk"].SetValue(true);
+                    anim["is_moving"].SetValue(true);
                     SetAgentDestination(player.transform.position);
                     _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                     xylophone.Stop();
@@ -188,7 +188,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 
                     // PATH COMPLETED
                     _audio?.StopAudioInLoop(_footstepInstance);
-                    anim["walk"].SetValue(false);
+                    anim["is_moving"].SetValue(false);
                     if (wasCheckingPlayer || isFollowingPlayer)
                     {
                         isFollowingPlayer = false;
@@ -198,7 +198,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                             wasPathComplete = false;
                             wasCheckingPlayer = false;
                             SetAgentDestination(_defaultPos);
-                            anim["walk"].SetValue(true);
+                            anim["is_moving"].SetValue(true);
                             _audio.PlayAudioInLoop(ref _footstepInstance, footstep, rb);
                             StopAudiosInLoop();
                         }

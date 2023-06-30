@@ -349,7 +349,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6262647242452103651}
-  walking:
-    param: isMoving
-  attack:
-    param: Attack
+  animations:
+    list:
+    - Key: is_moving
+      Value:
+        _param: isMoving
+    - Key: attack
+      Value:
+        _param: Attack
+    keyCollision: 0

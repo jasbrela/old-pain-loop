@@ -19,12 +19,12 @@ namespace PanicPlayhouse.Scripts.Entities
         {
             if (animator == null) return;
 
-            foreach (KeyValuePair<string, Animation> kvp in animations)
+            foreach (string key in animations.Keys)
             {
-                if (kvp.Value == null)
-                    animations[kvp.Key] = new Animation();
+                if (animations[key] == null)
+                    animations[key] = new Animation();
 
-                kvp.Value.SetAnimator(animator);
+                animations[key].SetAnimator(animator);
             }
         }
 
@@ -40,7 +40,7 @@ namespace PanicPlayhouse.Scripts.Entities
         }
 
 
-
+        [Serializable]
         public class Animation
         {
             [HideIf("AnimatorIsNull")]
@@ -48,6 +48,8 @@ namespace PanicPlayhouse.Scripts.Entities
             [AnimatorParam("_animator")]
             protected string _param;
             protected Animator _animator;
+
+            public bool AnimatorIsNull => _animator == null;
 
             public virtual void SetValue() => _animator.SetTrigger(_param);
             public virtual void SetValue(bool value) => _animator.SetBool(_param, value);
@@ -63,13 +65,13 @@ namespace PanicPlayhouse.Scripts.Entities
             public Animation()
             {
                 _animator = null;
-                _param = null;
+                _param = "New Animation";
             }
 
             public Animation(Animator animator)
             {
                 _animator = animator;
-                _param = null;
+                _param = "New Animation";
             }
 
             public Animation(Animator animator, string param)

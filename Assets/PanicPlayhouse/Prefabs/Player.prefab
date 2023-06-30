@@ -486,7 +486,7 @@ Transform:
   - {fileID: 578616573}
   - {fileID: 1295073243}
   m_Father: {fileID: 7734100179996136550}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &684891182
 GameObject:
@@ -1062,6 +1062,38 @@ Transform:
   m_Father: {fileID: 640839332}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1195014212688589567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8278018922906349715}
+  m_Layer: 3
+  m_Name: FlipXGameObjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8278018922906349715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195014212688589567}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8111070412103455848}
+  m_Father: {fileID: 7734100179996136550}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5165523925432939003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,13 +1117,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5165523925432939003}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.16, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.83200026, y: 0.73, z: 0.42100143}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7734100179996136550}
-  m_RootOrder: 2
+  m_Father: {fileID: 8278018922906349715}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7532318208342181804
 GameObject:
@@ -1123,7 +1155,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7734100179996136550}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!212 &1395562758165979407
 SpriteRenderer:
@@ -1215,9 +1247,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 8278018922906349715}
   - {fileID: 7638325723872354304}
   - {fileID: 640839332}
-  - {fileID: 8111070412103455848}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1303,6 +1335,7 @@ MonoBehaviour:
       Data4: -1608874128
     Path: event:/Player/Footsteps
   spriteRenderer: {fileID: 1395562758165979407}
+  flipXGameObjects: {fileID: 8278018922906349715}
   rb: {fileID: 7734100179996136549}
   input: {fileID: 7734100179996136551}
   anim: {fileID: 285402477806567589}
@@ -1343,6 +1376,7 @@ MonoBehaviour:
     m_Bits: 1088
   pickupInteractablePosition: {fileID: 8111070412103455848}
   input: {fileID: 7734100179996136551}
+  anim: {fileID: 285402477806567589}
 --- !u!114 &8929065640780248005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1441,10 +1475,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4199877231867297704}
-  walking:
-    param: IsMoving
-  attack:
-    param: 
+  animations:
+    list:
+    - Key: is_moving
+      Value:
+        _param: IsMoving
+    - Key: on_pickup_item
+      Value:
+        _param: OnPickUpItem
+    - Key: item_picked_up
+      Value:
+        _param: ItemPickedUp
+    keyCollision: 0
 --- !u!95 &4199877231867297704
 Animator:
   serializedVersion: 5
