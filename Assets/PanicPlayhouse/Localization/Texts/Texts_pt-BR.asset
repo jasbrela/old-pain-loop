@@ -58,8 +58,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 402115892899840
-    m_Localized: "Game Design\nPrograma\xE7\xE3o\nGame Design\nArte / Anima\xE7\xE3o\nSom
-      / M\xFAsica\nNarrativa"
+    m_Localized: "Game Design\nPrograma\xE7\xE3o\nPrograma\xE7\xE3o\nGame Design\nArte
+      / Anima\xE7\xE3o\nSom / M\xFAsica\nNarrativa"
     m_Metadata:
       m_Items: []
   - m_Id: 417502428688384
@@ -83,9 +83,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 424970235965440
-    m_Localized: "Felipe Vergara\t\tGame Design\r\nGabriela Matias\t\tPrograma\xE7\xE3o\nPriscila
-      Januario\tGame Design\r\nRoger Cardoso\t\tArte / Anima\xE7\xE3o\nGabriel Scavacini\tSom
-      / M\xFAsica\nFilipe Xavier\t\tNarrativa"
+    m_Localized: "Felipe Vergara\t\tGame Design\r\nGabriela Matias\t\tPrograma\xE7\xE3o\nJo\xE3o
+      Magalh\xE3es\t\tPrograma\xE7\xE3o\nPriscila Januario\tGame Design\r\nRoger
+      Cardoso\t\tArte / Anima\xE7\xE3o\nGabriel Scavacini\tSom / M\xFAsica\nFilipe
+      Xavier\t\tNarrativa"
     m_Metadata:
       m_Items: []
   - m_Id: 437707884228608

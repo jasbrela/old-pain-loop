@@ -1070,14 +1070,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8771515123145138557, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
-      propertyPath: managedReferences[4247611861942665218].m_UpdateType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8771515123145138557, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
-      propertyPath: managedReferences[4247611861942665220].m_WaitForCompletion
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9030373030839158911, guid: 7c2567f43f7187f43aec78906a8c974f, type: 3}
       propertyPath: m_Group
       value: 
@@ -3158,18 +3150,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Felipe Vergara
-
-    Gabriela Matias
-
-    Priscila Januario
-
-    Roger
-    Cardoso
-
-    Gabriel Scavacini
-
-    Filipe Xavier'
+  m_text: "Felipe Vergara\nGabriela Matias\nJo\xE3o Magalh\xE3es\nPriscila Januario\nRoger
+    Cardoso\nGabriel Scavacini\nFilipe Xavier"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 77d5fa119cfebdb438cfc7ccda431f25, type: 2}
   m_sharedMaterial: {fileID: -8819927577405148600, guid: 77d5fa119cfebdb438cfc7ccda431f25, type: 2}
@@ -3196,7 +3178,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.65
+  m_fontSize: 34.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3724,7 +3706,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -3}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 269.99988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1222992683
 MonoBehaviour:
@@ -4772,12 +4754,14 @@ MonoBehaviour:
 
     Game Programmer
 
+    Game Programmer
+
     Game Design
 
-    Art / Animation
+    Art
+    / Animation
 
-    Sound
-    / Music
+    Sound / Music
 
     Narrative'
   m_isRightToLeft: 0
@@ -4806,7 +4790,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.65
+  m_fontSize: 34.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
