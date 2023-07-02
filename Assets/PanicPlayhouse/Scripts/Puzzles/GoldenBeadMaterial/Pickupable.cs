@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using FMODUnity;
+using NaughtyAttributes;
 using PanicPlayhouse.Scripts.Audio;
 using PanicPlayhouse.Scripts.Chunk;
 using PanicPlayhouse.Scripts.Entities.Player;
@@ -7,14 +8,17 @@ using UnityEngine;
 
 namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
 {
+    [RequireComponent(typeof(SpriteRenderer))]
     public class Pickupable : Interactable
     {
         [Header("Gameplay")]
-        [SerializeField] private float radius;
         [SerializeField] private float tweenDuration = 1f;
 
         [Header("Collision")]
         [SerializeField] private LayerMask roomMask;
+
+        [Header("Rendering")]
+        [SerializeField] [SortingLayer] private int abovePlayerLayer = 1748606149;
 
         [Header("SFX")]
         [SerializeField] private EventReference pickup;
@@ -23,18 +27,13 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         [Header("Components")]
         [SerializeField] private PlayerInteractionDetector interactionDetector;
 
-
+        private int _defaultSortingLayer;
         private Collider _collider;
+        private SpriteRenderer _spriteRenderer;
         private Rigidbody _rigidbody;
 
         private bool _pickedUp = false;
-        public bool pickedUp
-        {
-            get
-            {
-                return _pickedUp;
-            }
-        }
+        public bool PickedUp => _pickedUp;
 
         private AudioManager _audio;
         private AudioManager Audio
@@ -48,19 +47,14 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             }
         }
 
-        private Tween currentTween;
+        private Tween _currentTween;
 
         private void Awake()
         {
+            _spriteRenderer = GetComponentInChildren<SpriteRenderer>(); // problematico hj pq os objetos tem varios sprites... acho que os proximos devem ser só um p facilitar nossa vida
             _collider = GetComponentInChildren<Collider>();
             _rigidbody = GetComponentInChildren<Rigidbody>();
-
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawSphere(transform.position, radius);
+            _defaultSortingLayer = _spriteRenderer.sortingLayerID;
         }
 
         public bool IsBlocked { get; set; }
@@ -110,7 +104,9 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             //     _rigidbody.useGravity = true;
             //     currentTween = null;
             // });
-
+            
+            SetSortingLayer(abovePlayerLayer);
+            
             gameObject.layer = LayerMask.NameToLayer("PickedupInteractable");
 
             _pickedUp = true;
@@ -138,10 +134,10 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             }
             transform.SetParent(roomTransform);
 
-            if (currentTween != null)
-                currentTween.Kill(true);
+            if (_currentTween != null)
+                _currentTween.Kill(true);
 
-            currentTween = transform.DOMove(interactionDetector.transform.position, tweenDuration)
+            _currentTween = transform.DOMove(interactionDetector.transform.position, tweenDuration)
             .OnStart(() =>
             {
                 _collider.enabled = false;
@@ -151,13 +147,22 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
             {
                 _collider.enabled = true;
                 _rigidbody.useGravity = true;
-                currentTween = null;
+                _currentTween = null;
+                
             });
 
             gameObject.layer = LayerMask.NameToLayer("Interactable");
             transform.rotation = Quaternion.identity;
+            
+            SetSortingLayer(_defaultSortingLayer);
 
             _pickedUp = false;
+        }
+
+        private void SetSortingLayer(int id)
+        {
+            _spriteRenderer.sortingLayerID = id;
+            _spriteRenderer.sortingLayerName = SortingLayer.IDToName(id);
         }
     }
 }

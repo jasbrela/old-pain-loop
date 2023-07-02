@@ -40,7 +40,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         {
             if (!other.TryGetComponent(out PuzzlePickupable pickup)) return;
 
-            if (pickup.pickedUp)
+            if (pickup.PickedUp)
                 return;
 
             _inside.Add(pickup);
@@ -50,7 +50,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
         {
             if (!other.TryGetComponent(out PuzzlePickupable pickup)) return;
 
-            if (pickup.pickedUp)
+            if (pickup.PickedUp)
                 return;
 
             _inside.Remove(pickup);

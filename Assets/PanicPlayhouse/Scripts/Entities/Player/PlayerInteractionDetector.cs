@@ -57,7 +57,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             if (_currentInteractionState == PlayerInteractionState.InteractablePickedUp)
             {
                 // Caso não tenhamos interagível nas mãos, volta o estado do player para None e chama a função novamente.
-                if (_pickedUpInteractable == null || !_pickedUpInteractable.pickedUp)
+                if (_pickedUpInteractable == null || !_pickedUpInteractable.PickedUp)
                 {
                     ResetTarget();
                     CheckForInteractable();
@@ -172,7 +172,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
             if (_currentTarget.TryGetComponent(out Pickupable pickupable))
             {
-                if (pickupable.pickedUp)
+                if (pickupable.PickedUp)
                 {
                     anim["on_pickup_item"].SetValue();
                     anim["item_picked_up"].SetValue(true);

@@ -57,6 +57,9 @@ TagManager:
   - name: Door
     uniqueID: 74586531
     locked: 0
+  - name: PickedUp
+    uniqueID: 1748606149
+    locked: 0
   - name: Scenario (Front)
     uniqueID: 1748469711
     locked: 0
