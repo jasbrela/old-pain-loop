@@ -46,7 +46,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
                     {
                         if (distanceToDestination <= agent.stoppingDistance)
                         {
-                            agent.isStopped = true;
+                            // agent.isStopped = true;
                             timeIdle += Time.deltaTime;
 
                             if (timeIdle >= scriptableObject.idleTime)

@@ -65,7 +65,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         private void Start()
         {
             _defaultPos = transform.position;
-            agent.isStopped = true;
+            // agent.isStopped = true;
             GoToWaypoint(_defaultPos);
             // StartCoroutine(CheckPathStatus());
         }
@@ -75,15 +75,16 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             if (killedPlayer)
                 return;
 
-            entityAnimation["is_moving"].SetValue(!agent.isStopped);
+            float distanceFromDestination = Vector3.Distance(transform.position, agent.destination);
+            entityAnimation["is_moving"].SetValue(distanceFromDestination > agent.stoppingDistance);
             spriteRenderer.flipX = transform.position.x - agent.destination.x > 0;
 
             audio.footstepsInstance.getPlaybackState(out PLAYBACK_STATE state);
-            if (!agent.isStopped && (audio.footstepsInstance.isValid() && state == PLAYBACK_STATE.STOPPED))
+            if ((audio.footstepsInstance.isValid() && state == PLAYBACK_STATE.STOPPED))
             {
                 audio.ToggleFootstepsOn(true);
             }
-            else if (agent.isStopped && (audio.footstepsInstance.isValid() && state != PLAYBACK_STATE.STOPPED))
+            else if ((audio.footstepsInstance.isValid() && state != PLAYBACK_STATE.STOPPED))
             {
                 audio.ToggleFootstepsOn(false);
             }
@@ -91,6 +92,14 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             if (currentState != null)
             {
                 currentState.OnUpdate();
+
+                if (currentState.stateType == MonsterMovementStates.Waypoint)
+                {
+                    if (((WaypointMonsterMovementState)currentState).isDone)
+                    {
+                        DefaultBehaviour();
+                    }
+                }
             }
 
             distanceFromPlayer = Vector3.Distance(transform.position, player.transform.position);
@@ -113,6 +122,16 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         public void OnTriggerMonster()
         {
             GoToWaypoint(player.transform.position);
+        }
+
+        public void StartRoaming()
+        {
+            shouldRoam = true;
+
+            if (currentState == null || currentState.stateType != MonsterMovementStates.ChasePlayer)
+            {
+                DefaultBehaviour();
+            }
         }
 
         void KillPlayer()
@@ -193,7 +212,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 
         void DefaultBehaviour()
         {
-            if (shouldRoam && currentState.stateType != MonsterMovementStates.Roam)
+            if (shouldRoam && (currentState != null && currentState.stateType != MonsterMovementStates.Roam))
             {
                 currentState = new RoamMonsterMovementState(
                     this, entityAnimation, audio, agent, scriptableObject,

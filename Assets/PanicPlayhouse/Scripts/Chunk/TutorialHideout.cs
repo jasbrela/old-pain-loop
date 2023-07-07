@@ -9,23 +9,24 @@ namespace PanicPlayhouse.Scripts.Chunk
     {
         [SerializeField] private float delayToOpen = 0.5f;
         [SerializeField] private Event onEnterTutorialHideout;
-        
+
         private bool _interacted;
-        
+
         public override void OnInteract()
         {
-            if (_interacted) return;
-            
-            _interacted = true;
             base.OnInteract();
-            StartCoroutine(AfterOnInteract());
+
+            if (!_interacted)
+                StartCoroutine(AfterOnInteract());
         }
 
         private IEnumerator AfterOnInteract()
         {
             yield return new WaitForSeconds(delayToOpen);
-            
+
             if (onEnterTutorialHideout != null) onEnterTutorialHideout.Raise();
+
+            _interacted = true;
         }
     }
 }

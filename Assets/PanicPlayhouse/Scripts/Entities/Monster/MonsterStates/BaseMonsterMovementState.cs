@@ -35,7 +35,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 
         protected void SetAgentDestination(Vector3 pos)
         {
-            agent.isStopped = false;
+            // agent.isStopped = false;
             agent.destination = new Vector3(pos.x, movement.transform.position.y, pos.z);
         }
 

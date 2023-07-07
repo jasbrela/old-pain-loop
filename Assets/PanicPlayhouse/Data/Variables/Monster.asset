@@ -20,4 +20,4 @@ MonoBehaviour:
   delayBetweenChecks: 0.1
   roamSpeed: 5
   idleTime: 3
-  chaseSpeed: 6
+  chaseSpeed: 7

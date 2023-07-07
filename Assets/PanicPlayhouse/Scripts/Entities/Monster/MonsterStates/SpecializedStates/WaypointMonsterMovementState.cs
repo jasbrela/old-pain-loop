@@ -9,13 +9,16 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 {
     public class WaypointMonsterMovementState : BaseMonsterMovementState
     {
+        public bool isDone = false;
         private Vector3 waypointPosition;
+        private Coroutine idleCoroutine = null;
 
         public override void OnEnterState()
         {
             // base.OnEnterState();
 
             SetAgentDestination(waypointPosition);
+            isDone = false;
             agent.speed = scriptableObject.roamSpeed;
         }
 
@@ -25,7 +28,42 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             // base.OnUpdate();
 
             float distanceFromDestination = Vector3.Distance(movement.transform.position, agent.destination);
-            bool hasReachedDestination = distanceFromDestination <= agent.stoppingDistance;
+
+            if (distanceFromDestination <= agent.stoppingDistance && idleCoroutine == null)
+            {
+                idleCoroutine = movement.StartCoroutine(IdleCoroutine());
+            }
+        }
+
+        IEnumerator IdleCoroutine()
+        {
+            float currentWaitTime = 0;
+
+            while (currentWaitTime < scriptableObject.idleTime)
+            {
+                currentWaitTime += Time.deltaTime;
+
+                if (currentWaitTime >= scriptableObject.idleTime)
+                {
+                    isDone = true;
+                    break;
+                }
+
+                yield return new WaitForEndOfFrame();
+            }
+
+            idleCoroutine = null;
+        }
+
+        public override void OnExitState()
+        {
+            // base.OnExitState();
+
+            if (idleCoroutine != null)
+            {
+                movement.StopCoroutine(idleCoroutine);
+                idleCoroutine = null;
+            }
         }
 
         public WaypointMonsterMovementState(

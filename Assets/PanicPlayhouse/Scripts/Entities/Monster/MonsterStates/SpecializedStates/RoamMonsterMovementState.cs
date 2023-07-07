@@ -34,16 +34,18 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             }
         }
 
-        private void SortNewPoint(List<Vector3> excludedPoints = null)
+        private void SortNewPoint()
         {
             currentIdleTime = 0;
-            if (excludedPoints == null || excludedPoints.Count <= 0)
-            {
-                excludedPoints = new List<Vector3>();
-                if (currentPoint.HasValue)
-                    excludedPoints.Add(currentPoint.Value);
-            }
+            List<Vector3> excludedPoints = new List<Vector3>();
+            if (currentPoint.HasValue)
+                excludedPoints.Add(currentPoint.Value);
 
+            SortNewPoint(ref excludedPoints);
+        }
+
+        private void SortNewPoint(ref List<Vector3> excludedPoints)
+        {
             Vector3 newPointCandidate = mapWaypoints.GetRandomWaypoint(excludedPoints);
 
             NavMeshPath path = new NavMeshPath();
@@ -51,7 +53,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             if (!canReachEndpoint || path.status != NavMeshPathStatus.PathComplete)
             {
                 excludedPoints.Add(newPointCandidate);
-                SortNewPoint(excludedPoints);
+                SortNewPoint(ref excludedPoints);
                 return;
             }
 

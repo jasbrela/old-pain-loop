@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 
 public enum PlayerDetectorState
@@ -18,6 +19,7 @@ namespace PanicPlayhouse.Scripts.Entities
         [Header("Dependencies")]
         public Player.PlayerHiddenStatus player;
         public MonsterStates scriptableObject;
+        public NavMeshAgent agent;
 
         [Header("Events")]
         [SerializeField] PanicPlayhouse.Scripts.ScriptableObjects.Event onPlayerDetectorStateChange;
@@ -85,11 +87,14 @@ namespace PanicPlayhouse.Scripts.Entities
 
 
                 distanceFromPlayer = Vector3.Distance(transform.position, player.transform.position);
-
-                if (currentState == PlayerDetectorState.PlayerInVision)
-                    playerInVision = distanceFromPlayer <= scriptableObject.giveUpDistance;
-                else if (currentState == PlayerDetectorState.PlayerOffVision)
-                    playerInVision = distanceFromPlayer <= scriptableObject.visionDistance;
+                NavMeshHit navMeshRaycastHit;
+                if (!agent.Raycast(player.transform.position, out navMeshRaycastHit))
+                {
+                    if (currentState == PlayerDetectorState.PlayerInVision)
+                        playerInVision = distanceFromPlayer <= scriptableObject.giveUpDistance;
+                    else if (currentState == PlayerDetectorState.PlayerOffVision)
+                        playerInVision = distanceFromPlayer <= scriptableObject.visionDistance;
+                }
 
                 // Checks if player is hidden and was seen hiding, or is not hiding.
                 playerInVision =

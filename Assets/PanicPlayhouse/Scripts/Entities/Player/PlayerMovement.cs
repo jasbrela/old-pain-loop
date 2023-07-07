@@ -15,16 +15,14 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         [SerializeField] private float defaultMaxVel;
         [SerializeField] private float heavyMaxVel;
         [SerializeField] private EventReference footsteps;
-        
+
         [Header("Components")]
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Transform flipXGameObjects;
 
-        [SerializeField] private PlayerInteractionDetector detector;
-        
         [Label("Rigidbody")][SerializeField] private Rigidbody rb;
         [SerializeField] private PlayerInput input;
-        
+
         [Label("Animation")][SerializeField] private EntityAnimation anim;
         [SerializeField] private PlayerHiddenStatus hiddenStatus;
 
