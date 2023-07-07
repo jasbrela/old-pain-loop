@@ -17,13 +17,13 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         [SerializeField] private EventReference exhausted;
         [SerializeField] private EventReference hide;
         [SerializeField] private EventReference leave;
-        
+
         [Header("Hideout")]
         [SerializeField] private PlayerInput input;
         [SerializeField] private Event onLeaveHideout;
         [SerializeField] private float minDelayToLeave;
-        [SerializeField] [ReadOnly] private bool isHidden;
-        
+        [SerializeField][ReadOnly] private bool isHidden;
+
         [Header("Insanity")]
         [SerializeField] private float percentageToExhausted;
         [SerializeField] private float insanityReward;
@@ -36,22 +36,36 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         }
 
         private AudioManager _audio;
+        private AudioManager Audio
+        {
+            get
+            {
+                if (_audio == null)
+                    _audio = FindObjectOfType<AudioManager>();
+
+                return _audio;
+            }
+            set
+            {
+                _audio = value;
+            }
+        }
         private bool _canLeave;
-        
+
         private EventInstance _tiredInstance;
         private EventInstance _exhaustedInstance;
 
         private void Start()
         {
-            _audio = FindObjectOfType<AudioManager>();
+            Audio = FindObjectOfType<AudioManager>();
             SetUpControls();
         }
-        
+
         private void SetUpControls()
         {
             input.actions["ExitHideout"].performed += LeaveHideout;
         }
-        
+
         private void OnDisable()
         {
             input.actions["ExitHideout"].performed -= LeaveHideout;
@@ -77,20 +91,21 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             {
                 _canLeave = false;
                 StartCoroutine(AllowToLeave());
+
                 if (insanity.Value > insanity.MaxValue * percentageToExhausted / 100)
                 {
-                    _audio.PlayOneShot(hide);
-                    _audio.PlayAudioInLoop(ref _exhaustedInstance, exhausted);
+                    Audio?.PlayOneShot(hide);
+                    Audio?.PlayAudioInLoop(ref _exhaustedInstance, exhausted);
                 }
                 else
                 {
-                    _audio.PlayOneShot(hide);
-                    _audio.PlayAudioInLoop(ref _tiredInstance, tired);
+                    Audio?.PlayOneShot(hide);
+                    Audio?.PlayAudioInLoop(ref _tiredInstance, tired);
                 }
             }
             else
-            { 
-                _audio.PlayOneShot(leave);
+            {
+                Audio?.PlayOneShot(leave);
                 StopBreathingAudios();
             }
         }
@@ -98,8 +113,8 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         public void StopBreathingAudios()
         {
             isHidden = false;
-            _audio.StopAudioInLoop(_exhaustedInstance);
-            _audio.StopAudioInLoop(_tiredInstance);
+            Audio?.StopAudioInLoop(_exhaustedInstance);
+            Audio?.StopAudioInLoop(_tiredInstance);
         }
 
         private IEnumerator AllowToLeave()

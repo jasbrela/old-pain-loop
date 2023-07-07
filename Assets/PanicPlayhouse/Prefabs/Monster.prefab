@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5645243864778267042
 Transform:
   m_ObjectHideFlags: 0
@@ -183,7 +183,9 @@ GameObject:
   - component: {fileID: 7860628906984239353}
   - component: {fileID: 3951687702779899637}
   - component: {fileID: 3970387762709452774}
-  m_Layer: 0
+  - component: {fileID: 6262647242452103655}
+  - component: {fileID: 6262647242452103656}
+  m_Layer: 8
   m_Name: Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +223,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &2849899001654777005
 BoxCollider:
@@ -270,72 +272,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98780da6ac6413645929e21c61439557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xylophone: {fileID: 9185666577043228868}
-  knock:
-    Guid:
-      Data1: 1340107690
-      Data2: 1334305799
-      Data3: -1517150024
-      Data4: 769774886
-    Path: event:/Monster/Knock
-  breath:
-    Guid:
-      Data1: -1647065732
-      Data2: 1086785991
-      Data3: 608372611
-      Data4: -1441258881
-    Path: event:/Monster/Breath
-  attack:
-    Guid:
-      Data1: 688748363
-      Data2: 1105349141
-      Data3: -1021542212
-      Data4: -504563859
-    Path: event:/Monster/Attack
-  heartbeat:
-    Guid:
-      Data1: 835107806
-      Data2: 1168808149
-      Data3: -248597886
-      Data4: -1716327385
-    Path: event:/Player/Heartbeat
-  chasingMusic:
-    Guid:
-      Data1: -908431199
-      Data2: 1144317829
-      Data3: -1607084385
-      Data4: 1266244153
-    Path: event:/Music/Chasing
-  footstep:
-    Guid:
-      Data1: 2087403842
-      Data2: 1300446572
-      Data3: 1090422148
-      Data4: -1112043970
-    Path: event:/Monster/Footsteps
-  arrivedAtDefaultPosition: {fileID: 11400000, guid: 71ce80b22ecd8784f85fc15a45861198, type: 2}
-  rb: {fileID: 2849899001654777002}
   player: {fileID: 0}
-  playerInsanity: {fileID: 11400000, guid: c94776497f346824984f8bf99fb6f8d4, type: 2}
-  spriteRenderer: {fileID: 6883720999910810048}
-  speed: 6
-  insanityPenalty: 1
-  insanityDistance: 15
-  visionDistance: 15
-  giveUpDistance: 25
-  killDistance: 5
   agent: {fileID: 7860628906984239353}
-  anim: {fileID: 3970387762709452774}
-  delayBetweenChecks: 0.1
-  distanceFromDestination: 0
+  spriteRenderer: {fileID: 6883720999910810048}
+  rb: {fileID: 2849899001654777002}
+  entityAnimation: {fileID: 3970387762709452774}
+  playerDetector: {fileID: 6262647242452103655}
+  audio: {fileID: 6262647242452103656}
+  mapWaypoints: {fileID: 0}
+  arrivedAtDefaultPosition: {fileID: 11400000, guid: 71ce80b22ecd8784f85fc15a45861198, type: 2}
+  playerInsanity: {fileID: 11400000, guid: c94776497f346824984f8bf99fb6f8d4, type: 2}
+  scriptableObject: {fileID: 11400000, guid: 74ac8b10c8351a748bb7ab65b9ecd694, type: 2}
   distanceFromPlayer: 0
-  distanceFromDefault: 0
-  isCheckingPlayer: 0
-  wasCheckingPlayer: 0
-  wasPathComplete: 0
   canKillHiddenPlayer: 0
   killedPlayer: 0
-  isFollowingPlayer: 0
+  shouldRoam: 0
 --- !u!114 &3970387762709452774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,3 +309,96 @@ MonoBehaviour:
       Value:
         _param: Attack
     keyCollision: 0
+--- !u!114 &6262647242452103655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2849899001654777004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5b049559a68ac4eb0f1901184d04ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  scriptableObject: {fileID: 11400000, guid: 74ac8b10c8351a748bb7ab65b9ecd694, type: 2}
+  onPlayerDetectorStateChange: {fileID: 11400000, guid: 7fc1b08f96807fb44943534994e027db, type: 2}
+  lastPlayerSeenPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &6262647242452103656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2849899001654777004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215a7c2b9de0ccc42894f7af55b63b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventReferences:
+    list:
+    - Key: knock
+      Value:
+        eventReference:
+          Guid:
+            Data1: 1340107690
+            Data2: 1334305799
+            Data3: -1517150024
+            Data4: 769774886
+          Path: event:/Monster/Knock
+        stopMode: 1
+    - Key: breath
+      Value:
+        eventReference:
+          Guid:
+            Data1: -1647065732
+            Data2: 1086785991
+            Data3: 608372611
+            Data4: -1441258881
+          Path: event:/Monster/Breath
+        stopMode: 1
+    - Key: attack
+      Value:
+        eventReference:
+          Guid:
+            Data1: 688748363
+            Data2: 1105349141
+            Data3: -1021542212
+            Data4: -504563859
+          Path: event:/Monster/Attack
+        stopMode: 1
+    - Key: footsteps
+      Value:
+        eventReference:
+          Guid:
+            Data1: 2087403842
+            Data2: 1300446572
+            Data3: 1090422148
+            Data4: -1112043970
+          Path: event:/Monster/Footsteps
+        stopMode: 1
+    - Key: heartbeat
+      Value:
+        eventReference:
+          Guid:
+            Data1: 835107806
+            Data2: 1168808149
+            Data3: -248597886
+            Data4: -1716327385
+          Path: event:/Player/Heartbeat
+        stopMode: 0
+    - Key: chasing
+      Value:
+        eventReference:
+          Guid:
+            Data1: -908431199
+            Data2: 1144317829
+            Data3: -1607084385
+            Data4: 1266244153
+          Path: event:/Music/Chasing
+        stopMode: 0
+    keyCollision: 0
+  rb: {fileID: 2849899001654777002}
+  agent: {fileID: 7860628906984239353}

@@ -31,7 +31,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         private Interactable _currentTarget;
         private Pickupable _pickedUpInteractable;
         private PlayerInteractionState _currentInteractionState = PlayerInteractionState.None;
-        
+
         private void Start()
         {
             SetUpControls();
@@ -131,9 +131,9 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
         private void ResetTarget()
         {
-#if UNITY_EDITOR
-            Debug.Log($"Resetting current target: {(_currentTarget != null ? _currentTarget.name : "null")}");
-#endif
+            // #if UNITY_EDITOR
+            //             Debug.Log($"Resetting current target: {(_currentTarget != null ? _currentTarget.name : "null")}");
+            // #endif
             _currentInteractionState = PlayerInteractionState.None;
             if (_currentTarget == null) return;
 
@@ -167,7 +167,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             _currentTarget.OnInteract();
 
             if (!_currentTarget.TryGetComponent(out Pickupable pickupable)) return;
-            
+
             if (pickupable.PickedUp)
             {
                 anim["on_pickup_item"].SetValue();

@@ -10,13 +10,13 @@ namespace PanicPlayhouse.Scripts.Audio
     public class AudioManager : MonoBehaviour
     {
         [SerializeField] private Boot boot;
-        
+
         private Bus _music;
         private Bus _sfx;
         private Bus _master;
         private Bus _ambient;
         private Bus _ui;
-        
+
         private void Awake()
         {
             if (FindObjectOfType<AudioManager>() != this)
@@ -24,7 +24,7 @@ namespace PanicPlayhouse.Scripts.Audio
                 Destroy(this);
                 return;
             }
-            
+
             DontDestroyOnLoad(this);
         }
 
@@ -55,22 +55,37 @@ namespace PanicPlayhouse.Scripts.Audio
         {
             RuntimeManager.PlayOneShot(reference, pos);
         }
-    
+
         public void PlayOneShot(EventReference reference)
         {
             RuntimeManager.PlayOneShot(reference);
         }
 
-        public void PlayAudioInLoop(ref EventInstance instance, EventReference reference, Rigidbody attachTo = null) {
+        public void PlayAudioInLoop(ref EventInstance instance, EventReference reference, Rigidbody attachTo = null)
+        {
             PLAYBACK_STATE state = PLAYBACK_STATE.STOPPED;
 
             if (instance.isValid())
+            {
                 instance.getPlaybackState(out state);
-        
-            if (state != PLAYBACK_STATE.STOPPED) return;
+            }
+            else
+            {
+#if UNITY_EDITOR
+                Debug.LogWarning("AudioManager: ".Bold() + "Event instance is not valid!");
+#endif
+            }
+
+            if (state != PLAYBACK_STATE.STOPPED)
+            {
+#if UNITY_EDITOR
+                Debug.LogWarning("AudioManager: ".Bold() + "Instance is already playing!");
+#endif
+                return;
+            }
 
             instance = RuntimeManager.CreateInstance(reference);
-            
+
             if (attachTo != null)
             {
                 instance.set3DAttributes(attachTo.position.To3DAttributes());
@@ -79,39 +94,51 @@ namespace PanicPlayhouse.Scripts.Audio
 
             instance.start();
         }
-        
+
         public void StopAudioInLoop(EventInstance instance, FMOD.Studio.STOP_MODE mode = FMOD.Studio.STOP_MODE.IMMEDIATE)
         {
-            if (!instance.isValid()) return;
-        
+            if (!instance.isValid())
+            {
+#if UNITY_EDITOR
+                Debug.LogWarning("AudioManager: ".Bold() + "Tried to stop instance, but it is not valid!");
+#endif
+                return;
+            }
+
             instance.getPlaybackState(out PLAYBACK_STATE state);
-        
-            if (state != PLAYBACK_STATE.PLAYING) return;
-            
+
+            if (state != PLAYBACK_STATE.PLAYING)
+            {
+#if UNITY_EDITOR
+                Debug.LogWarning("AudioManager: ".Bold() + "Tried to stop instance, but it is not playing!");
+#endif
+                return;
+            }
+
             instance.stop(mode);
             instance.release();
         }
-        
+
         public void SetMasterVolume(float volume)
         {
             _master.setVolume(volume);
         }
-    
+
         public void SetMusicVolume(float volume)
         {
             _music.setVolume(volume);
         }
-    
+
         public void SetSFXVolume(float volume)
         {
             _sfx.setVolume(volume);
         }
-        
+
         public void SetAmbientVolume(float volume)
         {
             _ambient.setVolume(volume);
         }
-    
+
         public void SetUIVolume(float volume)
         {
             _ui.setVolume(volume);
