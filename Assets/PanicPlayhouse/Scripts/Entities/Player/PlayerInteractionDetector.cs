@@ -104,8 +104,11 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
             foreach (Collider col in results)
             {
-                col.TryGetComponent(out interactable);
-                if (interactable != null) break;
+                if (col != null)
+                {
+                    col.TryGetComponent(out interactable);
+                    if (interactable != null) break;
+                }
             }
 
             if (interactable == null)

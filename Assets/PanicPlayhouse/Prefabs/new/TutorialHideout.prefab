@@ -177,7 +177,7 @@ MonoBehaviour:
   enter: {fileID: 11400000, guid: 6079db3d0f6edea4eae8a73646dd44d9, type: 2}
   isHidden: 0
   delayToOpen: 0.5
-  onEnterTutorialHideout: {fileID: 11400000, guid: 6079db3d0f6edea4eae8a73646dd44d9, type: 2}
+  onEnterTutorialHideout: {fileID: 11400000, guid: f69e45d8f9455104791de891536b0cf0, type: 2}
 --- !u!1 &5069475729097771896
 GameObject:
   m_ObjectHideFlags: 0
