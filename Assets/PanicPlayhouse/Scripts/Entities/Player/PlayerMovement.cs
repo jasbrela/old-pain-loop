@@ -13,12 +13,18 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         [SerializeField] private bool startLocked;
         [SerializeField] private float defaultForce;
         [SerializeField] private float defaultMaxVel;
+        [SerializeField] private float heavyMaxVel;
         [SerializeField] private EventReference footsteps;
+        
         [Header("Components")]
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Transform flipXGameObjects;
+
+        [SerializeField] private PlayerInteractionDetector detector;
+        
         [Label("Rigidbody")][SerializeField] private Rigidbody rb;
         [SerializeField] private PlayerInput input;
+        
         [Label("Animation")][SerializeField] private EntityAnimation anim;
         [SerializeField] private PlayerHiddenStatus hiddenStatus;
 
@@ -27,6 +33,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         private AudioManager _audio;
         private Vector3 _previousInput;
         private bool _isHidden;
+        private float _currentMaxVel;
 
         private void Start()
         {
@@ -44,6 +51,16 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             {
                 UnlockMovement();
             }
+        }
+
+        public void OnPickUp()
+        {
+            _currentMaxVel = heavyMaxVel;
+        }
+
+        public void OnReleaseItem()
+        {
+            _currentMaxVel = defaultMaxVel;
         }
 
         public void UnlockMovement()
@@ -110,7 +127,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         private void Move()
         {
             if (_isHidden) return;
-            if (rb.velocity.magnitude >= defaultMaxVel) return;
+            if (rb.velocity.magnitude >= _currentMaxVel) return;
 
             rb.AddRelativeForce(_previousInput * defaultForce, ForceMode.Force);
         }

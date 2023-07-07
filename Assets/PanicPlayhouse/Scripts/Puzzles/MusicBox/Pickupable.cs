@@ -6,7 +6,7 @@ using PanicPlayhouse.Scripts.Chunk;
 using PanicPlayhouse.Scripts.Entities.Player;
 using UnityEngine;
 
-namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
+namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class Pickupable : Interactable
@@ -61,7 +61,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial
 
         public override void OnInteract()
         {
-            // if (IsBlocked) return;
+            if (IsBlocked) return;
 
             if (!_pickedUp) OnPickup();
             else OnDrop();

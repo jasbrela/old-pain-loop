@@ -1,6 +1,6 @@
 using System.Collections;
 using PanicPlayhouse.Scripts.Chunk;
-using PanicPlayhouse.Scripts.Puzzles.GoldenBeadMaterial;
+using PanicPlayhouse.Scripts.Puzzles.MusicBox;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,13 +25,13 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         public Transform pickupInteractablePosition;
 
         [SerializeField] private PlayerInput input;
+        [SerializeField] private PlayerMovement movement;
         [SerializeField] private EntityAnimation anim;
 
         private Interactable _currentTarget;
         private Pickupable _pickedUpInteractable;
         private PlayerInteractionState _currentInteractionState = PlayerInteractionState.None;
-
-
+        
         private void Start()
         {
             SetUpControls();
@@ -145,18 +145,11 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         private void SetUpControls()
         {
             input.actions["Interact"].performed += Interact;
-            input.actions["Movement"].performed += OnPlayerMove;
-        }
-
-        private void OnPlayerMove(InputAction.CallbackContext obj)
-        {
-            var forward = obj.ReadValue<Vector3>().normalized;
         }
 
         private void UnsubscribeControls()
         {
             input.actions["Interact"].performed -= Interact;
-            input.actions["Movement"].performed -= OnPlayerMove;
         }
 
         private void Interact(InputAction.CallbackContext ctx)
@@ -170,21 +163,22 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
             _currentTarget.OnInteract();
 
-            if (_currentTarget.TryGetComponent(out Pickupable pickupable))
+            if (!_currentTarget.TryGetComponent(out Pickupable pickupable)) return;
+            
+            if (pickupable.PickedUp)
             {
-                if (pickupable.PickedUp)
-                {
-                    anim["on_pickup_item"].SetValue();
-                    anim["item_picked_up"].SetValue(true);
-                    _pickedUpInteractable = pickupable;
-                    _currentInteractionState = PlayerInteractionState.InteractablePickedUp;
-                }
-                else
-                {
-                    anim["item_picked_up"].SetValue(false);
-                    _pickedUpInteractable = null;
-                    _currentInteractionState = PlayerInteractionState.None;
-                }
+                anim["on_pickup_item"].SetValue();
+                anim["item_picked_up"].SetValue(true);
+                movement.OnPickUp();
+                _pickedUpInteractable = pickupable;
+                _currentInteractionState = PlayerInteractionState.InteractablePickedUp;
+            }
+            else
+            {
+                anim["item_picked_up"].SetValue(false);
+                movement.OnReleaseItem();
+                _pickedUpInteractable = null;
+                _currentInteractionState = PlayerInteractionState.None;
             }
         }
 
