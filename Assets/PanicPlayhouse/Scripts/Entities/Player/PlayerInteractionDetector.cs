@@ -117,8 +117,9 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         private void SetupCurrentTarget(Interactable nearbyInteractable)
         {
             if (nearbyInteractable == null) return;
-
+#if UNITY_EDITOR
             Debug.Log($"Setting up current target: {(nearbyInteractable != null ? nearbyInteractable.name : "null")}");
+#endif
             if (_currentTarget != null)
                 ResetTarget();
 
@@ -130,7 +131,9 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
         private void ResetTarget()
         {
+#if UNITY_EDITOR
             Debug.Log($"Resetting current target: {(_currentTarget != null ? _currentTarget.name : "null")}");
+#endif
             _currentInteractionState = PlayerInteractionState.None;
             if (_currentTarget == null) return;
 

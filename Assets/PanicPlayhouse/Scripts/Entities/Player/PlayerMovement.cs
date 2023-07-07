@@ -37,6 +37,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
         private void Start()
         {
+            _currentMaxVel = defaultMaxVel;
             _audio = FindObjectOfType<AudioManager>();
             SetUpControls();
         }
@@ -106,15 +107,9 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             if (_previousInput.x != 0)
             {
                 spriteRenderer.flipX = _previousInput.x > 0;
-                flipXGameObjects.rotation = Quaternion.Euler
-                (
-                    new Vector3
-                    (
-                        0,
-                        _previousInput.x > 0 ? 180 : 0,
-                        0
-                    )
-                );
+                flipXGameObjects.localScale = new Vector3(_previousInput.x > 0
+                    ? -1
+                    : 1, 1, 1);
             }
         }
 

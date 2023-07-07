@@ -1,4 +1,6 @@
-﻿using DG.Tweening;
+﻿using System.Collections.Generic;
+using System.Linq;
+using DG.Tweening;
 using FMODUnity;
 using NaughtyAttributes;
 using PanicPlayhouse.Scripts.Audio;
@@ -29,7 +31,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
 
         private int _defaultSortingLayer;
         private Collider _collider;
-        private SpriteRenderer _spriteRenderer;
+        private List<SpriteRenderer> _sprites;
         private Rigidbody _rigidbody;
 
         private bool _pickedUp = false;
@@ -51,10 +53,10 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
 
         private void Awake()
         {
-            _spriteRenderer = GetComponentInChildren<SpriteRenderer>(); // problematico hj pq os objetos tem varios sprites... acho que os proximos devem ser só um p facilitar nossa vida
+            _sprites = GetComponentsInChildren<SpriteRenderer>().ToList();
             _collider = GetComponentInChildren<Collider>();
             _rigidbody = GetComponentInChildren<Rigidbody>();
-            _defaultSortingLayer = _spriteRenderer.sortingLayerID;
+            _defaultSortingLayer = _sprites[0].sortingLayerID;
         }
 
         public bool IsBlocked { get; set; }
@@ -70,16 +72,22 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
 
         void OnPickup()
         {
+#if UNITY_EDITOR
             Debug.Log("OnPickup!");
+#endif
             if (interactionDetector == null) // algo de errado não está certo
             {
+#if UNITY_EDITOR
                 Debug.LogError($"Pickupable {gameObject.name}:".Bold() + " No Interaction Detector found!");
+#endif
                 return;
             }
 
             if (interactionDetector.pickupInteractablePosition == null) // algo de errado não está certo
             {
+#if UNITY_EDITOR
                 Debug.LogError($"Pickupable {gameObject.name}:".Bold() + " No pickup holder found on interaction detector!");
+#endif
                 return;
             }
 
@@ -114,10 +122,14 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
 
         void OnDrop()
         {
+#if UNITY_EDITOR
             Debug.Log("OnDrop!");
+#endif
             if (interactionDetector == null) // algo de errado não está certo
             {
+#if UNITY_EDITOR
                 Debug.LogError($"Pickupable {gameObject.name}:".Bold() + " No Interaction Detector found!");
+#endif
                 return;
             }
 
@@ -161,8 +173,11 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
 
         private void SetSortingLayer(int id)
         {
-            _spriteRenderer.sortingLayerID = id;
-            _spriteRenderer.sortingLayerName = SortingLayer.IDToName(id);
+            foreach (var sprite in _sprites)
+            {
+                sprite.sortingLayerID = id;
+                sprite.sortingLayerName = SortingLayer.IDToName(id);
+            }
         }
     }
 }

@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1958433423
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 1622157737, guid: 2b814e1c47fcfa843ace8ed158f3fa02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -155,7 +155,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1958433423
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1857366827, guid: 2b814e1c47fcfa843ace8ed158f3fa02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -239,7 +239,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1958433423
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 467703e8cc83d2e49979b65c00025c87, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -323,7 +323,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1958433423
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -957622670, guid: 2b814e1c47fcfa843ace8ed158f3fa02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -441,7 +441,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1958433423
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 2001660891, guid: 2b814e1c47fcfa843ace8ed158f3fa02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -559,7 +559,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1958433423
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1534649606, guid: 2b814e1c47fcfa843ace8ed158f3fa02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -643,7 +643,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1958433423
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -221179947, guid: 2b814e1c47fcfa843ace8ed158f3fa02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -762,7 +762,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1958433423
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -521935345, guid: 2b814e1c47fcfa843ace8ed158f3fa02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -846,7 +846,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1958433423
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 761406821, guid: 2b814e1c47fcfa843ace8ed158f3fa02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -930,7 +930,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1958433423
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1029316223, guid: 2b814e1c47fcfa843ace8ed158f3fa02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1014,7 +1014,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1958433423
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 1809286342, guid: 2b814e1c47fcfa843ace8ed158f3fa02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1327,6 +1327,7 @@ MonoBehaviour:
   startLocked: 1
   defaultForce: 80
   defaultMaxVel: 10
+  heavyMaxVel: 5
   footsteps:
     Guid:
       Data1: -1980647854
@@ -1336,6 +1337,7 @@ MonoBehaviour:
     Path: event:/Player/Footsteps
   spriteRenderer: {fileID: 1395562758165979407}
   flipXGameObjects: {fileID: 8278018922906349715}
+  detector: {fileID: 0}
   rb: {fileID: 7734100179996136549}
   input: {fileID: 7734100179996136551}
   anim: {fileID: 285402477806567589}
@@ -1376,6 +1378,7 @@ MonoBehaviour:
     m_Bits: 1088
   pickupInteractablePosition: {fileID: 8111070412103455848}
   input: {fileID: 7734100179996136551}
+  movement: {fileID: 0}
   anim: {fileID: 285402477806567589}
 --- !u!114 &8929065640780248005
 MonoBehaviour:
