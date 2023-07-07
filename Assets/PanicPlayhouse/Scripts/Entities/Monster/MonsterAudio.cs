@@ -115,12 +115,12 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 
         public void PlayKnockOneShot()
         {
-            audioManager.PlayOneShot(knockReference.eventReference);
+            audioManager?.PlayOneShot(knockReference.eventReference);
         }
 
         public void PlayAttackOneShot()
         {
-            audioManager.PlayOneShot(attackReference.eventReference);
+            audioManager?.PlayOneShot(attackReference.eventReference);
         }
 
         public void ToggleChaseAudiosOn(bool on)
@@ -167,22 +167,22 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             if (on)
             {
                 if (attachRb)
-                    audioManager.PlayAudioInLoop(ref eventInstance, reference, rb);
+                    audioManager?.PlayAudioInLoop(ref eventInstance, reference, rb);
                 else
-                    audioManager.PlayAudioInLoop(ref eventInstance, reference);
+                    audioManager?.PlayAudioInLoop(ref eventInstance, reference);
             }
             else
-                audioManager.StopAudioInLoop(eventInstance, stopMode);
+                audioManager?.StopAudioInLoop(eventInstance, stopMode);
         }
 
         public void StopAudiosInLoop()
         {
-            audioManager.StopAudioInLoop(_footstepsInstance, footstepsReference.stopMode);
-            audioManager.StopAudioInLoop(_knockInstance, knockReference.stopMode);
-            audioManager.StopAudioInLoop(_attackInstance, attackReference.stopMode);
-            audioManager.StopAudioInLoop(_breathInstance, breathReference.stopMode);
-            audioManager.StopAudioInLoop(_heartbeatInstance, heartbeatReference.stopMode);
-            audioManager.StopAudioInLoop(_chasingInstance, chasingReference.stopMode);
+            audioManager?.StopAudioInLoop(_footstepsInstance, footstepsReference.stopMode);
+            audioManager?.StopAudioInLoop(_knockInstance, knockReference.stopMode);
+            audioManager?.StopAudioInLoop(_attackInstance, attackReference.stopMode);
+            audioManager?.StopAudioInLoop(_breathInstance, breathReference.stopMode);
+            audioManager?.StopAudioInLoop(_heartbeatInstance, heartbeatReference.stopMode);
+            audioManager?.StopAudioInLoop(_chasingInstance, chasingReference.stopMode);
         }
     }
 }
