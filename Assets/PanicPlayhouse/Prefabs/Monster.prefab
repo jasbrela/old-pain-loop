@@ -284,7 +284,6 @@ MonoBehaviour:
   playerInsanity: {fileID: 11400000, guid: c94776497f346824984f8bf99fb6f8d4, type: 2}
   scriptableObject: {fileID: 11400000, guid: 74ac8b10c8351a748bb7ab65b9ecd694, type: 2}
   distanceFromPlayer: 0
-  canKillHiddenPlayer: 0
   killedPlayer: 0
   shouldRoam: 0
 --- !u!114 &3970387762709452774
@@ -337,68 +336,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215a7c2b9de0ccc42894f7af55b63b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventReferences:
-    list:
-    - Key: knock
-      Value:
-        eventReference:
-          Guid:
-            Data1: 1340107690
-            Data2: 1334305799
-            Data3: -1517150024
-            Data4: 769774886
-          Path: event:/Monster/Knock
-        stopMode: 1
-    - Key: breath
-      Value:
-        eventReference:
-          Guid:
-            Data1: -1647065732
-            Data2: 1086785991
-            Data3: 608372611
-            Data4: -1441258881
-          Path: event:/Monster/Breath
-        stopMode: 1
-    - Key: attack
-      Value:
-        eventReference:
-          Guid:
-            Data1: 688748363
-            Data2: 1105349141
-            Data3: -1021542212
-            Data4: -504563859
-          Path: event:/Monster/Attack
-        stopMode: 1
-    - Key: footsteps
-      Value:
-        eventReference:
-          Guid:
-            Data1: 2087403842
-            Data2: 1300446572
-            Data3: 1090422148
-            Data4: -1112043970
-          Path: event:/Monster/Footsteps
-        stopMode: 1
-    - Key: heartbeat
-      Value:
-        eventReference:
-          Guid:
-            Data1: 835107806
-            Data2: 1168808149
-            Data3: -248597886
-            Data4: -1716327385
-          Path: event:/Player/Heartbeat
-        stopMode: 0
-    - Key: chasing
-      Value:
-        eventReference:
-          Guid:
-            Data1: -908431199
-            Data2: 1144317829
-            Data3: -1607084385
-            Data4: 1266244153
-          Path: event:/Music/Chasing
-        stopMode: 0
-    keyCollision: 0
+  footstepsReference:
+    eventReference:
+      Guid:
+        Data1: 2087403842
+        Data2: 1300446572
+        Data3: 1090422148
+        Data4: -1112043970
+      Path: event:/Monster/Footsteps
+    stopMode: 1
+  knockReference:
+    eventReference:
+      Guid:
+        Data1: 1340107690
+        Data2: 1334305799
+        Data3: -1517150024
+        Data4: 769774886
+      Path: event:/Monster/Knock
+    stopMode: 1
+  attackReference:
+    eventReference:
+      Guid:
+        Data1: 688748363
+        Data2: 1105349141
+        Data3: -1021542212
+        Data4: -504563859
+      Path: event:/Monster/Attack
+    stopMode: 1
+  breathReference:
+    eventReference:
+      Guid:
+        Data1: -1647065732
+        Data2: 1086785991
+        Data3: 608372611
+        Data4: -1441258881
+      Path: event:/Monster/Breath
+    stopMode: 1
+  heartbeatReference:
+    eventReference:
+      Guid:
+        Data1: 835107806
+        Data2: 1168808149
+        Data3: -248597886
+        Data4: -1716327385
+      Path: event:/Player/Heartbeat
+    stopMode: 0
+  chasingReference:
+    eventReference:
+      Guid:
+        Data1: -908431199
+        Data2: 1144317829
+        Data3: -1607084385
+        Data4: 1266244153
+      Path: event:/Music/Chasing
+    stopMode: 1
   rb: {fileID: 2849899001654777002}
   agent: {fileID: 7860628906984239353}

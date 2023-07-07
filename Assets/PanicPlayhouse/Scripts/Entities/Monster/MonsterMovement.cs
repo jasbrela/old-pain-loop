@@ -35,7 +35,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         [SerializeField][ReadOnly] private float distanceFromPlayer;
         [SerializeField][ReadOnly] private bool killedPlayer = false;
         [SerializeField][ReadOnly] private bool shouldRoam;
-        [SerializeField][ReadOnly] private EventInstance footstepsEventInstance;
+        // [SerializeField][ReadOnly] private EventInstance footstepsEventInstance;
         // [SerializeField][ReadOnly] private bool canKillHiddenPlayer;
         // [SerializeField][ReadOnly] private float distanceFromDestination;
         // [SerializeField][ReadOnly] private float distanceFromDefault;
@@ -78,15 +78,14 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             entityAnimation["is_moving"].SetValue(!agent.isStopped);
             spriteRenderer.flipX = transform.position.x - agent.destination.x > 0;
 
-            footstepsEventInstance = audio.GetEventInstance(MonsterAudioConstants.FOOTSTEPS_AUDIO_KEY);
-            footstepsEventInstance.getPlaybackState(out PLAYBACK_STATE state);
-            if (!agent.isStopped && (footstepsEventInstance.isValid() && state == PLAYBACK_STATE.STOPPED))
+            audio.footstepsInstance.getPlaybackState(out PLAYBACK_STATE state);
+            if (!agent.isStopped && (audio.footstepsInstance.isValid() && state == PLAYBACK_STATE.STOPPED))
             {
-                audio.PlayAudioInLoop(MonsterAudioConstants.FOOTSTEPS_AUDIO_KEY, true);
+                audio.ToggleFootstepsOn(true);
             }
-            else if (agent.isStopped && (footstepsEventInstance.isValid() && state != PLAYBACK_STATE.STOPPED))
+            else if (agent.isStopped && (audio.footstepsInstance.isValid() && state != PLAYBACK_STATE.STOPPED))
             {
-                audio.StopAudioInLoop(MonsterAudioConstants.FOOTSTEPS_AUDIO_KEY);
+                audio.ToggleFootstepsOn(false);
             }
 
             if (currentState != null)
@@ -123,7 +122,14 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 #endif
             // KILL PLAYER
             audio.StopAudiosInLoop();
-            audio.PlayOneShot(playerDetector.sawPlayerHiding ? MonsterAudioConstants.KNOCK_AUDIO_KEY : MonsterAudioConstants.ATTACK_AUDIO_KEY);
+            if (playerDetector.sawPlayerHiding)
+            {
+                audio.PlayKnockOneShot();
+            }
+            else
+            {
+                audio.PlayAttackOneShot();
+            }
 
             currentState = null;
             agent.speed = 0;

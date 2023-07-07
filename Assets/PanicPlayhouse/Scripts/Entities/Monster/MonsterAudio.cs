@@ -8,16 +8,6 @@ using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace PanicPlayhouse.Scripts.Entities.Monster
 {
-    public static class MonsterAudioConstants
-    {
-        public static string FOOTSTEPS_AUDIO_KEY = "footsteps";
-        public static string KNOCK_AUDIO_KEY = "knock";
-        public static string ATTACK_AUDIO_KEY = "attack";
-        public static string BREATH_AUDIO_KEY = "breath";
-        public static string HEARTBEAT_AUDIO_KEY = "heartbeat";
-        public static string CHASING_AUDIO_KEY = "chasing";
-    }
-
     [System.Serializable]
     public class FMODAudioEventReference
     {
@@ -39,13 +29,72 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
     public class MonsterAudio : MonoBehaviour
     {
         [Header("FMOD")]
-        [SerializeField] private GenericDictionary<string, FMODAudioEventReference> eventReferences = new GenericDictionary<string, FMODAudioEventReference>();
+        [SerializeField] private FMODAudioEventReference footstepsReference;
+        [SerializeField] private FMODAudioEventReference knockReference;
+        [SerializeField] private FMODAudioEventReference attackReference;
+        [SerializeField] private FMODAudioEventReference breathReference;
+        [SerializeField] private FMODAudioEventReference heartbeatReference;
+        [SerializeField] private FMODAudioEventReference chasingReference;
 
         [Header("Dependencies")]
         [SerializeField] private Rigidbody rb;
         [SerializeField] private NavMeshAgent agent;
 
-        private Dictionary<string, EventInstance> eventInstances = new Dictionary<string, EventInstance>();
+
+        private EventInstance _footstepsInstance;
+        public EventInstance footstepsInstance
+        {
+            get
+            {
+                return _footstepsInstance;
+            }
+        }
+
+        private EventInstance _knockInstance;
+        public EventInstance knockInstance
+        {
+            get
+            {
+                return _knockInstance;
+            }
+        }
+
+        private EventInstance _attackInstance;
+        public EventInstance attackInstance
+        {
+            get
+            {
+                return _attackInstance;
+            }
+        }
+
+        private EventInstance _breathInstance;
+        public EventInstance breathInstance
+        {
+            get
+            {
+                return _breathInstance;
+            }
+        }
+
+        private EventInstance _heartbeatInstance;
+        public EventInstance heatbeatInstance
+        {
+            get
+            {
+                return _heartbeatInstance;
+            }
+        }
+
+        private EventInstance _chasingInstance;
+        public EventInstance chasingInstance
+        {
+            get
+            {
+                return _chasingInstance;
+            }
+        }
+
 
         private AudioManager _audioManager;
         private AudioManager audioManager
@@ -59,83 +108,81 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             }
         }
 
-        void Awake()
-        {
-            foreach (string eventReferenceKey in eventReferences.Keys)
-            {
-                eventInstances.Add(eventReferenceKey, new EventInstance());
-            }
-        }
-
         void Start()
         {
-            PlayAudioInLoop(MonsterAudioConstants.BREATH_AUDIO_KEY, true);
+            ToggleBreathOn(true);
         }
 
-        public EventInstance GetEventInstance(string audioKey)
+        public void PlayKnockOneShot()
         {
-            if (!eventInstances.TryGetValue(audioKey, out EventInstance eventInstance))
-            {
-#if UNITY_EDITOR
-                Debug.LogWarning("MonsterAudio: ".Bold() + $"No event instance for audio \"{audioKey}\"");
-#endif
-            }
+            audioManager.PlayOneShot(knockReference.eventReference);
+        }
 
-            return eventInstance;
+        public void PlayAttackOneShot()
+        {
+            audioManager.PlayOneShot(attackReference.eventReference);
+        }
+
+        public void ToggleChaseAudiosOn(bool on)
+        {
+            ToggleLoopAudio(
+                on,
+                ref _chasingInstance,
+                chasingReference.eventReference,
+                chasingReference.stopMode
+            );
+
+            ToggleLoopAudio(
+                on,
+                ref _heartbeatInstance,
+                heartbeatReference.eventReference,
+                heartbeatReference.stopMode
+            );
+        }
+
+        public void ToggleBreathOn(bool on)
+        {
+            ToggleLoopAudio(
+                on,
+                ref _breathInstance,
+                breathReference.eventReference,
+                breathReference.stopMode,
+                true
+            );
+        }
+
+        public void ToggleFootstepsOn(bool on)
+        {
+            ToggleLoopAudio(
+                on,
+                ref _footstepsInstance,
+                footstepsReference.eventReference,
+                footstepsReference.stopMode,
+                true
+            );
+        }
+
+        void ToggleLoopAudio(bool on, ref EventInstance eventInstance, EventReference reference, STOP_MODE stopMode, bool attachRb = false)
+        {
+            if (on)
+            {
+                if (attachRb)
+                    audioManager.PlayAudioInLoop(ref eventInstance, reference, rb);
+                else
+                    audioManager.PlayAudioInLoop(ref eventInstance, reference);
+            }
+            else
+                audioManager.StopAudioInLoop(eventInstance, stopMode);
         }
 
         public void StopAudiosInLoop()
         {
-            foreach (KeyValuePair<string, EventInstance> eventInstanceKvp in eventInstances)
-            {
-                STOP_MODE stopMode = eventReferences.TryGetValue(eventInstanceKvp.Key, out FMODAudioEventReference eventReference) ? eventReference.stopMode : STOP_MODE.IMMEDIATE;
-                audioManager?.StopAudioInLoop(eventInstanceKvp.Value, stopMode);
-            }
-        }
-
-        public void StopAudioInLoop(string audioKey)
-        {
-            if (!eventInstances.TryGetValue(audioKey, out EventInstance eventInstance))
-                return;
-
-            audioManager?.StopAudioInLoop(eventInstance);
-        }
-
-        public void PlayOneShot(string audioKey)
-        {
-            if (!eventReferences.TryGetValue(audioKey, out FMODAudioEventReference audioReference))
-                return;
-
-            audioManager?.PlayOneShot(audioReference.eventReference);
-        }
-
-        public void PlayAudioInLoop(string audioKey, bool useRb = false)
-        {
-            if (!eventReferences.TryGetValue(audioKey, out FMODAudioEventReference audioReference))
-            {
-#if UNITY_EDITOR
-                Debug.LogWarning("MonsterAudio: ".Bold() + $"No event reference for audio \"{audioKey}\"");
-#endif
-                return;
-            }
-
-            if (!eventInstances.TryGetValue(audioKey, out EventInstance eventInstance))
-            {
-#if UNITY_EDITOR
-                Debug.LogWarning("MonsterAudio: ".Bold() + $"No event instance for audio \"{audioKey}\"");
-#endif
-                return;
-            }
-            eventInstance.getPlaybackState(out PLAYBACK_STATE state);
-            if (state != PLAYBACK_STATE.STOPPED)
-            {
-#if UNITY_EDITOR
-                Debug.LogWarning("MonsterAudio: ".Bold() + $"Audio \"{audioKey}\" is already playing!");
-#endif
-                return;
-            }
-
-            audioManager?.PlayAudioInLoop(ref eventInstance, audioReference.eventReference, useRb ? rb : null);
+            audioManager.StopAudioInLoop(_footstepsInstance, footstepsReference.stopMode);
+            audioManager.StopAudioInLoop(_knockInstance, knockReference.stopMode);
+            audioManager.StopAudioInLoop(_attackInstance, attackReference.stopMode);
+            audioManager.StopAudioInLoop(_breathInstance, breathReference.stopMode);
+            audioManager.StopAudioInLoop(_heartbeatInstance, heartbeatReference.stopMode);
+            audioManager.StopAudioInLoop(_chasingInstance, chasingReference.stopMode);
         }
     }
 }

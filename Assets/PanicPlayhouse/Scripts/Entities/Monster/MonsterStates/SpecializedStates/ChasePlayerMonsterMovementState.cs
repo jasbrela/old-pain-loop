@@ -20,8 +20,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         {
             Debug.Log("OnEnterState!");
             // base.OnEnterState();
-            audio.PlayAudioInLoop(MonsterAudioConstants.CHASING_AUDIO_KEY);
-            audio.PlayAudioInLoop(MonsterAudioConstants.HEARTBEAT_AUDIO_KEY);
+            audio.ToggleChaseAudiosOn(true);
 
             agent.speed = scriptableObject.chaseSpeed;
             currentCoroutine = movement.StartCoroutine(ChasePlayerCoroutine());
@@ -85,8 +84,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             if (currentCoroutine != null)
                 movement.StopCoroutine(currentCoroutine);
 
-            audio.StopAudioInLoop(MonsterAudioConstants.CHASING_AUDIO_KEY);
-            audio.StopAudioInLoop(MonsterAudioConstants.HEARTBEAT_AUDIO_KEY);
+            audio.ToggleChaseAudiosOn(false);
 
             currentCoroutine = null;
         }
