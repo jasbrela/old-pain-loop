@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 1.5
+    agentRadius: 1
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.5
+    cellSize: 0.33333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 1
@@ -4643,6 +4643,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &345827879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1226712714, guid: 91b97e1926b5a634b9f7679aba7f44ee, type: 3}
+  m_PrefabInstance: {fileID: 1898738674920102474}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6af457b440246478a615088602a7a67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &394652994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12226,6 +12237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onFinish: {fileID: 11400000, guid: 7c05c4f9301a9474e82ada3fb1136719, type: 2}
+  musicBox: {fileID: 345827879}
   insanityPenalty: 4
   insanityReward: 0
   insanity: {fileID: 11400000, guid: c94776497f346824984f8bf99fb6f8d4, type: 2}

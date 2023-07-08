@@ -1062,6 +1062,52 @@ Transform:
   m_Father: {fileID: 640839332}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &743727087248145027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8040348364660672102}
+  - component: {fileID: 3320942672618539495}
+  m_Layer: 3
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8040348364660672102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743727087248145027}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0.9}
+  m_LocalScale: {x: 2.64, y: 1, z: 2.24}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7734100179996136550}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &3320942672618539495
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743727087248145027}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1195014212688589567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1266,6 @@ GameObject:
   - component: {fileID: 7734100179996136550}
   - component: {fileID: 7734100179996136551}
   - component: {fileID: 7734100179996136549}
-  - component: {fileID: 7734100179996136546}
   - component: {fileID: 7734100179996136548}
   - component: {fileID: 1170892685}
   - component: {fileID: 1170892686}
@@ -1250,6 +1295,7 @@ Transform:
   - {fileID: 8278018922906349715}
   - {fileID: 7638325723872354304}
   - {fileID: 640839332}
+  - {fileID: 8040348364660672102}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1299,19 +1345,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!65 &7734100179996136546
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7734100179996136547}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 3.1648228, z: 0.25}
-  m_Center: {x: 0, y: 1.5824114, z: 0}
 --- !u!114 &7734100179996136548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1337,7 +1370,6 @@ MonoBehaviour:
     Path: event:/Player/Footsteps
   spriteRenderer: {fileID: 1395562758165979407}
   flipXGameObjects: {fileID: 8278018922906349715}
-  detector: {fileID: 0}
   rb: {fileID: 7734100179996136549}
   input: {fileID: 7734100179996136551}
   anim: {fileID: 285402477806567589}
@@ -1378,7 +1410,7 @@ MonoBehaviour:
     m_Bits: 1088
   pickupInteractablePosition: {fileID: 8111070412103455848}
   input: {fileID: 7734100179996136551}
-  movement: {fileID: 0}
+  movement: {fileID: 7734100179996136548}
   anim: {fileID: 285402477806567589}
 --- !u!114 &8929065640780248005
 MonoBehaviour:

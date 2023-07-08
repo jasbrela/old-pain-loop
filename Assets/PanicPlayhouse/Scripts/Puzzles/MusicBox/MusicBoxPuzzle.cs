@@ -11,6 +11,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
     {
         [Header("Puzzle")]
         [SerializeField] private Event onFinish;
+        [SerializeField] private MusicBox musicBox;
 
         [Header("Insanity")]
         [SerializeField] private float insanityPenalty;
@@ -23,7 +24,6 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
 
         private AudioManager _audio;
         private MusicBoxBase _base;
-        private MusicBox _musicBox;
 
         private bool IsActivated { get; set; }
         private bool IsFinished { get; set; }
@@ -54,7 +54,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
             insanity.Value -= insanityReward;
             _audio.PlayOneShot(success);
             if (onFinish != null) onFinish.Raise();
-            _musicBox.IsBlocked = true;
+            musicBox.IsBlocked = true;
             insanity.Value += insanityPenalty;
         }
 
