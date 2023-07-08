@@ -7,7 +7,7 @@ namespace PanicPlayhouse.Scripts.Chunk
     {
         [Tooltip("'False' will switch sprites instead of material")]
         [SerializeField] private bool switchMat = true;
-        
+
         [HideIf("switchMat")][SerializeField] private Sprite hoverSprite;
         [ShowIf("switchMat")][SerializeField] private Material hoverMaterial;
         [SerializeField] private SpriteRenderer spriteRenderer;
@@ -17,9 +17,9 @@ namespace PanicPlayhouse.Scripts.Chunk
         private void Start()
         {
             if (spriteRenderer == null) return;
-            
+
             if (switchMat)
-                _defaultMaterial = spriteRenderer.material;
+                _defaultMaterial = spriteRenderer.sharedMaterial;
             else
                 _defaultSprite = spriteRenderer.sprite;
         }
@@ -40,7 +40,7 @@ namespace PanicPlayhouse.Scripts.Chunk
         public virtual void OnQuitRange()
         {
             if (spriteRenderer == null) return;
-            
+
             if (switchMat)
                 spriteRenderer.material = _defaultMaterial;
             else
