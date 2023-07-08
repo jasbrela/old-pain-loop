@@ -18814,10 +18814,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1123427105, guid: 91b97e1926b5a634b9f7679aba7f44ee, type: 3}
+      propertyPath: m_Name
+      value: Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123427107, guid: 91b97e1926b5a634b9f7679aba7f44ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 1226712714, guid: 91b97e1926b5a634b9f7679aba7f44ee, type: 3}
       propertyPath: interactionDetector
       value: 
       objectReference: {fileID: 986933349}
+    - target: {fileID: 1773080729, guid: 91b97e1926b5a634b9f7679aba7f44ee, type: 3}
+      propertyPath: m_Name
+      value: Box A
+      objectReference: {fileID: 0}
     - target: {fileID: 1773080733, guid: 91b97e1926b5a634b9f7679aba7f44ee, type: 3}
       propertyPath: interactionDetector
       value: 
@@ -18838,6 +18850,10 @@ PrefabInstance:
       propertyPath: interactionDetector
       value: 
       objectReference: {fileID: 986933349}
+    - target: {fileID: 1576304194751938938, guid: 91b97e1926b5a634b9f7679aba7f44ee, type: 3}
+      propertyPath: m_Name
+      value: Box B
+      objectReference: {fileID: 0}
     - target: {fileID: 1576304194751938942, guid: 91b97e1926b5a634b9f7679aba7f44ee, type: 3}
       propertyPath: interactionDetector
       value: 
@@ -19958,6 +19974,10 @@ PrefabInstance:
       propertyPath: interactionDetector
       value: 
       objectReference: {fileID: 986933349}
+    - target: {fileID: 8226432271130830619, guid: 91b97e1926b5a634b9f7679aba7f44ee, type: 3}
+      propertyPath: m_Name
+      value: Box C
+      objectReference: {fileID: 0}
     - target: {fileID: 8226432271130830623, guid: 91b97e1926b5a634b9f7679aba7f44ee, type: 3}
       propertyPath: interactionDetector
       value: 
