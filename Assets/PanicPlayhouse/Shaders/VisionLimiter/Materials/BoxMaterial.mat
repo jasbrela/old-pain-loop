@@ -44,7 +44,7 @@ Material:
     - _Cull: 2
     - _DistanceMod: 0.5
     - _DstBlend: 0
-    - _MinDistance: 6.5
+    - _MinDistance: 7.5
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -60,8 +60,8 @@ Material:
     - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _DistanceB: {r: 0, g: 0, b: 0, a: 0}
     - _FarColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PlayerPosition: {r: -22.887653, g: 0.5, b: 134.3662, a: 0}
-    - _PlayerPositionOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _PlayerPosition: {r: -57.916508, g: 0.5, b: 116.06724, a: 0}
+    - _PlayerPositionOffset: {r: -1, g: 0, b: 1, a: 0}
     - _PositionMultiplier: {r: 1, g: 0, b: 1, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &3854299993119392611
