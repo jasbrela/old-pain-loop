@@ -1,0 +1,47 @@
+{9e174107-2c9b-4fc9-8598-383f95d606bf} bank:/Master
+{060a61d3-5de0-038b-03d1-b2c164250027} bank:/Master.strings
+{73be3f6a-71b6-446b-a74b-2ff3178a190e} bank:/Music
+{25fdc7f2-d2ab-455e-8fd5-b722c2814e0b} bank:/Sounds
+{3258f791-ed02-4c81-8d4a-2f241c97a062} bus:/
+{bfdb5f2e-bfd4-46ad-8275-6cc74635463b} bus:/Ambient
+{35d398e9-d640-4168-81ed-a3876e2e79af} bus:/Music
+{36608869-c16c-4fb7-bdd8-7359d35ee7bf} bus:/Reverb
+{ed1cdbcb-9893-45a1-9bd1-d50522ff38fb} bus:/SFX
+{8135dc2b-aee1-406d-98e9-0a3cd95a2502} bus:/UI
+{6f8dfb6d-3074-4c03-a990-9a592db9a15d} event:/Ambient/Ambient
+{290d774b-4a15-41e2-bc80-1cc36df7ece1} event:/Monster/Attack
+{9dd3c57c-09c7-40c7-8307-43247f2218aa} event:/Monster/Breath
+{8ff6cca9-eed6-4d69-88b0-2dceeba1aca4} event:/Monster/Footstep1
+{9fdc4380-5536-4af9-9d78-120c54d65481} event:/Monster/Footstep2
+{7c6b4142-3d6c-4d83-8485-fe403e8eb7bd} event:/Monster/Footsteps
+{4fe06baa-e407-4f87-b820-92a526d5e12d} event:/Monster/Knock
+{d70f2ba5-1e37-46f3-b265-dbbcb7c3e8fb} event:/Monster/Xylophone
+{c9da70a1-e785-4434-9fd6-35a0395a794b} event:/Music/Chasing
+{ec99cc85-9a3c-45d2-8ddb-d3cb13de3b68} event:/Music/Cutscene
+{3cacb204-89ec-4098-b07a-339bdb0560a6} event:/Music/Menu
+{c911d642-7694-436d-88aa-7b0dd23ec4c2} event:/Player/Breath
+{22ad5bc3-eabf-4cc8-9bc4-7ee323b4bf6e} event:/Player/Drop
+{01234384-28df-475f-a1a0-1fb7393ff4b6} event:/Player/Exhale
+{182b88e3-cf39-41b2-864a-b15ef5c55416} event:/Player/FasterBreath
+{8e75d2e4-eb8e-4c10-9b97-2c4b09f5af64} event:/Player/Footstep1
+{ed66bb2a-ea52-4de2-9d5c-cd14e65206a8} event:/Player/Footstep2
+{89f1b652-e544-4374-8194-472a70871aa0} event:/Player/Footsteps
+{31c6bbde-98d5-45aa-82b2-2ef127ecb299} event:/Player/Heartbeat
+{ecfff122-9766-4c21-80d3-cad7ad09b0ef} event:/Player/HideoutEnter
+{907b8e44-afaf-458f-8b5f-af4d16e78c6b} event:/Player/HideoutExit
+{c39f1fe6-cfab-46a1-9ab7-acd01f394ef4} event:/Player/Pickup
+{6c6b769c-73a3-4745-a1f8-799e828b4eea} event:/Puzzles/Final
+{06260fbc-ca43-4d56-adbd-cfdd5bfe05c4} event:/Puzzles/GoldenBeads/Drag
+{15b2eda1-7308-47fd-8e8e-3d4818274b5b} event:/Puzzles/GoldenBeads/Fitting
+{104acf1c-8bea-4660-b87f-c74bee38e56d} event:/Puzzles/GoldenBeads/Success
+{d4f23522-f09a-4e4e-98d7-0dd343f37ec1} event:/Puzzles/Grief/Click
+{e49ca70c-17ab-45bc-b6f6-e1172ebd1fe0} event:/Puzzles/Grief/Rotate
+{ff6c38c2-10fa-42f5-9e8b-31312235b211} event:/Puzzles/Grief/Success
+{742e11d4-007d-4616-a579-00c3522237c8} event:/Puzzles/MusicBox/Music Box
+{93364a29-0f23-4b6c-b88a-ef30efd9d7de} event:/Puzzles/Xylophone/Success
+{8b25881a-dfee-4654-a579-8fc01f83d2f6} event:/Puzzles/Xylophone/Xylophone - 1
+{116f9977-f5ea-4256-8dd9-f82a5928ebd1} event:/Puzzles/Xylophone/Xylophone - 3
+{489a8fc0-b6ca-490e-9ab1-94f4ec0ac70e} event:/Puzzles/Xylophone/Xylophone - 5
+{55a4e9f0-b6bb-4d71-b687-d2d622d8dfc4} event:/Puzzles/Xylophone/Xylophone - 7
+{9f8d382e-53d7-4d4f-96d9-c3cb7f6911b1} event:/UI/Click
+{a7bfaa8b-1ec6-4b6c-b890-928a43eb15b5} event:/UI/Hover

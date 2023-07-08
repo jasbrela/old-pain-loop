@@ -8,6 +8,7 @@
 			<destination>{4b0f4071-a1c0-41ab-9153-ad59e2bc7bf2}</destination>
 			<destination>{054d3188-74d7-414d-a0bf-41c89e5209cd}</destination>
 			<destination>{812ed2d0-af1e-48fd-8c5b-0d07c5ef84b0}</destination>
+			<destination>{b6ef4fbf-aeca-449d-8e0f-63462db9bbcf}</destination>
 		</relationship>
 	</object>
 	<object class="Tag" id="{4b0f4071-a1c0-41ab-9153-ad59e2bc7bf2}">
@@ -23,6 +24,11 @@
 	<object class="Tag" id="{812ed2d0-af1e-48fd-8c5b-0d07c5ef84b0}">
 		<property name="name">
 			<value>Monster</value>
+		</property>
+	</object>
+	<object class="Tag" id="{b6ef4fbf-aeca-449d-8e0f-63462db9bbcf}">
+		<property name="name">
+			<value>placeholder</value>
 		</property>
 	</object>
 </objects>

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System;
+using FMODUnity;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -7,13 +8,28 @@ namespace PanicPlayhouse.Scripts.Entities
 {
     public class EntityAnimation : MonoBehaviour
     {
-        [Header("Animation")]
+        [Header("SFX")]
+        [SerializeField] private GenericDictionary<string, EventReference> oneShotSFXes = new GenericDictionary<string, EventReference>();
+
+        [Header("Dependencies")]
         [SerializeField] private Animator animator;
 
         [HideIf("AnimatorIsNull")]
         public GenericDictionary<string, Animation> animations = new GenericDictionary<string, Animation>();
 
         public bool AnimatorIsNull => animator == null;
+
+        private PanicPlayhouse.Scripts.Audio.AudioManager _audioManager;
+        private PanicPlayhouse.Scripts.Audio.AudioManager audioManager
+        {
+            get
+            {
+                if (_audioManager == null)
+                    _audioManager = FindObjectOfType<PanicPlayhouse.Scripts.Audio.AudioManager>();
+
+                return _audioManager;
+            }
+        }
 
         private void OnValidate()
         {
@@ -31,6 +47,17 @@ namespace PanicPlayhouse.Scripts.Entities
         private void Awake()
         {
             OnValidate();
+        }
+
+        public void PlayOneShotSFX(string sfx)
+        {
+            if (!oneShotSFXes.ContainsKey(sfx))
+                return;
+
+            if (audioManager == null)
+                return;
+
+            audioManager.PlayOneShot(oneShotSFXes[sfx]);
         }
 
         public Animation this[string key]

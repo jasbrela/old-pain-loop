@@ -1163,8 +1163,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5165523925432939003}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.83200026, y: 0.73, z: 0.42100143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.8320003, y: 0.73, z: 0.4210014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1509,6 +1509,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec165433794445cb9f412e210ad192f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oneShotSFXes:
+    list:
+    - Key: footstep1
+      Value:
+        Guid:
+          Data1: -1904880924
+          Data2: 1276177294
+          Data3: 1261213595
+          Data4: 1689253129
+        Path: event:/Player/Footstep1
+    - Key: footstep2
+      Value:
+        Guid:
+          Data1: -312034518
+          Data2: 1306716754
+          Data3: 349002909
+          Data4: -1475980570
+        Path: event:/Player/Footstep2
+    - Key: pickup
+      Value:
+        Guid:
+          Data1: -1012981786
+          Data2: 1185009579
+          Data3: -793987174
+          Data4: -196200161
+        Path: event:/Player/Pickup
+    keyCollision: 0
   animator: {fileID: 4199877231867297704}
   animations:
     list:

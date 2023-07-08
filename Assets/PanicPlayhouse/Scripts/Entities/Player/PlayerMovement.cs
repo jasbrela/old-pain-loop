@@ -91,14 +91,14 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             IsMoving = true;
             _previousInput = ctx.ReadValue<Vector3>();
 
-            if (_previousInput != Vector3.zero)
-            {
-                _audio?.PlayAudioInLoop(ref _footstepInstance, footsteps);
-            }
-            else
-            {
-                _audio?.StopAudioInLoop(_footstepInstance);
-            }
+            // if (_previousInput != Vector3.zero)
+            // {
+            //     _audio?.PlayAudioInLoop(ref _footstepInstance, footsteps);
+            // }
+            // else
+            // {
+            //     _audio?.StopAudioInLoop(_footstepInstance);
+            // }
 
             anim["is_moving"].SetValue(_previousInput != Vector3.zero);
 
@@ -135,7 +135,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
 
             rb.velocity = vel;
             anim["is_moving"].SetValue(false);
-            _audio?.StopAudioInLoop(_footstepInstance);
+            // _audio?.StopAudioInLoop(_footstepInstance);
         }
     }
 }

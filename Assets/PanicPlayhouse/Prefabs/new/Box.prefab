@@ -234,18 +234,18 @@ MonoBehaviour:
   abovePlayerLayer: 1748606149
   pickup:
     Guid:
-      Data1: 103157692
-      Data2: 1297533507
-      Data3: -573588051
-      Data4: -1006240165
-    Path: event:/Puzzles/GoldenBeads/Drag
+      Data1: -1012981786
+      Data2: 1185009579
+      Data3: -793987174
+      Data4: -196200161
+    Path: event:/Player/Pickup
   drop:
     Guid:
-      Data1: 103157692
-      Data2: 1297533507
-      Data3: -573588051
-      Data4: -1006240165
-    Path: event:/Puzzles/GoldenBeads/Drag
+      Data1: 581786563
+      Data2: 1288235711
+      Data3: -478231397
+      Data4: 1858057251
+    Path: event:/Player/Drop
   interactionDetector: {fileID: 0}
 --- !u!65 &2155401287629905165
 BoxCollider:

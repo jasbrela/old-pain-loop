@@ -23,7 +23,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
         [SerializeField][SortingLayer] private int abovePlayerLayer = 1748606149;
 
         [Header("SFX")]
-        [SerializeField] private EventReference pickup;
+        // [SerializeField] private EventReference pickup;
         [SerializeField] private EventReference drop;
 
         [Header("Components")]
@@ -94,7 +94,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
             // if (_pickedUp)
             //     return;
 
-            Audio?.PlayOneShot(pickup);
+            // Audio?.PlayOneShot(pickup);
             transform.SetParent(interactionDetector.pickupInteractablePosition);
             transform.localPosition = Vector3.zero;
             // if (currentTween != null)
