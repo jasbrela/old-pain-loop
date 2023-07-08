@@ -31,7 +31,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
         private void Start()
         {
             _audio = FindObjectOfType<AudioManager>();
-            
+
             ActivatePuzzle();
         }
 
@@ -52,6 +52,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
 
             IsFinished = true;
             insanity.Value -= insanityReward;
+            musicBox.ToggleMusicOn(false);
             _audio.PlayOneShot(success);
             if (onFinish != null) onFinish.Raise();
             musicBox.IsBlocked = true;

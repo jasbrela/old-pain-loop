@@ -20,7 +20,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
         [SerializeField] private LayerMask roomMask;
 
         [Header("Rendering")]
-        [SerializeField] [SortingLayer] private int abovePlayerLayer = 1748606149;
+        [SerializeField][SortingLayer] private int abovePlayerLayer = 1748606149;
 
         [Header("SFX")]
         [SerializeField] private EventReference pickup;
@@ -32,13 +32,13 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
         private int _defaultSortingLayer;
         private Collider _collider;
         private List<SpriteRenderer> _sprites;
-        private Rigidbody _rigidbody;
+        protected Rigidbody _rigidbody;
 
         private bool _pickedUp = false;
         public bool PickedUp => _pickedUp;
 
         private AudioManager _audio;
-        private AudioManager Audio
+        protected AudioManager Audio
         {
             get
             {
@@ -51,7 +51,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
 
         private Tween _currentTween;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _sprites = GetComponentsInChildren<SpriteRenderer>().ToList();
             _collider = GetComponentInChildren<Collider>();
@@ -112,9 +112,9 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
             //     _rigidbody.useGravity = true;
             //     currentTween = null;
             // });
-            
+
             SetSortingLayer(abovePlayerLayer);
-            
+
             gameObject.layer = LayerMask.NameToLayer("PickedupInteractable");
 
             _pickedUp = true;
@@ -160,12 +160,12 @@ namespace PanicPlayhouse.Scripts.Puzzles.MusicBox
                 _collider.enabled = true;
                 _rigidbody.useGravity = true;
                 _currentTween = null;
-                
+
             });
 
             gameObject.layer = LayerMask.NameToLayer("Interactable");
             transform.rotation = Quaternion.identity;
-            
+
             SetSortingLayer(_defaultSortingLayer);
 
             _pickedUp = false;
