@@ -5,7 +5,7 @@ namespace PanicPlayhouse.Scripts.Chunk
 {
     public class ShowOnEvent : MonoBehaviour
     {
-        [SerializeField] private List<GameObject> toShow = new List<GameObject>();
+        [SerializeField] private List<GameObject> toShow = new();
 
         public void Show()
         {

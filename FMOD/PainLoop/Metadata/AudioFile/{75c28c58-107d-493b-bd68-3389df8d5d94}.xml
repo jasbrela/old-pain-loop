@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{75c28c58-107d-493b-bd68-3389df8d5d94}">
+		<property name="assetPath">
+			<value>Music Box Puzzle 2.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>31.373061224489796</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{519b26be-39a1-4dc6-9372-88596cc3c9fe}</destination>
+		</relationship>
+	</object>
+</objects>
