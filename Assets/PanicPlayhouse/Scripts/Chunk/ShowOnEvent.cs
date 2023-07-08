@@ -11,6 +11,7 @@ namespace PanicPlayhouse.Scripts.Chunk
         {
             foreach (GameObject obj in toShow)
             {
+                if (obj == null) continue;
                 obj.SetActive(true);
             }
         }
