@@ -60,6 +60,9 @@
 		<property name="dopplerEnabled">
 			<value>true</value>
 		</property>
+		<property name="minimumDistance">
+			<value>10</value>
+		</property>
 		<property name="maximumDistance">
 			<value>100</value>
 		</property>
@@ -74,6 +77,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{37eedef1-27e9-444c-a0c7-ca154575512e}">
+		<property name="volume">
+			<value>10</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{0300f4cd-6889-4d25-b65c-4c785864648f}</destination>
 		</relationship>
@@ -114,12 +120,18 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{0300f4cd-6889-4d25-b65c-4c785864648f}">
 		<relationship name="effects">
+			<destination>{7adfa271-27c4-43e7-a4e8-d3b797d18f8d}</destination>
 			<destination>{b946e129-c066-4d4e-a802-6a997cac37f7}</destination>
 			<destination>{855e94c8-fcef-4c8f-811e-c3cb22d61bb5}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{1399bb74-339c-42c4-8cfe-6fec5920b969}" />
 	<object class="MixerBusFader" id="{2a600325-5531-4968-ace4-f4bb177d8877}" />
+	<object class="GainEffect" id="{7adfa271-27c4-43e7-a4e8-d3b797d18f8d}">
+		<property name="gain">
+			<value>5</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{b946e129-c066-4d4e-a802-6a997cac37f7}" />
 	<object class="SpatialiserEffect" id="{855e94c8-fcef-4c8f-811e-c3cb22d61bb5}">
 		<property name="distanceRolloffType">
