@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using PanicPlayhouse.Scripts.Chunk;
 using PanicPlayhouse.Scripts.Puzzles.MusicBox;
@@ -67,7 +68,6 @@ namespace PanicPlayhouse.Scripts.Entities.Player
                 return;
             }
 
-            // Debug.Log("Checking for Interactable!");
             // Get nearest interactable.
             if (!GetNearbyInteractable(out Interactable nearbyInteractable) && _pickedUpInteractable == null)
             {
@@ -96,6 +96,13 @@ namespace PanicPlayhouse.Scripts.Entities.Player
         private bool GetNearbyInteractable(out Interactable interactable)
         {
             interactable = null;
+            Debug.Log("Current Interaction State: ".Bold() + _currentInteractionState);
+            if (_pickedUpInteractable != null)
+            {
+                interactable = _pickedUpInteractable;
+                return false;
+            }
+            
             Collider[] results = new Collider[5];
             int size = Physics.OverlapSphereNonAlloc(transform.position, interactionRadius, results, interactableMask);
 
@@ -138,6 +145,7 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             //             Debug.Log($"Resetting current target: {(_currentTarget != null ? _currentTarget.name : "null")}");
             // #endif
             _currentInteractionState = PlayerInteractionState.None;
+            
             if (_currentTarget == null) return;
 
             tooltip.IsCloseToInteraction = false;
@@ -170,8 +178,8 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             _currentTarget.OnInteract();
 
             if (!_currentTarget.TryGetComponent(out Pickupable pickupable)) return;
-
-            if (pickupable.PickedUp)
+            
+            if (_pickedUpInteractable == null && pickupable.PickedUp)
             {
                 anim["on_pickup_item"].SetValue();
                 anim["item_picked_up"].SetValue(true);
