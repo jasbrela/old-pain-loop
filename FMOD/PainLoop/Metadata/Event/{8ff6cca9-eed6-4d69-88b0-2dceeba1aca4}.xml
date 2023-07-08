@@ -5,7 +5,7 @@
 			<value>Footstep1</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9a7d50d8-aa1d-4e55-8f16-21377e6e1248}</destination>
@@ -56,7 +56,14 @@
 			<destination>{ed1cdbcb-9893-45a1-9bd1-d50522ff38fb}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{f64b4898-f705-4547-8c07-a26847fa49ee}" />
+	<object class="EventAutomatableProperties" id="{f64b4898-f705-4547-8c07-a26847fa49ee}">
+		<property name="minimumDistance">
+			<value>0.800000012</value>
+		</property>
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{ac8f78a4-3637-4467-8a99-1dbf3854c8dc}" />
 	<object class="Timeline" id="{bb04e59f-b0af-43ea-8e0d-1cf7c22ce18f}">
 		<relationship name="modules">
@@ -64,6 +71,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{0e885f9d-d702-40f3-bc9f-218d1934444c}">
+		<property name="volume">
+			<value>5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{1f8baab9-dbbb-40fa-8bbc-4567bb322fc0}</destination>
 		</relationship>
@@ -94,6 +104,8 @@
 	<object class="MixerBusEffectChain" id="{1f8baab9-dbbb-40fa-8bbc-4567bb322fc0}">
 		<relationship name="effects">
 			<destination>{aa521b31-5635-4ee0-9e26-335273bb1126}</destination>
+			<destination>{a2cec58b-82f5-4ce0-8167-856ea729f12f}</destination>
+			<destination>{e2af7de7-18b2-4bcd-8404-5113e6325295}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{6d15d71c-c0ed-487e-8143-e14f147678d7}" />
@@ -107,6 +119,19 @@
 	</object>
 	<object class="MixerBusFader" id="{f4bf1faf-034f-4cb5-8b20-62bc362b98a0}" />
 	<object class="MixerBusFader" id="{aa521b31-5635-4ee0-9e26-335273bb1126}" />
+	<object class="GainEffect" id="{a2cec58b-82f5-4ce0-8167-856ea729f12f}">
+		<property name="gain">
+			<value>5</value>
+		</property>
+	</object>
+	<object class="SpatialiserEffect" id="{e2af7de7-18b2-4bcd-8404-5113e6325295}">
+		<property name="minimumDistance">
+			<value>0.800000012</value>
+		</property>
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{fe242594-bb30-46a2-9140-d700432af532}">
 		<property name="position">
 			<value>0.88400000000000001</value>

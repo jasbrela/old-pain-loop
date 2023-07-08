@@ -223,13 +223,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   abovePlayerLayer: 1748606149
-  pickup:
-    Guid:
-      Data1: 103157692
-      Data2: 1297533507
-      Data3: -573588051
-      Data4: -1006240165
-    Path: event:/Puzzles/GoldenBeads/Drag
   drop:
     Guid:
       Data1: 103157692
@@ -238,6 +231,14 @@ MonoBehaviour:
       Data4: -1006240165
     Path: event:/Puzzles/GoldenBeads/Drag
   interactionDetector: {fileID: 0}
+  volumeReduceOnPickup: 0
+  musicBoxEventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &28508405176521730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,7 +1265,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 74e67581ed0532b4e97991b21a4e13ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28104,7 +28105,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 74e67581ed0532b4e97991b21a4e13ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29516,7 +29517,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 74e67581ed0532b4e97991b21a4e13ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

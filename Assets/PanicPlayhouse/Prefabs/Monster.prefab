@@ -73,7 +73,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2799308151189938383}
   - component: {fileID: 6883720999910810048}
-  - component: {fileID: 6262647242452103651}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -148,27 +147,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6262647242452103651
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2617084689451222883}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d9b668260fdd6f44ab5f3af30b7c99b1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2849899001654777004
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +158,7 @@ GameObject:
   - component: {fileID: 2849899001654777001}
   - component: {fileID: 2849899001654777002}
   - component: {fileID: 2849899001654777005}
+  - component: {fileID: 4828596182619543028}
   - component: {fileID: 7860628906984239353}
   - component: {fileID: 3951687702779899637}
   - component: {fileID: 3970387762709452774}
@@ -238,6 +217,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 6.2592406, z: 0.25}
   m_Center: {x: 0, y: 3.1296203, z: 0}
+--- !u!95 &4828596182619543028
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2849899001654777004}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9b668260fdd6f44ab5f3af30b7c99b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!195 &7860628906984239353
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -298,7 +298,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec165433794445cb9f412e210ad192f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 6262647242452103651}
+  oneShotSFXes:
+    list:
+    - Key: footstep1
+      Value:
+        Guid:
+          Data1: -1879651159
+          Data2: 1298788054
+          Data3: -835866488
+          Data4: -1532190229
+        Path: event:/Monster/Footstep1
+    - Key: footstep2
+      Value:
+        Guid:
+          Data1: -1612954752
+          Data2: 1257854262
+          Data3: 202537117
+          Data4: -2125146540
+        Path: event:/Monster/Footstep2
+    keyCollision: 0
+  animator: {fileID: 4828596182619543028}
   animations:
     list:
     - Key: is_moving
@@ -337,15 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215a7c2b9de0ccc42894f7af55b63b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepsReference:
-    eventReference:
-      Guid:
-        Data1: 2087403842
-        Data2: 1300446572
-        Data3: 1090422148
-        Data4: -1112043970
-      Path: event:/Monster/Footsteps
-    stopMode: 1
   knockReference:
     eventReference:
       Guid:

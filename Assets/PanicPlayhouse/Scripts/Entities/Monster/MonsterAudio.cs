@@ -29,7 +29,6 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
     public class MonsterAudio : MonoBehaviour
     {
         [Header("FMOD")]
-        [SerializeField] private FMODAudioEventReference footstepsReference;
         [SerializeField] private FMODAudioEventReference knockReference;
         [SerializeField] private FMODAudioEventReference attackReference;
         [SerializeField] private FMODAudioEventReference breathReference;
@@ -39,10 +38,6 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
         [Header("Dependencies")]
         [SerializeField] private Rigidbody rb;
         [SerializeField] private NavMeshAgent agent;
-
-
-        private EventInstance _footstepsInstance;
-        public EventInstance FootstepsInstance => _footstepsInstance;
 
         private EventInstance _knockInstance;
         public EventInstance KnockInstance => _knockInstance;
@@ -115,17 +110,6 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             );
         }
 
-        public void ToggleFootstepsOn(bool on)
-        {
-            ToggleLoopAudio(
-                on,
-                ref _footstepsInstance,
-                footstepsReference.eventReference,
-                footstepsReference.stopMode,
-                true
-            );
-        }
-
         void ToggleLoopAudio(bool on, ref EventInstance eventInstance, EventReference reference, STOP_MODE stopMode, bool attachRb = false)
         {
             if (on)
@@ -141,7 +125,6 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 
         public void StopAudiosInLoop()
         {
-            AudioManager?.StopAudioInLoop(_footstepsInstance, footstepsReference.stopMode);
             AudioManager?.StopAudioInLoop(_knockInstance, knockReference.stopMode);
             AudioManager?.StopAudioInLoop(_attackInstance, attackReference.stopMode);
             AudioManager?.StopAudioInLoop(_breathInstance, breathReference.stopMode);

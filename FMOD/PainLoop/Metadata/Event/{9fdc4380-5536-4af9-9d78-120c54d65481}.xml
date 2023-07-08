@@ -5,7 +5,7 @@
 			<value>Footstep2</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9a7d50d8-aa1d-4e55-8f16-21377e6e1248}</destination>
@@ -56,7 +56,14 @@
 			<destination>{ed1cdbcb-9893-45a1-9bd1-d50522ff38fb}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{9bc6a0d3-7944-4961-844d-be45e4bb6698}" />
+	<object class="EventAutomatableProperties" id="{9bc6a0d3-7944-4961-844d-be45e4bb6698}">
+		<property name="minimumDistance">
+			<value>0.800000012</value>
+		</property>
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{2ee3834d-3772-40f6-85ee-6fa748b7ed18}" />
 	<object class="Timeline" id="{ec556a66-9b1b-4a84-a1d6-51ab852916ee}">
 		<relationship name="modules">
@@ -64,6 +71,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{f842882b-d422-4291-8773-6129473a6256}">
+		<property name="volume">
+			<value>5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{91b3b2ac-e70b-4b3a-bfe5-287c8d98c426}</destination>
 		</relationship>
@@ -91,9 +101,24 @@
 	<object class="MixerBusEffectChain" id="{91b3b2ac-e70b-4b3a-bfe5-287c8d98c426}">
 		<relationship name="effects">
 			<destination>{b103285b-e33f-4561-8b0c-e9ebfac7b2e1}</destination>
+			<destination>{311f6ae9-4f62-4950-adc7-f363cd356061}</destination>
+			<destination>{2fb12203-4d22-45ea-bbad-82a3c6b9e558}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{fa0af4df-0d86-4a97-89f3-4134da973412}" />
 	<object class="MixerBusFader" id="{daf6544a-fc6d-4035-a464-225c570d9c79}" />
 	<object class="MixerBusFader" id="{b103285b-e33f-4561-8b0c-e9ebfac7b2e1}" />
+	<object class="GainEffect" id="{311f6ae9-4f62-4950-adc7-f363cd356061}">
+		<property name="gain">
+			<value>5</value>
+		</property>
+	</object>
+	<object class="SpatialiserEffect" id="{2fb12203-4d22-45ea-bbad-82a3c6b9e558}">
+		<property name="minimumDistance">
+			<value>0.800000012</value>
+		</property>
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+	</object>
 </objects>

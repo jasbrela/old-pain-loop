@@ -57,7 +57,7 @@ namespace PanicPlayhouse.Scripts.Entities
             if (audioManager == null)
                 return;
 
-            audioManager.PlayOneShot(oneShotSFXes[sfx]);
+            audioManager.PlayOneShot(oneShotSFXes[sfx], transform.position);
         }
 
         public Animation this[string key]

@@ -79,8 +79,6 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             entityAnimation["is_moving"].SetValue(distanceFromDestination > agent.stoppingDistance);
             spriteRenderer.flipX = transform.position.x - agent.destination.x > 0;
 
-            audio.ToggleFootstepsOn(distanceFromDestination > agent.stoppingDistance);
-
             if (currentState != null)
             {
                 currentState.OnUpdate();
