@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using FMODUnity;
 using PanicPlayhouse.Scripts.Audio;
-using PanicPlayhouse.Scripts.Chunk;
-using PanicPlayhouse.Scripts.Puzzles.Grief;
 using PanicPlayhouse.Scripts.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Event = PanicPlayhouse.Scripts.ScriptableObjects.Event;
 
 namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
@@ -22,11 +21,9 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         
         [Header("Puzzle")]
         [SerializeField] private Event onFinish;
-        [SerializeField] private List<XylophoneButton> order;
-        [SerializeField] private List<Wall> wallsToOpen;
-        [SerializeField] private List<GameObject> roomsToShow;
+        [FormerlySerializedAs("order")] [SerializeField] private List<XylophoneButton> password;
         [SerializeField] private List<SpriteRenderer> drawingsToColor;
-        [SerializeField] private List<Color> colors;
+        [SerializeField] private List<SpriteRenderer> chalkToColor;
         [SerializeField] private Color disabledColor;
 
         [Header("SFX")]
@@ -37,7 +34,6 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         private List<XylophoneButton> _uniqueButtons;
         private int _buttonCount;
         private int _triggerCount;
-        private bool _firstButtonPressed;
         
         private bool IsActivated { get; set; }
         private bool IsFinished { get; set; }
@@ -46,8 +42,9 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
         {
             _audio = FindObjectOfType<AudioManager>();
             _uniqueButtons = new List<XylophoneButton>(FindObjectsOfType<XylophoneButton>());
+            ColorChalk();
             
-            if (order.Count == 0)
+            if (password.Count == 0)
             {
                 gameObject.SetActive(false);
 #if UNITY_EDITOR
@@ -56,12 +53,20 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
                 return;
             }
             
-            foreach (XylophoneButton button in order)
+            foreach (XylophoneButton button in password)
             {
                 button.Puzzle = this;
             }
             
             ActivatePuzzle();
+        }
+
+        private void ColorChalk()
+        {
+            for (int i = 0; i < chalkToColor.Count; i++)
+            {
+                chalkToColor[i].color = password[i].Color;
+            }
         }
 
         public void EnableFlowers()
@@ -91,27 +96,13 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
 
         public void OnPressButton(XylophoneButton button, EventReference reference)
         {
-            if (!_firstButtonPressed)
-            {
-                _firstButtonPressed = true;
-
-                foreach (Wall wall in wallsToOpen)
-                {
-                    wall.Unlock();
-                }
-                foreach (GameObject room in roomsToShow)
-                {
-                    room.SetActive(true);
-                }
-            }
-            
             if (IsFinished || !IsActivated) return;
 
             _audio.PlayOneShot(reference, button.transform.position);
             
-            if (order[_buttonCount] == button)
+            if (password[_buttonCount] == button)
             {
-                drawingsToColor[_buttonCount].color = colors[_buttonCount];
+                drawingsToColor[_buttonCount].color = password[_buttonCount].Color;
                 _buttonCount++;
             }
             else
@@ -131,7 +122,7 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
             
             insanity.Value += insanityPenalty;
 
-            if (_buttonCount != order.Count) return;
+            if (_buttonCount != password.Count) return;
             
             IsFinished = true;
             IsActivated = false;

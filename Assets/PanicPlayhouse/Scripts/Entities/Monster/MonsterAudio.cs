@@ -42,62 +42,26 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 
 
         private EventInstance _footstepsInstance;
-        public EventInstance footstepsInstance
-        {
-            get
-            {
-                return _footstepsInstance;
-            }
-        }
+        public EventInstance FootstepsInstance => _footstepsInstance;
 
         private EventInstance _knockInstance;
-        public EventInstance knockInstance
-        {
-            get
-            {
-                return _knockInstance;
-            }
-        }
+        public EventInstance KnockInstance => _knockInstance;
 
         private EventInstance _attackInstance;
-        public EventInstance attackInstance
-        {
-            get
-            {
-                return _attackInstance;
-            }
-        }
+        public EventInstance AttackInstance => _attackInstance;
 
         private EventInstance _breathInstance;
-        public EventInstance breathInstance
-        {
-            get
-            {
-                return _breathInstance;
-            }
-        }
+        public EventInstance BreathInstance => _breathInstance;
 
         private EventInstance _heartbeatInstance;
-        public EventInstance heatbeatInstance
-        {
-            get
-            {
-                return _heartbeatInstance;
-            }
-        }
+        public EventInstance HeatbeatInstance => _heartbeatInstance;
 
         private EventInstance _chasingInstance;
-        public EventInstance chasingInstance
-        {
-            get
-            {
-                return _chasingInstance;
-            }
-        }
+        public EventInstance ChasingInstance => _chasingInstance;
 
 
         private AudioManager _audioManager;
-        private AudioManager audioManager
+        private AudioManager AudioManager
         {
             get
             {
@@ -115,12 +79,12 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
 
         public void PlayKnockOneShot()
         {
-            audioManager?.PlayOneShot(knockReference.eventReference);
+            AudioManager?.PlayOneShot(knockReference.eventReference);
         }
 
         public void PlayAttackOneShot()
         {
-            audioManager?.PlayOneShot(attackReference.eventReference);
+            AudioManager?.PlayOneShot(attackReference.eventReference);
         }
 
         public void ToggleChaseAudiosOn(bool on)
@@ -167,22 +131,22 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             if (on)
             {
                 if (attachRb)
-                    audioManager?.PlayAudioInLoop(ref eventInstance, reference, rb);
+                    AudioManager?.PlayAudioInLoop(ref eventInstance, reference, rb);
                 else
-                    audioManager?.PlayAudioInLoop(ref eventInstance, reference);
+                    AudioManager?.PlayAudioInLoop(ref eventInstance, reference);
             }
             else
-                audioManager?.StopAudioInLoop(eventInstance, stopMode);
+                AudioManager?.StopAudioInLoop(eventInstance, stopMode);
         }
 
         public void StopAudiosInLoop()
         {
-            audioManager?.StopAudioInLoop(_footstepsInstance, footstepsReference.stopMode);
-            audioManager?.StopAudioInLoop(_knockInstance, knockReference.stopMode);
-            audioManager?.StopAudioInLoop(_attackInstance, attackReference.stopMode);
-            audioManager?.StopAudioInLoop(_breathInstance, breathReference.stopMode);
-            audioManager?.StopAudioInLoop(_heartbeatInstance, heartbeatReference.stopMode);
-            audioManager?.StopAudioInLoop(_chasingInstance, chasingReference.stopMode);
+            AudioManager?.StopAudioInLoop(_footstepsInstance, footstepsReference.stopMode);
+            AudioManager?.StopAudioInLoop(_knockInstance, knockReference.stopMode);
+            AudioManager?.StopAudioInLoop(_attackInstance, attackReference.stopMode);
+            AudioManager?.StopAudioInLoop(_breathInstance, breathReference.stopMode);
+            AudioManager?.StopAudioInLoop(_heartbeatInstance, heartbeatReference.stopMode);
+            AudioManager?.StopAudioInLoop(_chasingInstance, chasingReference.stopMode);
         }
     }
 }

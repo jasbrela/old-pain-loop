@@ -166,11 +166,26 @@ namespace PanicPlayhouse.Scripts.Entities.Player
             input.actions["Interact"].performed -= Interact;
         }
 
+        public void Release()
+        {
+            if (_pickedUpInteractable != null)
+            {
+                Interact();
+            }
+        }
+
         private void Interact(InputAction.CallbackContext ctx)
         {
             if (_currentTarget == null) return;
 
             tooltip.SetInteractionKey(ctx.action.activeControl.displayName);
+
+            Interact();
+        }
+
+        private void Interact()
+        {
+            if (_currentTarget == null) return;
 
             ResetIdleTimer();
             tooltip.HideTooltip();

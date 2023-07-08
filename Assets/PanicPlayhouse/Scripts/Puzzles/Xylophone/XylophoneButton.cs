@@ -6,7 +6,10 @@ namespace PanicPlayhouse.Scripts.Puzzles.Xylophone
 {
     public class XylophoneButton : Interactable
     {
+        [SerializeField] private Color color;
         [SerializeField] private EventReference click;
+
+        public Color Color => color;
         private bool _isBlocked;
         
         public bool IsBlocked

@@ -79,15 +79,7 @@ namespace PanicPlayhouse.Scripts.Entities.Monster
             entityAnimation["is_moving"].SetValue(distanceFromDestination > agent.stoppingDistance);
             spriteRenderer.flipX = transform.position.x - agent.destination.x > 0;
 
-            audio.footstepsInstance.getPlaybackState(out PLAYBACK_STATE state);
-            if ((audio.footstepsInstance.isValid() && state == PLAYBACK_STATE.STOPPED))
-            {
-                audio.ToggleFootstepsOn(true);
-            }
-            else if ((audio.footstepsInstance.isValid() && state != PLAYBACK_STATE.STOPPED))
-            {
-                audio.ToggleFootstepsOn(false);
-            }
+            audio.ToggleFootstepsOn(distanceFromDestination > agent.stoppingDistance);
 
             if (currentState != null)
             {
