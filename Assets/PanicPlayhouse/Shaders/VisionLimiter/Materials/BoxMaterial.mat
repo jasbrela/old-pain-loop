@@ -53,6 +53,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SmoothingStep: 1.25
+    - _Smoothness: 0
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 0
@@ -64,7 +65,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DistanceB: {r: 0, g: 0, b: 0, a: 0}
     - _FarColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PlayerPosition: {r: 31.40032, g: 0.5, b: 80.94244, a: 0}
+    - _PlayerPosition: {r: -54.5, g: 0.5, b: 112.229996, a: 0}
     - _PlayerPositionOffset: {r: 0, g: 0, b: 1, a: 0}
     - _PositionMultiplier: {r: 1, g: 0, b: 1, a: 0}
     - _TexOffset: {r: 0, g: 0, b: 0, a: 0}

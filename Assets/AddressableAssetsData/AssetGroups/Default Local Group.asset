@@ -16,7 +16,11 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 6d05bd49d52700447a94c9d6de1b6389
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 5385d9f31f360d046b0f1d9cf1068899
+    m_Address: Assets/PanicPlayhouse/Shaders/VisionLimiter/Materials/WallsNoChalk.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d4f2901c473a3d84a921e2285aad8f0c, type: 2}
   m_SchemaSet:
